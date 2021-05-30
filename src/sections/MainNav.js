@@ -44,7 +44,8 @@ const Main = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${(props) => theme.palette.white};
+  background-color: ${theme.palette.white};
+  z-index: 100;
   /* display: flex;
   flex-direction: row; */
 `;

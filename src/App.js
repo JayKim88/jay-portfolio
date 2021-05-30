@@ -1,6 +1,7 @@
-import MainNav from "./sections/MainNav";
 import styled, { ThemeProvider } from "styled-components";
 import defaultTheme from "./common/style/themes/default";
+import MainNav from "./sections/MainNav";
+import Home from "./sections/Home";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <ThemeProvider theme={defaultTheme}>
         <Main>
           <MainNav />
+          <Home />
         </Main>
       </ThemeProvider>
     </>
@@ -15,7 +17,8 @@ function App() {
 }
 
 const Main = styled.div`
-  border: 3px solid green;
+  /* border: 3px solid green; */
+  /* padding-top: 3.5rem; */
   height: 100%;
 `;
 

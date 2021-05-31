@@ -99,6 +99,28 @@ const theme = {
       font-weight: 400;
       letter-spacing: 0.03rem;
     `,
+    itemTitle: `
+      width: 20rem;
+      // border: 10px solid black;
+      font-size: 2.5rem;
+      font-weight: 500;
+      text-align: start;
+      padding-left: 2rem;
+      color: #07C173;
+    `,
+    contentsBody: `
+      font-size: 1.3rem;
+      line-height: 3rem;
+    `,
+    stackStyle: `
+      background-color: #e0e0e0;
+      color: #07C173;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      display: flex;
+      align-items: center;
+    `,
   },
 };
 

@@ -4,6 +4,7 @@ import Leaf from "../assets/images/leaf.png";
 import Introduction from "../components/Introduction";
 import PairReview from "../components/PairReview";
 import Stacks from "../components/Stacks";
+import Education from "../components/Education";
 
 function About() {
   return (
@@ -14,16 +15,18 @@ function About() {
           <TitleText>About</TitleText>
         </TitleBox>
       </Title>
-      <SectionFirst>
+      <Section>
         <SectionMain>
           <Introduction />
           <PairReview />
           <Stacks />
         </SectionMain>
-      </SectionFirst>
-      <SectionSecond>
-        <SectionMain></SectionMain>
-      </SectionSecond>
+      </Section>
+      <Section>
+        <SectionMain>
+          <Education />
+        </SectionMain>
+      </Section>
     </Main>
   );
 }
@@ -39,21 +42,19 @@ const Title = styled.div`
   align-items: flex-end;
   padding-bottom: 4rem;
 `;
-const SectionFirst = styled.div`
+const Section = styled.div`
   /* border: 3px solid green; */
   display: flex;
   justify-content: center;
 `;
-const SectionSecond = styled.div`
-  /* border: 3px solid green; */
-`;
+
 const TitleBox = styled.div`
   /* border: 3px solid black; */
   display: flex;
   justify-content: center;
 `;
 const SectionMain = styled.div`
-  border: 3px solid yellow;
+  /* border: 3px solid yellow; */
   width: 80%;
   background-color: white;
   border-radius: 2rem;

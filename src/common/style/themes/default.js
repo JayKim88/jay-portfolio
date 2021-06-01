@@ -120,6 +120,11 @@ const theme = {
       margin: 0.5rem;
       display: flex;
       align-items: center;
+      height: 2rem;
+    `,
+    periodStyle: `
+      font-size: 1.8rem;
+      width: 40%;
     `,
   },
 };

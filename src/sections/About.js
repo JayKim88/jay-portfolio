@@ -5,8 +5,9 @@ import Introduction from "../components/Introduction";
 import PairReview from "../components/PairReview";
 import Stacks from "../components/Stacks";
 import Education from "../components/Education";
+import Studies from "../components/Studies";
 
-function About() {
+function About({ handleItem }) {
   return (
     <Main>
       <Title>
@@ -25,6 +26,7 @@ function About() {
       <Section>
         <SectionMain>
           <Education />
+          <Studies handleItem={handleItem} />
         </SectionMain>
       </Section>
     </Main>

@@ -121,6 +121,7 @@ const theme = {
       display: flex;
       align-items: center;
       height: 2rem;
+  
     `,
     periodStyle: `
       font-size: 1.8rem;

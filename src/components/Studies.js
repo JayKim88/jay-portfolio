@@ -13,16 +13,14 @@ function Studies({ handleItem }) {
     <MainItem>
       <ItemTitle>Studies</ItemTitle>
       <ItemBox>
-        <ItemWrapper>
-          {studiesData.map((ele) => (
-            <Item key={ele.id} onClick={() => handleItem(ele)}>
-              <ImgWrapper key={ele.id}>
-                <ItemImg src={ele.thumbnail} name="img" />
-              </ImgWrapper>
-              <ItemInfo name="info">{ele.summary}</ItemInfo>
-            </Item>
-          ))}
-        </ItemWrapper>
+        {studiesData.map((ele) => (
+          <Item key={ele.id} onClick={() => handleItem(ele)}>
+            <ImgWrapper key={ele.id}>
+              <ItemImg src={ele.thumbnail} name="img" />
+            </ImgWrapper>
+            <ItemInfo name="info">{ele.summary}</ItemInfo>
+          </Item>
+        ))}
       </ItemBox>
     </MainItem>
   );
@@ -44,29 +42,17 @@ const ItemTitle = styled.div`
 
 const ItemBox = styled.div`
   /* border: 3px solid red; */
-  display: flex;
-  justify-content: center;
-`;
-
-const ItemWrapper = styled.div`
-  /* border: 3px solid blue; */
-  margin-top: 1rem;
-  width: 80%;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
-  z-index: 99;
-  @media only screen and (max-width: 1400px) {
+  grid-gap: 100px;
+  @media only screen and (max-width: 1600px) {
     grid-template-columns: 1fr 1fr;
     /* transition: grid-template-columns 0.2s ease-in; */
   }
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1100px) {
     grid-template-columns: 1fr;
     /* transition: grid-template-columns 0.2s ease-in; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 `;
 
@@ -107,7 +93,7 @@ const ItemImg = styled.img`
 const ItemInfo = styled.div`
   /* border: 3px solid black; */
   /* text-align: center; */
-  max-width: 80%;
+  width: 80%;
   pointer-events: none;
 `;
 

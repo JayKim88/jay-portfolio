@@ -5,6 +5,7 @@ import MainNav from "./sections/MainNav";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Modal from "./components/Modal";
+import Works from "./sections/Works";
 
 function App() {
   const [ItemData, setItemData] = useState(null);
@@ -20,6 +21,7 @@ function App() {
           <MainNav />
           <Home />
           <About handleItem={handleItem} />
+          <Works handleItem={handleItem} />
           {ItemData && <Modal ItemData={ItemData} handleItem={handleItem} />}
         </Main>
       </ThemeProvider>
@@ -28,7 +30,7 @@ function App() {
 }
 
 const Main = styled.div`
-  border: 3px solid green;
+  /* border: 3px solid green; */
   /* padding-top: 3.5rem; */
   height: 100%;
   background-color: ${defaultTheme.palette.lightGreen};

@@ -68,19 +68,25 @@ function Modal({ ItemData, handleItem }) {
             <Item>
               <Name>배포링크</Name>
               <Content>
-                <ContentLink href={hostingLink}>{hostingLink}</ContentLink>
+                <ContentLink href={hostingLink} target="_blank">
+                  {hostingLink}
+                </ContentLink>
               </Content>
             </Item>
             <Item>
               <Name>깃헙링크</Name>
               <Content>
-                <ContentLink href={githubLink}>{githubLink}</ContentLink>
+                <ContentLink href={githubLink} target="_blank">
+                  {githubLink}
+                </ContentLink>
               </Content>
             </Item>
             <Item>
               <Name>회고록</Name>
               <Content>
-                <ContentLink href={reviewLink}>{reviewLink}</ContentLink>
+                <ContentLink href={reviewLink} target="_blank">
+                  {reviewLink}
+                </ContentLink>
               </Content>
             </Item>
           </Items>
@@ -182,7 +188,7 @@ const StackItem = styled.span`
   ${theme("fontStyle.stackStyle")}
   height: 0.8rem;
   font-size: 1rem;
-  margin: 0 0.5rem 0 0;
+  margin: 0 0.5rem 0.5rem 0;
 `;
 
 const RoleBox = styled.div`
@@ -197,6 +203,10 @@ const Role = styled.div`
 
 const ContentLink = styled.a`
   /* border: 3px solid orange; */
+  width: 25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
 `;
 
 export default Modal;

@@ -22,7 +22,7 @@ function Stacks() {
       <ItemTitle>Stacks</ItemTitle>
       <StacksContents>
         {stackArray.map((ele) => (
-          <StacksElement>{ele}</StacksElement>
+          <StacksElement key={ele}>{ele}</StacksElement>
         ))}
       </StacksContents>
     </MainItem>

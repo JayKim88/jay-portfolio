@@ -1,17 +1,26 @@
+import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import defaultTheme from "./common/style/themes/default";
 import MainNav from "./sections/MainNav";
 import Home from "./sections/Home";
 import About from "./sections/About";
+import Modal from "./components/Modal";
 
 function App() {
+  const [ItemData, setItemData] = useState(null);
+
+  const handleItem = (data) => {
+    setItemData(data);
+  };
+
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
         <Main>
           <MainNav />
           <Home />
-          <About />
+          <About handleItem={handleItem} />
+          {ItemData && <Modal ItemData={ItemData} handleItem={handleItem} />}
         </Main>
       </ThemeProvider>
     </>

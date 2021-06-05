@@ -4,7 +4,7 @@ import treeImg from "../assets/images/tree.png";
 
 function Contact() {
   return (
-    <Main>
+    <Main className="contact">
       <Contents>
         <Comment>
           Would you work with me? <br />
@@ -26,7 +26,8 @@ function Contact() {
 const Main = styled.div`
   /* border: 3px solid red; */
   position: relative;
-  height: 50rem;
+  height: 70em;
+  /* margin-top: 20rem; */
   /* margin: 2rem 1rem 0rem 1rem; */
 `;
 
@@ -35,14 +36,14 @@ const BackgroundImg = styled.img`
   position: absolute;
   bottom: 0;
   left: 15%;
-  width: 30rem;
+  width: 32rem;
 `;
 
 const Contents = styled.div`
   /* border: 3px solid blue; */
   position: absolute;
   width: 40rem;
-  top: 15rem;
+  top: 28rem;
   left: 48%;
   display: flex;
   flex-direction: column;
@@ -54,7 +55,7 @@ const Comment = styled.div`
   font-size: 3rem;
   font-weight: 500;
   line-height: 5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 `;
 const Mobile = styled.div`
   /* border: 3px solid green; */
@@ -67,7 +68,7 @@ const Email = styled.div`
 `;
 const EmailLink = styled.a`
   text-decoration: none;
-  color: #07c173;
+  color: #39a350;
 `;
 
 export default Contact;

@@ -108,7 +108,7 @@ const Main = styled.div`
 
 const ReviewWrapper = styled.div`
   /* border: 3px solid black; */
-  width: 40vw;
+  width: 80%;
   padding: 2rem;
   background-color: ${theme.palette.cgreen};
 `;
@@ -117,8 +117,7 @@ const StyledSlider = styled(Slider)`
   /* border: 3px solid blue; */
   height: 21em;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+
   img {
     width: 2rem;
     height: 2rem;

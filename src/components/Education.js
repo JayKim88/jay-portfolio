@@ -74,7 +74,7 @@ const MainItem = styled.div`
   /* border: 3px solid red; */
   display: flex;
   flex-direction: column;
-  margin: 0 1rem 0rem 1rem;
+  margin: 0 1rem 3rem 1rem;
 `;
 
 const ItemTitle = styled.div`
@@ -82,7 +82,7 @@ const ItemTitle = styled.div`
   ${theme("fontStyle.itemTitle")}
   width: 95%;
   padding-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const EduContents = styled.div`
@@ -107,12 +107,14 @@ const Period = styled.div`
 const Contents = styled.div`
   /* border: 3px solid green; */
   width: 100%;
+  margin-bottom: 1rem;
 `;
 
 const ContentsHeader = styled.div`
   /* border: 3px solid red; */
   line-height: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 `;
 
 const ContentsBody = styled.div`

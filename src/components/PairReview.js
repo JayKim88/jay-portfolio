@@ -24,7 +24,7 @@ const MainItem = styled.div`
   /* border: 3px solid lightgreen; */
   display: flex;
   /* width: 80%; */
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 const ItemTitle = styled.div`
   /* border: 3px solid blue; */
@@ -35,7 +35,7 @@ const IntroContents = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: flex-start; */
-  width: 80%;
+  width: 72%;
   flex-wrap: wrap;
 `;
 const ContentsBody = styled.div`

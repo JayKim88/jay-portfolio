@@ -21,9 +21,9 @@ function App() {
         <Main>
           <MainNav />
           <Home />
-          <About handleItem={handleItem} />
-          <Works handleItem={handleItem} />
-          <Contact />
+          <About handleItem={handleItem} className="about" />
+          <Works handleItem={handleItem} className="works" />
+          <Contact className="contact" />
           {ItemData && <Modal ItemData={ItemData} handleItem={handleItem} />}
         </Main>
       </ThemeProvider>

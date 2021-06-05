@@ -6,6 +6,7 @@ import Home from "./sections/Home";
 import About from "./sections/About";
 import Modal from "./components/Modal";
 import Works from "./sections/Works";
+import Contact from "./sections/Contact";
 
 function App() {
   const [ItemData, setItemData] = useState(null);
@@ -22,6 +23,7 @@ function App() {
           <Home />
           <About handleItem={handleItem} />
           <Works handleItem={handleItem} />
+          <Contact />
           {ItemData && <Modal ItemData={ItemData} handleItem={handleItem} />}
         </Main>
       </ThemeProvider>

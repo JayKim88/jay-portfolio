@@ -9,7 +9,7 @@ import Studies from "../components/Studies";
 
 function About({ handleItem }) {
   return (
-    <Main>
+    <Main className="about">
       <Title>
         <TitleBox>
           <LeafImg src={Leaf} />
@@ -38,12 +38,13 @@ const Main = styled.section`
 `;
 const Title = styled.div`
   /* border: 3px solid blue; */
-  height: 15rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 4rem;
 `;
+// @media only screen and (max-width: 600px)  {...}
 const Section = styled.div`
   /* border: 3px solid green; */
   display: flex;
@@ -54,10 +55,12 @@ const TitleBox = styled.div`
   /* border: 3px solid black; */
   display: flex;
   justify-content: center;
+  margin-right: 3rem;
 `;
+
 const SectionMain = styled.div`
   /* border: 3px solid yellow; */
-  width: 80%;
+  width: 65%;
   background-color: white;
   border-radius: 2rem;
   padding: 2rem 1rem 2rem 1rem;

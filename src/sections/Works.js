@@ -7,7 +7,7 @@ function Works({ handleItem }) {
   const worksData = useFiretore("works");
 
   return (
-    <Main>
+    <Main className="works">
       <Title>
         <TitleBox>
           <LeafImg src={Leaf} />
@@ -53,10 +53,11 @@ const TitleBox = styled.div`
   /* border: 3px solid black; */
   display: flex;
   justify-content: center;
+  margin-right: 3rem;
 `;
 const SectionMain = styled.div`
   /* border: 3px solid yellow; */
-  width: 80%;
+  width: 65%;
   background-color: white;
   border-radius: 2rem;
   padding: 2rem 1rem 2rem 1rem;

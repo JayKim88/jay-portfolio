@@ -6,7 +6,7 @@ import BackgroundImg from "../assets/images/background.jpg";
 
 function Home() {
   return (
-    <Main>
+    <Main className="home">
       <Background src={BackgroundImg} />
       <Contents>
         <ImgBox>

@@ -90,6 +90,7 @@ const ItemImg = styled.img`
   max-height: 90%;
   pointer-events: none;
 `;
+
 const ItemInfo = styled.div`
   /* border: 3px solid black; */
   /* text-align: center; */

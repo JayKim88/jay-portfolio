@@ -15,7 +15,7 @@ function Home() {
         <TextBox>
           <IntroHeader>
             안녕하세요,
-            <br /> 저는 디자인이 즐거운 개발자
+            <br /> 저는 디자인을 사랑하는 개발자
             <br /> 김용재 입니다.
           </IntroHeader>
           <IntroBody>
@@ -29,7 +29,6 @@ function Home() {
 }
 
 const Main = styled.section`
-  /* border: 3px solid red; */
   height: 100vh;
   position: relative;
 `;
@@ -41,7 +40,6 @@ const Background = styled.img`
 `;
 
 const Contents = styled.div`
-  /* border: 3px solid blue; */
   position: absolute;
   bottom: 13%;
   height: 20rem;
@@ -50,7 +48,6 @@ const Contents = styled.div`
 `;
 
 const ImgBox = styled.div`
-  /* border: 3px solid green; */
   width: 30%;
   display: flex;
   justify-content: center;
@@ -59,7 +56,6 @@ const ImgBox = styled.div`
 `;
 
 const TextBox = styled.div`
-  /* border: 3px solid green; */
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -67,7 +63,6 @@ const TextBox = styled.div`
 `;
 
 const ProfileImg = styled.img`
-  /* border: 3px solid yellow; */
   width: 18rem;
   height: 18rem;
 `;

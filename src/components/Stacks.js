@@ -30,19 +30,15 @@ function Stacks() {
 }
 
 const MainItem = styled.div`
-  /* border: 3px solid lightgreen; */
   display: flex;
   height: 10rem;
   /* width: 80%; */
 `;
 const ItemTitle = styled.div`
-  /* border: 3px solid blue; */
   ${theme("fontStyle.itemTitle")}
 `;
 const StacksContents = styled.div`
-  /* border: 3px solid blue; */
   width: 80%;
-  /* padding: 1rem; */
   display: flex;
   flex-wrap: wrap;
 `;

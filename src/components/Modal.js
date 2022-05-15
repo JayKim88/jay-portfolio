@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { theme } from "styled-tools";
 
 function Modal({ ItemData, handleItem }) {
-  // const itemData = useFiretore("studies");
-  // console.log(ItemData);
   const {
     githubLink,
     hostingLink,
@@ -20,7 +18,6 @@ function Modal({ ItemData, handleItem }) {
   } = ItemData;
 
   const handleClick = (e) => {
-    // console.log(e.target.classList);
     if (e.target.classList.contains("backdrop")) {
       handleItem(null);
     }
@@ -65,30 +62,36 @@ function Modal({ ItemData, handleItem }) {
                 ))}
               </RoleBox>
             </Item>
-            <Item>
-              <Name>배포링크</Name>
-              <Content>
-                <ContentLink href={hostingLink} target="_blank">
-                  {hostingLink}
-                </ContentLink>
-              </Content>
-            </Item>
-            <Item>
-              <Name>깃헙링크</Name>
-              <Content>
-                <ContentLink href={githubLink} target="_blank">
-                  {githubLink}
-                </ContentLink>
-              </Content>
-            </Item>
-            <Item>
-              <Name>회고록</Name>
-              <Content>
-                <ContentLink href={reviewLink} target="_blank">
-                  {reviewLink}
-                </ContentLink>
-              </Content>
-            </Item>
+            {hostingLink && (
+              <Item>
+                <Name>배포링크</Name>
+                <Content>
+                  <ContentLink href={hostingLink} target="_blank">
+                    {hostingLink}
+                  </ContentLink>
+                </Content>
+              </Item>
+            )}
+            {githubLink && (
+              <Item>
+                <Name>깃헙링크</Name>
+                <Content>
+                  <ContentLink href={githubLink} target="_blank">
+                    {githubLink}
+                  </ContentLink>
+                </Content>
+              </Item>
+            )}
+            {reviewLink && (
+              <Item>
+                <Name>회고록</Name>
+                <Content>
+                  <ContentLink href={reviewLink} target="_blank">
+                    {reviewLink}
+                  </ContentLink>
+                </Content>
+              </Item>
+            )}
           </Items>
         </Body>
       </Main>
@@ -97,7 +100,6 @@ function Modal({ ItemData, handleItem }) {
 }
 
 const Backdrop = styled.div`
-  /* border: 3px solid yellow; */
   position: fixed;
   top: 0;
   left: 0;
@@ -117,10 +119,9 @@ const Backdrop = styled.div`
 `;
 
 const Main = styled.div`
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 2rem;
   background: white;
-  /* height: 50rem; */
   width: 40rem;
   display: flex;
   flex-direction: column;
@@ -128,12 +129,11 @@ const Main = styled.div`
 `;
 
 const Body = styled.div`
-  /* border: 3px solid skyblue; */
   margin: 1rem;
 `;
 
 const Title = styled.div`
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   font-size: 2.5rem;
   font-weight: 500;
   text-align: start;
@@ -144,32 +144,26 @@ const Title = styled.div`
 `;
 
 const Summary = styled.div`
-  /* border: 3px solid purple; */
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0.2rem;
   margin-bottom: 1rem;
 `;
 
-const Items = styled.div`
-  /* border: 3px solid purple; */
-`;
+const Items = styled.div``;
 
 const Item = styled.div`
-  /* border: 3px solid red; */
   display: flex;
   margin-bottom: 0.5rem;
 `;
 
 const Name = styled.div`
-  /* border: 3px solid lightgreen; */
   width: 20%;
   margin: 0.2rem;
   font-weight: 400;
 `;
 
 const Content = styled.div`
-  /* border: 3px solid lightgreen; */
   width: 80%;
   display: flex;
   align-items: center;
@@ -177,7 +171,6 @@ const Content = styled.div`
 `;
 
 const StackBox = styled.div`
-  /* border: 3px solid lightgreen; */
   width: 70%;
   display: flex;
   flex-wrap: wrap;
@@ -192,17 +185,14 @@ const StackItem = styled.span`
 `;
 
 const RoleBox = styled.div`
-  /* border: 3px solid lightgreen; */
   margin-top: 0.2rem;
 `;
 
 const Role = styled.div`
-  /* border: 3px solid orange; */
   margin-bottom: 0.2rem;
 `;
 
 const ContentLink = styled.a`
-  /* border: 3px solid orange; */
   width: 25rem;
   overflow: hidden;
   text-overflow: ellipsis;

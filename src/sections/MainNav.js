@@ -97,7 +97,6 @@ function MainNav() {
 }
 
 const Main = styled.nav`
-  /* border: 3px solid red; */
   position: fixed;
   top: 0;
   left: 0;
@@ -110,7 +109,6 @@ const Main = styled.nav`
 `;
 
 const NavList = styled.ul`
-  /* border: 3px solid yellow; */
   position: relative;
   width: 100%;
   display: flex;
@@ -119,7 +117,6 @@ const NavList = styled.ul`
   padding-left: 2rem;
 `;
 const List = styled.li`
-  /* border: 3px solid blue; */
   margin-right: 1rem;
   cursor: pointer;
   font-size: 1.5rem;

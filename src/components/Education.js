@@ -71,14 +71,12 @@ function Education() {
 }
 
 const MainItem = styled.div`
-  /* border: 3px solid red; */
   display: flex;
   flex-direction: column;
   margin: 0 1rem 3rem 1rem;
 `;
 
 const ItemTitle = styled.div`
-  /* border: 3px solid lightgreen; */
   ${theme("fontStyle.itemTitle")}
   width: 95%;
   padding-left: 0;
@@ -86,50 +84,41 @@ const ItemTitle = styled.div`
 `;
 
 const EduContents = styled.div`
-  /* border: 3px solid lightgreen; */
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 `;
 
 const ContentsBox = styled.div`
-  /* border: 3px solid yellow; */
   display: flex;
   margin-bottom: 1rem;
 `;
 
 const Period = styled.div`
-  /* border: 3px solid green; */
   ${theme("fontStyle.periodStyle")}
   padding-top: 0.4rem;
 `;
 
 const Contents = styled.div`
-  /* border: 3px solid green; */
   width: 100%;
   margin-bottom: 1rem;
 `;
 
 const ContentsHeader = styled.div`
-  /* border: 3px solid red; */
   line-height: 3rem;
   font-size: 1.4rem;
   margin-bottom: 1rem;
 `;
 
 const ContentsBody = styled.div`
-  /* border: 3px solid red; */
   width: 100%;
-  /* margin-top: 1rem; */
 `;
 
 const EduItem = styled.div`
-  /* border: 3px solid orange; */
   display: flex;
 `;
 
 const ItemName = styled.div`
-  /* border: 3px solid black; */
   width: 8rem;
   span {
     ${theme("fontStyle.stackStyle")}
@@ -141,7 +130,6 @@ const ItemName = styled.div`
 `;
 
 const ItemBody = styled.div`
-  /* border: 3px solid black; */
   ${theme("fontStyle.contentsBody")}
   display: flex;
   align-items: center;

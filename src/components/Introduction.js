@@ -21,30 +21,24 @@ function Introduction() {
 }
 
 const MainItem = styled.div`
-  /* border: 3px solid lightgreen; */
   display: flex;
   margin-bottom: 3rem;
-  /* width: 80%; */
 `;
 const ItemTitle = styled.div`
-  /* border: 3px solid blue; */
   ${theme("fontStyle.itemTitle")}
 `;
 const IntroContents = styled.div`
-  /* border: 3px solid blue; */
   display: flex;
   flex-direction: column;
   width: 80%;
 `;
 const ContentsHeader = styled.div`
-  /* border: 3px solid red; */
   font-size: 1.7rem;
   font-weight: bold;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 `;
 const ContentsBody = styled.div`
-  /* border: 3px solid green; */
   ${theme("fontStyle.contentsBody")}
 `;
 

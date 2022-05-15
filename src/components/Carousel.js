@@ -95,7 +95,6 @@ class Carousel extends Component {
 }
 
 const Main = styled.div`
-  /* border: 3px solid yellow; */
   width: 100%;
   margin: 0;
   display: flex;
@@ -107,14 +106,12 @@ const Main = styled.div`
 `;
 
 const ReviewWrapper = styled.div`
-  /* border: 3px solid black; */
   width: 80%;
   padding: 2rem;
   background-color: ${theme.palette.cgreen};
 `;
 
 const StyledSlider = styled(Slider)`
-  /* border: 3px solid blue; */
   height: 21em;
   display: flex;
 
@@ -125,12 +122,10 @@ const StyledSlider = styled(Slider)`
 `;
 
 const ReviewBox = styled.div`
-  /* border: 3px solid pink; */
   width: 100%;
   height: 20rem;
 `;
 const RContents = styled.div`
-  /* border: 3px solid yellow; */
   height: 70%;
   padding: 1rem 2rem 2rem 2rem;
   margin-bottom: 0.5rem;
@@ -148,7 +143,6 @@ const RContents = styled.div`
 `;
 
 const RWriter = styled.div`
-  /* border: 3px solid blue; */
   font-size: 1.2rem;
   text-align: center;
   font-weight: bold;

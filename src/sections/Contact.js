@@ -24,15 +24,11 @@ function Contact() {
 }
 
 const Main = styled.div`
-  /* border: 3px solid red; */
   position: relative;
   height: 70em;
-  /* margin-top: 20rem; */
-  /* margin: 2rem 1rem 0rem 1rem; */
 `;
 
 const BackgroundImg = styled.img`
-  /* border: 3px solid black; */
   position: absolute;
   bottom: 0;
   left: 15%;
@@ -40,7 +36,7 @@ const BackgroundImg = styled.img`
 `;
 
 const Contents = styled.div`
-  /* border: 3px solid blue; */
+  z-index: 99;
   position: absolute;
   width: 40rem;
   top: 28rem;
@@ -50,7 +46,6 @@ const Contents = styled.div`
 `;
 
 const Comment = styled.div`
-  /* border: 3px solid yellow; */
   height: 50%;
   font-size: 3rem;
   font-weight: 500;
@@ -58,7 +53,6 @@ const Comment = styled.div`
   margin-bottom: 3rem;
 `;
 const Mobile = styled.div`
-  /* border: 3px solid green; */
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
 `;

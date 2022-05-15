@@ -18,7 +18,7 @@ function MainNav() {
     navBtns.forEach((btn) => {
       btn.style.color = "black";
     });
-    let currentScrollValue = document.documentElement.scrollTop;
+    let currentScrollValue = document.documentElement.scrollTop + 10;
 
     if (about <= currentScrollValue && currentScrollValue < works) {
       btnAbout[0].style.color = theme.palette.green;

@@ -1,5 +1,5 @@
-# Jay-portfolio
-Portfolio Web
+# JPortfolio
+Jay's Portfolio Website
 
 ## Required Pages 
 - Home

@@ -1,4 +1,4 @@
-# jay-portfolio
+# Jay-portfolio
 Portfolio Web
 
 ## Required Pages 

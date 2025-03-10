@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import wArrowLeft from "../assets/images/wArrowLeft.svg";
 import wArrowRight from "../assets/images/wArrowRight.svg";
 import gArrowLeft from "../assets/images/gArrowLeft.svg";
 import gArrowRight from "../assets/images/gArrowRight.svg";
-import theme from "../common/style/themes/default";
 import reviews from "../assets/reviews/reviews";
 
 function handleHover(element) {
-  // if (element.target)
   const arrowId = element.target.id;
 
   if (arrowId === "right") {
@@ -63,7 +60,7 @@ function PrevArrow(props) {
   );
 }
 
-class Carousel extends Component {
+export class Carousel extends Component {
   render() {
     const settings = {
       dots: true,
@@ -73,79 +70,66 @@ class Carousel extends Component {
       autoplaySpeed: 3500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      border: "1px solid blue",
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
     };
     return (
-      <Main>
-        <ReviewWrapper>
-          <StyledSlider {...settings}>
+      <div
+        style={{
+          margin: 0,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+          width: "800px",
+        }}
+      >
+        <div
+          style={{
+            width: "90%",
+            padding: "2rem",
+            backgroundColor: `#88F5C7`,
+          }}
+        >
+          <Slider {...settings}>
             {reviews.map((ele) => (
-              <ReviewBox key={ele.name}>
-                <RContents>{ele.comment}</RContents>
-                <RWriter>{ele.name}</RWriter>
-              </ReviewBox>
+              <div
+                key={ele.name}
+                style={{
+                  height: "20rem",
+                }}
+              >
+                <div
+                  style={{
+                    height: "70%",
+                    padding: "1rem 2rem 2rem 2rem",
+                    marginBottom: "0.5rem",
+                    lineHeight: "2.3rem",
+                    fontSize: "1.2rem",
+                    display: "flex",
+                    cursor: "pointer",
+                    overflowY: "auto",
+                    msOverflowStyle: "none", // IE and Edge
+                    scrollbarWidth: "none", // Firefox
+                  }}
+                >
+                  {ele.comment}
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.2rem",
+                    textAlign: "center",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {ele.name}
+                </div>
+              </div>
             ))}
-          </StyledSlider>
-        </ReviewWrapper>
-      </Main>
+          </Slider>
+        </div>
+      </div>
     );
   }
 }
-
-const Main = styled.div`
-  width: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  /* overflow: hidden; */
-`;
-
-const ReviewWrapper = styled.div`
-  width: 80%;
-  padding: 2rem;
-  background-color: ${theme.palette.cgreen};
-`;
-
-const StyledSlider = styled(Slider)`
-  height: 21em;
-  display: flex;
-
-  img {
-    width: 2rem;
-    height: 2rem;
-  }
-`;
-
-const ReviewBox = styled.div`
-  width: 100%;
-  height: 20rem;
-`;
-const RContents = styled.div`
-  height: 70%;
-  padding: 1rem 2rem 2rem 2rem;
-  margin-bottom: 0.5rem;
-  line-height: 2.3rem;
-  font-size: 1.2rem;
-  display: flex;
-  /* align-items: center; */
-  cursor: pointer;
-  overflow-y: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  ::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-  }
-`;
-
-const RWriter = styled.div`
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-`;
-
-export default Carousel;

@@ -1,6 +1,8 @@
 import React from "react";
-import GitLogo from "../assets/images/github.png";
-import BlogLogo from "../assets/images/tistory.svg";
+import Github from "../assets/images/sns/github.svg?react";
+import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
+import Instagram from "../assets/images/sns/instagram.svg?react";
+import Tistory from "../assets/images/sns/tistory.svg?react";
 
 const moveToTargetSection = (e) => {
   const title = e.target.innerText.toLowerCase();
@@ -14,18 +16,19 @@ const moveToTargetSection = (e) => {
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 left-0 w-1/2 max-w-[600px] h-screen max-h-screen bg-white flex flex-col justify-between box-border py-24 px-0">
+    <header className="sticky top-0 left-0 w-1/2 max-w-[600px] h-screen max-h-screen bg-[#175754] flex flex-col justify-between box-border py-24 px-0">
       <section className="flex flex-col gap-16">
         <section>
           <h1
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-4xl font-medium cursor-pointer"
           >
-            Jay Kim
+            Yongjae Kim
           </h1>
           <h2 className="text-lg mt-3 mb-0">Frontend Software Engineer</h2>
           <div className="w-[320px] mt-4">
-            Jay Kim Jay Kim Jay Kim Jay Kim Jay Kim Jay Kim Jay Kim Jay Kim
+            Experienced software engineer dedicated to crafting user-centric
+            services, prioritising seamless UX and intuitive interactions
           </div>
         </section>
         <ul className="relative flex flex-col items-start justify-start list-none p-0 w-fit">
@@ -42,14 +45,28 @@ export const Header = () => {
           target="_blank"
           className="inline-block"
         >
-          <img src={GitLogo} alt="GitHub" className="w-12 h-12" />
+          <Github className="w-12 h-12 fill-white" />
+        </a>
+        <a
+          href="https://www.instagram.com/jay_kim_diary/"
+          target="_blank"
+          className="inline-block"
+        >
+          <Instagram className="w-12 h-12 fill-white" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yongjae-jay-kim/"
+          target="_blank"
+          className="inline-block"
+        >
+          <LinkedIn className="w-12 h-12 fill-white rounded-xl" />
         </a>
         <a
           href="https://nomadkim880901.tistory.com/"
           target="_blank"
           className="inline-block"
         >
-          <img src={BlogLogo} alt="Tistory Blog" className="w-12 h-12" />
+          <Tistory className="w-12 h-12 fill-white" />
         </a>
       </section>
     </header>

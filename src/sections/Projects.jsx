@@ -2,54 +2,20 @@ import React from "react";
 import { useFiretore } from "../firebase/useFirestore";
 import { Title } from "../components/Title";
 import { Tags } from "../components/Tags";
-
-const newData = [
-  {
-    hostingLink: "https://build-your-body.vercel.app/",
-    thumbnail:
-      "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/build-your-body.png?alt=media&token=eadb9315-8d42-4f26-a689-cdf7935f934e",
-    purpose: "Personal Home Training Service",
-    period: "2024-05 - 2024-09",
-    projectType: "Personal",
-    reviewLink: "https://nomadkim880901.tistory.com/466",
-    stacks: [
-      "Typescript",
-      "NextJS",
-      "NextAuth",
-      "React",
-      "Zustand",
-      "TailwindCSS",
-      "MongoDB",
-      "GCP",
-      "Vercel",
-    ],
-    summary: "Personal Home Training Service",
-    githubLink: "https://github.com/JayKim88/build-your-body",
-    position: "Full-stack",
-    role: [
-      "Select exercises using detail modal and create your own program",
-      "Proceed with your program by checking in set-checkboxes on every exercises",
-      "Save your workout details including performance, title, satisfaction, notes, and images. You can also make it public.",
-      "Monitor your workout history on a dashboard with visualized charts.",
-      "View the workout performances of other users, give likes, and get inspired.",
-    ],
-    title: "Build Your Body",
-    id: "1vWJUxn21dfmJqsi5htN",
-  },
-];
+import { projects } from "../constants/data";
+import { Description } from "../components/Description";
 
 export const Projects = ({ onClick }) => {
-  const projectsData = useFiretore("works");
-  const combinedData = [...newData, ...projectsData];
+  // const projectsData = useFiretore("works");
 
   return (
     <section className="projects w-full flex flex-col items-center space-y-12">
       <Title value="Projects" />
-      <section className="flex flex-col space-y-12">
-        {combinedData?.map((project) => (
-          <Project key={project.id} data={project} />
+      <ul className="experiences gap-y-10 flex flex-col">
+        {projects.map((item) => (
+          <Description {...item} />
         ))}
-      </section>
+      </ul>
     </section>
   );
 };

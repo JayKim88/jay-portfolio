@@ -1,6 +1,6 @@
-export const Tags = ({ data }) => {
+export const Tags = ({ data, styles }) => {
   return (
-    <ul className="flex flex-wrap gap-2 mt-auto list-none p-0 m-0">
+    <ul className={`flex flex-wrap gap-2 list-none p-0 ${styles}`}>
       {data?.map((v) => (
         <li
           key={v}

@@ -17,7 +17,7 @@ const data = [
       "Learned React for frontend and learned NodeJS for backend",
       "Solved algorithm problems every day",
       "Performed assignments every day and experienced pair programming and code review",
-      "Conducted 2 collaborative projects (First and Final)",
+      "Conducted 2 collaborative projects (Homemade and Royal Diary)",
     ],
   },
   {

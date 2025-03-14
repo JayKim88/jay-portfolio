@@ -11,7 +11,7 @@ export const Home = () => {
         <div className="text-2xl font-semibold">
           안녕하세요,
           <br /> 저는 디자인을 사랑하는 개발자
-          <br /> 김용재 입니다.
+          <br /> 김용재 입니다. 여기는 내용을 좀 더 생각해보자.
         </div>
         <div className="text-lg text-gray-500">
           인터랙티브하고 직관적인 웹 디자인을 통해

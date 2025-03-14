@@ -9,6 +9,7 @@ import { Skills } from "./sections/Skills";
 import { Experiences } from "./sections/Experiences";
 import { Educations } from "./sections/Educations";
 import { Studies } from "./sections/Studies";
+import { experiences } from "./constants/data";
 
 function App() {
   const [itemData, setItemData] = useState(null);
@@ -42,7 +43,7 @@ function App() {
         >
           <Home />
           <Skills />
-          <Experiences />
+          <Experiences data={experiences} />
           <Projects onClick={handleClickedItem} className="projects" />
           <Educations />
           <Studies />

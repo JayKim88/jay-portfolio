@@ -11,12 +11,13 @@ const iconStyle = `w-4 h-4 folder-open-8 fill-black`;
 const icons = {
   github: <Github className={iconStyle} />,
   deploy: <Deploy className={iconStyle} />,
-  plan: <Plan className={iconStyle} />,
+  note: <Plan className={iconStyle} />,
   figma: <Figma className={iconStyle} />,
 };
 
 export const Description = ({
   period,
+  image,
   title,
   company,
   position,
@@ -25,61 +26,28 @@ export const Description = ({
   stacks,
   refs,
   type,
+  paragraph,
 }) => (
   <li key={title} className="flex gap-x-10">
     <section className="flex flex-col w-[140px] justify-between">
-      <span>{period}</span>
-      <div className="flex flex-col">
-        {refs?.map((v) => {
-          return (
-            <li
-              className="flex gap-x-1 items-center hover:[&>svg]:fill-amber-300 
-            hover:[&>button]:text-amber-300 cursor-pointer"
-            >
-              {icons[v.type]}
-              <button
-                onClick={() => {
-                  window.open(v.url, "_blank");
-                }}
-              >
-                {v.type}
-              </button>
-            </li>
-          );
-        })}
-      </div>
+      {image ? (
+        <img src={image} className="w-[120px] rounded-3xl" />
+      ) : (
+        <span className="text-sm">{period}</span>
+      )}
     </section>
-    <section
-      style={{
-        flex: 1,
-        display: "flex",
-        flexDirection: "column",
-        rowGap: 16,
-      }}
-    >
+    <section className="flex-1 flex flex-col gap-y-4">
       <section className="flex justify-between items-center">
-        <div className="flex gap-x-1 items-center">
+        <div className="flex gap-x-1 items-center justify-center">
           {type && (
-            <span className="px-2 py-1 bg-yellow-300 rounded-full text-sm font-medium">
+            <span className="px-2 py-1 bg-yellow-300 rounded-full text-xs font-medium">
               {type}
             </span>
           )}
-          <strong
-            style={{
-              fontSize: 18,
-              fontWeight: 500,
-            }}
-          >
-            {title}
-          </strong>
+          <strong className="text-base font-medium">{title}</strong>
           {(company || position) && (
-            <span
-              style={{
-                fontSize: 16,
-                fontWeight: 500,
-              }}
-            >
-              - {company || position}
+            <span className="text-sm font-medium pt-0.5">
+              · {company || position}
             </span>
           )}
         </div>
@@ -92,15 +60,44 @@ export const Description = ({
           <FolderOpen className={`w-8 folder-open-8 hover:fill-amber-300`} />
         </button>
       </section>
-      <div>{summary}</div>
-      <section className="mt-1">
-        <ul className="pl-6">
-          {points.map((p) => (
-            <li className="list-disc -indent-1">{p}</li>
-          ))}
-        </ul>
+      {summary && <div className="text-[14.6px] leading-6">{summary}</div>}
+      <section className="mt-1 text-[14.6px]">
+        {paragraph ? (
+          <p className="leading-6">{paragraph}</p>
+        ) : (
+          <ul className="pl-6">
+            {points.map((p, index) => (
+              <li key={index} className="list-disc -indent-1">
+                {p}
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
-      <Tags data={stacks} styles="mt-4" />
+      {refs?.length && (
+        <div className="flex gap-x-3 mt-auto">
+          {refs?.map((v, index) => {
+            return (
+              <li
+                key={index}
+                className="flex gap-x-1 items-center cursor-pointer hover:[&>svg]:fill-amber-300 
+            hover:[&>button]:text-amber-300"
+              >
+                {icons[v.type]}
+                <button
+                  className="text-[16px] cursor-pointer"
+                  onClick={() => {
+                    window.open(v.url, "_blank");
+                  }}
+                >
+                  {v.type === "note" ? v.title : v.type}
+                </button>
+              </li>
+            );
+          })}
+        </div>
+      )}
+      {stacks?.length && <Tags data={stacks} />}
     </section>
   </li>
 );

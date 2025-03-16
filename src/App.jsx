@@ -15,35 +15,17 @@ function App() {
   const [itemData, setItemData] = useState(null);
 
   const handleClickedItem = (data) => {
-    console.log("?????", data);
-
     setItemData(data);
   };
 
   return (
     <>
-      <div
-        style={{
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          margin: "0 auto",
-          columnGap: "1rem",
-        }}
-      >
+      <div className="h-full flex justify-center items-start mx-auto gap-50">
         <Header />
-        <main
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            rowGap: "96px",
-            maxWidth: "800px",
-          }}
-        >
+        <main className="flex flex-col gap-28 max-w-[800px]">
           <Home />
           <Skills />
-          <Experiences data={experiences} />
+          <Experiences />
           <Projects onClick={handleClickedItem} className="projects" />
           <Educations />
           <Studies />

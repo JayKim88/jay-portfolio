@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Title } from "../components/Title";
 import { Tags } from "../components/Tags";
 import { Description } from "../components/Description";
@@ -7,10 +8,9 @@ import { studies } from "../constants/data";
 export const Studies = () => {
   return (
     <section className="studies w-full flex flex-col items-center space-y-1">
-      <Title value="Studies" />
-      <ul className="experiences gap-y-10 flex flex-col">
+      <ul className="experiences gap-y-12 flex flex-col">
         {studies.map((item) => (
-          <Description {...item} />
+          <Description key={item.title} {...item} />
         ))}
       </ul>
     </section>
@@ -32,14 +32,10 @@ const Study = ({
 }) => {
   return (
     <div className="flex gap-6">
-      {/* Thumbnail Section */}
       <section className="w-40 flex items-start">
         <img alt={title} src={thumbnail} className="w-40 rounded-lg" />
       </section>
-
-      {/* Content Section */}
       <section className="flex flex-col flex-1 space-y-4">
-        {/* Title and Meta Information */}
         <section className="flex justify-between">
           <div className="flex items-center gap-2">
             <span className="px-2 py-1 bg-yellow-300 rounded-full text-sm font-medium">
@@ -50,11 +46,7 @@ const Study = ({
           </div>
           <span className="flex items-center">{period}</span>
         </section>
-
-        {/* Purpose */}
         <div>{purpose}</div>
-
-        {/* Achievements */}
         <section>
           <div className="font-semibold">Achievements</div>
           <ul className="list-disc list-inside">
@@ -63,8 +55,6 @@ const Study = ({
             ))}
           </ul>
         </section>
-
-        {/* Tech Stack Tags */}
         <Tags data={stacks} />
       </section>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+
 import Github from "../assets/images/sns/github.svg?react";
 import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
 import Instagram from "../assets/images/sns/instagram.svg?react";
@@ -16,7 +17,7 @@ const moveToTargetSection = (e) => {
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 left-0 w-1/2 max-w-[600px] h-screen max-h-screen bg-[#175754] flex flex-col justify-between box-border py-24 px-0">
+    <header className="sticky top-0 left-0 w-1/2 max-w-[500px] h-screen max-h-screen bg-[#175754] flex flex-col justify-between box-border py-24 px-0">
       <section className="flex flex-col gap-16">
         <section>
           <h1

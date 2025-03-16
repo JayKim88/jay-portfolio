@@ -5,7 +5,7 @@ export const experiences = [
     title: "Frontend Engineer",
     company: "Bold9, Seoul",
     summary:
-      "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping.",
+      "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
     points: [
       "Developed pages having search filters and paginated table considering performance optimisation using react-table and various reusable common components having versatility.",
       "Implemented dashboard with customised visualisation charts for better UX using recharts",
@@ -36,7 +36,8 @@ export const experiences = [
         url: "https://build-your-body.vercel.app/",
       },
       {
-        type: "plan",
+        type: "note",
+        title: "procedure",
         url: "https://jay-global.notion.site/Build-Your-Body-84e9378c4266402b851205d44a40be79?pvs=4",
       },
       {
@@ -45,15 +46,27 @@ export const experiences = [
       },
     ],
   },
+  {
+    type: null,
+    period: "2018.01 - 2020.02",
+    title: "Overseas Sales",
+    company: "DRGEM, Gyeonggi-do",
+    summary:
+      "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
+    points: [
+      " Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
+    ],
+  },
 ];
 
 export const projects = [
   {
-    type: "personal",
+    type: "Personal",
     period: "2024-05 - 2024-09",
     title: "Build Your Body",
     position: "Full Stack",
-    summary: "Personal Home Training Service",
+    paragraph:
+      "A personal home training service designed to help users customize and track their fitness journey. It allows users to create personalized workout routines by setting weights, reps, and sets while rearranging exercises to fit their goals. A detailed logging system enables users to record their performance, including workout time, satisfaction ratings, and progress photos, providing valuable insights over time. An interactive dashboard visualizes progress through dynamic charts, offering real-time updates on workout history and achievements.",
     points: [
       "Integrated Google Login/Logout with NextAuth, enabling secure and smooth user authentication, and simplifying the onboarding process",
       "Empowered users to customise their workout routines allowing them to set weight, reps, and sets while rearranging exercises for their specific training goals",
@@ -82,7 +95,8 @@ export const projects = [
         url: "https://build-your-body.vercel.app/",
       },
       {
-        type: "plan",
+        type: "note",
+        title: "procedure",
         url: "https://jay-global.notion.site/Build-Your-Body-84e9378c4266402b851205d44a40be79?pvs=4",
       },
       {
@@ -92,19 +106,19 @@ export const projects = [
     ],
   },
   {
-    type: "personal",
+    type: "Personal",
     period: "2021-04",
     title: "JStargram",
     position: "Full Stack",
-    summary:
-      "Interactive photo-sharing platform designed to connect users through shared images and real-time conversations",
+    paragraph:
+      "An interactive photo-sharing platform that connects users through shared images and real-time conversations. It features a thoughtfully designed UI, seamless Google login, smooth image uploads and rendering, and a real-time chat window for instant engagement, creating a dynamic and immersive social experience.",
     points: [
       "UI configuration and design",
       "Google login/logout implementation",
       "Image upload and rendering function implementation",
       "Real-time chat window implementation",
     ],
-    stacks: ["React", "Framer-motion", "Firebase"],
+    stacks: ["React", "Firebase", "Framer-motion"],
     refs: [
       {
         type: "github",
@@ -115,24 +129,25 @@ export const projects = [
         url: "https://j-star-gram.firebaseapp.com/",
       },
       {
-        type: "plan",
-        url: "https://nomadkim880901.tistory.com/category/Projects/J",
+        type: "note",
+        title: "procedure",
+        url: "https://nomadkim880901.tistory.com/category/Projects/JStargram",
       },
     ],
   },
   {
-    type: "personal",
+    type: "Personal",
     period: "2021-04",
     title: "Covid19 Tracker",
     position: "Full Stack",
-    summary:
-      "Chart and map service showing coronavirus infections, recoveries, and deaths around the world",
+    paragraph:
+      "A chart and map service providing real-time global COVID-19 data, including infections, recoveries, and deaths. It features a well-designed UI, integrates the disease.sh API for data processing, and visualizes insights through interactive charts and maps using Chart.js and Leaflet.js",
     points: [
       "UI configuration and design",
       "Using disease.sh API, implementing coronavirus data processing logic",
       "Implementing charts and maps with Chart and Leaflet libraries",
     ],
-    stacks: ["React", "Firebase", "Material UI", "Chart.js", "Leaflet.js"],
+    stacks: ["React", "Firebase", "Material UI"],
     refs: [
       {
         type: "github",
@@ -143,24 +158,25 @@ export const projects = [
         url: "https://covid-19-tracker-124a9.web.app/",
       },
       {
-        type: "plan",
+        type: "note",
+        title: "procedure",
         url: "https://nomadkim880901.tistory.com/category/Projects/Covid19%20Tracker",
       },
     ],
   },
   {
-    type: "team",
+    type: "Team",
     period: "2021.02 - 2021.03",
     title: "Royal Diary",
     position: "Front End",
     summary:
-      "Digital picture diary where users can create and save memorable moments through drawings and writings",
+      "A digital picture diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling.",
     points: [
-      "Implementation of main, membership registration, manual, diary writing, and creator pages",
-      "Implementation of Google and Kakao social login",
-      "Implementation of drawing board writing/saving/editing functions",
-      "Implementation of page movement loading effect",
-      "Implementation of responsive web",
+      "Developed key pages: intro, signup, manual, write-diary, and creator page",
+      "Integrated social logins (Google and Kakao) for seamless access",
+      "Implemented drawing board with writing, saving, and editing functions",
+      "Added smooth loading effects to enhance page transition experience",
+      "Ensured responsive design optimized for various devices",
     ],
     stacks: ["React", "Typescript", "React Canvas Draw"],
     refs: [
@@ -169,24 +185,25 @@ export const projects = [
         url: "https://github.com/codestates/RoyalDiary-client/wiki",
       },
       {
-        type: "plan",
+        type: "note",
+        title: "procedure",
         url: "https://nomadkim880901.tistory.com/508",
       },
     ],
   },
   {
-    type: "team",
+    type: "Team",
     period: "2021.01 - 2021.02",
     title: "Home Made",
     position: "Back End",
     summary:
-      "Recipe-sharing service that allows users to share their family's secret recipes with the community",
+      "A recipe-sharing service created in response to increased home cooking during COVID-19. Users can share family recipes, rate, and comment on others’ dishes, while the platform highlights popular recipes of the week, fostering a community around discovering and enjoying delicious meals.",
     points: [
-      "All server API branches",
-      "User Side API implementation",
-      "Crypto user password one-way encryption implementation",
-      "JWT token authentication implementation",
-      "Server AWS HTTPS deployment",
+      "Implemented user-side API which includes login, logout, signup, email duplication check, account deletion, and user information updates",
+      "Used JavaScript Crypto library for one-way encryption to prevent password leaks",
+      "Implemented JWT authentication by generating AccessToken and RefreshToken",
+      "Deployed with AWS services (EC2, RDS, S3, Route53, ELB, CM) for HTTPS hosting",
+      "Designed the database schema using DBDiagram",
     ],
     stacks: [
       "Node.js",
@@ -203,7 +220,8 @@ export const projects = [
         url: "https://github.com/codestates/im25Homemade-server/wiki",
       },
       {
-        type: "plan",
+        type: "note",
+        title: "retrospect",
         url: "https://nomadkim880901.tistory.com/466",
       },
     ],
@@ -212,16 +230,14 @@ export const projects = [
 
 export const studies = [
   {
-    type: "clone",
+    type: "Clone",
     period: "2025.03",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/uber.png?alt=media&token=284fb2c9-8dd7-4071-845c-45b700d14f31",
     title: "Uber Mobile app",
     position: "Front End",
-    summary:
-      "Ride-hailing app that connects passengers with drivers for convenient, on-demand transportation and delivery services.",
-    points: [
-      "Learn react native with React Navigation using dynamic routing",
-      "Learn how to use GCP APIs to make a map based app",
-    ],
+    paragraph:
+      "Built a ride-hailing app that connects passengers with drivers for on-demand transportation and delivery services. Learned React Native with React Navigation to implement dynamic routing and used GCP APIs to build a map-based application, enhancing the user experience with real-time location tracking and navigation features.",
     stacks: [
       "React Native",
       "Redux",
@@ -237,16 +253,14 @@ export const studies = [
     ],
   },
   {
-    type: "clone",
+    type: "Clone",
     period: "2025.02",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/deliveroo.png?alt=media&token=752e4e9d-1571-4a4b-9b3b-377019b4b589",
     title: "Deliveroo Mobile app",
     position: "Full Stack",
-    summary: "Food delivery and shopping app",
-    points: [
-      "Learn react native with React Navigation using dynamic routing",
-      "Get used to styling with Mobile tailwindCss",
-      "Experience using Content Management System by SanityCMS",
-    ],
+    paragraph:
+      "Built a food delivery and shopping app to learn React Native and React Navigation for dynamic routing. Gained experience with mobile styling using TailwindCSS and explored content management with SanityCMS, integrating it into the app for dynamic content updates.",
     stacks: [
       "React Native",
       "Redux",
@@ -262,17 +276,14 @@ export const studies = [
     ],
   },
   {
-    type: "clone",
+    type: "Clone",
     period: "2025.02",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/aora.png?alt=media&token=41edff34-ded0-4928-9bcb-579c5fdac39a",
     title: "Aora Mobile app",
     position: "Full Stack",
-    summary: "AI Generated video sharing app",
-    points: [
-      "Learn react native with Expo router using file-based routing",
-      "Learn to deal with video type data",
-      "Get used to styling with Mobile tailwindCss",
-      "Experience implementing backend server with Appwrite",
-    ],
+    paragraph:
+      "Built a video-sharing app using React Native with Expo Router and file-based routing. Learned to handle video data, styled the app with Mobile TailwindCSS, and gained experience implementing a backend server with Appwrite for user and data management.",
     stacks: ["React Native", "NativeWind", "Appwrite", "Expo router"],
     refs: [
       {
@@ -280,5 +291,24 @@ export const studies = [
         url: "https://github.com/JayKim88/aora",
       },
     ],
+  },
+];
+
+export const education = [
+  {
+    period: "2022.03 - 2024.08",
+    title: "Korea National Open University, South Korea",
+    contents: "Computer Science(3.7/4.5)",
+  },
+  {
+    period: "2020.10 - 2021.03",
+    title: "Codestates(Boot camp), South Korea",
+    contents:
+      "Completed a full-stack course based on JavaScript, where I learned React for the frontend and Node.js for the backend. Solved algorithm problems daily, worked on assignments consistently, and participated in pair programming and code reviews. At last, contributed to two collaborative projects: Homemade and Royal Diary.",
+  },
+  {
+    period: "2010.03 - 2018.02",
+    title: "Soongsil University, South Korea",
+    contents: "Economics(3.8/4.5)",
   },
 ];

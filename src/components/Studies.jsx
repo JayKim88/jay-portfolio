@@ -2,11 +2,11 @@ import React from "react";
 import { useFiretore } from "../firebase/useFirestore";
 
 export const Studies = ({ onClick }) => {
-  const studies = useFiretore("studies");
+  // const studies = useFiretore("studies");
 
   return (
     <div className="flex flex-col mt-8 mx-4">
-      <div className="text-2xl font-bold w-[95%] mb-4">Studies</div>
+      {/* <div className="text-2xl font-bold w-[95%] mb-4">Studies</div>
       <div
         className="grid grid-cols-3 gap-[100px] mx-auto mt-[50px] 
                       max-w-screen-xl 
@@ -33,7 +33,7 @@ export const Studies = ({ onClick }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

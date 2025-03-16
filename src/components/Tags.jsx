@@ -1,6 +1,6 @@
 export const Tags = ({ data, styles }) => {
   return (
-    <ul className={`flex flex-wrap gap-2 list-none p-0 ${styles}`}>
+    <ul className={`flex flex-wrap gap-2 list-none p-0 text-sm ${styles}`}>
       {data?.map((v) => (
         <li
           key={v}

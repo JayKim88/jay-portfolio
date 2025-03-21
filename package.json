@@ -4,18 +4,19 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.11",
+    "@tailwindcss/vite": "^4.0.15",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^12.8.3",
     "@vitejs/plugin-react": "^4.3.4",
     "firebase": "^11.4.0",
     "framer-motion": "^4.1.17",
+    "lodash": "^4.17.21",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^4.0.11",
+    "tailwindcss": "^4.0.15",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

@@ -21,10 +21,10 @@ const StacksElements = ({ title, data }) => {
           <div
             key={name}
             className="flex flex-col items-center justify-center w-24 h-24 
-                       border border-black rounded-sm gap-4"
+                       border border-white rounded-sm gap-2 p-1"
           >
             <img src={img} alt={name} className="w-12 h-12" />
-            <span>{name}</span>
+            <span className="text-xs">{name}</span>
           </div>
         ))}
       </div>

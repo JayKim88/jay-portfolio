@@ -4,21 +4,65 @@ import Profile from "../assets/images/profile.png";
 
 export const Home = () => {
   return (
-    <main className="home flex h-[1000px]">
-      <div className="w-1/3 flex justify-center items-center pl-20">
-        <img src={Profile} alt="Profile" className="w-72 h-72" />
-      </div>
-      <div className="w-2/3 flex flex-col justify-evenly">
-        <div className="text-2xl font-semibold">
-          안녕하세요,
-          <br /> 저는 디자인을 사랑하는 개발자
-          <br /> 김용재 입니다. 여기는 내용을 좀 더 생각해보자.
+    <main className="home flex flex-col gap-y-12 justify-start w-[650px] py-24 [&>p]:leading-7">
+      <p>
+        I'm a user-centric software engineer passionate about crafting intuitive
+        and seamless user experiences. I prioritize clean and efficient UI/UX,
+        minimizing unnecessary complexity while incorporating interactive
+        elements to enhance engagement.
+        <div>
+          At the code level, I ensure reliability through unit, integration, and
+          end-to-end testing, building robust and scalable applications.
         </div>
-        <div className="text-lg text-gray-500">
-          인터랙티브하고 직관적인 웹 디자인을 통해
-          <br /> 사용자의 웹 경험에 기여하고 싶습니다.
-        </div>
-      </div>
+      </p>
+      <p>
+        Currently, I’m a Frontend Engineer at
+        <BoldBtn link="https://www.bold-9.com/" title="Bold9" />, developing
+        user-friendly interfaces to optimize e-commerce fulfillment operations.
+        <BoldBtn
+          title="My contribution"
+          onClick={() => {
+            console.log("show detail contribution");
+          }}
+        />{" "}
+        includes enhancing UI performance, visualizing data-driven insights, and
+        implementing immersive experiences to streamline logistics workflows.
+      </p>
+      <p>
+        Previously, I worked in overseas sales, honing communication and global
+        collaboration skills before transitioning into software engineering. To
+        make this shift, I completed a JavaScript-based full-stack development
+        bootcamp at Code States and later earned a Computer Science degree from
+        <BoldBtn
+          title="Korea National Open University (KNOU)"
+          link="https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG"
+        />
+        .
+      </p>
+      <p>
+        While working as a developer, I am continuously refining my frontend
+        expertise while expanding my knowledge in system design, backend
+        technologies, and cloud infrastructure to grow into a well-rounded
+        engineer.
+      </p>
     </main>
+  );
+};
+
+const BoldBtn = ({ title, link, onClick }) => {
+  return (
+    <button
+      className="inline-block cursor-pointer ml-1"
+      onClick={() => {
+        if (link) {
+          window.open(link, "_blank");
+          return;
+        }
+
+        onClick();
+      }}
+    >
+      <b>{title}</b>
+    </button>
   );
 };

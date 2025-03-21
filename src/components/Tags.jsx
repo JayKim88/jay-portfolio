@@ -4,7 +4,7 @@ export const Tags = ({ data, styles }) => {
       {data?.map((v) => (
         <li
           key={v}
-          className="w-fit h-5 rounded-xl border border-black px-2 py-1 flex justify-center items-center"
+          className="w-fit h-5 rounded-xl border px-2 py-1 flex justify-center items-center"
         >
           {v}
         </li>

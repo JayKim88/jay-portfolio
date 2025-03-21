@@ -26,25 +26,7 @@ export const experiences = [
       "GCP",
       "Firebase",
     ],
-    refs: [
-      {
-        type: "github",
-        url: "https://github.com/JayKim88/build-your-body?tab=readme-ov-file",
-      },
-      {
-        type: "deploy",
-        url: "https://build-your-body.vercel.app/",
-      },
-      {
-        type: "note",
-        title: "procedure",
-        url: "https://jay-global.notion.site/Build-Your-Body-84e9378c4266402b851205d44a40be79?pvs=4",
-      },
-      {
-        type: "figma",
-        url: "https://www.figma.com/design/w0724tFpVxA2GI8WTq6amB/BYB_Build-Your-Body?node-id=0-1&t=zrJF3qpKzQI8tets-1",
-      },
-    ],
+    details: [],
   },
   {
     type: null,

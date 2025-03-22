@@ -1,3 +1,7 @@
+import { Highlight } from "../components/Highlight";
+
+const Important = ({ content }) => <strong className="mx-1">{content}</strong>;
+
 export const experiences = [
   {
     type: null,
@@ -7,11 +11,29 @@ export const experiences = [
     summary:
       "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
     points: [
-      "Developed pages having search filters and paginated table considering performance optimisation using react-table and various reusable common components having versatility.",
-      "Implemented dashboard with customised visualisation charts for better UX using recharts",
+      <>
+        Developed pages having search filters and paginated table with
+        <Important content="performance optimisation" />
+        using react-table and various reusable common components having
+        versatility.
+      </>,
+      <>
+        Implemented
+        <Important content="dashboard with customised visualisation charts" />
+        for better UX using recharts
+      </>,
       "Dealt with validation in forms on client side using Formik, React forms library",
-      "Applied unit, integration and E2E test by React testing library, Vitest, msw and playwright and set up automatic UI test by storybook and chromatic, visual testing tool",
-      "Implemented fulfilment Center 3d visualisation for UX using ThreeJS",
+      <>
+        Applied
+        <Important content="unit, integration and E2E test" />
+        by Vitest, msw and playwright and set up automatic UI test by storybook
+        and chromatic, visual testing tool
+      </>,
+      <>
+        Implemented
+        <Important content="fulfilment Center 3d visualisation" />
+        for UX using ThreeJS
+      </>,
     ],
     stacks: [
       "Javascript",
@@ -292,5 +314,48 @@ export const education = [
     period: "2010.03 - 2018.02",
     title: "Soongsil University, South Korea",
     contents: "Economics(3.8/4.5)",
+  },
+];
+
+export const experiencesTest = [
+  {
+    type: null,
+    period: "2021.06 - present",
+    title: "Frontend Engineer",
+    company: "Bold9, Seoul",
+    summary:
+      "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
+    points: [
+      "Developed pages having search filters and paginated table considering performance optimisation using react-table and various reusable common components having versatility.",
+      "Implemented dashboard with customised visualisation charts for better UX using recharts",
+      "Dealt with validation in forms on client side using Formik, React forms library",
+      "Applied unit, integration and E2E test by React testing library, Vitest, msw and playwright and set up automatic UI test by storybook and chromatic, visual testing tool",
+      "Implemented fulfilment Center 3d visualisation for UX using ThreeJS",
+    ],
+    stacks: [
+      "Javascript",
+      "Typescript",
+      "HTML5 & CSS3",
+      "React",
+      "Next JS",
+      "GraphQL",
+      "Docker",
+      "Vite",
+      "Vitest",
+      "GCP",
+      "Firebase",
+    ],
+    details: [],
+  },
+  {
+    type: null,
+    period: "2018.01 - 2020.02",
+    title: "Overseas Sales",
+    company: "DRGEM, Gyeonggi-do",
+    summary:
+      "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
+    points: [
+      " Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
+    ],
   },
 ];

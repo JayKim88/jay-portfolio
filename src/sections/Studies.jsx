@@ -8,7 +8,7 @@ import { studies } from "../constants/data";
 export const Studies = () => {
   return (
     <section className="studies w-full flex flex-col items-center space-y-1">
-      <ul className="experiences gap-y-12 flex flex-col">
+      <ul className="gap-y-12 flex flex-col">
         {studies.map((item) => (
           <Description key={item.title} {...item} />
         ))}

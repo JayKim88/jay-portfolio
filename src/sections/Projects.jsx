@@ -11,7 +11,7 @@ export const Projects = ({ onClick }) => {
 
   return (
     <section className="projects w-full flex flex-col items-center space-y-12">
-      <ul className="experiences gap-y-12 flex flex-col">
+      <ul className="gap-y-12 flex flex-col">
         {projects.map((item) => (
           <Description key={item.title} {...item} />
         ))}

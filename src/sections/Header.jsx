@@ -71,7 +71,7 @@ export const Header = () => {
           >
             Yongjae Kim
           </h1>
-          <h2 className="text-lg mt-3 mb-0">Frontend Software Engineer</h2>
+          <h2 className="text-lg mt-4 mb-0">Frontend Engineer</h2>
           <div className="w-[320px] mt-4">
             Experienced software engineer dedicated to crafting user-centric
             services, prioritising seamless UX and intuitive interactions

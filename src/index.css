@@ -12,18 +12,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: oklch(0.129 0.042 264.695);
   color: oklch(0.985 0.002 247.839);
-  background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  background-color: rgb(25, 26, 26);
+  background: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  background-color: #0e4b49;
   border-color: #fff;
   /* -ms-overflow-style: none; */
 }
-
-/** football ground
-https://www.transparenttextures.com/patterns/football-no-lines.png
-rgb(15, 72, 55)
-*/
 
 /* ::-webkit-scrollbar {
   display: none;

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import { Header } from "./sections/Header";
+import { Header, Navigation } from "./sections/Header";
 import { Home } from "./sections/Home";
 import { About } from "./sections/About";
 import { DetailModal } from "./components/DetailModal";
@@ -11,14 +11,19 @@ import { Experiences } from "./sections/Experiences";
 import { Educations } from "./sections/Educations";
 import { Studies } from "./sections/Studies";
 import { experiences } from "./constants/data";
-
-const BACKGROUND_COLOR = "#38035e";
+import AudioPlayer from "./components/AudioPlayer";
 
 function App() {
   const [itemData, setItemData] = useState(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [pageHeight, setPageHeight] = useState(0);
   const [svgWidth, setSvgWidth] = useState(0);
+  const [hoveredItem, setHoveredItem] = useState("");
+
+  const appRef = useRef(null);
+
+  const handleHoverItem = (v) => {
+    setHoveredItem(v);
+  };
 
   const svgWrapperRef = useRef(null);
 
@@ -26,16 +31,10 @@ function App() {
     setItemData(data);
   };
 
-  const handleMouseMove = (e) => {
-    setPosition({ x: e.clientX, y: window.scrollY + e.clientY });
-  };
-
   useEffect(() => {
     const updateSizes = () => {
-      setPageHeight(document.documentElement.scrollHeight);
-      if (svgWrapperRef.current) {
-        setSvgWidth(svgWrapperRef.current.offsetWidth);
-      }
+      svgWrapperRef.current && setSvgWidth(svgWrapperRef.current.offsetWidth);
+      appRef.current && setPageHeight(appRef.current.clientHeight);
     };
 
     setTimeout(updateSizes, 0);
@@ -43,18 +42,29 @@ function App() {
     window.addEventListener("resize", updateSizes);
 
     return () => window.removeEventListener("resize", updateSizes);
-  }, []);
+  }, [appRef]);
+
+  const showNavigaion = window.innerWidth < 1024;
 
   return (
     <>
       <div
-        className={`h-full flex justify-center items-start mx-auto gap-50`}
-        onMouseMove={handleMouseMove}
+        ref={appRef}
+        className={`relative h-full flex justify-center items-start mx-auto 
+          px-10 lg:px-0
+          lg:gap-50 flex-col lg:flex-row`}
       >
+        {showNavigaion && (
+          <Navigation
+            customStyle={`fixed flex right-6 z-20 p-1 px-4 text-black bg-gray-100 
+              rounded-2xl w-[420px] transition-all duration-500 ease-in-out w-fit flex-wrap
+              opacity-50 hover:opacity-100 top-4 left-10 flex-row gap-x-5 justify-start`}
+          />
+        )}
         <div
           ref={svgWrapperRef}
-          style={{ minHeight: `${document.documentElement.scrollHeight}px` }}
-          className="absolute w-full -z-1"
+          style={{ minHeight: pageHeight + 40 }}
+          className="absolute w-full -z-1 left-0"
         >
           <svg
             id="svg-container"
@@ -157,13 +167,19 @@ function App() {
           </svg>
         </div>
         <Header />
-        <main className="flex flex-col gap-28 max-w-[800px]">
+        <AudioPlayer />
+        <main className="flex flex-col gap-28 max-w-[700px]">
           <Home />
           <Skills />
-          <Experiences />
-          <Projects onClick={handleClickedItem} className="projects" />
+          <Experiences onHover={handleHoverItem} hoveredItem={hoveredItem} />
+          <Projects
+            onClick={handleClickedItem}
+            className="projects"
+            onHover={handleHoverItem}
+            hoveredItem={hoveredItem}
+          />
           <Educations />
-          <Studies />
+          <Studies onHover={handleHoverItem} hoveredItem={hoveredItem} />
           <Contact className="contact" />
           {itemData && (
             <DetailModal

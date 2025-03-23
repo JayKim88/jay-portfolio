@@ -6,14 +6,19 @@ import { Tags } from "../components/Tags";
 import { projects } from "../constants/data";
 import { Description } from "../components/Description";
 
-export const Projects = ({ onClick }) => {
+export const Projects = ({ onClick, onHover, hoveredItem }) => {
   // const projectsData = useFiretore("works");
 
   return (
-    <section className="projects w-full flex flex-col items-center space-y-12">
-      <ul className="gap-y-12 flex flex-col">
+    <section className="projects w-full flex flex-col items-start space-y-12">
+      <ul className="gap-y-14 flex flex-col">
         {projects.map((item) => (
-          <Description key={item.title} {...item} />
+          <Description
+            key={item.title}
+            {...item}
+            onHover={onHover}
+            hoveredItem={hoveredItem}
+          />
         ))}
       </ul>
     </section>

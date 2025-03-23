@@ -5,12 +5,17 @@ import { Tags } from "../components/Tags";
 import { Description } from "../components/Description";
 import { studies } from "../constants/data";
 
-export const Studies = () => {
+export const Studies = ({ onHover, hoveredItem }) => {
   return (
-    <section className="studies w-full flex flex-col items-center space-y-1">
-      <ul className="gap-y-12 flex flex-col">
+    <section className="studies w-full flex flex-col items-start space-y-1">
+      <ul className="gap-y-14 flex flex-col">
         {studies.map((item) => (
-          <Description key={item.title} {...item} />
+          <Description
+            key={item.title}
+            {...item}
+            onHover={onHover}
+            hoveredItem={hoveredItem}
+          />
         ))}
       </ul>
     </section>

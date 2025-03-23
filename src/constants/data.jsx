@@ -1,11 +1,14 @@
+import { BoldBtn } from "../components/BoldBtn";
 import { Highlight } from "../components/Highlight";
 
-const Important = ({ content }) => <strong className="mx-1">{content}</strong>;
+const Important = ({ content }) => (
+  <strong className="mx-1 text-main">{content}</strong>
+);
 
 export const experiences = [
   {
     type: null,
-    period: "2021.06 - present",
+    period: "Jun 2021 - Present",
     title: "Frontend Engineer",
     company: "Bold9, Seoul",
     summary:
@@ -52,7 +55,7 @@ export const experiences = [
   },
   {
     type: null,
-    period: "2018.01 - 2020.02",
+    period: "Jan 2018 - Feb 2020",
     title: "Overseas Sales",
     company: "DRGEM, Gyeonggi-do",
     summary:
@@ -66,7 +69,7 @@ export const experiences = [
 export const projects = [
   {
     type: "Personal",
-    period: "2024-05 - 2024-09",
+    period: "May - Sep 2024",
     title: "Build Your Body",
     position: "Full Stack",
     paragraph:
@@ -111,7 +114,7 @@ export const projects = [
   },
   {
     type: "Personal",
-    period: "2021-04",
+    period: "Apr 2021",
     title: "JStargram",
     position: "Full Stack",
     paragraph:
@@ -141,7 +144,7 @@ export const projects = [
   },
   {
     type: "Personal",
-    period: "2021-04",
+    period: "Apr 2021",
     title: "Covid19 Tracker",
     position: "Full Stack",
     paragraph:
@@ -170,7 +173,7 @@ export const projects = [
   },
   {
     type: "Team",
-    period: "2021.02 - 2021.03",
+    period: "Feb - Mar 2021",
     title: "Royal Diary",
     position: "Front End",
     summary:
@@ -197,7 +200,7 @@ export const projects = [
   },
   {
     type: "Team",
-    period: "2021.01 - 2021.02",
+    period: "Jan - Feb 2021",
     title: "Home Made",
     position: "Back End",
     summary:
@@ -235,7 +238,7 @@ export const projects = [
 export const studies = [
   {
     type: "Clone",
-    period: "2025.03",
+    period: "Mar 2025",
     image:
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/uber.png?alt=media&token=284fb2c9-8dd7-4071-845c-45b700d14f31",
     title: "Uber Mobile app",
@@ -258,7 +261,7 @@ export const studies = [
   },
   {
     type: "Clone",
-    period: "2025.02",
+    period: "Feb 2025",
     image:
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/deliveroo.png?alt=media&token=752e4e9d-1571-4a4b-9b3b-377019b4b589",
     title: "Deliveroo Mobile app",
@@ -281,7 +284,7 @@ export const studies = [
   },
   {
     type: "Clone",
-    period: "2025.02",
+    period: "Feb 2025",
     image:
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/aora.png?alt=media&token=41edff34-ded0-4928-9bcb-579c5fdac39a",
     title: "Aora Mobile app",
@@ -300,62 +303,25 @@ export const studies = [
 
 export const education = [
   {
-    period: "2022.03 - 2024.08",
-    title: "Korea National Open University, South Korea",
+    period: "Mar 2022 - Aug 2024",
+    title: (
+      <BoldBtn
+        title="Korea National Open University, South Korea"
+        link="https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG"
+        customStyle="ml-0"
+      />
+    ),
     contents: "Computer Science(3.7/4.5)",
   },
   {
-    period: "2020.10 - 2021.03",
+    period: "Oct 2020 - Mar 2021",
     title: "Codestates(Boot camp), South Korea",
     contents:
       "Completed a full-stack course based on JavaScript, where I learned React for the frontend and Node.js for the backend. Solved algorithm problems daily, worked on assignments consistently, and participated in pair programming and code reviews. At last, contributed to two collaborative projects: Homemade and Royal Diary.",
   },
   {
-    period: "2010.03 - 2018.02",
+    period: "Mar 2010 - Feb 2018",
     title: "Soongsil University, South Korea",
     contents: "Economics(3.8/4.5)",
-  },
-];
-
-export const experiencesTest = [
-  {
-    type: null,
-    period: "2021.06 - present",
-    title: "Frontend Engineer",
-    company: "Bold9, Seoul",
-    summary:
-      "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
-    points: [
-      "Developed pages having search filters and paginated table considering performance optimisation using react-table and various reusable common components having versatility.",
-      "Implemented dashboard with customised visualisation charts for better UX using recharts",
-      "Dealt with validation in forms on client side using Formik, React forms library",
-      "Applied unit, integration and E2E test by React testing library, Vitest, msw and playwright and set up automatic UI test by storybook and chromatic, visual testing tool",
-      "Implemented fulfilment Center 3d visualisation for UX using ThreeJS",
-    ],
-    stacks: [
-      "Javascript",
-      "Typescript",
-      "HTML5 & CSS3",
-      "React",
-      "Next JS",
-      "GraphQL",
-      "Docker",
-      "Vite",
-      "Vitest",
-      "GCP",
-      "Firebase",
-    ],
-    details: [],
-  },
-  {
-    type: null,
-    period: "2018.01 - 2020.02",
-    title: "Overseas Sales",
-    company: "DRGEM, Gyeonggi-do",
-    summary:
-      "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
-    points: [
-      " Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
-    ],
   },
 ];

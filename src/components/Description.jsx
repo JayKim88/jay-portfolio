@@ -29,24 +29,30 @@ export const Description = ({
   type,
   paragraph,
   details,
+  onHover,
+  hoveredItem,
 }) => {
+  const isNotHovered = !!hoveredItem && hoveredItem !== title;
+
   return (
     <li
       key={title}
-      className={`relative flex gap-x-10 p-4 transition-all delay-50 duration-200 
+      className={`relative flex gap-x-6 transition-all delay-50 duration-200 
       ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-       hover:scale-108 group transform-gpu
-      ${details && "cursor-pointer"}`}
+       hover:scale-108 group transform-gpu max-w-[660px]
+      ${details && "cursor-pointer"} ${isNotHovered && "opacity-50"}`}
+      onMouseOver={() => onHover?.(title)}
+      onMouseOut={() => onHover?.("")}
     >
-      <section className="flex flex-col w-[140px] justify-between">
+      <section className="hidden md:flex flex-col w-[124px] justify-between pt-1">
         {image ? (
-          <img src={image} className="w-[120px] rounded-3xl" />
+          <img src={image} className="rounded-3xl" />
         ) : (
-          <span className="text-sm">{period}</span>
+          <span className="text-xs text-opacity2 font-medium">{period}</span>
         )}
       </section>
       <section className="flex-1 flex flex-col gap-y-4">
-        <section className="flex items-center justify-start gap-x-1 group-hover:font-bold">
+        <section className="flex items-center justify-start gap-x-1">
           {type && (
             <span
               className="px-2 py-1 bg-yellow-300 rounded-full text-xs 
@@ -62,8 +68,12 @@ export const Description = ({
             </span>
           )}
         </section>
-        {summary && <div className="text-[14.6px] leading-6">{summary}</div>}
-        <section className="mt-1 mb-2 text-[14.6px]">
+        {summary && (
+          <div className={`text-[14.6px] leading-6 text-opacity1`}>
+            {summary}
+          </div>
+        )}
+        <section className={`mt-1 mb-2 text-[14.6px] text-opacity1`}>
           {paragraph ? (
             <p className="leading-6">{paragraph}</p>
           ) : (
@@ -77,7 +87,7 @@ export const Description = ({
           )}
         </section>
         {refs?.length && (
-          <div className="flex gap-x-3 mt-auto h-6 mb-2">
+          <div className={`flex gap-x-3 mt-auto h-6 mb-2`}>
             {refs?.map((v, index) => {
               const refName = v.type === "note" ? v.title : v.type;
 

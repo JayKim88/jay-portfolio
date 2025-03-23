@@ -18,12 +18,12 @@ export const Educations = ({ handleItem }) => {
 const Education = ({ data: { period, title, contents, details } }) => {
   return (
     <section className="flex gap-x-6">
-      <section className="flex item-start w-[160px]">
-        <span className="text-sm">{period}</span>
+      <section className="item-start w-[124px] pt-1 hidden md:flex">
+        <span className="text-xs text-opacity2 font-medium">{period}</span>
       </section>
       <section className="flex-1 flex flex-col gap-y-4">
         <strong className="text-base font-medium">{title}</strong>
-        <div className="text-[14.8px] leading-6">{contents}</div>
+        <div className="text-[14.8px] leading-6 text-opacity1">{contents}</div>
         {details && (
           <ul>
             {details?.map((v) => (

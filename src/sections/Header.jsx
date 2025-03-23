@@ -31,7 +31,7 @@ const useScrollY = () => {
   return scrollY;
 };
 
-export const Header = () => {
+export const Navigation = ({ customStyle, style }) => {
   const [currentSection, setCurrentSection] = useState("home");
   const scrollY = useScrollY();
 
@@ -59,42 +59,75 @@ export const Header = () => {
   }, [scrollY, positions]);
 
   return (
+    <ul className={`flex-col list-none p-0 ${customStyle} `} style={style}>
+      <NavItem
+        title="Skills"
+        isShowing={currentSection === "skills"}
+        customStyle="min-w-[44px]"
+      />
+      <NavItem
+        title="Experiences"
+        isShowing={currentSection === "experiences"}
+        customStyle="min-w-[100px]"
+      />
+      <NavItem
+        title="Projects"
+        isShowing={currentSection === "projects"}
+        customStyle="min-w-[70px]"
+      />
+      <NavItem
+        title="Educations"
+        isShowing={currentSection === "educations"}
+        customStyle="min-w-[90px]"
+      />
+      <NavItem
+        title="Studies"
+        isShowing={currentSection === "studies"}
+        customStyle="min-w-[62px]"
+      />
+    </ul>
+  );
+};
+
+export const Header = () => {
+  const showNavigaion = window.innerWidth >= 1024;
+
+  return (
     <header
-      className="sticky top-0 left-0 w-1/2 max-w-[500px] h-screen 
-    max-h-screen flex flex-col justify-between box-border py-24 px-0"
+      className="relative lg:sticky top-0 left-0 w-full lg:max-w-[500px] h-[500px] lg:h-screen 
+    lg:max-h-screen flex flex-col justify-between box-border pt-24 lg:py-24 px-0"
     >
       <section className="flex flex-col gap-16">
         <section>
           <h1
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[60px] font-medium cursor-pointer"
+            className="text-[60px] font-medium cursor-pointer leading-[50px]"
           >
             Yongjae Kim
           </h1>
-          <h2 className="text-lg mt-4 mb-0">Frontend Engineer</h2>
-          <div className="w-[320px] mt-4">
+          <h2 className="text-lg mt-8 mb-0 font-bold">Frontend Engineer</h2>
+          <div className="w-[320px] mt-4 text-opacity1">
             Experienced software engineer dedicated to crafting user-centric
             services, prioritising seamless UX and intuitive interactions
           </div>
         </section>
-        <ul className="relative flex flex-col items-start justify-start list-none p-0 w-fit">
-          <NavItem title="Skills" isShowing={currentSection === "skills"} />
-          <NavItem
-            title="Experiences"
-            isShowing={currentSection === "experiences"}
-          />
-          <NavItem title="Projects" isShowing={currentSection === "projects"} />
-          <NavItem
-            title="Educations"
-            isShowing={currentSection === "educations"}
-          />
-          <NavItem title="Studies" isShowing={currentSection === "studies"} />
-        </ul>
+        {showNavigaion && (
+          <Navigation customStyle="lg:flex text-opacity1 items-start justify-start w-fit" />
+        )}
       </section>
-      <section className="flex gap-2">
-        {references.map((ref) => (
-          <a href={ref.url} target="_blank" className="inline-block">
-            {ref.icon}
+      <section className="flex gap-3">
+        {references.map(({ url, icon, title }) => (
+          <a href={url} target="_blank" className="inline-block relative">
+            {icon}
+            <span
+              className={`absolute bottom-0 opacity-0 translate-y-0 
+        font-bold text-xs transition-all duration-500 ease-in-out 
+        pointer-events-none peer-hover:opacity-100 peer-hover:-translate-y-9 ${
+          title === "Blog" && "left-1"
+        }`}
+            >
+              {title}
+            </span>
           </a>
         ))}
       </section>
@@ -102,7 +135,7 @@ export const Header = () => {
   );
 };
 
-const NavItem = ({ title, isShowing }) => {
+const NavItem = ({ title, isShowing, customStyle }) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -110,12 +143,24 @@ const NavItem = ({ title, isShowing }) => {
   }, [isShowing]);
 
   return (
-    <li className="cursor-pointer text-xl flex justify-start items-start">
+    <li
+      className={`relative cursor-pointer flex justify-start items-center ${customStyle}`}
+    >
+      <div
+        className={`scale-x-[-0.9] scale-y-[0.9] transition-all duration-1000 opacity-0 w-0 
+          -translate-x-8 -translate-y-8 ease-in-out animate-buzz
+          ${
+            show && "opacity-100 translate-x-0 -translate-y-[4px] animate-buzz"
+          }`}
+      >
+        🐝
+      </div>
       <div
         onClick={moveToTargetSection}
-        className={`text-base cursor-pointer transition-all duration-200 translate-x-0 ${
-          show && "text-yellow-300 translate-x-2 font-extrabold"
-        }`}
+        className={`text-sm cursor-pointer transition-all duration-200 translate-x-0           
+          before:mr-1 before:duration-200 hover:text-yellow-300
+          ${show && "text-yellow-300 font-extrabold"}
+        `}
       >
         {title}
       </div>
@@ -123,23 +168,27 @@ const NavItem = ({ title, isShowing }) => {
   );
 };
 
-const iconStyle = "w-12 h-12 fill-white";
+const iconStyle = "w-7 h-7 lg:w-8 lg:h-8 fill-white peer";
 
 const references = [
   {
     icon: <Github className={iconStyle} />,
     url: "https://github.com/JayKim88",
+    title: "Github",
   },
   {
     icon: <Instagram className={iconStyle} />,
     url: "https://www.instagram.com/jay_kim_diary/",
+    title: "Instagram",
   },
   {
     icon: <LinkedIn className={`${iconStyle} rounded-xl`} />,
     url: "https://www.linkedin.com/in/yongjae-jay-kim/",
+    title: "LinkedIn",
   },
   {
     icon: <Tistory className={iconStyle} />,
     url: "https://nomadkim880901.tistory.com/",
+    title: "Blog",
   },
 ];

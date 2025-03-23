@@ -2,6 +2,4 @@ import React from "react";
 
 import treeImg from "../assets/images/tree.png";
 
-export const Contact = () => {
-  return <div className="relative h-[30em]"></div>;
-};
+export const Contact = () => <div className="relative h-[20em]"></div>;

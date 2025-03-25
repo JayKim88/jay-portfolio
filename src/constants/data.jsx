@@ -1,9 +1,148 @@
+import React, { useState, useRef, useEffect } from "react";
+
 import { BoldBtn } from "../components/BoldBtn";
 import { Highlight } from "../components/Highlight";
 
 const Important = ({ content }) => (
   <strong className="mx-1 text-main">{content}</strong>
 );
+
+const achievements = [
+  {
+    title: "Product Image Upload & Editing",
+    points: [
+      "Developed an intuitive image upload feature that enhanced user experience by improving product recognition and usability.",
+      "Implemented image cropping and reordering using react-cropper and react-sortablejs, making it easier for sellers to manage product images.",
+    ],
+  },
+  {
+    title: "Dashboard Development & Performance Optimization",
+    points: [
+      "Designed and implemented a customized dashboard with real-time visualized analytics using recharts.",
+      "Built various data visualization widgets (e.g., Recent Invoice, Market Order Status, Delivery Status), enabling users to monitor fulfillment operations at a glance.",
+      "Optimized order/invoice data requests, reducing API response time from 13s to 1s using Promise.all.",
+    ],
+  },
+  {
+    title: "Testing & Code Reliability",
+    points: [
+      "Wrote 33 unit tests for shared components and 54 integration tests across the entire application, significantly improving test coverage and stability.",
+      "Applied snapshot testing for integration tests to verify UI at the page level and reduce UI-related bugs.",
+      "Set up automated UI testing using Storybook and Chromatic to catch unintended UI changes before deployment.",
+      "Applied GitHub Actions for parallel testing and module caching, reducing test execution time from 12–15 minutes to 6 minutes.",
+    ],
+  },
+  {
+    title: "3D Warehouse Visualization",
+    points: [
+      "Developed a 3D fulfillment center visualization for a better user experience using Three.js.",
+      "Improved warehouse navigation by adding rack search, mini-maps, and pallet models, enhancing usability for logistics staff.",
+    ],
+  },
+  {
+    title: "Platform-Specific Notification System",
+    points: [
+      "Integrated real-time push notifications using FCM for desktop, mobile web (PWA), and mobile apps (Flutter).",
+      "Built a local HTTPS testing environment using self-signed certificates and Nginx, enabling cross-platform notification testing.",
+    ],
+  },
+  {
+    title: "Security & Authentication Enhancements",
+    points: [
+      "Improved login session management by replacing local storage with secure HTTP-only cookies and CSRF protection.",
+      "Added session extension functionality to prevent unintended logouts, improving the user experience.",
+    ],
+  },
+  {
+    title: "Barcode Printing System",
+    points: [
+      "Implemented custom barcode printing for different product sizes using react-barcode and react-to-print.",
+      "Developed print preview and multi-size selection (e.g., 40x10mm, 60x100mm), increasing efficiency for warehouse staff.",
+    ],
+  },
+  {
+    title: "Continuous Deployment & Versioning Improvements",
+    points: [
+      "Integrated GitHub API (Octokit) to detect new versions for production, staging, and beta environments, ensuring automatic reloading of the latest client code.",
+    ],
+  },
+  {
+    title: "SEO & Server-Side Rendering (SSR)",
+    points: [
+      "Applied Next.js server-side rendering (SSR) on key landing pages to improve SEO and initial load times.",
+    ],
+  },
+  {
+    title: "New Page Development",
+    points: [
+      "Designed and implemented critical pages, including Operations Management, Sales Reports, and Outbound Processing.",
+    ],
+  },
+];
+
+const Bold9Contribution = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef();
+  const [rootWidth, setRootWidth] = useState(0);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    setRootWidth(ref.current.clientWidth ?? 0);
+  }, [ref]);
+
+  return (
+    <div ref={ref} className="mx-auto mt-2 mb-4 rounded-xl relative">
+      <h2 className="text-[16px] font-bold mb-6 text-main">
+        Key Achievements & Contributions
+      </h2>
+      <ul
+        className={`flex flex-col gap-y-6 overflow-hidden 
+           ${
+             open
+               ? "max-h-[1500px] transition-all duration-600 ease-in-out"
+               : "max-h-[400px]"
+           }`}
+      >
+        {achievements.map((achievement, index) => (
+          <li key={index}>
+            <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
+              {achievement.title}
+            </h3>
+            <ul className="pl-6 gap-y-0.5 flex flex-col">
+              {achievement.points.map((point, i) => (
+                <li key={i} className="marker:mr-1 list-disc">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+      <button
+        className="absolute -bottom-4 bg-amber-50 rounded-2xl transition-all duration-200
+        text-black px-2 cursor-pointer w-[60px] font-medium hover:bg-yellow-300"
+        style={{
+          right: rootWidth / 2 - 30,
+        }}
+        onClick={() => {
+          if (open) {
+            const experiencePosition =
+              document.getElementsByClassName("experiences")[0]?.offsetTop ?? 0;
+            window.scrollTo({
+              top: experiencePosition - 50,
+              behavior: "smooth",
+            });
+          }
+
+          setOpen((prev) => !prev);
+        }}
+      >
+        {open ? "Close" : "Open"}
+      </button>
+    </div>
+  );
+};
 
 export const experiences = [
   {
@@ -13,31 +152,7 @@ export const experiences = [
     company: "Bold9, Seoul",
     summary:
       "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
-    points: [
-      <>
-        Developed pages having search filters and paginated table with
-        <Important content="performance optimisation" />
-        using react-table and various reusable common components having
-        versatility.
-      </>,
-      <>
-        Implemented
-        <Important content="dashboard with customised visualisation charts" />
-        for better UX using recharts
-      </>,
-      "Dealt with validation in forms on client side using Formik, React forms library",
-      <>
-        Applied
-        <Important content="unit, integration and E2E test" />
-        by Vitest, msw and playwright and set up automatic UI test by storybook
-        and chromatic, visual testing tool
-      </>,
-      <>
-        Implemented
-        <Important content="fulfilment Center 3d visualisation" />
-        for UX using ThreeJS
-      </>,
-    ],
+    paragraph: <Bold9Contribution />,
     stacks: [
       "Javascript",
       "Typescript",
@@ -51,7 +166,6 @@ export const experiences = [
       "GCP",
       "Firebase",
     ],
-    details: [],
   },
   {
     type: null,
@@ -61,7 +175,10 @@ export const experiences = [
     summary:
       "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
     points: [
-      " Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
+      "Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
+      "Collaborated with R&D, quality management, and legal teams to resolve technical issues, revise OEM contracts, and support product development.",
+      "Attended global medical exhibitions (RSNA, ECR, ARAB HEALTH) to gather market insights and drive product strategy",
+      "Developed problem-solving and technical communication skills, now applied to building user-centric software solutions",
     ],
   },
 ];
@@ -72,8 +189,8 @@ export const projects = [
     period: "May - Sep 2024",
     title: "Build Your Body",
     position: "Full Stack",
-    paragraph:
-      "A personal home training service designed to help users customize and track their fitness journey. It allows users to create personalized workout routines by setting weights, reps, and sets while rearranging exercises to fit their goals. A detailed logging system enables users to record their performance, including workout time, satisfaction ratings, and progress photos, providing valuable insights over time. An interactive dashboard visualizes progress through dynamic charts, offering real-time updates on workout history and achievements.",
+    summary:
+      "A personal home training service designed to help users customize and track their fitness journey.",
     points: [
       "Integrated Google Login/Logout with NextAuth, enabling secure and smooth user authentication, and simplifying the onboarding process",
       "Empowered users to customise their workout routines allowing them to set weight, reps, and sets while rearranging exercises for their specific training goals",
@@ -117,13 +234,13 @@ export const projects = [
     period: "Apr 2021",
     title: "JStargram",
     position: "Full Stack",
-    paragraph:
-      "An interactive photo-sharing platform that connects users through shared images and real-time conversations. It features a thoughtfully designed UI, seamless Google login, smooth image uploads and rendering, and a real-time chat window for instant engagement, creating a dynamic and immersive social experience.",
+    summary:
+      "An interactive photo-sharing platform that connects users through shared images and real-time conversations.",
     points: [
-      "UI configuration and design",
-      "Google login/logout implementation",
-      "Image upload and rendering function implementation",
-      "Real-time chat window implementation",
+      "Implemented responsive web design to ensure optimal user experience across various devices",
+      "Integrated Google login/logout functionality for seamless user authentication",
+      "Developed an image upload and rendering feature using Firebase for efficient media management",
+      "Built a real-time chat window for instant messaging and user interaction",
     ],
     stacks: ["React", "Firebase", "Framer-motion"],
     refs: [
@@ -147,12 +264,11 @@ export const projects = [
     period: "Apr 2021",
     title: "Covid19 Tracker",
     position: "Full Stack",
-    paragraph:
-      "A chart and map service providing real-time global COVID-19 data, including infections, recoveries, and deaths. It features a well-designed UI, integrates the disease.sh API for data processing, and visualizes insights through interactive charts and maps using Chart.js and Leaflet.js",
+    summary: "A chart and map service providing real-time global COVID-19 data",
     points: [
-      "UI configuration and design",
-      "Using disease.sh API, implementing coronavirus data processing logic",
-      "Implementing charts and maps with Chart and Leaflet libraries",
+      "Designed and configured a user-friendly UI for a real-time global COVID-19 data service",
+      "Integrated the disease.sh API to process and fetch real-time COVID-19 data, including infections, recoveries, and deaths",
+      "Developed interactive charts and maps for visualizing COVID-19 insights using Chart.js and Leaflet.js libraries",
     ],
     stacks: ["React", "Firebase", "Material UI"],
     refs: [
@@ -304,24 +420,42 @@ export const studies = [
 export const education = [
   {
     period: "Mar 2022 - Aug 2024",
-    title: (
-      <BoldBtn
-        title="Korea National Open University, South Korea"
-        link="https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG"
-        customStyle="ml-0"
-      />
+    title: "Bachelor of Computer Science",
+    contents: (
+      <button
+        className="hover:text-yellow-300"
+        onClick={() =>
+          window.open(
+            "https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG",
+            "_blank"
+          )
+        }
+      >
+        Korea National Open University, South Korea
+      </button>
     ),
-    contents: "Computer Science(3.7/4.5)",
   },
   {
     period: "Oct 2020 - Mar 2021",
-    title: "Codestates(Boot camp), South Korea",
-    contents:
-      "Completed a full-stack course based on JavaScript, where I learned React for the frontend and Node.js for the backend. Solved algorithm problems daily, worked on assignments consistently, and participated in pair programming and code reviews. At last, contributed to two collaborative projects: Homemade and Royal Diary.",
+    title: "Full-stack course based on JavaScript",
+    contents: (
+      <div className="flex flex-col gap-y-2">
+        <div>Codestates(Boot camp), South Korea</div>
+        <ul className="[&>li]:list-disc pl-6 gap-y-0.5 flex flex-col">
+          <li>Learned React for the frontend and Node.js for the backend</li>
+          <li>Solved algorithm problems on daily basis</li>
+          <li>Worked on assignments consistently</li>
+          <li>Participated in pair programming and code reviews</li>
+          <li>
+            Contributed to 2 collaborative projects: Homemade and Royal Diary
+          </li>
+        </ul>
+      </div>
+    ),
   },
   {
     period: "Mar 2010 - Feb 2018",
-    title: "Soongsil University, South Korea",
-    contents: "Economics(3.8/4.5)",
+    title: "Bachelor of Economics",
+    contents: "Soongsil University, South Korea",
   },
 ];

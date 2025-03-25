@@ -11,8 +11,10 @@ const moveToTargetSection = (e) => {
   const targetSection = document.getElementsByClassName(title)[0];
 
   if (targetSection) {
+    const isHome = title === "home";
     const top = targetSection.offsetTop - 120;
-    window.scrollTo({ top, behavior: "smooth" });
+
+    window.scrollTo({ top: isHome ? 0 : top, behavior: "smooth" });
   }
 };
 
@@ -61,6 +63,11 @@ export const Navigation = ({ customStyle, style }) => {
   return (
     <ul className={`flex-col list-none p-0 ${customStyle} `} style={style}>
       <NavItem
+        title="Home"
+        isShowing={currentSection === "home"}
+        customStyle="min-w-[44px] lg:hidden"
+      />
+      <NavItem
         title="Skills"
         isShowing={currentSection === "skills"}
         customStyle="min-w-[44px]"
@@ -101,7 +108,7 @@ export const Header = () => {
         <section>
           <h1
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[60px] font-medium cursor-pointer leading-[50px]"
+            className="text-[60px] font-medium cursor-pointer leading-[60px]"
           >
             Yongjae Kim
           </h1>

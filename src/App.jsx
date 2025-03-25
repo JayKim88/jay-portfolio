@@ -51,14 +51,13 @@ function App() {
       <div
         ref={appRef}
         className={`relative h-full flex justify-center items-start mx-auto 
-          px-10 lg:px-0
-          lg:gap-50 flex-col lg:flex-row`}
+          px-10 lg:px-10 lg:gap-30 flex-col lg:flex-row`}
       >
         {showNavigaion && (
           <Navigation
             customStyle={`fixed flex right-6 z-20 p-1 px-4 text-black bg-gray-100 
               rounded-2xl w-[420px] transition-all duration-500 ease-in-out w-fit flex-wrap
-              opacity-50 hover:opacity-100 top-4 left-10 flex-row gap-x-5 justify-start`}
+              sm:opacity-50 hover:opacity-100 top-4 left-10 flex-row gap-x-5 justify-start`}
           />
         )}
         <div

@@ -39,7 +39,7 @@ export const Description = ({
       key={title}
       className={`relative flex gap-x-6 transition-all delay-50 duration-200 
       ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-       hover:scale-108 group transform-gpu max-w-[660px]
+       hover:scale-104 group transform-gpu max-w-[660px]
       ${details && "cursor-pointer"} ${isNotHovered && "opacity-50"}`}
       onMouseOver={() => onHover?.(title)}
       onMouseOut={() => onHover?.("")}

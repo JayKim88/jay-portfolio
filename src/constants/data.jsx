@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { throttle } from "lodash";
 
 import { BoldBtn } from "../components/BoldBtn";
 import { Highlight } from "../components/Highlight";
+import Eye from "../assets/images/eye.svg?react";
+import EyeSlash from "../assets/images/eye-slash.svg?react";
 
 const Important = ({ content }) => (
   <strong className="mx-1 text-main">{content}</strong>
@@ -9,136 +12,188 @@ const Important = ({ content }) => (
 
 const achievements = [
   {
-    title: "Product Image Upload & Editing",
-    points: [
-      "Developed an intuitive image upload feature that enhanced user experience by improving product recognition and usability.",
-      "Implemented image cropping and reordering using react-cropper and react-sortablejs, making it easier for sellers to manage product images.",
-    ],
-  },
-  {
     title: "Dashboard Development & Performance Optimization",
     points: [
-      "Designed and implemented a customized dashboard with real-time visualized analytics using recharts.",
-      "Built various data visualization widgets (e.g., Recent Invoice, Market Order Status, Delivery Status), enabling users to monitor fulfillment operations at a glance.",
-      "Optimized order/invoice data requests, reducing API response time from 13s to 1s using Promise.all.",
+      "Customized dashboard with real-time visualized analytics using Recharts library",
+      "Various data visualization widgets (e.g., Recent Invoice, Market Order Status, Courier Bands Info), enabling users to monitor fulfillment operations at a glance.",
+      "Optimized recent invoice widget which requires 2 weeks data by reducing rendering time from 13s to 1s using Promise.all on all API requests",
     ],
   },
   {
     title: "Testing & Code Reliability",
     points: [
-      "Wrote 33 unit tests for shared components and 54 integration tests across the entire application, significantly improving test coverage and stability.",
-      "Applied snapshot testing for integration tests to verify UI at the page level and reduce UI-related bugs.",
-      "Set up automated UI testing using Storybook and Chromatic to catch unintended UI changes before deployment.",
-      "Applied GitHub Actions for parallel testing and module caching, reducing test execution time from 12–15 minutes to 6 minutes.",
-    ],
-  },
-  {
-    title: "3D Warehouse Visualization",
-    points: [
-      "Developed a 3D fulfillment center visualization for a better user experience using Three.js.",
-      "Improved warehouse navigation by adding rack search, mini-maps, and pallet models, enhancing usability for logistics staff.",
+      "Wrote 33 unit tests for core components and 54 integration tests across the entire application, significantly improving test coverage and stability.",
+      "Snapshot testing for integration tests to verify UI at the page level and reduce UI-related bugs.",
+      "Automated component UI testing using Storybook and Chromatic to catch unintended UI changes before deployment.",
+      "Parallel testing and module caching to GitHub workflow, cutting test execution time from 12–15 minutes to 6 minutes.",
     ],
   },
   {
     title: "Platform-Specific Notification System",
     points: [
-      "Integrated real-time push notifications using FCM for desktop, mobile web (PWA), and mobile apps (Flutter).",
-      "Built a local HTTPS testing environment using self-signed certificates and Nginx, enabling cross-platform notification testing.",
+      "Real-time push notifications using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android).",
+      "Settings page that allows users to enable or disable notifications based on notification type and target, along with a real-time notification modal offering cursor-based infinite scrolling.",
+      "For the mobile app, implemented a “Do Not Disturb” feature that lets users schedule quiet hours during which notifications are muted ",
+      "Built a local HTTPS testing environment with self-signed certificates and Nginx to support Service Worker and PWA development, enabling cross-platform notification testing",
     ],
   },
   {
     title: "Security & Authentication Enhancements",
     points: [
-      "Improved login session management by replacing local storage with secure HTTP-only cookies and CSRF protection.",
-      "Added session extension functionality to prevent unintended logouts, improving the user experience.",
+      "Strengthened security by transitioning from token-based authentication to cookie-based authentication using secure HTTP-only cookies with CSRF protection, preventing CSRF attacks and improving session management.",
+      "Login session extension feature to reduce unintended logouts and enhance user experience.",
     ],
   },
   {
-    title: "Barcode Printing System",
+    title: "Product Image Upload & Editing",
     points: [
-      "Implemented custom barcode printing for different product sizes using react-barcode and react-to-print.",
-      "Developed print preview and multi-size selection (e.g., 40x10mm, 60x100mm), increasing efficiency for warehouse staff.",
+      "Intuitive image upload feature that enhanced user experience by improving product recognition and usability.",
+      "Includes image cropping and reordering functions using react-cropper and react-sortablejs, that help users manage product images easily.",
+    ],
+  },
+  {
+    title: "3D Warehouse Visualization",
+    points: [
+      "3D fulfillment center visualization using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions.",
+      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+    ],
+  },
+  {
+    title: "Multi-Size Barcode Printing System",
+    points: [
+      "Custom barcode printing for different product sizes using react-barcode and react-to-print.",
+      "Includes print preview and 5 multi-size selection (e.g., 40x10mm, 60x100mm), increasing efficiency for warehouse staffs.",
     ],
   },
   {
     title: "Continuous Deployment & Versioning Improvements",
     points: [
       "Integrated GitHub API (Octokit) to detect new versions for production, staging, and beta environments, ensuring automatic reloading of the latest client code.",
+      "Eliminated frequent version mismatch errors that occurred weekly on deployment days, reducing the frequency to near zero by ensuring seamless client-server synchronization.",
     ],
   },
   {
     title: "SEO & Server-Side Rendering (SSR)",
     points: [
-      "Applied Next.js server-side rendering (SSR) on key landing pages to improve SEO and initial load times.",
+      "Enhanced SEO and discoverability by implementing Next.js Server-Side Rendering (SSR) on key landing pages, ensuring search engines can efficiently index content.",
+      "Optimized metadata and Open Graph tags, including dynamic titles, descriptions, canonical URLs, and structured keywords, improving ranking and social media previews.",
+      "Reduced initial load times by pre-rendering critical content, improving user engagement and page experience across web and mobile platforms.",
     ],
   },
   {
-    title: "New Page Development",
+    title: "New Page Developments",
     points: [
-      "Designed and implemented critical pages, including Operations Management, Sales Reports, and Outbound Processing.",
+      "Business core pages with full CRUD functionality—including Operations Management, Sales and Outbound pages—featuring search filters and offset-based data tables for efficient data handling.",
+      "Page size selector with options and column sorting to enhance table usability and user experience.",
+      "Row selection checkboxes for bulk operations and added a detail page button for easy access to individual records.",
+    ],
+  },
+  {
+    title: "Automatic PR Labeler for team productivity",
+    points: [
+      "Implemented an Automated D-day Labeler for Pull Requests (PRs) to streamline code reviews and release cycles, boosting team productivity.",
+      "Automatically assigns a D-day label to new PRs, indicating the urgency based on the upcoming release date.",
+      "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0', ensuring continuous visibility of upcoming deadlines.",
+      "Reduced the risk of delayed reviews and last-minute changes, improving team efficiency and the stability of live products.",
     ],
   },
 ];
 
+const viewBtnStyle =
+  "fill-black w-6 h-6 group-hover/view:fill-yellow-300 transition-all duration-200";
+const viewBtnTextStyle =
+  "group-hover/view:text-yellow-300 transition-all duration-200";
+
 const Bold9Contribution = () => {
+  const ulRef = useRef();
   const [open, setOpen] = useState(false);
-  const ref = useRef();
-  const [rootWidth, setRootWidth] = useState(0);
+  const [ulSizes, setUlSizes] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  const handleOpen = () => {
+    const experiencePosition =
+      document.getElementsByClassName("experiences")[0]?.offsetTop ?? 0;
+
+    setOpen((prev) => !prev);
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        window.scrollTo({
+          top: experiencePosition - 100,
+          behavior: "instant",
+        });
+      }, 1000);
+    });
+  };
 
   useEffect(() => {
-    if (!ref.current) return;
+    const updateUlSizes = () => {
+      if (!ulRef.current) return;
+      setUlSizes({
+        width: ulRef.current.offsetWidth ?? 0,
+        height: ulRef.current.offsetHeight ?? 0,
+      });
+    };
 
-    setRootWidth(ref.current.clientWidth ?? 0);
-  }, [ref]);
+    window.addEventListener("resize", updateUlSizes);
+
+    updateUlSizes();
+
+    return () => window.removeEventListener("resize", updateUlSizes);
+  }, [ulRef]);
 
   return (
-    <div ref={ref} className="mx-auto mt-2 mb-4 rounded-xl relative">
+    <div className="mx-auto mt-2 mb-4 rounded-xl relative">
       <h2 className="text-[16px] font-bold mb-6 text-main">
         Key Achievements & Contributions
       </h2>
-      <ul
-        className={`flex flex-col gap-y-6 overflow-hidden 
-           ${
-             open
-               ? "max-h-[1500px] transition-all duration-600 ease-in-out"
-               : "max-h-[400px]"
-           }`}
-      >
-        {achievements.map((achievement, index) => (
-          <li key={index}>
-            <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
-              {achievement.title}
-            </h3>
-            <ul className="pl-6 gap-y-0.5 flex flex-col">
-              {achievement.points.map((point, i) => (
-                <li key={i} className="marker:mr-1 list-disc">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-      <button
-        className="absolute -bottom-4 bg-amber-50 rounded-2xl transition-all duration-200
-        text-black px-2 cursor-pointer w-[60px] font-medium hover:bg-yellow-300"
+      <div
+        className="overflow-hidden transition-all duration-800 ease-in-out"
         style={{
-          right: rootWidth / 2 - 30,
-        }}
-        onClick={() => {
-          if (open) {
-            const experiencePosition =
-              document.getElementsByClassName("experiences")[0]?.offsetTop ?? 0;
-            window.scrollTo({
-              top: experiencePosition - 50,
-              behavior: "smooth",
-            });
-          }
-
-          setOpen((prev) => !prev);
+          maxHeight: open ? ulSizes.height : 400,
         }}
       >
-        {open ? "Close" : "Open"}
+        <ul ref={ulRef} className={`flex flex-col gap-y-6`}>
+          {achievements.map((achievement, index) => (
+            <li key={index}>
+              <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
+                {achievement.title}
+              </h3>
+              <ul className="pl-6 gap-y-0.5 flex flex-col">
+                {achievement.points.map((point, i) => (
+                  <li key={i} className="marker:mr-1 list-disc">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button
+        className={`absolute px-2 py-1 bg-amber-50 rounded-2xl font-medium flex 
+          justify-center items-center gap-x-1 min-w-[124px] ${
+            open ? "-bottom-8" : "-bottom-4"
+          } 
+          text-black cursor-pointer group/view`}
+        style={{
+          right: ulSizes.width / 2 - 62,
+        }}
+        onClick={handleOpen}
+      >
+        {open ? (
+          <>
+            <EyeSlash className={viewBtnStyle} />
+            <span className={viewBtnTextStyle}>View Less</span>
+          </>
+        ) : (
+          <>
+            <Eye className={viewBtnStyle} />
+            <span className={viewBtnTextStyle}>View more</span>
+          </>
+        )}
       </button>
     </div>
   );

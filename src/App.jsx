@@ -167,7 +167,7 @@ function App() {
         </div>
         <Header />
         <AudioPlayer />
-        <main className="flex flex-col gap-28 max-w-[700px]">
+        <main className="flex flex-col gap-40 max-w-[700px]">
           <Home />
           <Skills />
           <Experiences onHover={handleHoverItem} hoveredItem={hoveredItem} />

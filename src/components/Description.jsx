@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import { Tags } from "../components/Tags";
 
 import Figma from "../assets/images/figma.svg?react";
@@ -39,7 +39,7 @@ export const Description = ({
       key={title}
       className={`relative flex gap-x-6 transition-all delay-50 duration-200 
       ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-       hover:scale-104 group transform-gpu max-w-[660px]
+       hover:scale-x-108 hover:scale-y-106 group transform-gpu max-w-[660px]
       ${details && "cursor-pointer"} ${isNotHovered && "opacity-50"}`}
       onMouseOver={() => onHover?.(title)}
       onMouseOut={() => onHover?.("")}
@@ -75,7 +75,7 @@ export const Description = ({
         )}
         <section className={`mt-1 mb-2 text-[14.6px] text-opacity1`}>
           {paragraph ? (
-            <p className="leading-6">{paragraph}</p>
+            <div className="leading-6">{paragraph}</div>
           ) : (
             <ul className="pl-6 gap-y-0.5 flex flex-col">
               {points.map((p, index) => (

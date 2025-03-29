@@ -12,9 +12,19 @@ const moveToTargetSection = (e) => {
 
   if (targetSection) {
     const isHome = title === "home";
-    const top = targetSection.offsetTop - 120;
+    const isEducation = title === "educations";
 
-    window.scrollTo({ top: isHome ? 0 : top, behavior: "smooth" });
+    const destination = isHome
+      ? 0
+      : isEducation
+      ? window.scrollY +
+        targetSection.getBoundingClientRect().top +
+        targetSection.offsetHeight / 2 -
+        window.innerHeight / 2 +
+        20
+      : targetSection.offsetTop - 120;
+
+    window.scrollTo({ top: destination, behavior: "smooth" });
   }
 };
 
@@ -108,15 +118,19 @@ export const Header = () => {
         <section>
           <h1
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[60px] font-medium cursor-pointer leading-[60px]"
+            className="text-[62px] font-medium cursor-pointer leading-[60px]"
           >
             Yongjae Kim
           </h1>
-          <h2 className="text-lg mt-8 mb-0 font-bold">Frontend Engineer</h2>
-          <div className="w-[320px] mt-4 text-opacity1">
-            Experienced software engineer dedicated to crafting user-centric
-            services, prioritising seamless UX and intuitive interactions
-          </div>
+          <h2 className="text-lg mt-14 mb-0 font-bold pl-2">
+            Frontend Engineer
+          </h2>
+          <section className="min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
+            <div>Experienced software engineer</div>
+            <div>Dedicated to crafting user-centric services,</div>
+            <div>Prioritising seamless UX and </div>
+            <div>Intuitive interactions</div>
+          </section>
         </section>
         {showNavigaion && (
           <Navigation customStyle="lg:flex text-opacity1 items-start justify-start w-fit" />

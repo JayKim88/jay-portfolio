@@ -6,55 +6,261 @@ import { Highlight } from "../components/Highlight";
 import Eye from "../assets/images/eye.svg?react";
 import EyeSlash from "../assets/images/eye-slash.svg?react";
 
+import Widgets from "../assets/images/refs/widgets.png";
+import ImageUpload1 from "../assets/images/refs/image-upload_1.png";
+import ImageUpload2 from "../assets/images/refs/image-upload_2.png";
+import ImageUpload3 from "../assets/images/refs/image-upload_3.png";
+import CorePage1 from "../assets/images/refs/core-page_1.png";
+import CorePage2 from "../assets/images/refs/core-page_2.png";
+import CorePage3 from "../assets/images/refs/core-page_3.png";
+import Center3d from "../assets/video/3d-center.mp4";
+import BarcodePrint1 from "../assets/images/refs/barcode-print_1.png";
+import BarcodePrint2 from "../assets/images/refs/barcode-print_2.png";
+
+const testCodeExample = `// example.test.tsx
+import React from 'react';
+
+import { server } from 'test-utils/mocks/server';
+import { handlers } from './mockHandlers';
+import {
+  configure,
+  render,
+  screen,
+  userEvent,
+  waitFor,
+  within,
+} from 'test-utils/renderWithProviders';
+import { ExampleOrders } from 'pages/ExampleOrders/ExampleOrders';
+import { exampleList } from './mock';
+import {
+  mockLogisticId,
+  mockLogisticTeamId,
+  mockSellerId,
+} from 'test-utils/mocks/props';
+
+configure({ testIdAttribute: 'id' });
+
+describe('example list page test', () => {
+  let totalCheckBox: Element | null;
+
+  beforeEach(async () => {
+    server.use(...handlers);
+    render(
+      <ExampleOrders
+        logisticId={mockLogisticId}
+        logisticTeamId={mockLogisticTeamId}
+        sellerId={mockSellerId}
+      />
+    );
+
+    const submitButton = screen.getAllByRole('button', {
+      name: 'Search',
+    })[0];
+
+    await userEvent.click(submitButton);
+
+    totalCheckBox = screen.getAllByTestId('selection')[0];
+  });
+
+  it('example list renders properly.', async () => {
+    const table = screen.getAllByLabelText('example table')[0];
+    const rowsCount = within(table).getByRole('rowgroup').childElementCount;
+
+    await waitFor(() => {
+      expect(rowsCount).toBe(exampleList.totalCount);
+    });
+  });
+
+  ...
+
+  it('example actions operates properly.', async () => {
+    totalCheckBox && (await userEvent.click(totalCheckBox));
+
+    const orderDoneBtn = (await screen.findAllByLabelText('Order Done'))[0]
+      .firstElementChild;
+
+    orderDoneBtn && (await userEvent.click(orderDoneBtn));
+
+    const snackbarMsg =
+      document.getElementById('snackbar message')?.firstChild?.nodeValue;
+
+    expect(snackbarMsg).toBe('order completed successfully.');
+  });
+
+  
+ ...
+});
+
+// mockHandlers.ts
+import { GraphQLHandler, graphql, HttpResponse } from 'msw';
+import { MOCKING_API_LINK } from 'test-utils/renderWithProviders';
+import { exampleList } from './mock';
+import {  
+  ExampleListQuery,
+  ExampleListQueryVariables,
+  namedOperations as exampleListNamedOperations,
+} from '../../example/OrderList.query.generated';
+
+const linkedGrahpql = graphql.link(MOCKING_API_LINK);
+
+export const handlers: GraphQLHandler[] = [
+  linkedGrahpql.query<
+    ExampleListQuery,
+    ExampleListQueryVariables
+  >(exampleListNamedOperations.Query.OrderManagementList, () =>
+    HttpResponse.json({
+      data: {
+        exampleList,
+      },
+    })
+  ),
+];
+`;
+
 const Important = ({ content }) => (
-  <strong className="mx-1 text-main">{content}</strong>
+  <span className="text-main font-medium">{content}</span>
 );
 
 const achievements = [
   {
     title: "Dashboard Development & Performance Optimization",
     points: [
-      "Customized dashboard with real-time visualized analytics using Recharts library",
-      "Various data visualization widgets (e.g., Recent Invoice, Market Order Status, Courier Bands Info), enabling users to monitor fulfillment operations at a glance.",
-      "Optimized recent invoice widget which requires 2 weeks data by reducing rendering time from 13s to 1s using Promise.all on all API requests",
-    ],
-  },
-  {
-    title: "Testing & Code Reliability",
-    points: [
-      "Wrote 33 unit tests for core components and 54 integration tests across the entire application, significantly improving test coverage and stability.",
-      "Snapshot testing for integration tests to verify UI at the page level and reduce UI-related bugs.",
-      "Automated component UI testing using Storybook and Chromatic to catch unintended UI changes before deployment.",
-      "Parallel testing and module caching to GitHub workflow, cutting test execution time from 12–15 minutes to 6 minutes.",
+      "Customized dashboard with real-time visualized analytics using Recharts library.",
+      <>
+        Implemented various
+        <BoldBtn
+          title="data visualization widgets"
+          customStyle="mx-1"
+          fontWeight="medium"
+          imageUrls={[Widgets]}
+        />
+        (e.g., Recent Invoice, Market Order Status, Courier Bands Info),
+        enabling users to monitor fulfillment operations at a glance.
+      </>,
+      <>
+        Optimized recent invoice widget which requires 2 weeks data by reducing
+        rendering time <Important content="from 13s to 1s (92% improvement) " />
+        using Promise.all on all API requests.
+      </>,
     ],
   },
   {
     title: "Platform-Specific Notification System",
     points: [
-      "Real-time push notifications using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android).",
-      "Settings page that allows users to enable or disable notifications based on notification type and target, along with a real-time notification modal offering cursor-based infinite scrolling.",
-      "For the mobile app, implemented a “Do Not Disturb” feature that lets users schedule quiet hours during which notifications are muted ",
-      "Built a local HTTPS testing environment with self-signed certificates and Nginx to support Service Worker and PWA development, enabling cross-platform notification testing",
+      <>
+        Real-time push notifications using FCM for
+        <Important content=" desktop, mobile web (PWA), and mobile apps " />
+        (Flutter InAppWebView for ios and android).
+      </>,
+      "Developed a settings page for customizable notifications and a real-time notification modal with cursor-based infinite scrolling.",
+      "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
+      <>
+        Built a
+        <BoldBtn
+          title="local HTTPS testing environment"
+          customStyle="mx-1"
+          fontWeight="medium"
+          link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
+        />
+        with self-signed certificates and Nginx to support Service Worker and
+        PWA development.
+      </>,
+    ],
+  },
+  {
+    title: "Testing & Code Reliability",
+    points: [
+      <>
+        Increased test coverage
+        <Important content=" from 10% to 70% " />
+        with 33 unit tests for core components and
+        <BoldBtn
+          title="54 integration tests"
+          codeBlock={testCodeExample}
+          fontWeight="medium"
+          customStyle="mx-1"
+        />
+        across the entire application by Vitest and MSW, improving app
+        stability.
+      </>,
+      "Implemented snapshot testing and automated UI testing with Storybook & Chromatic to prevent UI regressions.",
+      <>
+        Optimized GitHub workflow with parallel testing & module caching,
+        cutting test time by <Important content="50% (15m → 6m)" />.
+      </>,
+      <>
+        Established a
+        <BoldBtn
+          title="Guide to writing test code"
+          link="https://nomadkim880901.tistory.com/entry/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C"
+          customStyle="mx-1"
+          fontWeight="medium"
+        />
+        for the client project.
+      </>,
+    ],
+  },
+  {
+    title: "New Page Developments",
+    points: [
+      <>
+        Developed core business pages (Operations Management, Sales, and
+        Outbound, among others) with full CRUD functionality, incorporating{" "}
+        <BoldBtn
+          title="search filters and data tables."
+          fontWeight="medium"
+          imageUrls={[CorePage1, CorePage2, CorePage3]}
+        />
+      </>,
+      "Added bulk selection, sorting, and detail page navigation for improved usability to data table.",
     ],
   },
   {
     title: "Security & Authentication Enhancements",
     points: [
-      "Strengthened security by transitioning from token-based authentication to cookie-based authentication using secure HTTP-only cookies with CSRF protection, preventing CSRF attacks and improving session management.",
+      <>
+        Mitigated CSRF attacks and improved session security by transitioning
+        from token-based authentication to
+        <BoldBtn
+          title="secure HTTP-only cookies with CSRF protection."
+          link="https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541?pvs=4"
+          fontWeight="medium"
+          customStyle="mr-1"
+        />
+      </>,
       "Login session extension feature to reduce unintended logouts and enhance user experience.",
     ],
   },
   {
     title: "Product Image Upload & Editing",
     points: [
-      "Intuitive image upload feature that enhanced user experience by improving product recognition and usability.",
+      <>
+        <BoldBtn
+          title="Intuitive image upload feature"
+          imageUrls={[ImageUpload1, ImageUpload2, ImageUpload3]}
+          customStyle="mr-1"
+          fontWeight="medium"
+        />
+        that enhanced user experience by improving product recognition and
+        usability.
+      </>,
       "Includes image cropping and reordering functions using react-cropper and react-sortablejs, that help users manage product images easily.",
     ],
   },
   {
     title: "3D Warehouse Visualization",
     points: [
-      "3D fulfillment center visualization using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions.",
+      <>
+        Created
+        <BoldBtn
+          title="3D fulfillment center visualization"
+          customStyle="mx-1"
+          fontWeight="medium"
+          videoUrl={Center3d}
+        />
+        using Three.js, allowing users to freely navigate the space with
+        keyboard controls and mouse interactions.
+      </>,
       "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
     ],
   },
@@ -62,39 +268,60 @@ const achievements = [
     title: "Multi-Size Barcode Printing System",
     points: [
       "Custom barcode printing for different product sizes using react-barcode and react-to-print.",
-      "Includes print preview and 5 multi-size selection (e.g., 40x10mm, 60x100mm), increasing efficiency for warehouse staffs.",
+      <>
+        Includes
+        <BoldBtn
+          title="print preview and 5 multi-size selection"
+          customStyle="ml-1"
+          fontWeight="medium"
+          imageUrls={[BarcodePrint1, BarcodePrint2]}
+        />
+        , increasing efficiency for warehouse staffs.
+      </>,
     ],
   },
   {
     title: "Continuous Deployment & Versioning Improvements",
     points: [
       "Integrated GitHub API (Octokit) to detect new versions for production, staging, and beta environments, ensuring automatic reloading of the latest client code.",
-      "Eliminated frequent version mismatch errors that occurred weekly on deployment days, reducing the frequency to near zero by ensuring seamless client-server synchronization.",
+
+      <>
+        Eliminated frequent version mismatch errors that occurred weekly on
+        deployment days,
+        <Important content=" reducing the frequency to near zero " />
+        by ensuring seamless client-server synchronization.
+      </>,
     ],
   },
   {
     title: "SEO & Server-Side Rendering (SSR)",
     points: [
-      "Enhanced SEO and discoverability by implementing Next.js Server-Side Rendering (SSR) on key landing pages, ensuring search engines can efficiently index content.",
-      "Optimized metadata and Open Graph tags, including dynamic titles, descriptions, canonical URLs, and structured keywords, improving ranking and social media previews.",
-      "Reduced initial load times by pre-rendering critical content, improving user engagement and page experience across web and mobile platforms.",
-    ],
-  },
-  {
-    title: "New Page Developments",
-    points: [
-      "Business core pages with full CRUD functionality—including Operations Management, Sales and Outbound pages—featuring search filters and offset-based data tables for efficient data handling.",
-      "Page size selector with options and column sorting to enhance table usability and user experience.",
-      "Row selection checkboxes for bulk operations and added a detail page button for easy access to individual records.",
+      "Improved SEO with Next.js SSR, optimized metadata, and Open Graph tags for better ranking and previews.",
+      "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.",
     ],
   },
   {
     title: "Automatic PR Labeler for team productivity",
     points: [
-      "Implemented an Automated D-day Labeler for Pull Requests (PRs) to streamline code reviews and release cycles, boosting team productivity.",
-      "Automatically assigns a D-day label to new PRs, indicating the urgency based on the upcoming release date.",
-      "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0', ensuring continuous visibility of upcoming deadlines.",
-      "Reduced the risk of delayed reviews and last-minute changes, improving team efficiency and the stability of live products.",
+      <>
+        Implemented an
+        <BoldBtn
+          title="automated D-day labeler"
+          customStyle="mx-1"
+          fontWeight="medium"
+          link="https://github.com/JayKim88/automatic-pr-labeler"
+        />
+        for PRs, ensuring continuous visibility of deadlines.
+      </>,
+      "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'.",
+      <>
+        <BoldBtn
+          title="Reduced delayed reviews by 50%"
+          fontWeight="medium"
+          link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
+        />
+        , improving team efficiency and product stability.
+      </>,
     ],
   },
 ];
@@ -230,10 +457,21 @@ export const experiences = [
     summary:
       "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
     points: [
-      "Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering technical support and fostering effective collaboration as key partners",
+      <>
+        Built strong relationships with FujiFilm branches across Asia, the
+        Middle East, and Africa, offering
+        <Important content=" technical support " />
+        and fostering
+        <Important content=" effective collaboration " />
+        as key partners.
+      </>,
       "Collaborated with R&D, quality management, and legal teams to resolve technical issues, revise OEM contracts, and support product development.",
-      "Attended global medical exhibitions (RSNA, ECR, ARAB HEALTH) to gather market insights and drive product strategy",
-      "Developed problem-solving and technical communication skills, now applied to building user-centric software solutions",
+      "Attended global medical exhibitions (RSNA, ECR, ARAB HEALTH) to gather market insights and drive product strategy.",
+      <>
+        Developed
+        <Important content=" problem-solving and technical communication skills" />
+        , now applied to building user-centric software solutions.
+      </>,
     ],
   },
 ];
@@ -245,13 +483,23 @@ export const projects = [
     title: "Build Your Body",
     position: "Full Stack",
     summary:
-      "A personal home training service designed to help users customize and track their fitness journey.",
+      "A personal home training service designed to help users customize and track their fitness journey",
     points: [
-      "Integrated Google Login/Logout with NextAuth, enabling secure and smooth user authentication, and simplifying the onboarding process",
-      "Empowered users to customise their workout routines allowing them to set weight, reps, and sets while rearranging exercises for their specific training goals",
-      "Created a system for users to log and track performance in great detail, capturing sets, reps, workout time, satisfaction ratings, and even photos, offering valuable insights into their progress",
-      "Developed an interactive dashboard that visualises user progress with dynamic charts, offering real-time updates on their workout history, achievements, and trends by week/month",
-      "Built a community page to allow users to like and share workouts, creating a motivational space for fitness enthusiasts",
+      "Implemented Google Login/Logout with NextAuth for seamless authentication and onboarding.",
+      "Enabled users to customize workout routines by adjusting weight, reps, sets, and exercise order.",
+      <>
+        Designed a
+        <Important content=" Program process page " />
+        for tracking sets, modifying workouts, and auto-progressing to the next
+        exercise.
+      </>,
+      "Designed a Workout complete page to capture workout details, including sets, reps, time, satisfaction, and photos.",
+      <>
+        Built an
+        <Important content=" interactive dashboard with real-time charts " />
+        tracking user progress by week/month.
+      </>,
+      "Created a community page for users to like and share workouts, fostering motivation.",
     ],
     stacks: [
       "Typescript",
@@ -290,12 +538,12 @@ export const projects = [
     title: "JStargram",
     position: "Full Stack",
     summary:
-      "An interactive photo-sharing platform that connects users through shared images and real-time conversations.",
+      "An interactive photo-sharing platform that connects users through shared images and conversations",
     points: [
-      "Implemented responsive web design to ensure optimal user experience across various devices",
-      "Integrated Google login/logout functionality for seamless user authentication",
-      "Developed an image upload and rendering feature using Firebase for efficient media management",
-      "Built a real-time chat window for instant messaging and user interaction",
+      "Implemented responsive web design to ensure optimal user experience across desktop and mobile.",
+      "Integrated Google login/logout functionality for seamless user authentication.",
+      "Developed an image upload and rendering feature using Firebase for efficient media management.",
+      "Built a real-time chat window for instant messaging and user interaction.",
     ],
     stacks: ["React", "Firebase", "Framer-motion"],
     refs: [
@@ -321,9 +569,9 @@ export const projects = [
     position: "Full Stack",
     summary: "A chart and map service providing real-time global COVID-19 data",
     points: [
-      "Designed and configured a user-friendly UI for a real-time global COVID-19 data service",
-      "Integrated the disease.sh API to process and fetch real-time COVID-19 data, including infections, recoveries, and deaths",
-      "Developed interactive charts and maps for visualizing COVID-19 insights using Chart.js and Leaflet.js libraries",
+      "Designed and configured a user-friendly UI for a global COVID-19 data service.",
+      "Integrated the disease.sh API to process and fetch COVID-19 data, including infections, recoveries, and deaths.",
+      "Developed interactive charts and maps for visualizing COVID-19 insights using Chart.js and Leaflet.js libraries.",
     ],
     stacks: ["React", "Firebase", "Material UI"],
     refs: [
@@ -348,13 +596,19 @@ export const projects = [
     title: "Royal Diary",
     position: "Front End",
     summary:
-      "A digital picture diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling.",
+      "A digital picture diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling",
     points: [
-      "Developed key pages: intro, signup, manual, write-diary, and creator page",
-      "Integrated social logins (Google and Kakao) for seamless access",
-      "Implemented drawing board with writing, saving, and editing functions",
-      "Added smooth loading effects to enhance page transition experience",
-      "Ensured responsive design optimized for various devices",
+      <>
+        <Important content="Developed key pages" />: intro, signup, manual,
+        write-diary, and creator page.
+      </>,
+      "Integrated social logins (Google and Kakao) for seamless access.",
+      <>
+        <Important content="Implemented drawing board " />
+        with writing, saving, and editing functions.
+      </>,
+      "Added smooth loading effects to enhance page transition experience.",
+      "Ensured responsive design optimized for desktop and mobile.",
     ],
     stacks: ["React", "Typescript", "React Canvas Draw"],
     refs: [
@@ -375,13 +629,22 @@ export const projects = [
     title: "Home Made",
     position: "Back End",
     summary:
-      "A recipe-sharing service created in response to increased home cooking during COVID-19. Users can share family recipes, rate, and comment on others’ dishes, while the platform highlights popular recipes of the week, fostering a community around discovering and enjoying delicious meals.",
+      "A recipe-sharing service created in response to increased home cooking during COVID-19. Users can share family recipes, rate, and comment on others’ dishes, while the platform highlights popular recipes of the week, fostering a community around discovering and enjoying delicious meals",
     points: [
-      "Implemented user-side API which includes login, logout, signup, email duplication check, account deletion, and user information updates",
-      "Used JavaScript Crypto library for one-way encryption to prevent password leaks",
-      "Implemented JWT authentication by generating AccessToken and RefreshToken",
-      "Deployed with AWS services (EC2, RDS, S3, Route53, ELB, CM) for HTTPS hosting",
-      "Designed the database schema using DBDiagram",
+      "Designed the database schema using DBDiagram.",
+      <>
+        Implemented
+        <Important content=" user-side APIs " />
+        which includes login, logout, signup, email duplication check, account
+        deletion, and user information updates.
+      </>,
+      "Used JavaScript Crypto library for one-way encryption to prevent password leaks.",
+      "Implemented JWT authentication by generating acccess and refresh tokens.",
+      <>
+        Deployed with
+        <Important content=" AWS services (EC2, RDS, S3, Route53, ELB, CM) " />
+        for HTTPS hosting.
+      </>,
     ],
     stacks: [
       "Node.js",
@@ -415,7 +678,7 @@ export const studies = [
     title: "Uber Mobile app",
     position: "Front End",
     paragraph:
-      "Built a ride-hailing app that connects passengers with drivers for on-demand transportation and delivery services. Learned React Native with React Navigation to implement dynamic routing and used GCP APIs to build a map-based application, enhancing the user experience with real-time location tracking and navigation features.",
+      "Built a ride-hailing app that connects passengers with drivers for on-demand transportation and delivery services. Learned React Native with React Navigation to implement dynamic routing and used GCP APIs to build a map-based application, enhancing the user experience with real-time location tracking and navigation features",
     stacks: [
       "React Native",
       "Redux",
@@ -438,7 +701,7 @@ export const studies = [
     title: "Deliveroo Mobile app",
     position: "Full Stack",
     paragraph:
-      "Built a food delivery and shopping app to learn React Native and React Navigation for dynamic routing. Gained experience with mobile styling using TailwindCSS and explored content management with SanityCMS, integrating it into the app for dynamic content updates.",
+      "Built a food delivery and shopping app to learn React Native and React Navigation for dynamic routing. Gained experience with mobile styling using TailwindCSS and explored content management with SanityCMS, integrating it into the app for dynamic content updates",
     stacks: [
       "React Native",
       "Redux",
@@ -461,7 +724,7 @@ export const studies = [
     title: "Aora Mobile app",
     position: "Full Stack",
     paragraph:
-      "Built a video-sharing app using React Native with Expo Router and file-based routing. Learned to handle video data, styled the app with Mobile TailwindCSS, and gained experience implementing a backend server with Appwrite for user and data management.",
+      "Built a video-sharing app using React Native with Expo Router and file-based routing. Learned to handle video data, styled the app with Mobile TailwindCSS, and gained experience implementing a backend server with Appwrite for user and data management",
     stacks: ["React Native", "NativeWind", "Appwrite", "Expo router"],
     refs: [
       {

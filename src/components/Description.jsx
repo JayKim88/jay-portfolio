@@ -79,7 +79,7 @@ export const Description = ({
           ) : (
             <ul className="pl-6 gap-y-0.5 flex flex-col">
               {points.map((p, index) => (
-                <li key={index} className="list-disc">
+                <li key={index} className="list-disc leading-6">
                   {p}
                 </li>
               ))}

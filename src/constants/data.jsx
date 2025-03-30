@@ -271,12 +271,12 @@ const achievements = [
       <>
         Includes
         <BoldBtn
-          title="print preview and 5 multi-size selection"
-          customStyle="ml-1"
+          title="print preview and 5 multi-size selection,"
+          customStyle="mx-1"
           fontWeight="medium"
           imageUrls={[BarcodePrint1, BarcodePrint2]}
         />
-        , increasing efficiency for warehouse staffs.
+        increasing efficiency for warehouse staffs.
       </>,
     ],
   },
@@ -284,7 +284,6 @@ const achievements = [
     title: "Continuous Deployment & Versioning Improvements",
     points: [
       "Integrated GitHub API (Octokit) to detect new versions for production, staging, and beta environments, ensuring automatic reloading of the latest client code.",
-
       <>
         Eliminated frequent version mismatch errors that occurred weekly on
         deployment days,
@@ -316,11 +315,12 @@ const achievements = [
       "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'.",
       <>
         <BoldBtn
-          title="Reduced delayed reviews by 50%"
+          title="Reduced delayed reviews by 50%,"
           fontWeight="medium"
+          customStyle="mr-1"
           link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
         />
-        , improving team efficiency and product stability.
+        improving team efficiency and product stability.
       </>,
     ],
   },

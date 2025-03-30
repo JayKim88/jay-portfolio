@@ -30,8 +30,11 @@ export const BoldBtn = ({
   return (
     <button
       className={`inline-block text-left text-main ${customStyle} ${
-        (onClick || link || modalAvailable) &&
-        "cursor-pointer hover:text-yellow-300"
+        onClick || link
+          ? "cursor-pointer hover:text-yellow-300"
+          : modalAvailable
+          ? "hover:text-yellow-300"
+          : ""
       }`}
       onClick={() => {
         if (link) {

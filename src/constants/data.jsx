@@ -127,7 +127,7 @@ const achievements = [
     points: [
       "Customized dashboard with real-time visualized analytics using Recharts library.",
       <>
-        Implemented various
+        Created
         <BoldBtn
           title="data visualization widgets"
           customStyle="mx-1"
@@ -157,12 +157,12 @@ const achievements = [
       <>
         Built a
         <BoldBtn
-          title="local HTTPS testing environment"
+          title="local HTTPS setup"
           customStyle="mx-1"
           fontWeight="medium"
           link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
         />
-        with self-signed certificates and Nginx to support Service Worker and
+        using self-signed certificates and Nginx to support Service Workers and
         PWA development.
       </>,
     ],
@@ -191,7 +191,7 @@ const achievements = [
       <>
         Established a
         <BoldBtn
-          title="Guide to writing test code"
+          title="test code guide"
           link="https://nomadkim880901.tistory.com/entry/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C"
           customStyle="mx-1"
           fontWeight="medium"
@@ -220,13 +220,14 @@ const achievements = [
     points: [
       <>
         Mitigated CSRF attacks and improved session security by transitioning
-        from token-based authentication to
+        from token-based to
         <BoldBtn
-          title="secure HTTP-only cookies with CSRF protection."
+          title="cookie-based authentication"
           link="https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541?pvs=4"
           fontWeight="medium"
-          customStyle="mr-1"
+          customStyle="ml-1"
         />
+        , secure HTTP-only cookies with CSRF protection.
       </>,
       "Login session extension feature to reduce unintended logouts and enhance user experience.",
     ],
@@ -244,7 +245,12 @@ const achievements = [
         that enhanced user experience by improving product recognition and
         usability.
       </>,
-      "Includes image cropping and reordering functions using react-cropper and react-sortablejs, that help users manage product images easily.",
+      <>
+        Includes
+        <Important content=" image cropping and reordering functions " />
+        using react-cropper and react-sortablejs, that help users manage product
+        images easily.
+      </>,
     ],
   },
   {
@@ -253,7 +259,7 @@ const achievements = [
       <>
         Created
         <BoldBtn
-          title="3D fulfillment center visualization"
+          title="3D center visualization"
           customStyle="mx-1"
           fontWeight="medium"
           videoUrl={Center3d}
@@ -267,17 +273,16 @@ const achievements = [
   {
     title: "Multi-Size Barcode Printing System",
     points: [
-      "Custom barcode printing for different product sizes using react-barcode and react-to-print.",
       <>
-        Includes
         <BoldBtn
-          title="print preview and 5 multi-size selection,"
-          customStyle="mx-1"
+          title="Custom barcode printing"
+          customStyle="mr-1"
           fontWeight="medium"
           imageUrls={[BarcodePrint1, BarcodePrint2]}
         />
-        increasing efficiency for warehouse staffs.
+        for different product sizes using react-barcode and react-to-print.
       </>,
+      "Includes print preview and 5 multi-size selection, increasing efficiency for warehouse staffs",
     ],
   },
   {
@@ -303,7 +308,7 @@ const achievements = [
     title: "Automatic PR Labeler for team productivity",
     points: [
       <>
-        Implemented an
+        Created
         <BoldBtn
           title="automated D-day labeler"
           customStyle="mx-1"

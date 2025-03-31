@@ -138,7 +138,12 @@ export const Header = () => {
       </section>
       <section className="flex gap-3">
         {references.map(({ url, icon, title }) => (
-          <a href={url} target="_blank" className="inline-block relative">
+          <a
+            key={title}
+            href={url}
+            target="_blank"
+            className="inline-block relative"
+          >
             {icon}
             <span
               className={`absolute bottom-0 opacity-0 translate-y-0 

@@ -11,6 +11,7 @@ export const BoldBtn = ({
   imageUrls,
   videoUrl,
   codeBlock,
+  refName,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef(null);
@@ -29,7 +30,7 @@ export const BoldBtn = ({
 
   return (
     <button
-      className={`inline-block text-left text-main ${customStyle} ${
+      className={`inline-block text-left text-main group/ref ${customStyle} ${
         onClick || link
           ? "cursor-pointer hover:text-yellow-300"
           : modalAvailable
@@ -49,12 +50,24 @@ export const BoldBtn = ({
         onMouseLeave: () => setIsHovered(false),
       })}
     >
-      <span className={`${fontWeight ? "font-" + fontWeight : "font-bold"}`}>
-        {title}
-      </span>
+      <div className="relative">
+        <span className={`${fontWeight ? "font-" + fontWeight : "font-bold"}`}>
+          {title}
+        </span>
+        {refName && (
+          <span
+            className="absolute bottom-0 -left-1 opacity-0 translate-y-0 font-medium
+                    text-xs transition-all duration-500 ease-in-out pointer-events-none 
+                  group-hover/ref:opacity-100 min-w-max bg-main py-0.5 px-1.5 rounded-2xl 
+                  group-hover/ref:-translate-y-6 group-hover/ref:text-black"
+          >
+            {"👇 " + refName?.[0].toUpperCase() + refName?.slice(1)}
+          </span>
+        )}
+      </div>
       <div
         className={`flex flex-col gap-y-4 absolute left-1/2 transform -translate-x-1/2 
-          mt-2 ${
+          mt-2 z-10 ${
             codeBlock ? "w-full max-w-[470px]" : "w-full max-w-[400px]"
           } max-h-[400px] overflow-y-auto text-main
           p-2 bg-white shadow-lg rounded-lg border-1 border-main transition-all 

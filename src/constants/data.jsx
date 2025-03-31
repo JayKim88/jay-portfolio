@@ -16,6 +16,7 @@ import CorePage3 from "../assets/images/refs/core-page_3.png";
 import Center3d from "../assets/video/3d-center.mp4";
 import BarcodePrint1 from "../assets/images/refs/barcode-print_1.png";
 import BarcodePrint2 from "../assets/images/refs/barcode-print_2.png";
+import Mobile from "../assets/images/refs/mobile.png";
 
 const testCodeExample = `// example.test.tsx
 import React from 'react';
@@ -160,6 +161,7 @@ const achievements = [
           title="local HTTPS setup"
           customStyle="mx-1"
           fontWeight="medium"
+          refName="Connect to Notion"
           link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
         />
         using self-signed certificates and Nginx to support Service Workers and
@@ -195,13 +197,14 @@ const achievements = [
           link="https://nomadkim880901.tistory.com/entry/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C"
           customStyle="mx-1"
           fontWeight="medium"
+          refName="Connect to Blog"
         />
         for the client project.
       </>,
     ],
   },
   {
-    title: "New Page Developments",
+    title: "Core Page Developments",
     points: [
       <>
         Developed core business pages (Operations Management, Sales, and
@@ -213,6 +216,16 @@ const achievements = [
         />
       </>,
       "Added bulk selection, sorting, and detail page navigation for improved usability to data table.",
+      <>
+        Designed with
+        <BoldBtn
+          title="responsive mobile support"
+          fontWeight="medium"
+          imageUrls={[Mobile]}
+          customStyle="ml-1"
+        />
+        , ensuring seamless accessibility and interaction.
+      </>,
     ],
   },
   {
@@ -226,6 +239,7 @@ const achievements = [
           link="https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541?pvs=4"
           fontWeight="medium"
           customStyle="ml-1"
+          refName="Connect to Notion"
         />
         , secure HTTP-only cookies with CSRF protection.
       </>,
@@ -314,6 +328,7 @@ const achievements = [
           customStyle="mx-1"
           fontWeight="medium"
           link="https://github.com/JayKim88/automatic-pr-labeler"
+          refName="Connect to Github Repo"
         />
         for PRs, ensuring continuous visibility of deadlines.
       </>,
@@ -324,6 +339,7 @@ const achievements = [
           fontWeight="medium"
           customStyle="mr-1"
           link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
+          refName="Connect to Blog"
         />
         improving team efficiency and product stability.
       </>,

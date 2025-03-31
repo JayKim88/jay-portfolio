@@ -20,7 +20,7 @@ const StacksElements = ({ title, data }) => {
       <div className="text-start text-2xl">{title}</div>
       <div className="flex flex-wrap gap-4">
         {data.map(({ name, img, usage }) => (
-          <div className="w-24 h-24 group">
+          <div key={name} className="w-24 h-24 group">
             <div
               className="relative w-full h-full transition-transform transform-gpu
             duration-500 transform-3d group-hover:rotate-y-180"

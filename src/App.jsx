@@ -5,7 +5,7 @@ import { Home } from "./sections/Home";
 import { About } from "./sections/About";
 import { DetailModal } from "./components/DetailModal";
 import { Projects } from "./sections/Projects";
-import { Contact } from "./sections/Contact";
+import { TheLastFootsteps } from "./sections/TheLastFootsteps";
 import { Skills } from "./sections/Skills";
 import { Experiences } from "./sections/Experiences";
 import { Educations } from "./sections/Educations";
@@ -165,7 +165,7 @@ function App() {
           />
           <Educations />
           <Studies onHover={handleHoverItem} hoveredItem={hoveredItem} />
-          <Contact className="contact" />
+          <TheLastFootsteps className="contact" />
           {itemData && (
             <DetailModal
               data={itemData}

@@ -118,6 +118,70 @@ export const handlers: GraphQLHandler[] = [
 ];
 `;
 
+const versionDetectorCodeExample = `// checkVersionAndReload.ts
+const { VITE_GH_TOKEN: gh_token, VITE_DEPLOY_ENV: deploy_env } =
+  import.meta.env ?? {};
+
+const checkVersionAndReload = () => {
+  const targetDeployEnvs = ['production', 'staging', 'beta'];
+  const isProperDeployEnv = targetDeployEnvs.includes(deploy_env);
+
+  if (!!gh_token && isProperDeployEnv) {
+    import('https://cdn.skypack.dev/octokit@2.0.14')
+      .then(async (res) => {
+      const octokit = new res.Octokit({
+        auth: gh_token,
+      });
+
+      const reloadTarget =
+        deploy_env === targetDeployEnvs[0]
+          ? {
+              workflowId: '{PRODUCTION_WORKFLOW_ID}',
+              keyName: 'productionExampleRunNumber',
+            }
+          : deploy_env === targetDeployEnvs[1]
+          ? {
+              workflowId: '{STAGING_WORKFLOW_ID}',
+              keyName: 'stagingExampleRunNumber',
+            }
+          : {
+              workflowId: '{BETA_WORKFLOW_ID}',
+              keyName: 'betaExampleRunNumber',
+            };
+
+      const gitActionData = await octokit.request(
+        'GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs',
+        {
+          owner: '{PROJECT_OWNER_NAME}',
+          repo: '{REPO_NAME}',
+          workflow_id: reloadTarget.workflowId,
+          per_page: 1,
+          page: 1,
+          status: 'completed',
+        }
+      );
+      const recentActionRunNumber = 
+        await gitActionData.data.workflow_runs[0].run_number;
+      const lastActionRunNumber = 
+      JSON.parse(localStorage.getItem(reloadTarget.keyName) || 'null');
+
+      if (
+        !lastActionRunNumber ||
+        recentActionRunNumber !== lastActionRunNumber
+      ) {
+        localStorage.setItem(
+          reloadTarget.keyName,
+          JSON.stringify(recentActionRunNumber)
+        );
+        location.reload();
+      }
+    });
+  }
+};
+
+export { checkVersionAndReload };
+`;
+
 const Important = ({ content }) => (
   <span className="text-main font-medium">{content}</span>
 );
@@ -158,7 +222,7 @@ const achievements = [
       <>
         Built a
         <BoldBtn
-          title="local HTTPS setup"
+          title="Local HTTPS setup"
           customStyle="mx-1"
           fontWeight="medium"
           refName="Connect to Notion"
@@ -302,9 +366,19 @@ const achievements = [
   {
     title: "Continuous Deployment & Versioning Improvements",
     points: [
-      "Integrated GitHub API (Octokit) to detect new versions for production, staging, and beta environments, ensuring automatic reloading of the latest client code.",
       <>
-        Eliminated frequent version mismatch errors that occurred weekly on
+        Implemented a
+        <BoldBtn
+          title="Version Detector"
+          customStyle="mx-1"
+          fontWeight="medium"
+          codeBlock={versionDetectorCodeExample}
+        />
+        for production, staging, and beta environments using the GitHub API
+        (Octokit), ensuring automatic reloading of the latest client code.
+      </>,
+      <>
+        Minimized version mismatch errors that previously occurred weekly on
         deployment days,
         <Important content=" reducing the frequency to near zero " />
         by ensuring seamless client-server synchronization.
@@ -322,9 +396,9 @@ const achievements = [
     title: "Automatic PR Labeler for team productivity",
     points: [
       <>
-        Created
+        Created a
         <BoldBtn
-          title="automated D-day labeler"
+          title="Automated D-day labeler"
           customStyle="mx-1"
           fontWeight="medium"
           link="https://github.com/JayKim88/automatic-pr-labeler"

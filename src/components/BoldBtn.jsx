@@ -12,6 +12,7 @@ export const BoldBtn = ({
   videoUrl,
   codeBlock,
   refName,
+  refNameStyle,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef(null);
@@ -56,10 +57,10 @@ export const BoldBtn = ({
         </span>
         {refName && (
           <span
-            className="absolute bottom-0 -left-1 opacity-0 translate-y-0 font-medium
+            className={`absolute bottom-0 -left-1 opacity-0 translate-y-0 font-medium
                     text-xs transition-all duration-500 ease-in-out pointer-events-none 
                   group-hover/ref:opacity-100 min-w-max bg-main py-0.5 px-1.5 rounded-2xl 
-                  group-hover/ref:-translate-y-6 group-hover/ref:text-black"
+                  group-hover/ref:-translate-y-6 group-hover/ref:text-black ${refNameStyle}`}
           >
             {"👇 " + refName?.[0].toUpperCase() + refName?.slice(1)}
           </span>

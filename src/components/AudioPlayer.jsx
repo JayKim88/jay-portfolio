@@ -20,6 +20,7 @@ const AudioPlayer = () => {
   const [volume, setVolume] = useState(1);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [bright, setBright] = useState(false);
 
   const handlePlay = () => {
     if (isPlaying) {
@@ -78,11 +79,22 @@ const AudioPlayer = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setBright(true);
+    const timeoutId = setTimeout(() => {
+      setBright(false);
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
+  }, [isPlaying]);
+
   return (
     <div
-      className="z-20 fixed bottom-16 right-6 flex opacity-50 transition-all
+      className={`z-20 fixed bottom-8 lg:bottom-16 right-6 flex opacity-40 transition-all
       duration-500 ease-in-out flex-col gap-y-1
-     bg-gray-100 py-3 px-4 rounded-3xl shadow-lg hover:opacity-100"
+     bg-gray-100 py-3 px-4 rounded-3xl shadow-lg hover:opacity-100 ${
+       bright && "opacity-100"
+     }`}
     >
       <audio ref={audioRef} src={forestSound} />
       <div className="text-black font-medium">Forest Sound ᨒ ོ</div>
@@ -107,9 +119,8 @@ const AudioPlayer = () => {
           className="w-20 h-1 bg-gray-300 rounded-lg appearance-none 
           cursor-pointer progress-range"
         />
-
-        <div className="relative group flex items-center">
-          <Volume className=" w-5 h-5 text-gray-700 cursor-pointer" />
+        <div className="relative group hidden sm:flex items-center">
+          <Volume className="w-5 h-5 text-gray-700 cursor-pointer" />
           <input
             type="range"
             min="0"

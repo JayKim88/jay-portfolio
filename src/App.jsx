@@ -145,9 +145,11 @@ function App() {
       >
         {showNavigation && (
           <Navigation
-            customStyle={`fixed flex right-6 z-20 p-1 px-4 text-black bg-gray-100 
-              rounded-2xl w-[420px] transition-all duration-500 ease-in-out w-fit flex-wrap
-              sm:opacity-50 hover:opacity-100 top-4 left-10 flex-row gap-x-5 justify-start`}
+            isTop
+            customStyle="fixed flex z-20 p-1 px-4 text-black bg-gray-100 
+            rounded-2xl w-[80%] max-w-[550px] transition-all duration-500 ease-in-out flex-wrap
+            opacity-50 top-4 left-10 flex-row 
+            gap-x-5 justify-start"
           />
         )}
         <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} />

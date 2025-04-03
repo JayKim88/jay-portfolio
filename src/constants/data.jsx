@@ -441,12 +441,14 @@ const Bold9Contribution = () => {
     setOpen((prev) => !prev);
 
     requestAnimationFrame(() => {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         window.scrollTo({
           top: experiencePosition - 100,
           behavior: "instant",
         });
       }, 1000);
+
+      return () => clearTimeout(timeoutId);
     });
   };
 
@@ -836,7 +838,7 @@ export const education = [
     title: "Bachelor of Computer Science",
     contents: (
       <button
-        className="hover:text-yellow-300"
+        className="hover:text-yellow-300 text-start"
         onClick={() =>
           window.open(
             "https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG",

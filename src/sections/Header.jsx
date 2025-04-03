@@ -43,8 +43,9 @@ const useScrollY = () => {
   return scrollY;
 };
 
-export const Navigation = ({ customStyle, style }) => {
+export const Navigation = ({ isTop, customStyle, style }) => {
   const [currentSection, setCurrentSection] = useState("home");
+  const [bright, setBright] = useState(false);
   const scrollY = useScrollY();
 
   const positions = {
@@ -70,8 +71,23 @@ export const Navigation = ({ customStyle, style }) => {
     setCurrentSection(getSectionNow());
   }, [scrollY, positions]);
 
+  useEffect(() => {
+    if (!isTop) return;
+    setBright(true);
+    const timeoutId = setTimeout(() => {
+      setBright(false);
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentSection]);
+
   return (
-    <ul className={`flex-col list-none p-0 ${customStyle} `} style={style}>
+    <ul
+      className={`flex-col list-none p-0 ${customStyle} ${
+        bright && "opacity-100"
+      }`}
+      style={style}
+    >
       <NavItem
         title="Home"
         isShowing={currentSection === "home"}
@@ -125,7 +141,7 @@ export const Header = () => {
           <h2 className="text-lg mt-14 mb-0 font-bold pl-2">
             Frontend Engineer
           </h2>
-          <section className="min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
+          <section className="sm:min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
             <div>Experienced software engineer</div>
             <div>Dedicated to crafting user-centric services,</div>
             <div>Prioritising seamless UX and </div>
@@ -136,7 +152,7 @@ export const Header = () => {
           <Navigation customStyle="lg:flex text-opacity1 items-start justify-start w-fit" />
         )}
       </section>
-      <section className="flex gap-3">
+      <section className="flex gap-3 mt-10">
         {references.map(({ url, icon, title }) => (
           <a
             key={title}

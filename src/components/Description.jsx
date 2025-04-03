@@ -33,16 +33,17 @@ export const Description = ({
   hoveredItem,
 }) => {
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
+  const isDesktop = window.innerWidth >= 1024;
 
   return (
     <li
       key={title}
       className={`relative flex gap-x-6 transition-all delay-50 duration-200 
       ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-       hover:scale-x-108 hover:scale-y-106 group transform-gpu max-w-[660px]
-      ${details && "cursor-pointer"} ${isNotHovered && "opacity-50"}`}
-      onMouseOver={() => onHover?.(title)}
-      onMouseOut={() => onHover?.("")}
+       lg:hover:scale-x-108 lg:hover:scale-y-106 group transform-gpu max-w-[660px]
+      ${details && "cursor-pointer"} ${isNotHovered && "lg:opacity-50"}`}
+      onMouseOver={() => isDesktop && onHover?.(title)}
+      onMouseOut={() => isDesktop && onHover?.("")}
     >
       <section className="hidden md:flex flex-col w-[124px] justify-between pt-1">
         {image ? (

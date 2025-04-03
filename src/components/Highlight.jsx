@@ -1,17 +1,38 @@
 import React from "react";
 
-export const Highlight = ({ isImportant, content, customStyle }) => (
-  <span
-    className={`text-base relative ${customStyle} ${
-      isImportant ? "font-bold" : "font-normal"
-    }`}
-  >
-    <span className={highlightStyle}></span>
-    {content}
-  </span>
-);
+export const Highlight = ({ isImportant, content, customStyle }) => {
+  const isMobileOrTablet = window.innerWidth < 1024;
+  const isDeliveroo = content === "Deliveroo Mobile app";
 
-const highlightStyle = `
+  return (
+    <span
+      className={`text-base relative ${customStyle} ${
+        isMobileOrTablet && isDeliveroo && "text-[15px]"
+      } ${isImportant ? "font-bold" : "font-normal"}`}
+    >
+      <span
+        className={`${
+          isMobileOrTablet ? fixedHighlightStyle : dynamicHighlightStyle
+        }`}
+      ></span>
+      {content}
+    </span>
+  );
+};
+
+const fixedHighlightStyle = `
+  absolute bottom-[0.3px] left-0 w-full
+  h-[15%]
+  bg-gradient-to-r 
+  from-[rgba(255, 255, 0, 0.341)] 
+  via-[rgba(255,255,0,0.7)] 
+  to-yellow-300 
+  blur-[0.2px]
+  bg-[length:0%_100%] bg-left-bottom bg-no-repeat 
+  bg-[length:100%_100%]
+`;
+
+const dynamicHighlightStyle = `
   absolute bottom-[0.3px] left-0 w-full
   h-[15%]
   transition-all duration-1000

@@ -119,7 +119,7 @@ const AudioPlayer = () => {
           className="w-20 h-1 bg-gray-300 rounded-lg appearance-none 
           cursor-pointer progress-range"
         />
-        <div className="relative group hidden sm:flex items-center">
+        <div className="relative group hidden lg:flex items-center">
           <Volume className="w-5 h-5 text-gray-700 cursor-pointer" />
           <input
             type="range"

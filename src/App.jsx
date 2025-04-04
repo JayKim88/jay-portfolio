@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 
 import { Header, Navigation } from "./sections/Header";
 import { Home } from "./sections/Home";
-import { About } from "./sections/About";
 import { DetailModal } from "./components/DetailModal";
 import { Projects } from "./sections/Projects";
 import { TheLastFootsteps } from "./sections/TheLastFootsteps";

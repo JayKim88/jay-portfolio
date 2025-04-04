@@ -7,8 +7,9 @@ import { studies } from "../constants/data";
 
 export const Studies = ({ onHover, hoveredItem }) => {
   return (
-    <section className="studies w-full flex flex-col items-start space-y-1">
-      <ul className="gap-y-14 flex flex-col">
+    <main className="studies">
+      <Title value="Studies" />
+      <ul className="gap-y-18 flex flex-col">
         {studies.map((item) => (
           <Description
             key={item.title}
@@ -18,7 +19,7 @@ export const Studies = ({ onHover, hoveredItem }) => {
           />
         ))}
       </ul>
-    </section>
+    </main>
   );
 };
 

@@ -6,7 +6,8 @@ import { Description } from "../components/Description";
 
 export const Experiences = ({ handleItem, onHover, hoveredItem }) => {
   return (
-    <div className="h-fit w-full flex flex-col items-start gap-14">
+    <main className="experiences flex flex-col gap-y-6">
+      <Title value="Experiences" />
       <ul className="experiences gap-y-22 flex flex-col">
         {experiences.map((item) => (
           <Description
@@ -17,6 +18,6 @@ export const Experiences = ({ handleItem, onHover, hoveredItem }) => {
           />
         ))}
       </ul>
-    </div>
+    </main>
   );
 };

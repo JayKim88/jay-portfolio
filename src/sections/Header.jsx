@@ -34,7 +34,7 @@ const useScrollY = () => {
   useEffect(() => {
     const handleScroll = throttle(() => {
       setScrollY(window.scrollY + window.innerHeight / 2);
-    }, 1000);
+    }, 800);
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

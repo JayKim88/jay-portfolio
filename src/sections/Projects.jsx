@@ -10,8 +10,9 @@ export const Projects = ({ onClick, onHover, hoveredItem }) => {
   // const projectsData = useFiretore("works");
 
   return (
-    <section className="projects w-full flex flex-col items-start space-y-12">
-      <ul className="gap-y-14 flex flex-col">
+    <main className="projects">
+      <Title value="Projects" />
+      <ul className="gap-y-18 flex flex-col">
         {projects.map((item) => (
           <Description
             key={item.title}
@@ -21,7 +22,7 @@ export const Projects = ({ onClick, onHover, hoveredItem }) => {
           />
         ))}
       </ul>
-    </section>
+    </main>
   );
 };
 

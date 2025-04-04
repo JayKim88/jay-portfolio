@@ -470,7 +470,7 @@ const Bold9Contribution = () => {
 
   return (
     <div className="mx-auto mt-2 mb-4 rounded-xl relative">
-      <h2 className="text-[16px] font-bold mb-6 text-main">
+      <h2 className="text-[16px] font-bold mb-6 mt-8 text-main">
         Key Achievements & Contributions
       </h2>
       <div
@@ -479,11 +479,11 @@ const Bold9Contribution = () => {
           maxHeight: open ? ulSizes.height : 400,
         }}
       >
-        <ul ref={ulRef} className={`flex flex-col gap-y-6`}>
+        <ul ref={ulRef} className={`flex flex-col gap-y-10`}>
           {achievements.map((achievement, index) => (
             <li key={index}>
               <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
-                {achievement.title}
+                {`${index + 1}. ${achievement.title}`}
               </h3>
               <ul className="pl-6 gap-y-0.5 flex flex-col">
                 {achievement.points.map((point, i) => (
@@ -530,7 +530,7 @@ export const experiences = [
     title: "Frontend Engineer",
     company: "Bold9, Seoul",
     summary:
-      "E-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
+      "Bold9 is e-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
     paragraph: <Bold9Contribution />,
     stacks: [
       "Javascript",
@@ -552,7 +552,7 @@ export const experiences = [
     title: "Overseas Sales",
     company: "DRGEM, Gyeonggi-do",
     summary:
-      "Manufacturer of advanced digital X-ray systems for global medical imaging solutions",
+      "DRGEM is manufacturer of advanced digital X-ray systems for global medical imaging solutions",
     points: [
       <>
         Built strong relationships with FujiFilm branches across Asia, the

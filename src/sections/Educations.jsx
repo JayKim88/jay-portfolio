@@ -5,8 +5,9 @@ import { education } from "../constants/data";
 
 export const Educations = ({ handleItem }) => {
   return (
-    <main className="educations h-fit w-full flex flex-col items-center gap-14">
-      <section className="flex gap-y-10 flex-col">
+    <main className="educations">
+      <Title value="Educations" />
+      <section className="flex gap-y-18 flex-col">
         {education?.map((v) => (
           <Education key={v.title} data={v} />
         ))}

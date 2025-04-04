@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import LinkIcon from "../assets/images/link.svg?react";
+import MoreIcon from "../assets/images/more.svg?react";
+
 export const BoldBtn = ({
   title,
   link,
@@ -27,11 +30,14 @@ export const BoldBtn = ({
     videoRef.current.currentTime = 0;
   }, [isHovered]);
 
+  const clickable = !!onClick || !!link;
   const modalAvailable = !!imageUrls?.length || !!videoUrl || !!codeBlock;
 
   return (
     <button
-      className={`inline-block text-left text-main group/ref ${customStyle} ${
+      className={`inline-block text-left text-main group/ref 
+        transition-all duration-200 ease-in-out
+        ${customStyle} ${
         onClick || link
           ? "cursor-pointer hover:text-yellow-300"
           : modalAvailable
@@ -52,8 +58,18 @@ export const BoldBtn = ({
       })}
     >
       <div className="relative">
-        <span className={`${fontWeight ? "font-" + fontWeight : "font-bold"}`}>
+        <span
+          className={`${
+            fontWeight ? "font-" + fontWeight : "font-bold"
+          } flex items-center gap-x-0.5`}
+        >
           {title}
+          {clickable && <LinkIcon className={`w-4 h-4 ${refIconStyle}`} />}
+          {modalAvailable && (
+            <MoreIcon
+              className={`w-[15px] h-[15px] ml-[1px] mb-0.5 ${refIconStyle}`}
+            />
+          )}
         </span>
         {refName && (
           <span
@@ -110,3 +126,7 @@ export const BoldBtn = ({
     </button>
   );
 };
+
+const refIconStyle = `fill-main transition-all duration-200 ease-in-out 
+              group-hover/ref:fill-yellow-300 group-hover/ref:translate-x-0.5 
+              group-hover/ref:-translate-y-1`;

@@ -6,6 +6,8 @@ import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
 import Instagram from "../assets/images/sns/instagram.svg?react";
 import Tistory from "../assets/images/sns/tistory.svg?react";
 import { useScrollY } from "../hooks/useScrollY";
+import Copy from "../assets/images/copy.svg?react";
+import Check from "../assets/images/check.svg?react";
 
 const moveToTargetSection = (e) => {
   const title = e.target.innerText.toLowerCase();
@@ -109,11 +111,19 @@ export const Navigation = ({ isTop, customStyle, style }) => {
 };
 
 export const Header = () => {
+  const [copied, setCopied] = useState(false);
   const showNavigaion = window.innerWidth >= 1024;
+  const email = "yongjae.kim.dev@gmail.com";
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1200); // Reset copied state
+  };
 
   return (
     <header
-      className="relative lg:sticky top-0 left-0 w-full lg:max-w-[500px] h-[500px] lg:h-screen 
+      className="relative lg:sticky top-0 left-0 w-full lg:max-w-[500px] h-fit lg:h-screen 
     lg:max-h-screen flex flex-col justify-between box-border pt-24 lg:py-24 px-0"
     >
       <section className="flex flex-col gap-16">
@@ -138,26 +148,46 @@ export const Header = () => {
           <Navigation customStyle="lg:flex text-opacity1 items-start justify-start w-fit" />
         )}
       </section>
-      <section className="flex gap-3 mt-10">
-        {references.map(({ url, icon, title }) => (
-          <a
-            key={title}
-            href={url}
-            target="_blank"
-            className="inline-block relative"
-          >
-            {icon}
-            <span
-              className={`absolute bottom-0 opacity-0 translate-y-0 
+      <section className="mt-10 flex flex-col gap-y-4">
+        <div className="flex gap-3">
+          {references.map(({ url, icon, title }) => (
+            <a
+              key={title}
+              href={url}
+              target="_blank"
+              className="inline-block relative"
+            >
+              {icon}
+              <span
+                className={`absolute bottom-0 opacity-0 translate-y-0 
         font-bold text-xs transition-all duration-500 ease-in-out 
         pointer-events-none peer-hover:opacity-100 peer-hover:-translate-y-9 ${
           title === "Blog" && "left-1"
         }`}
-            >
-              {title}
+              >
+                {title}
+              </span>
+            </a>
+          ))}
+        </div>
+        <div className="flex flex-col gap-y-1 text-main text-sm font-semibold">
+          <button
+            onClick={handleCopy}
+            className={`relative flex w-fit hover:cursor-pointer group ${
+              copied && "pointer-events-none"
+            }`}
+          >
+            <span className="flex justify-start gap-x-1">
+              <span>Email: </span>
+              <span>{email}</span>
             </span>
-          </a>
-        ))}
+            {!copied && (
+              <Copy className="absolute -right-[18px] w-[14px] lg:hidden group-hover:block" />
+            )}
+            {copied && <Check className="absolute -right-5 w-4" />}
+          </button>
+          <div>Timezone: Korea Standard Time — GMT+9</div>
+        </div>
       </section>
     </header>
   );

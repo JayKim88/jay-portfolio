@@ -274,10 +274,11 @@ const achievements = [
         Developed core business pages (Operations Management, Sales, and
         Outbound, among others) with full CRUD functionality, incorporating{" "}
         <BoldBtn
-          title="search filters and data tables."
+          title="search filters and data tables"
           fontWeight="medium"
           imageUrls={[CorePage1, CorePage2, CorePage3]}
         />
+        .
       </>,
       "Added bulk selection, sorting, and detail page navigation for improved usability to data table.",
       <>
@@ -409,13 +410,12 @@ const achievements = [
       "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'.",
       <>
         <BoldBtn
-          title="Reduced delayed reviews by 50%,"
+          title="Reduced delayed reviews by 50%"
           fontWeight="medium"
-          customStyle="mr-1"
           link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
           refName="Connect to Blog"
         />
-        improving team efficiency and product stability.
+        , improving team efficiency and product stability.
       </>,
     ],
   },
@@ -444,7 +444,7 @@ const Bold9Contribution = () => {
       const timeoutId = setTimeout(() => {
         window.scrollTo({
           top: experiencePosition - 100,
-          behavior: "instant",
+          behavior: "smooth",
         });
       }, 1000);
 

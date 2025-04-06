@@ -34,10 +34,11 @@ export const Home = () => {
         and landing my first developer role. While working full-time as a
         software engineer, I earned a Bachelor’s degree in Computer Science from
         <BoldBtn
-          title="Korea National Open University (KNOU)."
+          title="Korea National Open University"
           link="https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG"
           customStyle="ml-1"
         />
+        .
       </p>
       <p>
         In my free time, I enjoy picking up new skills, like mobile app

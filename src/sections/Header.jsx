@@ -5,6 +5,7 @@ import Github from "../assets/images/sns/github.svg?react";
 import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
 import Instagram from "../assets/images/sns/instagram.svg?react";
 import Tistory from "../assets/images/sns/tistory.svg?react";
+import { useScrollY } from "../hooks/useScrollY";
 
 const moveToTargetSection = (e) => {
   const title = e.target.innerText.toLowerCase();
@@ -26,21 +27,6 @@ const moveToTargetSection = (e) => {
 
     window.scrollTo({ top: destination, behavior: "smooth" });
   }
-};
-
-const useScrollY = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = throttle(() => {
-      setScrollY(window.scrollY + window.innerHeight / 2);
-    }, 800);
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return scrollY;
 };
 
 export const Navigation = ({ isTop, customStyle, style }) => {

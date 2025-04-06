@@ -46,7 +46,7 @@ export const Home = () => {
         the Premier League and Bundesliga. Additionally, I’m always eager to
         learn new languages, such as German and Mandarin, and I’m fascinated by
         the idea of building and growing{" "}
-        <ImportantContent content="bootstrapped businesses" /> .
+        <ImportantContent content="bootstrapped businesses." />
       </p>
     </main>
   );

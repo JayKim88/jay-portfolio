@@ -56,7 +56,7 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 110,
             yPosition: -30,
-            growthRate: 0.13,
+            growthRate: 0.14,
           })}
           fill="rgba(138, 133, 32, 0.3)"
         />
@@ -66,7 +66,7 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 420,
             yPosition: -30,
-            growthRate: 0.15,
+            growthRate: 0.16,
           })}
           fill="rgba(137, 255, 78, 0.1)"
         />
@@ -76,7 +76,7 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 120,
             yPosition: 500,
-            growthRate: 0.12,
+            growthRate: 0.13,
           })}
           fill="rgba(35, 207, 8, 0.089)"
         />
@@ -89,7 +89,7 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.12,
             yRatio: 1.1,
           })}
-          fill="rgba(137, 255, 78, 0.1)"
+          fill="rgba(137, 255, 78, 0.24)"
         />
         <circle
           cx="170"
@@ -108,7 +108,7 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 120,
             yPosition: 4800,
-            growthRate: 0.12,
+            growthRate: 0.16,
             yRatio: 1.1,
           })}
           fill="rgba(85, 250, 35, 0.13)"
@@ -192,7 +192,8 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 250,
             yPosition: 740,
-            growthRate: 0.14,
+            growthRate: 0.15,
+            yRatio: 1,
           })}
           fill="rgba(106, 219, 94, 0.2)"
         />
@@ -202,7 +203,8 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
           r={dynamicRadius({
             initialRadius: 140,
             yPosition: 1100,
-            growthRate: 0.13,
+            growthRate: 0.14,
+            yRatio: 1.1,
           })}
           fill="rgba(162, 246, 53, 0.186)"
         />

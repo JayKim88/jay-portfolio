@@ -15,16 +15,18 @@ export const TheLastFootsteps = () => (
         refName="Connect to deployed site"
         refNameStyle="group-hover/ref:-translate-y-7"
       />
-      , you may have noticed a solitary tree 🌳.
+      , you may have noticed a solitary tree.
     </div>
-    <div>In the beginning, I was just that—one tree, standing alone. </div>
+    <div className="mt-2">
+      In the beginning, I was just that—one tree 🌳, standing alone.
+    </div>
     <div>But as I’ve cultivated my craft as a software engineer,</div>
-    <div>
+    <div className="font-medium">
       I’ve come to see both my career and life as an ever-growing forest,
     </div>
     <div>Each experience a new branch, each challenge a deepening root.</div>
-    <div className="mt-6 font-bold">
-      Hope you found joy in wandering through my forest.
+    <div className="mt-6 font-bold text-xl">
+      Hope you found joy in wandering through my forest ᨒ ོ.
     </div>
   </section>
 );

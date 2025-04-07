@@ -57,12 +57,12 @@ const client = [
   {
     name: "React Native",
     img: reactNative,
-    usage: 30,
+    usage: 40,
   },
   {
     name: "Tailwind CSS",
     img: tailwindCss,
-    usage: 40,
+    usage: 50,
   },
   {
     name: "Vite JS",

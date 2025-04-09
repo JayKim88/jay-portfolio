@@ -17,18 +17,31 @@ export const BoldBtn = ({
   refName,
   refNameStyle,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
     if (!videoUrl || !videoRef.current) return;
-    if (isHovered) {
+    if (isOpen) {
       videoRef.current.play();
       return;
     }
     videoRef.current.pause();
     videoRef.current.currentTime = 0;
-  }, [isHovered]);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const updateSizes = () => {
+      const isMobileOrTablet = window.innerWidth < 1024;
+      setIsMobileOrTablet(isMobileOrTablet);
+    };
+
+    window.addEventListener("resize", updateSizes);
+    updateSizes();
+
+    return () => window.removeEventListener("resize", updateSizes);
+  }, []);
 
   const clickable = !!onClick || !!link;
   const modalAvailable = !!imageUrls?.length || !!videoUrl || !!codeBlock;
@@ -53,11 +66,19 @@ export const BoldBtn = ({
         onClick?.();
       }}
       {...(modalAvailable && {
-        onMouseEnter: () => setIsHovered(true),
-        onMouseLeave: () => setIsHovered(false),
+        onMouseLeave: () => setIsOpen(false),
+        ...(!isMobileOrTablet && {
+          onMouseEnter: () => setIsOpen(true),
+        }),
       })}
     >
-      <div className="relative">
+      <div
+        className="relative"
+        {...(modalAvailable &&
+          isMobileOrTablet && {
+            onClick: () => setIsOpen((prev) => !prev),
+          })}
+      >
         <span
           className={`${
             fontWeight ? "font-" + fontWeight : "font-bold"
@@ -83,17 +104,19 @@ export const BoldBtn = ({
         )}
       </div>
       <div
-        className={`flex flex-col gap-y-4 absolute left-1/2 transform -translate-x-1/2 
+        className={`flex flex-col gap-y-4 absolute left-1/2 transform -translate-x-1/2 -translate-y-2
           mt-2 z-10 ${
             codeBlock ? "w-full max-w-[470px]" : "w-full max-w-[400px]"
           } max-h-[400px] overflow-y-auto text-main
           p-2 bg-white shadow-lg rounded-lg border-1 border-main transition-all 
-          duration-300 ${
-            isHovered
-              ? "opacity-100 visible scale-100"
-              : "opacity-0 invisible scale-95"
+          ${
+            isOpen
+              ? "opacity-100 visible scale-100 duration-300"
+              : "opacity-0 invisible scale-95 duration-100"
           }`}
-        onMouseLeave={() => setIsHovered(false)}
+        {...(!isMobileOrTablet && {
+          onMouseLeave: () => setIsOpen(false),
+        })}
       >
         {imageUrls?.map((v, index) => (
           <img

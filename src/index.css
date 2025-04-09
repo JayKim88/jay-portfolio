@@ -22,6 +22,8 @@
   --color-opacity2: #f5f5f589;
 
   --animate-buzz: buzz 1.8s ease-in-out infinite;
+  --animate-gradientX: gradientX 2s ease-in-out infinite;
+
   @keyframes buzz {
     0%,
     100% {
@@ -29,6 +31,16 @@
     }
     50% {
       transform: translateY(3px);
+    }
+  }
+
+  @keyframes gradientX {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
     }
   }
 }

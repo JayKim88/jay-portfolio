@@ -421,10 +421,7 @@ const achievements = [
   },
 ];
 
-const viewBtnStyle =
-  "fill-black w-6 h-6 group-hover/view:fill-yellow-300 transition-all duration-200";
-const viewBtnTextStyle =
-  "group-hover/view:text-yellow-300 transition-all duration-200";
+const viewBtnStyle = "fill-black w-6 h-6";
 
 const Bold9Contribution = () => {
   const ulRef = useRef();
@@ -497,11 +494,13 @@ const Bold9Contribution = () => {
         </ul>
       </div>
       <button
-        className={`absolute px-2 py-1 bg-amber-50 rounded-2xl font-medium flex 
-          justify-center items-center gap-x-1 min-w-[124px] ${
-            open ? "-bottom-8" : "-bottom-4"
-          } 
-          text-black cursor-pointer group/view`}
+        className={`absolute px-2 py-1 rounded-2xl font-medium flex 
+          justify-center items-center gap-x-1 min-w-[124px]
+          ${open ? "-bottom-8" : "-bottom-4"} 
+          text-black cursor-pointer transition-transform duration-300
+          bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500
+          bg-[length:200%_200%] animate-gradientX
+        `}
         style={{
           right: ulSizes.width / 2 - 62,
         }}
@@ -510,12 +509,12 @@ const Bold9Contribution = () => {
         {open ? (
           <>
             <EyeSlash className={viewBtnStyle} />
-            <span className={viewBtnTextStyle}>View Less</span>
+            <span>View Less</span>
           </>
         ) : (
           <>
             <Eye className={viewBtnStyle} />
-            <span className={viewBtnTextStyle}>View more</span>
+            <span>View more</span>
           </>
         )}
       </button>
@@ -715,7 +714,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "procedure",
+        title: "retrospect",
         url: "https://nomadkim880901.tistory.com/508",
       },
     ],

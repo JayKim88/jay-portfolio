@@ -8,6 +8,7 @@ import Tistory from "../assets/images/sns/tistory.svg?react";
 import { useScrollY } from "../hooks/useScrollY";
 import Copy from "../assets/images/copy.svg?react";
 import Check from "../assets/images/check.svg?react";
+import Pdf from "../assets/images/pdf.svg?react";
 
 const moveToTargetSection = (e) => {
   const title = e.target.innerText.toLowerCase();
@@ -187,6 +188,14 @@ export const Header = () => {
             {copied && <Check className="absolute -right-5 w-4" />}
           </button>
           <div>Timezone: Korea Standard Time — GMT+9</div>
+          <a
+            href="https://drive.google.com/file/d/1ToVVRhFqVbATIl947vfTyKJcrzJcoGm4/view?usp=sharing"
+            target="_blank"
+            className=" text-main font-semibold flex gap-x-1"
+          >
+            Download Resume
+            <Pdf className="w-4 fill-main" />
+          </a>
         </div>
       </section>
     </header>

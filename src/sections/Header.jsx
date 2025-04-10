@@ -191,7 +191,7 @@ export const Header = () => {
           <a
             href="https://drive.google.com/file/d/1ToVVRhFqVbATIl947vfTyKJcrzJcoGm4/view?usp=sharing"
             target="_blank"
-            className=" text-main font-semibold flex gap-x-1"
+            className=" text-main font-semibold flex gap-x-1 w-fit"
           >
             Download Resume
             <Pdf className="w-4 fill-main" />

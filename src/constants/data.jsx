@@ -246,7 +246,7 @@ const achievements = [
           imageUrls={[NotificationModal]}
         />
         supporting infinite scroll with clickable notifications linking to
-        task-specific pages
+        task-specific pages.
       </>,
       "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
     ],

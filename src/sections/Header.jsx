@@ -189,7 +189,7 @@ export const Header = () => {
           </button>
           <div>Timezone: Korea Standard Time — GMT+9</div>
           <a
-            href="https://drive.google.com/file/d/1ToVVRhFqVbATIl947vfTyKJcrzJcoGm4/view?usp=sharing"
+            href="https://drive.google.com/file/d/1FLX5D-oUW_qsD3zeufUIgUYzMp-fCsC7/view?usp=sharing"
             target="_blank"
             className=" text-main font-semibold flex gap-x-1 w-fit"
           >

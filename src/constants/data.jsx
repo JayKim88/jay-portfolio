@@ -17,6 +17,9 @@ import Center3d from "../assets/video/3d-center.mp4";
 import BarcodePrint1 from "../assets/images/refs/barcode-print_1.png";
 import BarcodePrint2 from "../assets/images/refs/barcode-print_2.png";
 import Mobile from "../assets/images/refs/mobile.png";
+import NotificationModal from "../assets/images/refs/notification-modal.png";
+import NotificationIosForeback from "../assets/images/refs/notification-ios-foreback.png";
+import NotificationAndroidDesktop from "../assets/images/refs/notification-android-desktop.png";
 
 const testCodeExample = `// example.test.tsx
 import React from 'react';
@@ -210,15 +213,8 @@ const achievements = [
     ],
   },
   {
-    title: "Platform-Specific Notification System",
+    title: "Cross-Platform Notification System",
     points: [
-      <>
-        Real-time push notifications using FCM for
-        <Important content=" desktop, mobile web (PWA), and mobile apps " />
-        (Flutter InAppWebView for ios and android).
-      </>,
-      "Developed a settings page for customizable notifications and a real-time notification modal with cursor-based infinite scrolling.",
-      "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
       <>
         Built a
         <BoldBtn
@@ -231,6 +227,28 @@ const achievements = [
         using self-signed certificates and Nginx to support Service Workers and
         PWA development.
       </>,
+      <>
+        <BoldBtn
+          title="Push notifications"
+          customStyle="mr-1"
+          fontWeight="medium"
+          imageUrls={[NotificationIosForeback, NotificationAndroidDesktop]}
+        />
+        using FCM for desktop, mobile web (PWA), and mobile apps (Flutter
+        InAppWebView for ios and android).
+      </>,
+      <>
+        Developed a settings page for customizable notifications and
+        <BoldBtn
+          title="real-time notification modal"
+          customStyle="mx-1"
+          fontWeight="medium"
+          imageUrls={[NotificationModal]}
+        />
+        supporting infinite scroll with clickable notifications linking to
+        task-specific pages
+      </>,
+      "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
     ],
   },
   {
@@ -389,7 +407,12 @@ const achievements = [
   {
     title: "SEO & Server-Side Rendering (SSR)",
     points: [
-      "Improved SEO with Next.js SSR, optimized metadata, and Open Graph tags for better ranking and previews.",
+      <>
+        Enhanced SEO by
+        <Important content=" migrating the landing page from React to Next.js " />
+        leveraging SSR, optimized metadata, and Open Graph tags for improved
+        visibility and rich link previews.
+      </>,
       "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.",
     ],
   },
@@ -437,16 +460,17 @@ const Bold9Contribution = () => {
 
     setOpen((prev) => !prev);
 
-    requestAnimationFrame(() => {
-      const timeoutId = setTimeout(() => {
-        window.scrollTo({
-          top: experiencePosition - 100,
-          behavior: "smooth",
-        });
-      }, 1000);
+    open &&
+      requestAnimationFrame(() => {
+        const timeoutId = setTimeout(() => {
+          window.scrollTo({
+            top: experiencePosition - 100,
+            behavior: "smooth",
+          });
+        }, 1000);
 
-      return () => clearTimeout(timeoutId);
-    });
+        return () => clearTimeout(timeoutId);
+      });
   };
 
   useEffect(() => {
@@ -473,7 +497,7 @@ const Bold9Contribution = () => {
       <div
         className="overflow-hidden transition-all duration-800 ease-in-out"
         style={{
-          maxHeight: open ? ulSizes.height : 400,
+          maxHeight: open ? ulSizes.height : 350,
         }}
       >
         <ul ref={ulRef} className={`flex flex-col gap-y-10`}>

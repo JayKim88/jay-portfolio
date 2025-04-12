@@ -103,7 +103,7 @@ export const Description = ({
                 >
                   {icons[v.type]}
                   <span
-                    className={`absolute bottom-0 opacity-0 translate-y-0 font-bold
+                    className={`absolute bottom-0 opacity-0 translate-y-0 font-bold whitespace-nowrap
                     text-xs transition-all duration-500 ease-in-out pointer-events-none 
                   group-hover/ref:opacity-100 group-hover/ref:-translate-y-7`}
                   >

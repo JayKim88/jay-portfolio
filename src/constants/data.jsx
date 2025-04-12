@@ -606,14 +606,23 @@ export const projects = [
       "A personal home training service designed to help users customize and track their fitness journey",
     points: [
       "Implemented Google Login/Logout with NextAuth for seamless authentication and onboarding.",
-      "Enabled users to customize workout routines by adjusting weight, reps, sets, and exercise order.",
+      <>
+        Enabled users to
+        <Important content=" customize workout routines " />
+        by adjusting weight, reps, sets, and exercise order.
+      </>,
       <>
         Designed a
-        <Important content=" Program process page " />
+        <Important content=" program-process page " />
         for tracking sets, modifying workouts, and auto-progressing to the next
         exercise.
       </>,
-      "Designed a Workout complete page to capture workout details, including sets, reps, time, satisfaction, and photos.",
+      <>
+        Designed a
+        <Important content=" workout-complete page " />
+        to capture workout details, including sets, reps, time, satisfaction,
+        and photos.
+      </>,
       <>
         Built an
         <Important content=" interactive dashboard with real-time charts " />
@@ -643,7 +652,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "procedure",
+        title: "work history",
         url: "https://jay-global.notion.site/Build-Your-Body-84e9378c4266402b851205d44a40be79?pvs=4",
       },
       {
@@ -662,8 +671,16 @@ export const projects = [
     points: [
       "Implemented responsive web design to ensure optimal user experience across desktop and mobile.",
       "Integrated Google login/logout functionality for seamless user authentication.",
-      "Developed an image upload and rendering feature using Firebase for efficient media management.",
-      "Built a real-time chat window for instant messaging and user interaction.",
+      <>
+        Developed an
+        <Important content=" image upload and rendering feature " />
+        using Firebase for efficient media management.
+      </>,
+      <>
+        Built a
+        <Important content=" real-time chat window " />
+        for instant messaging and user interaction.
+      </>,
     ],
     stacks: ["React", "Firebase", "Framer-motion"],
     refs: [
@@ -677,7 +694,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "procedure",
+        title: "work history",
         url: "https://nomadkim880901.tistory.com/category/Projects/JStargram",
       },
     ],
@@ -691,7 +708,12 @@ export const projects = [
     points: [
       "Designed and configured a user-friendly UI for a global COVID-19 data service.",
       "Integrated the disease.sh API to process and fetch COVID-19 data, including infections, recoveries, and deaths.",
-      "Developed interactive charts and maps for visualizing COVID-19 insights using Chart.js and Leaflet.js libraries.",
+      <>
+        Developed an
+        <Important content=" interactive map and charts " />
+        for visualizing COVID-19 insights using Chart.js and Leaflet.js
+        libraries.
+      </>,
     ],
     stacks: ["React", "Firebase", "Material UI"],
     refs: [
@@ -705,7 +727,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "procedure",
+        title: "work history",
         url: "https://nomadkim880901.tistory.com/category/Projects/Covid19%20Tracker",
       },
     ],
@@ -738,8 +760,8 @@ export const projects = [
       },
       {
         type: "note",
-        title: "retrospect",
-        url: "https://nomadkim880901.tistory.com/508",
+        title: "works",
+        url: "https://docs.google.com/presentation/d/14pNjfGywP11tC0fxRAGBPPGeuv9racICSAkgAVUFJmw/edit?usp=sharing",
       },
     ],
   },
@@ -751,14 +773,22 @@ export const projects = [
     summary:
       "A recipe-sharing service created in response to increased home cooking during COVID-19. Users can share family recipes, rate, and comment on others’ dishes, while the platform highlights popular recipes of the week, fostering a community around discovering and enjoying delicious meals",
     points: [
-      "Designed the database schema using DBDiagram.",
+      <>
+        Designed the
+        <Important content=" database schema " />
+        using DBDiagram.
+      </>,
       <>
         Implemented
         <Important content=" user-side APIs " />
         which includes login, logout, signup, email duplication check, account
         deletion, and user information updates.
       </>,
-      "Used JavaScript Crypto library for one-way encryption to prevent password leaks.",
+      <>
+        Applied
+        <Important content=" one-way encryption " />
+        by crypto.js to prevent password leaks.
+      </>,
       "Implemented JWT authentication by generating acccess and refresh tokens.",
       <>
         Deployed with
@@ -782,8 +812,8 @@ export const projects = [
       },
       {
         type: "note",
-        title: "retrospect",
-        url: "https://nomadkim880901.tistory.com/466",
+        title: "work history",
+        url: "https://nomadkim880901.tistory.com/category/BootCamp_Codestates/First%20Project?page=1",
       },
     ],
   },
@@ -797,8 +827,17 @@ export const studies = [
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/uber.png?alt=media&token=284fb2c9-8dd7-4071-845c-45b700d14f31",
     title: "Uber Mobile app",
     position: "Front End",
-    paragraph:
-      "Built a ride-hailing app that connects passengers with drivers for on-demand transportation and delivery services. Learned React Native with React Navigation to implement dynamic routing and used GCP APIs to build a map-based application, enhancing the user experience with real-time location tracking and navigation features",
+    paragraph: (
+      <>
+        Built a ride-hailing app that connects passengers with drivers for
+        on-demand transportation and delivery services.
+        <Important content=" Learned React Native " />
+        with React Navigation to implement
+        <Important content=" dynamic routing " />
+        and used GCP APIs to build a map-based application, enhancing the user
+        experience with real-time location tracking and navigation features
+      </>
+    ),
     stacks: [
       "React Native",
       "Redux",
@@ -820,8 +859,15 @@ export const studies = [
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/deliveroo.png?alt=media&token=752e4e9d-1571-4a4b-9b3b-377019b4b589",
     title: "Deliveroo Mobile app",
     position: "Full Stack",
-    paragraph:
-      "Built a food delivery and shopping app to learn React Native and React Navigation for dynamic routing. Gained experience with mobile styling using TailwindCSS and explored content management with SanityCMS, integrating it into the app for dynamic content updates",
+    paragraph: (
+      <>
+        Built a food delivery and shopping app to learn React Native and React
+        Navigation for dynamic routing. Gained experience with
+        <Important content=" mobile styling using TailwindCSS " /> and explored
+        content management with SanityCMS, integrating it into the app for
+        dynamic content updates
+      </>
+    ),
     stacks: [
       "React Native",
       "Redux",
@@ -843,8 +889,15 @@ export const studies = [
       "https://firebasestorage.googleapis.com/v0/b/jay-portfolio-487aa.appspot.com/o/aora.png?alt=media&token=41edff34-ded0-4928-9bcb-579c5fdac39a",
     title: "Aora Mobile app",
     position: "Full Stack",
-    paragraph:
-      "Built a video-sharing app using React Native with Expo Router and file-based routing. Learned to handle video data, styled the app with Mobile TailwindCSS, and gained experience implementing a backend server with Appwrite for user and data management",
+    paragraph: (
+      <>
+        Built a video-sharing app using React Native with
+        <Important content=" Expo Router and file-based routing" />. Learned to
+        handle video data, styled the app with
+        <Important content=" Mobile TailwindCSS" />, and gained experience
+        implementing a backend server with Appwrite for user and data management
+      </>
+    ),
     stacks: ["React Native", "NativeWind", "Appwrite", "Expo router"],
     refs: [
       {
@@ -861,7 +914,7 @@ export const education = [
     title: "Bachelor of Computer Science",
     contents: (
       <button
-        className="hover:text-yellow-300 text-start"
+        className="hover:text-yellow-300 text-start cursor-pointer"
         onClick={() =>
           window.open(
             "https://engknou.knou.ac.kr/engknou/5774/subview.do?epTicket=LOG",

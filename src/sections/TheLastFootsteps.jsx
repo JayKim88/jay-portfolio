@@ -4,7 +4,7 @@ import { BoldBtn } from "../components/BoldBtn";
 import treeImg from "../assets/images/tree.png";
 
 export const TheLastFootsteps = () => (
-  <section className="relative mb-[160px] flex flex-col gap-y-1 text-lg">
+  <section className="relative mb-[160px] flex flex-col gap-y-1 text-base sm:text-lg">
     <div>
       At the end of
       <BoldBtn
@@ -25,7 +25,7 @@ export const TheLastFootsteps = () => (
       I’ve come to see both my career and life as an ever-growing forest,
     </div>
     <div>Each experience a new branch, each challenge a deepening root.</div>
-    <div className="mt-6 font-bold text-xl">
+    <div className="mt-6 font-bold text-lg sm:text-xl">
       Hope you found joy in wandering through my forest ᨒ ོ.
     </div>
   </section>

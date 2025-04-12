@@ -750,7 +750,11 @@ export const projects = [
         with writing, saving, and editing functions.
       </>,
       "Added smooth loading effects to enhance page transition experience.",
-      "Ensured responsive design optimized for desktop and mobile.",
+      <>
+        Ensured
+        <Important content=" responsive design " />
+        optimized for desktop and mobile.
+      </>,
     ],
     stacks: ["React", "Typescript", "React Canvas Draw"],
     refs: [

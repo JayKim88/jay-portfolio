@@ -135,9 +135,9 @@ export const Header = () => {
           >
             Yongjae Kim
           </h1>
-          <h2 className="text-lg mt-14 mb-0 font-bold pl-2">
-            Fullstack Engineer{" "}
-            <span className="text-base">(Frontend-Focused)</span>
+          <h2 className="text-lg mt-14 mb-0 font-bold pl-2 flex items-center flex-wrap gap-x-1">
+            <div>Fullstack Engineer</div>
+            <div className="text-base mt-1">(Frontend-Focused)</div>
           </h2>
           <section className="sm:min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
             <div>Dedicated to crafting intuitive & user-centric</div>

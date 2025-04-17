@@ -20,6 +20,8 @@ import Mobile from "../assets/images/refs/mobile.png";
 import NotificationModal from "../assets/images/refs/notification-modal.png";
 import NotificationIosForeback from "../assets/images/refs/notification-ios-foreback.png";
 import NotificationAndroidDesktop from "../assets/images/refs/notification-android-desktop.png";
+import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.png";
+import { Important } from "../components/Important";
 
 const testCodeExample = `// example.test.tsx
 import React from 'react';
@@ -184,10 +186,6 @@ const checkVersionAndReload = () => {
 
 export { checkVersionAndReload };
 `;
-
-const Important = ({ content }) => (
-  <span className="text-main font-medium">{content}</span>
-);
 
 const achievements = [
   {
@@ -605,30 +603,53 @@ export const projects = [
     summary:
       "A personal home training service designed to help users customize and track their fitness journey",
     points: [
-      "Implemented Google Login/Logout with NextAuth for seamless authentication and onboarding.",
       <>
-        Enabled users to
-        <Important content=" customize workout routines " />
-        by adjusting weight, reps, sets, and exercise order.
+        Built an
+        <BoldBtn
+          title="interactive dashboard"
+          customStyle="mx-1"
+          imageUrls={[MyStatsDashboard]}
+        />
+        with real-time charts tracking user progress by week/month.
       </>,
       <>
         Designed a
-        <Important content=" program-process page " />
+        <BoldBtn
+          title="program-process page"
+          link="https://github.com/JayKim88/build-your-body?tab=readme-ov-file#4-program-process-page"
+          customStyle="mx-1"
+          refName="Connect to Github Repo"
+        />
         for tracking sets, modifying workouts, and auto-progressing to the next
         exercise.
       </>,
       <>
-        Designed a
-        <Important content=" workout-complete page " />
-        to capture workout details, including sets, reps, time, satisfaction,
-        and photos.
+        Integrated NextAuth for
+        <Important content=" Google OAuth authentication " />
+        and implemented
+        <Important content=" JWT-based session management " />
+        to ensure secure login, session persistence, and access to personalized
+        content.
       </>,
       <>
-        Built an
-        <Important content=" interactive dashboard with real-time charts " />
-        tracking user progress by week/month.
+        Built scalable and optimized
+        <BoldBtn
+          title="CRUD APIs with MongoDB"
+          link="https://github.com/JayKim88/build-your-body/tree/main/app/api"
+          customStyle="mx-1"
+          refName="Connect to Github Codes"
+        />
+        and aggregation pipelines to manage comprehensive fitness data,
+        implemented timezone-aware queries, and enabled secure image uploads via
+        signed URLs to Google Cloud Storage.
       </>,
-      "Created a community page for users to like and share workouts, fostering motivation.",
+      <>
+        Integrated
+        <Important content=" Zustand for client-side state management " />
+        with session and local storage to persist exercise cart and user
+        progress; designed modular stores to manage program details, workout
+        duration, and completion status.
+      </>,
     ],
     stacks: [
       "Typescript",
@@ -669,18 +690,34 @@ export const projects = [
     summary:
       "An interactive photo-sharing platform that connects users through shared images and conversations",
     points: [
-      "Implemented responsive web design to ensure optimal user experience across desktop and mobile.",
-      "Integrated Google login/logout functionality for seamless user authentication.",
       <>
-        Developed an
-        <Important content=" image upload and rendering feature " />
-        using Firebase for efficient media management.
+        Applied
+        <BoldBtn
+          title="responsive web design"
+          customStyle="mx-1"
+          fontWeight="medium"
+          imageUrls={[
+            "https://user-images.githubusercontent.com/55373668/114337773-b63b5300-9b8c-11eb-912c-afa5537b3be4.gif",
+          ]}
+        />
+        to ensure optimal user experience across desktop and mobile.
       </>,
       <>
-        Built a
-        <Important content=" real-time chat window " />
-        for instant messaging and user interaction.
+        Developed backend logic using
+        <Important content=" Firebase services " />
+        including Firestore, Cloud Storage, and Authentication.
       </>,
+      <>
+        Built a real-time chat feature using
+        <Important content=" Firestore’s snapshot listeners " />
+        to enable instant messaging.
+      </>,
+      <>
+        Integrated
+        <Important content=" Google login/logout " />
+        for seamless and secure user authentication.
+      </>,
+      "Implemented secure image upload with progress tracking and server-side timestamping for efficient media management.",
     ],
     stacks: ["React", "Firebase", "Framer-motion"],
     refs: [
@@ -741,20 +778,19 @@ export const projects = [
       "A digital picture diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling",
     points: [
       <>
-        <Important content="Developed key pages" />: intro, signup, manual,
-        write-diary, and creator page.
+        <Important content="Designed and Developed key pages" />: intro, signup,
+        manual, write-diary, and creator page.
       </>,
-      "Integrated social logins (Google and Kakao) for seamless access.",
       <>
         <Important content="Implemented drawing board " />
         with writing, saving, and editing functions.
       </>,
-      "Added smooth loading effects to enhance page transition experience.",
       <>
-        Ensured
-        <Important content=" responsive design " />
+        <Important content="Ensured responsive design " />
         optimized for desktop and mobile.
       </>,
+      "Integrated social logins (Google and Kakao) for seamless access.",
+      "Added smooth loading effects to enhance page transition experience.",
     ],
     stacks: ["React", "Typescript", "React Canvas Draw"],
     refs: [
@@ -779,25 +815,43 @@ export const projects = [
     points: [
       <>
         Designed the
-        <Important content=" database schema " />
+        <BoldBtn
+          title="database schema"
+          link="https://dbdiagram.io/d/homemade-601bc54e80d742080a3925bd"
+          customStyle="mx-1"
+          refName="Connect to DBDiagram"
+        />
         using DBDiagram.
       </>,
       <>
-        Implemented
-        <Important content=" user-side APIs " />
-        which includes login, logout, signup, email duplication check, account
-        deletion, and user information updates.
+        Developed
+        <BoldBtn
+          title="RESTful APIs"
+          link="https://github.com/codestates/im25Homemade-server/blob/dev/routes/users.js"
+          customStyle="mx-1"
+          refName="Connect to Github Repo"
+        />
+        for user authentication and account management, including login, logout,
+        signup, email duplication checks, account deletion, and profile updates.
       </>,
       <>
         Applied
         <Important content=" one-way encryption " />
         by crypto.js to prevent password leaks.
       </>,
-      "Implemented JWT authentication by generating acccess and refresh tokens.",
       <>
-        Deployed with
-        <Important content=" AWS services (EC2, RDS, S3, Route53, ELB, CM) " />
-        for HTTPS hosting.
+        Implemented
+        <Important content=" JWT-based authentication " />
+        by generating and managing access and refresh tokens
+      </>,
+      <>
+        <BoldBtn
+          title="Deployed with AWS services "
+          link="https://nomadkim880901.tistory.com/entry/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-https-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0"
+          customStyle="mr-1"
+          refName="Connect to Blog"
+        />
+        (EC2, RDS, S3, Route53, ELB, CM) for HTTPS hosting.
       </>,
     ],
     stacks: [

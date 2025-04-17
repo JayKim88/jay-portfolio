@@ -136,13 +136,14 @@ export const Header = () => {
             Yongjae Kim
           </h1>
           <h2 className="text-lg mt-14 mb-0 font-bold pl-2">
-            Frontend Engineer
+            Fullstack Engineer{" "}
+            <span className="text-base">(Frontend-Focused)</span>
           </h2>
           <section className="sm:min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
-            <div>Experienced software engineer</div>
-            <div>Dedicated to crafting user-centric services,</div>
-            <div>Prioritising seamless UX and </div>
-            <div>Intuitive interactions</div>
+            <div>Dedicated to crafting intuitive & user-centric</div>
+            <div>Experiences with clean & maintainable code.</div>
+            <div>Passionate about building seamless UX</div>
+            <div>From design to deployment.</div>
           </section>
         </section>
         {showNavigaion && (

@@ -2,17 +2,18 @@ import React from "react";
 
 import Profile from "../assets/images/profile.png";
 import { BoldBtn } from "../components/BoldBtn";
+import { Important } from "../components/Important";
 
 export const Home = () => {
   return (
     <main className="home flex flex-col gap-y-12 justify-start py-24 [&>p]:leading-7 text-opacity1 pr-4">
       <p>
-        I'm a <ImportantContent content="user-centric software engineer" />{" "}
-        passionate about crafting intuitive and seamless user experiences. I
-        prioritize clean and efficient UI/UX, minimizing unnecessary complexity
-        while incorporating interactive elements to enhance engagement. At the
-        code level, I ensure reliability through unit, integration, and snapshot
-        UI testing, building robust and scalable applications.
+        I’m a <Important content="user-centric software engineer" /> passionate
+        about crafting intuitive and seamless user experiences. On the client
+        side, I focus on building clean, efficient, and interactive UIs that
+        minimize complexity and enhance engagement. On the server side, I have
+        experience with building RESTful APIs and handling backend logic using
+        Node.js and Next.js, supporting end-to-end functionality.
       </p>
       <p>
         Currently, I’m a Frontend Engineer at
@@ -24,7 +25,21 @@ export const Home = () => {
         , developing user-friendly interfaces to optimize e-commerce fulfillment
         operations. My contribution includes enhancing UI performance,
         visualizing data-driven dashboard, and implementing intuitive and
-        easy-to-use features to streamline logistics workflows.
+        easy-to-use features to streamline logistics workflows. I also ensured
+        application reliability by writing unit, integration, and snapshot UI
+        tests—delivering robust, scalable software from design to deployment.
+      </p>
+      <p>
+        At Bold9, I work in an
+        <Important content=" agile and bottom-up environment " />
+        where developers actively choose tasks and take full ownership of it.
+        This
+        <Important content=" issue-based and task-driven workflow " />
+        empowers me to work independently while managing my own schedule. At the
+        same time, close collaboration with planners, designers, and backend
+        developers through open discussions and peer code reviews has
+        strengthened my ability to work cooperatively and contribute to higher
+        team coding standards.
       </p>
       <p>
         I began my career in overseas sales, where I developed strong
@@ -40,19 +55,6 @@ export const Home = () => {
         />
         .
       </p>
-      <p>
-        In my free time, I enjoy picking up new skills, like mobile app
-        development, which I’ve recently started diving into. I’m also a big fan
-        of sports, especially MMA and football, with a particular interest in
-        the Premier League and Bundesliga. Additionally, I’m always eager to
-        learn new languages, such as German and Mandarin, and I’m fascinated by
-        the idea of building and growing{" "}
-        <ImportantContent content="bootstrapped businesses." />
-      </p>
     </main>
   );
 };
-
-const ImportantContent = ({ content }) => (
-  <span className="text-main font-medium">{content}</span>
-);

@@ -634,7 +634,7 @@ export const projects = [
       <>
         Built scalable and optimized
         <BoldBtn
-          title="CRUD APIs with MongoDB"
+          title="CRUD APIs using MongoDB"
           link="https://github.com/JayKim88/build-your-body/tree/main/app/api"
           customStyle="mx-1"
           refName="Connect to Github Codes"

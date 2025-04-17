@@ -27,13 +27,13 @@ export const Home = () => {
         visualizing data-driven dashboard, and implementing intuitive and
         easy-to-use features to streamline logistics workflows. I also ensured
         application reliability by writing unit, integration, and snapshot UI
-        tests—delivering robust, scalable software from design to deployment.
+        tests—delivering robust and scalable software.
       </p>
       <p>
         At Bold9, I work in an
         <Important content=" agile and bottom-up environment " />
-        where developers actively choose tasks and take full ownership of it.
-        This
+        where developers actively choose tasks and take full ownership from
+        start to finish. This
         <Important content=" issue-based and task-driven workflow " />
         empowers me to work independently while managing my own schedule. At the
         same time, close collaboration with planners, designers, and backend

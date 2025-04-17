@@ -829,7 +829,7 @@ export const projects = [
           title="RESTful APIs"
           link="https://github.com/codestates/im25Homemade-server/blob/dev/routes/users.js"
           customStyle="mx-1"
-          refName="Connect to Github Repo"
+          refName="Connect to Github Codes"
         />
         for user authentication and account management, including login, logout,
         signup, email duplication checks, account deletion, and profile updates.

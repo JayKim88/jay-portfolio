@@ -143,7 +143,7 @@ export const Header = () => {
             <div>Dedicated to crafting intuitive & user-centric</div>
             <div>Experiences with clean & maintainable code.</div>
             <div>Passionate about building seamless UX</div>
-            <div>From design to deployment.</div>
+            <div>From feature planning to deployment.</div>
           </section>
         </section>
         {showNavigaion && (

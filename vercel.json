@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "host": "jaykim.dev" }],
+      "destination": "https://www.jaykim.dev/$1",
+      "permanent": true
+    }
+  ]
+}

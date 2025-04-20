@@ -136,8 +136,8 @@ export const Header = () => {
             Yongjae Kim
           </h1>
           <h2 className="text-lg mt-14 mb-0 font-bold pl-2 flex items-center flex-wrap gap-x-1">
-            <div>Fullstack Engineer</div>
-            <div className="text-base mt-[2px]">(Frontend-Focused)</div>
+            <div>Frontend Engineer</div>
+            <div className="text-base">aiming for Fullstack</div>
           </h2>
           <section className="sm:min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
             <div>Dedicated to crafting intuitive & user-centric</div>

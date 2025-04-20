@@ -584,7 +584,7 @@ export const experiences = [
         as key partners.
       </>,
       "Collaborated with R&D, quality management, and legal teams to resolve technical issues, revise OEM contracts, and support product development.",
-      "Attended global medical exhibitions (RSNA, ECR, ARAB HEALTH) to gather market insights and drive product strategy.",
+      "Gathered market insights and drove product sales strategies by Attending global medical exhibitions (RSNA, ECR, ARAB HEALTH).",
       <>
         Developed
         <Important content=" problem-solving and technical communication skills" />

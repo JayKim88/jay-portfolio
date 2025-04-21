@@ -253,22 +253,20 @@ const achievements = [
     title: "Testing & Code Reliability",
     points: [
       <>
-        Increased test coverage
-        <Important content=" from 10% to 70% " />
-        with 33 unit tests for core components and
-        <BoldBtn
-          title="54 integration tests"
-          codeBlock={testCodeExample}
-          fontWeight="medium"
-          customStyle="mx-1"
-        />
-        across the entire application by Vitest and MSW, improving app
-        stability.
+        <Important content="Increased test coverage from 10% to 70% " />
+        with 33 unit tests for core components and 54 integration tests across
+        the entire application by Vitest and MSW, improving app stability.
       </>,
-      "Implemented snapshot testing and automated UI testing with Storybook & Chromatic to prevent UI regressions.",
       <>
-        Optimized GitHub workflow with parallel testing & module caching,
-        cutting test time by <Important content="50% (15m → 6m)" />.
+        <Important content="Implemented snapshot testing " />
+        and
+        <Important content=" automated UI testing " />
+        with Storybook & Chromatic to prevent UI regressions.
+      </>,
+      <>
+        <Important content="Optimized GitHub workflow " />
+        with parallel testing & module caching, cutting test time by{" "}
+        <Important content="50% (15m → 6m)" />.
       </>,
       <>
         Established a

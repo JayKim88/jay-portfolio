@@ -38,10 +38,11 @@ export const Description = ({
   return (
     <li
       key={title}
-      className={`relative flex gap-x-6 transition-all delay-50 duration-200 
+      className={`relative flex gap-x-6 transition-all delay-50 duration-200
       ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-       lg:hover:scale-x-108 lg:hover:scale-y-106 group transform-gpu max-w-[660px]
-      ${details && "cursor-pointer"} ${isNotHovered && "lg:opacity-50"}`}
+       lg:hover:scale-x-108 lg:hover:scale-y-105 group transform-gpu max-w-[660px] 
+       p-4 lg:hover:bg-[#273b3b] ${details && "cursor-pointer"} 
+       ${isNotHovered && "lg:opacity-50"}`}
       onMouseOver={() => isDesktop && onHover?.(title)}
       onMouseOut={() => isDesktop && onHover?.("")}
     >

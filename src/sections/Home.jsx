@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <main className="home flex flex-col gap-y-12 justify-start py-24 [&>p]:leading-7 text-opacity1 pr-4">
       <p>
-        I’m a <Important content="user-centric software engineer" /> passionate
+        I’m an <Important content="user-centric software engineer" /> passionate
         about crafting intuitive and seamless user experiences. On the client
         side, I focus on building clean, efficient, and interactive UIs that
         minimize complexity and enhance engagement. On the server side, I have

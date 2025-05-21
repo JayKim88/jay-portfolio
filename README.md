@@ -1,7 +1,35 @@
-# JPortfolio
-Jay's Portfolio Website
+# JPortfolio V2
 
-## Required Pages 
+<i>April 2025, Renewaled.</i>
+<i>Tech stacks used - React, TailwindCSS, Vite, Vercel</i>
+
+👉 <strong>[jaykim.dev](https://www.jaykim.dev/)</strong>
+
+<br>
+
+## Sections
+
+- Intro
+- Skills
+- Experiences
+- Projects
+- Educations
+- Studies
+
+<br>
+<br>
+
+# JPortfolio V1
+
+<i>April 2021, Made.</i>
+<i>Tech stacks used - React, Styled-Components, Framer-Motion, Firebase</i>
+
+<strong>👉 https://jay-portfolio-487aa.web.app/</strong>
+
+<br>
+
+## Sections
+
 - Home
 - About(includes pairs comments about me)
   - Introduction
@@ -12,11 +40,8 @@ Jay's Portfolio Website
 - Works
 - Contact
 
-## Essentials
-- Implement contents of resume visually using Chart, Image and Animation 
-- Supplement addtional contents not in resume
-
 ## Overview Design(UI)
+
 <details>
 <summary>Main & Nav</summary>
 <img width="80%" src="https://user-images.githubusercontent.com/55373668/119842932-0fdfbd00-bf42-11eb-9fc8-74e385897fcb.png"/>

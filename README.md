@@ -1,11 +1,14 @@
 # JPortfolio V2
 
 <i>April 2025, Renewaled.</i>
-<i>Tech stacks used - React, TailwindCSS, Vite, Vercel</i>
 
 👉 <strong>[jaykim.dev](https://www.jaykim.dev/)</strong>
 
-<br>
+<a href="https://www.jaykim.dev/" target="_blank" rel="noopener noreferrer">
+  <img width="80%" src="https://github.com/user-attachments/assets/f2faede5-f06b-40ed-ba7d-440f1bfb4423"/>
+</a>
+
+<i>Tech stacks used - React, TailwindCSS, Vite, Vercel</i>
 
 ## Sections
 
@@ -18,13 +21,19 @@
 
 <br>
 <br>
+<br>
 
 # JPortfolio V1
 
 <i>April 2021, Made.</i>
-<i>Tech stacks used - React, Styled-Components, Framer-Motion, Firebase</i>
 
 <strong>👉 https://jay-portfolio-487aa.web.app/</strong>
+
+<a href="https://jay-portfolio-487aa.web.app/" target="_blank" rel="noopener noreferrer">
+  <img width="80%" src="https://github.com/user-attachments/assets/1ce01f82-2c3e-4b4a-9730-8b52cd5f68dc"/>
+</a>
+
+<i>Tech stacks used - React, Styled-Components, Framer-Motion, Firebase</i>
 
 <br>
 

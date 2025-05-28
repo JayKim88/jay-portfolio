@@ -515,6 +515,22 @@ const achievements = [
           </>
         )}
       </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "ARIA 속성을 적용하여 접근성 개선 "
+                  : "Enhanced accessibility and UX by applying ARIA attributes "
+              }
+            />
+            {isKo
+              ? "및 accesskey 를 통해 플랫폼 전반의 키보드 사용성을 개선했습니다."
+              : "and improving keyboard navigation across the platform by accesskey."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
   {

@@ -1,5 +1,6 @@
 import React from "react";
 import { Tags } from "../components/Tags";
+import { useTranslation } from "react-i18next";
 
 import Figma from "../assets/images/figma.svg?react";
 import Deploy from "../assets/images/rocket.svg?react";
@@ -32,8 +33,10 @@ export const Description = ({
   onHover,
   hoveredItem,
 }) => {
+  const { t, i18n } = useTranslation();
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
   const isDesktop = window.innerWidth >= 1024;
+  const isKo = i18n.language === "ko";
 
   return (
     <li
@@ -50,7 +53,7 @@ export const Description = ({
         {image ? (
           <img src={image} className="rounded-3xl" />
         ) : (
-          <span className="text-xs text-opacity2 font-medium">{period}</span>
+          <span className="text-xs text-opacity2 font-medium">{t(period)}</span>
         )}
       </section>
       <section className="flex-1 flex flex-col gap-y-4">
@@ -60,19 +63,19 @@ export const Description = ({
               className="px-2 py-1 bg-yellow-300 rounded-full text-xs 
             font-medium text-black mr-0.5"
             >
-              {type}
+              {t(type)}
             </span>
           )}
           <Highlight content={title} isImportant />
           {(company || position) && (
             <span className="text-sm font-medium pt-0.5">
-              · {company || position}
+              · {t(company || position)}
             </span>
           )}
         </section>
         {summary && (
           <div className={`text-[14.6px] leading-6 text-opacity1`}>
-            {summary}
+            {t(summary)}
           </div>
         )}
         <section className={`mt-1 mb-2 text-[14.6px] text-opacity1`}>
@@ -82,7 +85,7 @@ export const Description = ({
             <ul className="pl-6 gap-y-0.5 flex flex-col">
               {points.map((p, index) => (
                 <li key={index} className="list-disc leading-6">
-                  {p}
+                  {typeof p === "string" ? t(p) : p}
                 </li>
               ))}
             </ul>
@@ -108,7 +111,9 @@ export const Description = ({
                     text-xs transition-all duration-500 ease-in-out pointer-events-none 
                   group-hover/ref:opacity-100 group-hover/ref:-translate-y-7`}
                   >
-                    {refName[0].toUpperCase() + refName.slice(1)}
+                    {isKo
+                      ? t(refName)
+                      : refName[0].toUpperCase() + refName.slice(1)}
                   </span>
                 </li>
               );

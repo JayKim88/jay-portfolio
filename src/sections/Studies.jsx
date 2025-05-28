@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { Title } from "../components/Title";
 import { Tags } from "../components/Tags";
@@ -36,6 +37,7 @@ const Study = ({
     role,
   },
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex gap-6">
       <section className="w-40 flex items-start">
@@ -50,7 +52,7 @@ const Study = ({
             <strong className="text-lg font-medium">{title}</strong>
             <span className="text-base font-medium">- {position}</span>
           </div>
-          <span className="flex items-center">{period}</span>
+          <span className="flex items-center">{t(period)}</span>
         </section>
         <div>{purpose}</div>
         <section>

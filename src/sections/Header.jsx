@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { throttle } from "lodash";
+import { useTranslation } from "react-i18next";
 
 import Github from "../assets/images/sns/github.svg?react";
 import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
@@ -10,8 +11,8 @@ import Copy from "../assets/images/copy.svg?react";
 import Check from "../assets/images/check.svg?react";
 import Pdf from "../assets/images/pdf.svg?react";
 
-const moveToTargetSection = (e) => {
-  const title = e.target.innerText.toLowerCase();
+const moveToTargetSection = (v) => {
+  const title = v.toLowerCase();
   const targetSection = document.getElementsByClassName(title)[0];
 
   if (targetSection) {
@@ -112,6 +113,7 @@ export const Navigation = ({ isTop, customStyle, style }) => {
 };
 
 export const Header = () => {
+  const { t, i18n } = useTranslation();
   const [copied, setCopied] = useState(false);
   const showNavigaion = window.innerWidth >= 1024;
   const email = "yongjae.kim.dev@gmail.com";
@@ -121,6 +123,8 @@ export const Header = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 1200); // Reset copied state
   };
+
+  const isKo = i18n.language === "ko";
 
   return (
     <header
@@ -133,17 +137,20 @@ export const Header = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-[62px] font-medium cursor-pointer leading-[60px]"
           >
-            Yongjae Kim
+            {t("Yongjae Kim")}
           </h1>
           <h2 className="text-lg mt-14 mb-0 font-bold pl-2 flex items-center flex-wrap gap-x-1">
-            <div>Frontend Engineer</div>
-            <div className="text-base">aiming for Fullstack</div>
+            <div>
+              {t("Frontend Engineer")}
+              {isKo ? "," : ""}{" "}
+            </div>
+            <div className="text-base">{t("aiming for Fullstack")}</div>
           </h2>
           <section className="sm:min-w-[330px] mt-4 text-opacity1 flex flex-col gap-y-0.5 ml-2">
-            <div>Dedicated to crafting intuitive & user-centric</div>
-            <div>Experiences with clean & maintainable code.</div>
-            <div>Passionate about building seamless UX</div>
-            <div>From feature planning to deployment.</div>
+            <div>{t("Dedicated to crafting intuitive & user-centric")}</div>
+            <div>{t("Experiences with clean & maintainable code.")}</div>
+            <div>{t("Passionate about building seamless UX")}</div>
+            <div>{t("From feature planning to deployment.")}</div>
           </section>
         </section>
         {showNavigaion && (
@@ -162,12 +169,12 @@ export const Header = () => {
               {icon}
               <span
                 className={`absolute bottom-0 opacity-0 translate-y-0 
-        font-bold text-xs transition-all duration-500 ease-in-out 
+        font-bold text-xs transition-all duration-500 ease-in-out w-[60px]
         pointer-events-none peer-hover:opacity-100 peer-hover:-translate-y-9 ${
           title === "Blog" && "left-1"
         }`}
               >
-                {title}
+                {t(title)}
               </span>
             </a>
           ))}
@@ -180,7 +187,7 @@ export const Header = () => {
             }`}
           >
             <span className="flex justify-start gap-x-1">
-              <span>Email: </span>
+              <span>{t("Email")}: </span>
               <span>{email}</span>
             </span>
             {!copied && (
@@ -188,13 +195,13 @@ export const Header = () => {
             )}
             {copied && <Check className="absolute -right-5 w-4" />}
           </button>
-          <div>Timezone: Korea Standard Time — GMT+9</div>
+          <div>{t("Timezone: Korea Standard Time — GMT+9")}</div>
           <a
             href="https://drive.google.com/file/d/1FLX5D-oUW_qsD3zeufUIgUYzMp-fCsC7/view?usp=sharing"
             target="_blank"
             className=" text-main font-semibold flex gap-x-1 w-fit"
           >
-            Download Resume
+            {t("Download Resume")}
             <Pdf className="w-4 fill-main" />
           </a>
         </div>
@@ -204,6 +211,7 @@ export const Header = () => {
 };
 
 const NavItem = ({ title, isShowing, customStyle }) => {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -224,13 +232,13 @@ const NavItem = ({ title, isShowing, customStyle }) => {
         🐝
       </div>
       <div
-        onClick={moveToTargetSection}
+        onClick={() => moveToTargetSection(title)}
         className={`text-sm cursor-pointer transition-all duration-200 translate-x-0           
           before:mr-1 before:duration-200 hover:text-yellow-300
           ${show && "text-yellow-300 font-extrabold"}
         `}
       >
-        {title}
+        {t(title)}
       </div>
     </li>
   );

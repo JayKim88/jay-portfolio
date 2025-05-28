@@ -3,6 +3,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 import { both, client, server } from "../constants/stacks";
+import { useTranslation } from "react-i18next";
 
 export const Stacks = () => {
   return (
@@ -15,9 +16,11 @@ export const Stacks = () => {
 };
 
 const StacksElements = ({ title, data }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-4">
-      <div className="text-start text-2xl">{title}</div>
+      <div className="text-start text-2xl">{t(title)}</div>
       <div className="flex flex-wrap gap-4">
         {data.map(({ name, img, usage }) => (
           <div key={name} className="w-24 h-24 group">
@@ -36,7 +39,7 @@ const StacksElements = ({ title, data }) => {
                 className={`rotate-y-180 flex items-center justify-center flex-col ${commonStackStyle}`}
               >
                 <div className="absolute top-1 text-xs font-bold tracking-tighter">
-                  Usage
+                  {t("Usage")}
                 </div>
                 <div className="w-14 h-14 flex items-center justify-center mt-4">
                   <CircularProgressbar

@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Highlight = ({ isImportant, content, customStyle }) => {
+  const { t } = useTranslation();
   const isMobileOrTablet = window.innerWidth < 1024;
   const isDeliveroo = content === "Deliveroo Mobile app";
 
@@ -15,7 +17,7 @@ export const Highlight = ({ isImportant, content, customStyle }) => {
           isMobileOrTablet ? fixedHighlightStyle : dynamicHighlightStyle
         }`}
       ></span>
-      {content}
+      {t(content)}
     </span>
   );
 };

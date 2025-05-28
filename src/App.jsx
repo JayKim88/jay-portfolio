@@ -12,6 +12,7 @@ import { Studies } from "./sections/Studies";
 import { experiences } from "./constants/data";
 import AudioPlayer from "./components/AudioPlayer";
 import { useScrollY } from "./hooks/useScrollY";
+import { Language } from "./components/Language";
 
 const dynamicRadius = ({
   initialRadius,
@@ -309,6 +310,7 @@ function App() {
         )}
         <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} />
         <Header />
+        <Language />
         <AudioPlayer />
         <main className="flex flex-col gap-40 max-w-[700px]">
           <Home />

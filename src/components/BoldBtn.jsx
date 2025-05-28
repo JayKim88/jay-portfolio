@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useTranslation } from "react-i18next";
 
 import LinkIcon from "../assets/images/link.svg?react";
 import MoreIcon from "../assets/images/more.svg?react";
@@ -17,9 +18,12 @@ export const BoldBtn = ({
   refName,
   refNameStyle,
 }) => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const videoRef = useRef(null);
+
+  const isKo = i18n.language === "ko";
 
   useEffect(() => {
     if (!videoUrl || !videoRef.current) return;
@@ -99,7 +103,10 @@ export const BoldBtn = ({
                   group-hover/ref:opacity-100 min-w-max bg-main py-0.5 px-1.5 rounded-2xl 
                   group-hover/ref:-translate-y-6 group-hover/ref:text-black ${refNameStyle}`}
           >
-            {"👇 " + refName?.[0].toUpperCase() + refName?.slice(1)}
+            👇{" "}
+            {+isKo
+              ? t(refName)
+              : refName?.[0].toUpperCase() + refName?.slice(1)}
           </span>
         )}
       </div>

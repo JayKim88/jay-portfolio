@@ -16,7 +16,7 @@
   "LinkedIn": "링크드인",
   "Blog": "블로그",
   "Key Achievements & Contributions": "주요 성과 및 기여 내용",
-  "Dashboard Development & Performance Optimization": "대시보드 개발 및 성능 최적화",
+  "Dashboard Development": "대시보드 개발",
   "Customized dashboard with real-time visualized analytics using Recharts library.": "Recharts 라이브러리를 활용해 실시간으로 시각화된 분석을 제공하는 맞춤형 대시보드를 개발했습니다.",
   "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.": "모바일 앱에 특정 시간 동안 알림을 차단하는 ‘방해 금지’ 모드를 추가했습니다.",
   "Cross-Platform Notification System": "크로스 플랫폼 알림 시스템",
@@ -90,5 +90,6 @@
   "Jan - Feb 2021": "2021.1 - 2021.2",
   "Mar 2022 - Aug 2024": "2022.3 - 2024.8",
   "Oct 2020 - Mar 2021": "2020.10 - 2021.3",
-  "Mar 2010 - Feb 2018": "2010.3 - 2018.2"
+  "Mar 2010 - Feb 2018": "2010.3 - 2018.2",
+  "Performance Optimization & UX Enhancements": "성능 최적화 및 사용자 경험 개선"
 }

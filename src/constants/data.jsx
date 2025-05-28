@@ -197,7 +197,7 @@ export const TransDescription = ({ children }) => {
 
 const achievements = [
   {
-    title: "Dashboard Development & Performance Optimization",
+    title: "Dashboard Development",
     points: [
       "Customized dashboard with real-time visualized analytics using Recharts library.",
       <TransDescription>
@@ -430,6 +430,94 @@ const achievements = [
     ],
   },
   {
+    title: "Performance Optimization & UX Enhancements",
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "useMemo 와 useCallback "
+                  : "Utilized useMemo and useCallback hooks "
+              }
+            />
+            {isKo
+              ? "훅을 활용하여 불필요한 리렌더링을 줄이고 성능을 최적화했습니다."
+              : "to reduce unnecessary re-renders and optimize performance."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo ? "React.lazy 와 Suspense " : "React.lazy and Suspense "
+              }
+            />
+            {isKo
+              ? "를 적용하여 필요한 시점에 컴포넌트를 동적으로 import 하고, 초기 로딩 시간을 단축 및 성능을 최적화했습니다."
+              : "were applied to dynamically import components as needed, reducing initial load time and optimizing performance."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "Apollo Client의 " : "Integrated Apollo Client’s "}
+            <BoldBtn
+              title={"Automatic Persisted Queries (APQ)"}
+              link="https://jay-global.notion.site/Automatic-Persisted-Queries-Apply-APQ-for-query-efficacy-201e5ccd65b18051a0beee260b4c66ca?pvs=4"
+              fontWeight="medium"
+              customStyle="mr-1"
+              refName="Connect to Notion"
+            />
+            {isKo
+              ? "를 도입하여 요청 페이로드 크기를 줄이고 네트워크 효율성을 개선했습니다."
+              : "to reduce payload size and improve network efficiency."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <BoldBtn
+              title={
+                isKo
+                  ? "폰트 로딩 성능 개선"
+                  : "Improved font loading performance"
+              }
+              link="https://jay-global.notion.site/Render-display-with-animation-once-font-is-ready-201e5ccd65b18059a8c6dc82ac12fe40?pvs=4"
+              fontWeight="medium"
+              customStyle="mr-1"
+              refName="Connect to Notion"
+            />
+            {isKo
+              ? "을 위해 swap(기본 폰트→서비스 폰트)에서 fallback(서비스 폰트만) 방식으로 변경하여, 폰트 깜박임을 최소화하고 사용자 경험을 개선했습니다."
+              : "across the site by switching from swap (default-to-service font) to fallback (service font only) approach, minimizing font flickering and enhancing UX."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "모달과 페이지 렌더링 순서를 최적화하여 "
+                  : "Reduced layout shifts "
+              }
+            />
+            {isKo
+              ? "레이아웃 시프트를 줄이고, 더 매끄럽고 안정적으로 화면을 보여주도록 개선했습니다."
+              : "by optimizing modal and page rendering sequences, ensuring smoother and more stable content presentation."}
+          </>
+        )}
+      </TransDescription>,
+    ],
+  },
+  {
     title: "Security & Authentication Enhancements",
     points: [
       <TransDescription>
@@ -454,6 +542,7 @@ const achievements = [
       "Login session extension feature to reduce unintended logouts and enhance user experience.",
     ],
   },
+
   {
     title: "Product Image Upload & Editing",
     points: [

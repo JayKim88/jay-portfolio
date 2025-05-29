@@ -24,11 +24,11 @@ export const Language = () => {
     <button
       className={`z-20 fixed bottom-8 lg:bottom-16 right-68 lg:right-74 flex opacity-40 transition-all
       duration-500 ease-in-out flex-col gap-y-[6px] h-18 w-18 text-black font-medium text-sm
-     bg-gray-100 p-[10px] rounded-3xl shadow-lg hover:opacity-100 cursor-pointer
+     bg-gray-100 p-[10px] rounded-3xl shadow-lg hover:opacity-100 cursor-pointer items-center justify-center
       ${bright && "opacity-100"}`}
       onClick={changeLanguage}
     >
-      <GlobeIcon className={`min-w-4 min-h-4 fill-black`} />
+      <GlobeIcon className={`min-w-5 min-h-5 fill-black`} />
       {isKo ? "EN" : "KO"}
     </button>
   );

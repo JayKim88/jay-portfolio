@@ -558,7 +558,91 @@ const achievements = [
       "Login session extension feature to reduce unintended logouts and enhance user experience.",
     ],
   },
-
+  {
+    title: "SEO & Server-Side Rendering (SSR)",
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "SEO를 향상시키기 위해 " : "Enhanced SEO by "}
+            <Important
+              content={
+                isKo
+                  ? "랜딩 페이지를 React에서 Next.js로 마이그레이션"
+                  : "migrating the landing page from React to Next.js "
+              }
+            />
+            {isKo
+              ? "하고 SSR, 최적화된 메타데이터, Open Graph 태그를 활용하여 검색 가시성을 높이고 풍부한 링크 미리보기를 제공했습니다."
+              : "leveraging SSR, optimized metadata, and Open Graph tags for improved visibility and rich link previews."}
+          </>
+        )}
+      </TransDescription>,
+      "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.",
+    ],
+  },
+  {
+    title: "3D Warehouse Visualization",
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "" : "Created "}
+            <BoldBtn
+              title={isKo ? "3D 센터 시각화" : "3D center visualization"}
+              customStyle={isKo ? "mr-1" : "mx-1"}
+              fontWeight="medium"
+              videoUrl={Center3d}
+            />
+            {isKo
+              ? "를 Three.js 로 구현하여 사용자가 키보드와 마우스로 센터 공간을 자유롭게 탐색할 수 있도록 지원했습니다."
+              : "using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions."}
+          </>
+        )}
+      </TransDescription>,
+      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+    ],
+  },
+  {
+    title: "Continuous Deployment & Versioning Improvements",
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "" : "Implemented a "}
+            <BoldBtn
+              title={isKo ? "버전 탐지기" : "Version Detector"}
+              customStyle={isKo ? "mr-1" : "mx-1"}
+              fontWeight="medium"
+              codeBlock={versionDetectorCodeExample}
+            />
+            {isKo
+              ? "를 GitHub API(Octokit)를 이용해 프로덕션, 스테이징 그리고 베타 환경에서 사용할 수 있도록 구현하여 최신 클라이언트 코드를 자동으로 받아올 수 있도록 개선했습니다."
+              : "for production, staging, and beta environments using the GitHub API (Octokit), ensuring automatic reloading of the latest client code."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "배포일마다 발생하던 버전 불일치 오류를 최소화하고 "
+              : "Minimized version mismatch errors that previously occurred weekly on deployment days, "}
+            <Important
+              content={
+                isKo
+                  ? "불일치 빈도를 거의 0으로 감소"
+                  : "reducing the frequency to near zero "
+              }
+            />
+            {isKo
+              ? "시켜 클라이언트-서버 동기화를 원활하게 유지했습니다."
+              : "by ensuring seamless client-server synchronization."}
+          </>
+        )}
+      </TransDescription>,
+    ],
+  },
   {
     title: "Product Image Upload & Editing",
     points: [
@@ -603,28 +687,6 @@ const achievements = [
     ],
   },
   {
-    title: "3D Warehouse Visualization",
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Created "}
-            <BoldBtn
-              title={isKo ? "3D 센터 시각화" : "3D center visualization"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              fontWeight="medium"
-              videoUrl={Center3d}
-            />
-            {isKo
-              ? "를 Three.js 로 구현하여 사용자가 키보드와 마우스로 센터 공간을 자유롭게 탐색할 수 있도록 지원했습니다."
-              : "using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions."}
-          </>
-        )}
-      </TransDescription>,
-      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
-    ],
-  },
-  {
     title: "Multi-Size Barcode Printing System",
     points: [
       <TransDescription>
@@ -645,69 +707,6 @@ const achievements = [
         )}
       </TransDescription>,
       "Includes print preview and 5 multi-size selection, increasing efficiency for warehouse staffs.",
-    ],
-  },
-  {
-    title: "Continuous Deployment & Versioning Improvements",
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Implemented a "}
-            <BoldBtn
-              title={isKo ? "버전 탐지기" : "Version Detector"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              fontWeight="medium"
-              codeBlock={versionDetectorCodeExample}
-            />
-            {isKo
-              ? "를 GitHub API(Octokit)를 이용해 프로덕션, 스테이징 그리고 베타 환경에서 사용할 수 있도록 구현하여 최신 클라이언트 코드를 자동으로 받아올 수 있도록 개선했습니다."
-              : "for production, staging, and beta environments using the GitHub API (Octokit), ensuring automatic reloading of the latest client code."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "배포일마다 발생하던 버전 불일치 오류를 최소화하고 "
-              : "Minimized version mismatch errors that previously occurred weekly on deployment days, "}
-            <Important
-              content={
-                isKo
-                  ? "불일치 빈도를 거의 0으로 감소"
-                  : "reducing the frequency to near zero "
-              }
-            />
-            {isKo
-              ? "시켜 클라이언트-서버 동기화를 원활하게 유지했습니다."
-              : "by ensuring seamless client-server synchronization."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
-  {
-    title: "SEO & Server-Side Rendering (SSR)",
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "SEO를 향상시키기 위해 " : "Enhanced SEO by "}
-            <Important
-              content={
-                isKo
-                  ? "랜딩 페이지를 React에서 Next.js로 마이그레이션"
-                  : "migrating the landing page from React to Next.js "
-              }
-            />
-            {isKo
-              ? "하고 SSR, 최적화된 메타데이터, Open Graph 태그를 활용하여 검색 가시성을 높이고 풍부한 링크 미리보기를 제공했습니다."
-              : "leveraging SSR, optimized metadata, and Open Graph tags for improved visibility and rich link previews."}
-          </>
-        )}
-      </TransDescription>,
-      "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.",
     ],
   },
   {
@@ -759,12 +758,11 @@ const viewBtnStyle = "fill-black w-6 h-6";
 
 const Bold9Contribution = () => {
   const { i18n, t } = useTranslation();
-  const ulRef = useRef();
   const [open, setOpen] = useState(false);
-  const [ulSizes, setUlSizes] = useState({
-    width: 0,
-    height: 0,
-  });
+  const ulRefs = useRef([]);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  const isKo = i18n.language === "ko";
 
   const handleOpen = () => {
     const experiencePosition =
@@ -785,74 +783,78 @@ const Bold9Contribution = () => {
       });
   };
 
+  const getUlHeight = (index) => {
+    if (!ulRefs.current[index]) return "0px";
+    return open ? `${ulRefs.current[index].scrollHeight}px` : "0px";
+  };
+
   useEffect(() => {
-    const updateUlSizes = () => {
-      if (!ulRef.current) return;
-      setUlSizes({
-        width: ulRef.current.offsetWidth ?? 0,
-        height: ulRef.current.offsetHeight ?? 0,
-      });
+    setOpen(false);
+  }, [isKo, isMobileOrTablet]);
+
+  useEffect(() => {
+    const updateSizes = () => {
+      const isMobileOrTablet = window.innerWidth < 1024;
+      setIsMobileOrTablet(isMobileOrTablet);
     };
 
-    window.addEventListener("resize", updateUlSizes);
+    window.addEventListener("resize", updateSizes);
+    updateSizes();
 
-    updateUlSizes();
-
-    return () => window.removeEventListener("resize", updateUlSizes);
-  }, [ulRef]);
-
-  const isKo = i18n.language === "ko";
+    return () => window.removeEventListener("resize", updateSizes);
+  }, []);
 
   return (
     <div className="mx-auto mt-2 mb-4 rounded-xl relative">
       <h2 className="text-[16px] font-bold mb-6 mt-8 text-main">
         {t("Key Achievements & Contributions")}
       </h2>
-      <div
-        className="overflow-hidden transition-all duration-800 ease-in-out"
-        style={{
-          maxHeight: open ? ulSizes.height : isKo ? 300 : 350,
-        }}
-      >
-        <ul ref={ulRef} className={`flex flex-col gap-y-10`}>
-          {achievements.map((achievement, index) => (
-            <li key={index}>
-              <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
-                {`${index + 1}. ${t(achievement.title)}`}
-              </h3>
-              <ul className="pl-6 gap-y-0.5 flex flex-col">
-                {achievement.points.map((point, i) => (
-                  <li key={i} className="marker:mr-1 list-disc">
-                    {typeof point === "string" ? t(point) : point}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className={`flex flex-col ${open ? "gap-y-10" : ""}`}>
+        {achievements.map((achievement, index) => (
+          <li key={index}>
+            <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
+              {`${index + 1}. ${t(achievement.title)}`}
+            </h3>
+            <ul
+              ref={(el) => (ulRefs.current[index] = el)}
+              className={`pl-6 gap-y-0.5 flex flex-col transition-all duration-700 
+                ease-in-out overflow-hidden ${
+                  open ? "opacity-100" : "opacity-0"
+                }`}
+              style={{ height: getUlHeight(index) }}
+            >
+              {achievement.points.map((point, i) => (
+                <li key={i} className="marker:mr-1 list-disc">
+                  {typeof point === "string" ? t(point) : point}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
       <button
         className={`absolute px-2 py-1 rounded-2xl font-medium flex 
           justify-center items-center gap-x-1 min-w-[124px]
-          ${open ? "-bottom-8" : "-bottom-4"} 
+          ${open ? "-bottom-8" : "-bottom-6"} 
           text-black cursor-pointer transition-transform duration-300
           bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500
           bg-[length:200%_200%] animate-gradientX
         `}
         style={{
-          right: ulSizes.width / 2 - 62,
+          right: "50%",
+          transform: "translateX(50%)",
         }}
         onClick={handleOpen}
       >
         {open ? (
           <>
             <EyeSlash className={viewBtnStyle} />
-            <span>{t("View Less")}</span>
+            <span>{t("Hide Details")}</span>
           </>
         ) : (
           <>
             <Eye className={viewBtnStyle} />
-            <span>{t("View More")}</span>
+            <span>{t("View Details")}</span>
           </>
         )}
       </button>

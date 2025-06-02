@@ -259,6 +259,7 @@ const achievements = [
               fontWeight="medium"
               refName="Connect to Notion"
               link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
+              isBottomDirection
             />
             {isKo
               ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
@@ -722,6 +723,7 @@ const achievements = [
               fontWeight="medium"
               link="https://github.com/JayKim88/automatic-pr-labeler"
               refName="Connect to Github Repo"
+              isBottomDirection
             />
             {isKo
               ? "를 만들어 리뷰 마감일을 지속적으로 확인할 수 있도록 지원했습니다."

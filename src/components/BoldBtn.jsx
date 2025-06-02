@@ -17,6 +17,7 @@ export const BoldBtn = ({
   codeBlock,
   refName,
   refNameStyle,
+  isBottomDirection,
 }) => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -101,9 +102,13 @@ export const BoldBtn = ({
             className={`absolute bottom-0 -left-1 opacity-0 translate-y-0 font-medium
                     text-xs transition-all duration-500 ease-in-out pointer-events-none 
                   group-hover/ref:opacity-100 min-w-max bg-main py-0.5 px-1.5 rounded-2xl 
-                  group-hover/ref:-translate-y-6 group-hover/ref:text-black ${refNameStyle}`}
+                  ${
+                    isBottomDirection
+                      ? "group-hover/ref:translate-y-5"
+                      : "group-hover/ref:-translate-y-6"
+                  } group-hover/ref:text-black ${refNameStyle}`}
           >
-            👇{" "}
+            {isBottomDirection ? "☝️" : "👇"}{" "}
             {+isKo
               ? t(refName)
               : refName?.[0].toUpperCase() + refName?.slice(1)}

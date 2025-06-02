@@ -17,6 +17,9 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    returnNull: false,
+    returnEmptyString: false,
+    returnObjects: false,
   });
 
 export default i18n;

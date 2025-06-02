@@ -8,7 +8,9 @@ i18n
   .init({
     lng: "en",
     fallbackLng: "en",
-    debug: true,
+    debug: false,
+    saveMissing: false,
+    missingKeyHandler: null,
     backend: {
       loadPath: "/locales/{{lng}}/translation.json",
     },

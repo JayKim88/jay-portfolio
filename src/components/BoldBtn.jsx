@@ -139,7 +139,12 @@ export const BoldBtn = ({
           />
         ))}
         {videoUrl && (
-          <video ref={videoRef} width="400" controls>
+          <video
+            ref={videoRef}
+            width="400"
+            controls
+            data-testid="video-preview"
+          >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

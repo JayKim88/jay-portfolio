@@ -99,7 +99,11 @@ const AudioPlayer = () => {
       <audio ref={audioRef} src={forestSound} />
       <div className="text-black font-medium">Forest Sound ᨒ ོ</div>
       <div className="flex items-center justify-between gap-x-1.5">
-        <button onClick={handlePlay} className="p-0 rounded-full">
+        <button
+          onClick={handlePlay}
+          aria-label={isPlaying ? "Pause" : "Play"}
+          className="p-0 rounded-full"
+        >
           {isPlaying ? (
             <Pause className="w-5 h-5" />
           ) : (
@@ -110,6 +114,7 @@ const AudioPlayer = () => {
           {formatTime(progress)} / {formatTime(duration)}
         </p>
         <input
+          data-testid="progress-slider"
           type="range"
           min="0"
           max={duration || 1}
@@ -122,6 +127,7 @@ const AudioPlayer = () => {
         <div className="relative group hidden lg:flex items-center">
           <Volume className="w-5 h-5 text-gray-700 cursor-pointer" />
           <input
+            data-testid="volume-slider"
             type="range"
             min="0"
             max="1"

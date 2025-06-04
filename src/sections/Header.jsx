@@ -73,6 +73,7 @@ export const Navigation = ({ isTop, customStyle, style }) => {
 
   return (
     <ul
+      data-testid="navigation"
       className={`flex-col list-none p-0 ${customStyle} ${
         bright && "opacity-100"
       }`}

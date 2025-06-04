@@ -197,7 +197,7 @@ export const Header = () => {
           </button>
           <div>{t("Timezone: Korea Standard Time — GMT+9")}</div>
           <a
-            href="https://drive.google.com/file/d/1FLX5D-oUW_qsD3zeufUIgUYzMp-fCsC7/view?usp=sharing"
+            href={isKo ? RESUME_LINK_KO : RESUME_LINK_EN}
             target="_blank"
             className=" text-main font-semibold flex gap-x-1 w-fit"
           >
@@ -268,3 +268,8 @@ const references = [
     title: "Blog",
   },
 ];
+
+const RESUME_LINK_KO =
+  "https://drive.google.com/file/d/1O9wthl7AtaaWV9iu2KxPBHiFPzH_LOGR/view?usp=sharing";
+const RESUME_LINK_EN =
+  "https://drive.google.com/file/d/1JO5s1vvAky4vikEDJaZVuy8P_TVCUvaz/view?usp=sharing";

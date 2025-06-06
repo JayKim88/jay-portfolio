@@ -23,7 +23,7 @@ export const BoldBtn = ({
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const videoRef = useRef(null);
-
+  
   const isKo = i18n.language === "ko";
 
   useEffect(() => {

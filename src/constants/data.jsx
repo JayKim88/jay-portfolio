@@ -867,7 +867,7 @@ const Bold9Contribution = () => {
 export const experiences = [
   {
     type: null,
-    period: "Jun 2021 - Present",
+    period: "Jun 2021 - Jun 2025",
     title: "Frontend Engineer",
     company: "Bold9, Seoul",
     summary:
@@ -1206,7 +1206,7 @@ export const projects = [
     title: "Royal Diary",
     position: "Front End",
     summary:
-      "A digital picture diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling",
+      "A digital illustrated diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling",
     points: [
       <TransDescription>
         {(isKo) => (

@@ -43,35 +43,35 @@ export const Home = () => {
             <p>
               {isKo ? (
                 <>
-                  현재 저는
+                  저는 4년 동안
                   <BoldBtn
                     link="https://www.bold-9.com/"
                     title="Bold9"
                     customStyle={isKo ? "mx-1" : "ml-1"}
                   />
-                  에서 프론트엔드 엔지니어로 일하고 있습니다. 사용자 친화적인
+                  에서 프론트엔드 엔지니어로 일했습니다. 사용자 친화적인
                   인터페이스를 개발하여 이커머스 풀필먼트 운영을 최적화하는
-                  업무를 담당하고 있으며, UI 성능 향상, 데이터 기반 대시보드
-                  시각화, 물류 워크플로우를 간소화하기 위한 직관적이고 사용하기
-                  쉬운 기능 구현에 기여하고 있습니다. 또한, 단위 테스트, 통합
-                  테스트, 스냅샷 UI 테스트를 작성하여 애플리케이션의 안정성을
-                  확보하고, 견고하고 확장 가능한 소프트웨어를 제공합니다.
+                  업무를 담당했고, UI 성능 향상, 데이터 기반 대시보드 시각화,
+                  물류 워크플로우를 간소화하기 위한 직관적이고 사용하기 쉬운
+                  기능 구현에 기여했습니다. 또한, 단위 테스트, 통합 테스트,
+                  스냅샷 UI 테스트를 작성하여 애플리케이션의 안정성을 확보하고,
+                  견고하고 확장 가능한 소프트웨어를 제공했습니다.
                 </>
               ) : (
                 <>
-                  Currently, I’m a Frontend Engineer at
+                  I worked as a Frontend Engineer at
                   <BoldBtn
                     link="https://www.bold-9.com/"
                     title="Bold9"
-                    customStyle="ml-1"
+                    customStyle="mx-1"
                   />
-                  , developing user-friendly interfaces to optimize e-commerce
-                  fulfillment operations. My contribution includes enhancing UI
-                  performance, visualizing data-driven dashboard, and
-                  implementing intuitive and easy-to-use features to streamline
-                  logistics workflows. I also ensured application reliability by
-                  writing unit, integration, and snapshot UI tests—delivering
-                  robust and scalable software.
+                  for 4 years, developing user-friendly interfaces to optimize
+                  e-commerce fulfillment operations. My contribution includes
+                  enhancing UI performance, visualizing data-driven dashboard,
+                  and implementing intuitive and easy-to-use features to
+                  streamline logistics workflows. I also ensured application
+                  reliability by writing unit, integration, and snapshot UI
+                  tests—delivering robust and scalable software.
                 </>
               )}
             </p>
@@ -80,25 +80,25 @@ export const Home = () => {
                 <>
                   Bold9에서 저는{" "}
                   <Important content="애자일한 상향식 업무환경" />
-                  에서 일하고 있습니다. 개발자가 직접 태스크를 선택하고 시작부터
+                  에서 일했습니다. 개발자가 직접 태스크를 선택하고 시작부터
                   끝까지 주도적으로 이끌며,{" "}
                   <Important content="이슈 기반, 태스크 중심의 워크플로우" />를
                   통해 독립적으로 일하고 자신의 일정을 관리하며 업무를
-                  진행합니다. 동시에 기획자, 디자이너, 백엔드 개발자들과의
+                  진행했습니다. 동시에 기획자, 디자이너, 백엔드 개발자들과의
                   자유로운 논의와 동료들의 코드 리뷰를 통해 협업 능력을
-                  향상시키고, 팀의 코드 품질을 높이는데 기여하고 있습니다.
+                  향상시키고, 팀의 코드 품질을 높이는데 기여했습니다.
                 </>
               ) : (
                 <>
-                  At Bold9, I work in an{" "}
+                  At Bold9, I worked in an{" "}
                   <Important content="agile and bottom-up environment" /> where
                   developers actively choose tasks and take full ownership from
                   start to finish. This{" "}
                   <Important content="issue-based and task-driven workflow" />{" "}
-                  empowers me to work independently while managing my own
+                  empowered me to work independently while managing my own
                   schedule. At the same time, close collaboration with planners,
                   designers, and backend developers through open discussions and
-                  peer code reviews has strengthened my ability to work
+                  peer code reviews had strengthened my ability to work
                   cooperatively and contribute to higher team coding standards.
                 </>
               )}

@@ -78,12 +78,12 @@ export const Home = () => {
             <p>
               {isKo ? (
                 <>
-                  Bold9에서 저는{" "}
+                  Bold9 에서 저는{" "}
                   <Important content="애자일한 상향식 업무환경" />
-                  에서 일했습니다. 개발자가 직접 태스크를 선택하고 시작부터
-                  끝까지 주도적으로 이끌며,{" "}
+                  에서 직접 태스크를 선택하여 시작부터 끝까지 주도적으로 이끄는
+                  방식으로 일했습니다.{" "}
                   <Important content="이슈 기반, 태스크 중심의 워크플로우" />를
-                  통해 독립적으로 일하고 자신의 일정을 관리하며 업무를
+                  통해 독립적으로 일하고 스스로의 일정을 관리하며 업무를
                   진행했습니다. 동시에 기획자, 디자이너, 백엔드 개발자들과의
                   자유로운 논의와 동료들의 코드 리뷰를 통해 협업 능력을
                   향상시키고, 팀의 코드 품질을 높이는데 기여했습니다.
@@ -92,7 +92,7 @@ export const Home = () => {
                 <>
                   At Bold9, I worked in an{" "}
                   <Important content="agile and bottom-up environment" /> where
-                  developers actively choose tasks and take full ownership from
+                  I proactively selected tasks and took full ownership from
                   start to finish. This{" "}
                   <Important content="issue-based and task-driven workflow" />{" "}
                   empowered me to work independently while managing my own

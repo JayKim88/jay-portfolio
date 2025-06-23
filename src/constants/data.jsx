@@ -7,21 +7,21 @@ import { Highlight } from "../components/Highlight";
 import Eye from "../assets/images/eye.svg?react";
 import EyeSlash from "../assets/images/eye-slash.svg?react";
 
-import Widgets from "../assets/images/refs/widgets.png";
-import ImageUpload1 from "../assets/images/refs/image-upload_1.png";
-import ImageUpload2 from "../assets/images/refs/image-upload_2.png";
-import ImageUpload3 from "../assets/images/refs/image-upload_3.png";
-import CorePage1 from "../assets/images/refs/core-page_1.png";
-import CorePage2 from "../assets/images/refs/core-page_2.png";
-import CorePage3 from "../assets/images/refs/core-page_3.png";
+import Widgets from "../assets/images/refs/widgets.webp";
+import ImageUpload1 from "../assets/images/refs/image-upload_1.webp";
+import ImageUpload2 from "../assets/images/refs/image-upload_2.webp";
+import ImageUpload3 from "../assets/images/refs/image-upload_3.webp";
+import CorePage1 from "../assets/images/refs/core-page_1.webp";
+import CorePage2 from "../assets/images/refs/core-page_2.webp";
+import CorePage3 from "../assets/images/refs/core-page_3.webp";
 import Center3d from "../assets/video/3d-center.mp4";
-import BarcodePrint1 from "../assets/images/refs/barcode-print_1.png";
-import BarcodePrint2 from "../assets/images/refs/barcode-print_2.png";
-import Mobile from "../assets/images/refs/mobile.png";
-import NotificationModal from "../assets/images/refs/notification-modal.png";
-import NotificationIosForeback from "../assets/images/refs/notification-ios-foreback.png";
-import NotificationAndroidDesktop from "../assets/images/refs/notification-android-desktop.png";
-import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.png";
+import BarcodePrint1 from "../assets/images/refs/barcode-print_1.webp";
+import BarcodePrint2 from "../assets/images/refs/barcode-print_2.webp";
+import Mobile from "../assets/images/refs/mobile.webp";
+import NotificationModal from "../assets/images/refs/notification-modal.webp";
+import NotificationIosForeback from "../assets/images/refs/notification-ios-foreback.webp";
+import NotificationAndroidDesktop from "../assets/images/refs/notification-android-desktop.webp";
+import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.webp";
 import { Important } from "../components/Important";
 
 const testCodeExample = `// example.test.tsx

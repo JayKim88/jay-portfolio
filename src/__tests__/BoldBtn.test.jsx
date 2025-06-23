@@ -30,7 +30,7 @@ describe("BoldBtn Component", () => {
   });
 
   it("renders button with images and shows them on hover", async () => {
-    const imageUrls = ["image1.jpg", "image2.jpg"];
+    const imageUrls = ["image1.webp", "image2.webp"];
 
     render(<BoldBtn title="Test Button" imageUrls={imageUrls} />);
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BoldBtn } from "../components/BoldBtn";
-import treeImg from "../assets/images/tree.png";
+import treeImg from "../assets/images/tree.webp";
 import { TransDescription } from "../constants/data";
 
 export const TheLastFootsteps = () => (

@@ -25,16 +25,18 @@ const dynamicRadius = ({
     yRatio: yRatio ?? 3 / 4,
   });
 
-  const isTablet = 640 < window.innerWidth && window.innerWidth <= 1024;
-  const isMobile = window.innerWidth < 640;
-  const base = 0;
-  const max = 600;
+  const deviceType = useMemo(() => {
+    const width = window.innerWidth;
+    return width <= 640 ? 'mobile' : width <= 1024 ? 'tablet' : 'desktop';
+  }, []);
 
-  const formattedGrowthRate = isTablet
-    ? growthRate * 0.7
-    : isMobile
-    ? growthRate * 0.5
-    : growthRate;
+  const formattedGrowthRate = useMemo(() => {
+    switch (deviceType) {
+      case 'mobile': return growthRate * 0.5;
+      case 'tablet': return growthRate * 0.7;
+      default: return growthRate;
+    }
+  }, [growthRate, deviceType]);
 
   const growth = (screenYPosition - yPosition) * formattedGrowthRate;
   const readyGrowth = screenYPosition > yPosition;
@@ -42,7 +44,7 @@ const dynamicRadius = ({
   return readyGrowth ? initialRadius + growth : initialRadius;
 };
 
-const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
+const BackgroundImages = ({ svgWrapperRef, svgWidth, scrollHeight }) => {
   return (
     <div
       ref={svgWrapperRef}
@@ -138,10 +140,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={70}
-          cy={document.documentElement.scrollHeight - 100}
+          cy={scrollHeight - 100}
           r={dynamicRadius({
             initialRadius: 250,
-            yPosition: document.documentElement.scrollHeight - 100,
+            yPosition: scrollHeight - 100,
             growthRate: 0.7,
             yRatio: 1.1,
           })}
@@ -149,10 +151,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={370}
-          cy={document.documentElement.scrollHeight}
+          cy={scrollHeight}
           r={dynamicRadius({
             initialRadius: 80,
-            yPosition: document.documentElement.scrollHeight,
+            yPosition: scrollHeight,
             growthRate: 0.6,
             yRatio: 1.1,
           })}
@@ -222,10 +224,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={svgWidth - 200}
-          cy={document.documentElement.scrollHeight - 2000}
+          cy={scrollHeight - 2000}
           r={dynamicRadius({
             initialRadius: 140,
-            yPosition: document.documentElement.scrollHeight - 2000,
+            yPosition: scrollHeight - 2000,
             growthRate: 0.2,
             yRatio: 1,
           })}
@@ -233,10 +235,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={svgWidth + 10}
-          cy={document.documentElement.scrollHeight - 250}
+          cy={scrollHeight - 250}
           r={dynamicRadius({
             initialRadius: 220,
-            yPosition: document.documentElement.scrollHeight - 250,
+            yPosition: scrollHeight - 250,
             growthRate: 0.6,
             yRatio: 1,
           })}
@@ -244,10 +246,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={svgWidth - 290}
-          cy={document.documentElement.scrollHeight - 100}
+          cy={scrollHeight - 100}
           r={dynamicRadius({
             initialRadius: 250,
-            yPosition: document.documentElement.scrollHeight - 100,
+            yPosition: scrollHeight - 100,
             growthRate: 0.4,
             yRatio: 1.05,
           })}
@@ -255,10 +257,10 @@ const BackgroundImages = ({ svgWrapperRef, svgWidth }) => {
         />
         <circle
           cx={svgWidth - 600}
-          cy={document.documentElement.scrollHeight}
+          cy={scrollHeight}
           r={dynamicRadius({
             initialRadius: 100,
-            yPosition: document.documentElement.scrollHeight,
+            yPosition: scrollHeight,
             growthRate: 0.6,
             yRatio: 1.1,
           })}
@@ -275,6 +277,8 @@ function App() {
   const [svgWidth, setSvgWidth] = useState(0);
   const [hoveredItem, setHoveredItem] = useState("");
   const [readyShow, setReadyShow] = useState(false);
+  const [scrollHeight, setScrollHeight] = useState(0);
+  const [showNavigation, setShowNavigation] = useState(false);
 
   const handleHoverItem = (v) => setHoveredItem(v);
   const handleClickedItem = (data) => setItemData(data);
@@ -284,6 +288,8 @@ function App() {
       if (svgWrapperRef.current) {
         setSvgWidth(svgWrapperRef.current.offsetWidth);
       }
+      setScrollHeight(document.documentElement.scrollHeight);
+      setShowNavigation(window.innerWidth < 1024);
     };
 
     window.addEventListener("resize", updateSizes);
@@ -293,7 +299,6 @@ function App() {
     return () => window.removeEventListener("resize", updateSizes);
   }, [svgWrapperRef]);
 
-  const showNavigation = window.innerWidth < 1024;
 
   return (
     <div
@@ -310,7 +315,7 @@ function App() {
             gap-x-5 justify-start"
         />
       )}
-      <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} />
+      <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} scrollHeight={scrollHeight} />
       <Header />
       <Language />
       <AudioPlayer />

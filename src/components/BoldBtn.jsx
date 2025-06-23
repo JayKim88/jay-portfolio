@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import LinkIcon from "../assets/images/link.svg?react";
 import MoreIcon from "../assets/images/more.svg?react";
+import ErrorBoundary from "./ErrorBoundary";
 
 export const BoldBtn = ({
   title,
@@ -131,23 +132,39 @@ export const BoldBtn = ({
         })}
       >
         {imageUrls?.map((v, index) => (
-          <img
-            key={index}
-            src={v}
-            alt="Preview"
-            className="w-full max-w-full h-auto rounded"
-          />
+          <ErrorBoundary key={index} fallbackMessage="Failed to load image">
+            <picture>
+              <source srcSet={v} type="image/webp" />
+              <img
+                src={v.replace('.webp', '.png')}
+                alt="Preview"
+                className="w-full max-w-full h-auto rounded"
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  console.error('Failed to load image:', v);
+                }}
+              />
+            </picture>
+          </ErrorBoundary>
         ))}
         {videoUrl && (
-          <video
-            ref={videoRef}
-            width="400"
-            controls
-            data-testid="video-preview"
-          >
-            <source src={videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <ErrorBoundary fallbackMessage="Failed to load video">
+            <video
+              ref={videoRef}
+              width="400"
+              controls
+              preload="metadata"
+              data-testid="video-preview"
+              onError={(e) => {
+                console.error('Failed to load video:', videoUrl);
+              }}
+            >
+              <source src={videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </ErrorBoundary>
         )}
         {codeBlock && (
           <div className="flex flex-col items-start bg-[#2f2f2f] w-fit">

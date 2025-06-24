@@ -140,17 +140,8 @@ optimizeDeps: {
    // Updates only on resize events
    ```
 
-2. **Scroll Height Caching:**
-   ```javascript
-   // Before: DOM query on every render
-   cy={document.documentElement.scrollHeight - 100}
-   
-   // After: Cached state
-   const [scrollHeight, setScrollHeight] = useState(0);
-   cy={scrollHeight - 100}
-   ```
 
-3. **Device Type Memoization:**
+2. **Device Type Memoization:**
    ```javascript
    const deviceType = useMemo(() => {
      const width = window.innerWidth;

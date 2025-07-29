@@ -7,7 +7,7 @@ import LinkIcon from "../assets/images/link.svg?react";
 import MoreIcon from "../assets/images/more.svg?react";
 import ErrorBoundary from "./ErrorBoundary";
 
-export const BoldBtn = ({
+export const BoldBtn = React.memo(({
   title,
   link,
   onClick,
@@ -182,7 +182,7 @@ export const BoldBtn = ({
       </div>
     </button>
   );
-};
+});
 
 const refIconStyle = `fill-main transition-all duration-200 ease-in-out 
               group-hover/ref:fill-yellow-300 group-hover/ref:translate-x-0.5 

@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "react-i18next";
 import Profile from "../assets/images/profile.webp";
 import { BoldBtn } from "../components/BoldBtn";
 import { Important } from "../components/Important";
-import { TransDescription } from "../constants/data";
+import { TransDescription } from "../components/TransDescription";
 
 export const Home = () => {
   const { i18n } = useTranslation();

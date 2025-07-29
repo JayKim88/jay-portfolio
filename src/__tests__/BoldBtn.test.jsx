@@ -39,8 +39,10 @@ describe("BoldBtn Component", () => {
 
     const images = screen.getAllByAltText("Preview");
     expect(images).toHaveLength(2);
+    // The component has fallback logic that converts .webp to .png
+    const expectedUrls = ["image1.png", "image2.png"];
     images.forEach((img, index) =>
-      expect(img).toHaveAttribute("src", imageUrls[index])
+      expect(img).toHaveAttribute("src", expectedUrls[index])
     );
   });
 

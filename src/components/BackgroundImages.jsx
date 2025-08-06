@@ -71,7 +71,7 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.14,
           })}
           fill="rgba(138, 133, 32, 0.3)"
-          {...createCircleAnimation(0.1)}
+          {...createCircleAnimation(0.9)}
         />
         <motion.circle
           cx="100"
@@ -82,7 +82,7 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.16,
           })}
           fill="rgba(137, 255, 78, 0.1)"
-          {...createCircleAnimation(0.2)}
+          {...createCircleAnimation(0.8)}
         />
         <motion.circle
           cx="30"
@@ -93,7 +93,7 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.13,
           })}
           fill="rgba(35, 207, 8, 0.089)"
-          {...createCircleAnimation(0.3)}
+          {...createCircleAnimation(1.0)}
         />
         <motion.circle
           cx="70"

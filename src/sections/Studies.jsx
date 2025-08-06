@@ -5,12 +5,12 @@ import { Title } from "../components/Title";
 import { Tags } from "../components/Tags";
 import { Description } from "../components/Description";
 import { studies } from "../constants/data";
+import { AnimatedSection, AnimatedList } from "../components/AnimatedSection";
 
 export const Studies = ({ onHover, hoveredItem }) => {
   return (
-    <main className="studies">
-      <Title value="Studies" />
-      <ul className="gap-y-18 flex flex-col">
+    <AnimatedSection className="studies" title="Studies" titleComponent={Title}>
+      <AnimatedList className="gap-y-18 flex flex-col">
         {studies.map((item) => (
           <Description
             key={item.title}
@@ -19,8 +19,8 @@ export const Studies = ({ onHover, hoveredItem }) => {
             hoveredItem={hoveredItem}
           />
         ))}
-      </ul>
-    </main>
+      </AnimatedList>
+    </AnimatedSection>
   );
 };
 

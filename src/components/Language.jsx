@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 import GlobeIcon from "../assets/images/globe.svg?react";
 
@@ -21,15 +22,26 @@ export const Language = () => {
   }, [isKo]);
 
   return (
-    <button
+    <motion.button
       className={`z-20 fixed bottom-8 lg:bottom-16 right-68 lg:right-74 flex opacity-40 transition-all
       duration-500 ease-in-out flex-col gap-y-[6px] h-18 w-18 text-black font-medium text-sm
      bg-gray-100 p-[10px] rounded-3xl shadow-lg hover:opacity-100 cursor-pointer items-center justify-center
       ${bright && "opacity-100"}`}
       onClick={changeLanguage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.4 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.8,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        opacity: 1,
+        transition: { duration: 0.5 },
+      }}
     >
       <GlobeIcon className={`min-w-5 min-h-5 fill-black`} />
       {isKo ? "EN" : "KO"}
-    </button>
+    </motion.button>
   );
 };

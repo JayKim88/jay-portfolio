@@ -39,12 +39,12 @@ export const Description = ({
   const isKo = i18n.language === "ko";
 
   return (
-    <li
+    <div
       key={title}
       className={`relative flex gap-x-6 transition-all delay-50 duration-200
-      ease-in-out outline-2 outline-transparent rounded-2xl hover:rounded-2xl 
-      lg:hover:scale-x-105 lg:hover:scale-y-102 group transform-gpu max-w-[660px] 
-       p-4 lg:hover:bg-[#273b3b]/80 ${details && "cursor-pointer"} 
+      ease-in-out outline-2 outline-transparent rounded-2xl 
+     group transform-gpu max-w-[660px] 
+       p-4  ${details && "cursor-pointer"} 
        ${isNotHovered && "lg:opacity-50"}`}
       onMouseOver={() => isDesktop && onHover?.(title)}
       onMouseOut={() => isDesktop && onHover?.("")}
@@ -97,7 +97,7 @@ export const Description = ({
               const refName = v.type === "note" ? v.title : v.type;
 
               return (
-                <li
+                <div
                   key={index}
                   className={`flex gap-x-1 items-center cursor-pointer relative group/ref`}
                   onClick={(e) => {
@@ -115,13 +115,13 @@ export const Description = ({
                       ? t(refName)
                       : refName[0].toUpperCase() + refName.slice(1)}
                   </span>
-                </li>
+                </div>
               );
             })}
           </div>
         )}
         {stacks?.length && <Tags data={stacks} />}
       </section>
-    </li>
+    </div>
   );
 };

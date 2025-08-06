@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { throttle } from "lodash";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 import Github from "../assets/images/sns/github.svg?react";
 import LinkedIn from "../assets/images/sns/linkedIn.svg?react";
@@ -128,9 +129,17 @@ export const Header = () => {
   const isKo = i18n.language === "ko";
 
   return (
-    <header
+    <motion.header
       className="relative lg:sticky top-0 left-0 w-full lg:max-w-[500px] h-fit lg:h-screen 
     lg:max-h-screen flex flex-col justify-between box-border pt-24 lg:py-24 px-0"
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+      }}
     >
       <section className="flex flex-col gap-16">
         <section>
@@ -207,7 +216,7 @@ export const Header = () => {
           </a>
         </div>
       </section>
-    </header>
+    </motion.header>
   );
 };
 

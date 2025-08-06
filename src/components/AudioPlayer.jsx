@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import forestSound from "../assets/audio/forest.mp3";
 import Play from "../assets/images/play.svg?react";
@@ -89,12 +90,23 @@ const AudioPlayer = () => {
   }, [isPlaying]);
 
   return (
-    <div
+    <motion.div
       className={`z-20 fixed bottom-8 lg:bottom-16 right-6 flex opacity-40 transition-all
       duration-500 ease-in-out flex-col gap-y-1
      bg-gray-100 py-3 px-4 rounded-3xl shadow-lg hover:opacity-100 ${
        bright && "opacity-100"
      }`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.4 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.8,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        opacity: 1,
+        transition: { duration: 0.5 },
+      }}
     >
       <audio ref={audioRef} src={forestSound} />
       <div className="text-black font-medium">Forest Sound ᨒ ོ</div>
@@ -140,7 +152,7 @@ const AudioPlayer = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

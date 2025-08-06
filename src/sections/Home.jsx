@@ -1,5 +1,6 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 import Profile from "../assets/images/profile.webp";
 import { BoldBtn } from "../components/BoldBtn";
@@ -11,7 +12,18 @@ export const Home = () => {
   const isKo = i18n.language === "ko";
 
   return (
-    <main className="home flex flex-col gap-y-12 justify-start py-24 [&>p]:leading-7 text-opacity1 pr-4">
+    <motion.main
+      className="home flex flex-col gap-y-12 justify-start py-24 [&>p]:leading-7 text-opacity1 pr-4"
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+      }}
+    >
       <TransDescription>
         {(isKo) => (
           <>
@@ -29,7 +41,7 @@ export const Home = () => {
                 </>
               ) : (
                 <>
-                  I’m an <Important content="user-centric software engineer" />{" "}
+                  I'm an <Important content="user-centric software engineer" />{" "}
                   passionate about crafting intuitive and seamless user
                   experiences. On the client side, I focus on building clean,
                   efficient, and interactive UIs that minimize complexity and
@@ -126,7 +138,7 @@ export const Home = () => {
                   growing passion for technology, I transitioned into software
                   engineering—completing a full-stack JavaScript bootcamp at
                   Code States and landing my first developer role. While working
-                  full-time as a software engineer, I earned a Bachelor’s degree
+                  full-time as a software engineer, I earned a Bachelor's degree
                   in Computer Science from{" "}
                   <BoldBtn
                     title="Korea National Open University"
@@ -140,6 +152,6 @@ export const Home = () => {
           </>
         )}
       </TransDescription>
-    </main>
+    </motion.main>
   );
 };

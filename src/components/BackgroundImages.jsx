@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { motion } from "framer-motion";
 import { useScrollY } from "../hooks/useScrollY";
 
 const dynamicRadius = ({
@@ -34,9 +35,25 @@ const dynamicRadius = ({
   return readyGrowth ? initialRadius + growth : initialRadius;
 };
 
+const createCircleAnimation = (delay = 0) => ({
+  initial: { scale: 0, opacity: 0, rotate: -180 },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 15,
+      mass: 0.8,
+      delay: delay,
+    },
+  },
+});
+
 export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
   const currentScrollHeight = document.documentElement.scrollHeight;
-  
+
   return (
     <div
       ref={svgWrapperRef}
@@ -45,7 +62,7 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
     >
       <svg id="svg-container" className="relative" width="100%" height="100%">
         {/* left */}
-        <circle
+        <motion.circle
           cx="570"
           cy="-30"
           r={dynamicRadius({
@@ -54,8 +71,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.14,
           })}
           fill="rgba(138, 133, 32, 0.3)"
+          {...createCircleAnimation(0.1)}
         />
-        <circle
+        <motion.circle
           cx="100"
           cy="-30"
           r={dynamicRadius({
@@ -64,8 +82,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.16,
           })}
           fill="rgba(137, 255, 78, 0.1)"
+          {...createCircleAnimation(0.2)}
         />
-        <circle
+        <motion.circle
           cx="30"
           cy="500"
           r={dynamicRadius({
@@ -74,8 +93,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             growthRate: 0.13,
           })}
           fill="rgba(35, 207, 8, 0.089)"
+          {...createCircleAnimation(0.3)}
         />
-        <circle
+        <motion.circle
           cx="70"
           cy="1900"
           r={dynamicRadius({
@@ -85,8 +105,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(137, 255, 78, 0.24)"
+          {...createCircleAnimation(0.4)}
         />
-        <circle
+        <motion.circle
           cx="170"
           cy="2200"
           r={dynamicRadius({
@@ -96,8 +117,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(182, 103, 12, 0.349)"
+          {...createCircleAnimation(0.5)}
         />
-        <circle
+        <motion.circle
           cx="240"
           cy="5000"
           r={dynamicRadius({
@@ -107,8 +129,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(85, 250, 35, 0.13)"
+          {...createCircleAnimation(0.6)}
         />
-        <circle
+        <motion.circle
           cx="260"
           cy="6000"
           r={dynamicRadius({
@@ -118,8 +141,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(195, 254, 85, 0.23)"
+          {...createCircleAnimation(0.7)}
         />
-        <circle
+        <motion.circle
           cx="100"
           cy="6200"
           r={dynamicRadius({
@@ -129,8 +153,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(7, 255, 94, 0.114)"
+          {...createCircleAnimation(0.8)}
         />
-        <circle
+        <motion.circle
           cx={70}
           cy={currentScrollHeight - 100}
           r={dynamicRadius({
@@ -140,8 +165,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(84, 175, 18, 0.344)"
+          {...createCircleAnimation(0.9)}
         />
-        <circle
+        <motion.circle
           cx={370}
           cy={currentScrollHeight}
           r={dynamicRadius({
@@ -151,37 +177,10 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(175, 159, 18, 0.344)"
+          {...createCircleAnimation(1.0)}
         />
-        {/* leaf */}
-        <g transform="scale(0.6) rotate(80, 200, 200) translate(2000, 20)">
-          <path
-            id="svg_4"
-            d="m256.83491,313.32544c6.40275,-18.52744 15.16636,-34.21825 23.4792,-42.03831c8.90587,-8.37795 4.95464,-12.01204 -4.23249,-3.89278c-3.86514,3.41584 -4.96946,0.93557 -4.96946,-11.16129c0,-28.86213 16.92941,-46.72118 57.66248,-60.82879c34.46622,-11.93719 59.87662,-25.36132 70.41232,-37.19839l8.58529,-9.6458l0,16.78273c0,20.7521 -7.28514,52.1035 -15.34912,66.05456c-8.55445,14.79964 -37.87587,42.11759 -52.26436,48.69328c-12.89082,5.89128 -40.42147,7.62564 -55.13531,3.4734c-7.33251,-2.06921 -9.65962,-0.48823 -13.45895,9.14367c-2.52645,6.40495 -4.59355,15.517 -4.59355,20.24892c0,5.37204 -2.43797,8.60346 -6.49089,8.60346c-4.81366,0 -5.75555,-2.12778 -3.64515,-8.23465l-0.00001,0z"
-            fill="#1fe01f37"
-          />
-        </g>
-        <g
-          transform={`translate(${svgWidth}, 2650) scale(-0.6, 0.6) rotate(72, 200, 200)`}
-        >
-          <path
-            id="svg_4"
-            d="m256.83491,313.32544c6.40275,-18.52744 15.16636,-34.21825 23.4792,-42.03831c8.90587,-8.37795 4.95464,-12.01204 -4.23249,-3.89278c-3.86514,3.41584 -4.96946,0.93557 -4.96946,-11.16129c0,-28.86213 16.92941,-46.72118 57.66248,-60.82879c34.46622,-11.93719 59.87662,-25.36132 70.41232,-37.19839l8.58529,-9.6458l0,16.78273c0,20.7521 -7.28514,52.1035 -15.34912,66.05456c-8.55445,14.79964 -37.87587,42.11759 -52.26436,48.69328c-12.89082,5.89128 -40.42147,7.62564 -55.13531,3.4734c-7.33251,-2.06921 -9.65962,-0.48823 -13.45895,9.14367c-2.52645,6.40495 -4.59355,15.517 -4.59355,20.24892c0,5.37204 -2.43797,8.60346 -6.49089,8.60346c-4.81366,0 -5.75555,-2.12778 -3.64515,-8.23465l-0.00001,0z"
-            fill="#3bdc6e51"
-          />
-        </g>
-        <g
-          transform={`translate(${
-            svgWidth - 130
-          }, 5200) scale(-0.7, 0.7) rotate(80, 200, 200)`}
-        >
-          <path
-            id="svg_4"
-            d="m256.83491,313.32544c6.40275,-18.52744 15.16636,-34.21825 23.4792,-42.03831c8.90587,-8.37795 4.95464,-12.01204 -4.23249,-3.89278c-3.86514,3.41584 -4.96946,0.93557 -4.96946,-11.16129c0,-28.86213 16.92941,-46.72118 57.66248,-60.82879c34.46622,-11.93719 59.87662,-25.36132 70.41232,-37.19839l8.58529,-9.6458l0,16.78273c0,20.7521 -7.28514,52.1035 -15.34912,66.05456c-8.55445,14.79964 -37.87587,42.11759 -52.26436,48.69328c-12.89082,5.89128 -40.42147,7.62564 -55.13531,3.4734c-7.33251,-2.06921 -9.65962,-0.48823 -13.45895,9.14367c-2.52645,6.40495 -4.59355,15.517 -4.59355,20.24892c0,5.37204 -2.43797,8.60346 -6.49089,8.60346c-4.81366,0 -5.75555,-2.12778 -3.64515,-8.23465l-0.00001,0z"
-            fill="#24a84e51"
-          />
-        </g>
         {/* right */}
-        <circle
+        <motion.circle
           cx={svgWidth - 20}
           cy="740"
           r={dynamicRadius({
@@ -191,8 +190,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1,
           })}
           fill="rgba(106, 219, 94, 0.2)"
+          {...createCircleAnimation(1.4)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth - 6}
           cy="1100"
           r={dynamicRadius({
@@ -202,8 +202,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(162, 246, 53, 0.186)"
+          {...createCircleAnimation(1.5)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth - 140}
           cy="3800"
           r={dynamicRadius({
@@ -213,8 +214,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1,
           })}
           fill="rgba(133, 255, 67, 0.2)"
+          {...createCircleAnimation(1.6)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth - 200}
           cy={currentScrollHeight - 2000}
           r={dynamicRadius({
@@ -224,8 +226,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1,
           })}
           fill="rgba(16, 250, 137, 0.186)"
+          {...createCircleAnimation(1.7)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth + 10}
           cy={currentScrollHeight - 250}
           r={dynamicRadius({
@@ -235,8 +238,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1,
           })}
           fill="rgba(162, 246, 53, 0.186)"
+          {...createCircleAnimation(1.8)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth - 290}
           cy={currentScrollHeight - 100}
           r={dynamicRadius({
@@ -246,8 +250,9 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.05,
           })}
           fill="rgba(246, 236, 53, 0.186)"
+          {...createCircleAnimation(1.9)}
         />
-        <circle
+        <motion.circle
           cx={svgWidth - 600}
           cy={currentScrollHeight}
           r={dynamicRadius({
@@ -257,6 +262,7 @@ export const BackgroundImages = React.memo(({ svgWrapperRef, svgWidth }) => {
             yRatio: 1.1,
           })}
           fill="rgba(246, 156, 53, 0.344)"
+          {...createCircleAnimation(2.0)}
         />
       </svg>
     </div>

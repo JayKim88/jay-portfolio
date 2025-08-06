@@ -5,14 +5,18 @@ import { Title } from "../components/Title";
 import { Tags } from "../components/Tags";
 import { projects } from "../constants/data";
 import { Description } from "../components/Description";
+import { AnimatedSection, AnimatedList } from "../components/AnimatedSection";
 
 export const Projects = ({ onClick, onHover, hoveredItem }) => {
   // const projectsData = useFiretore("works");
 
   return (
-    <main className="projects">
-      <Title value="Projects" />
-      <ul className="gap-y-18 flex flex-col">
+    <AnimatedSection
+      className="projects"
+      title="Projects"
+      titleComponent={Title}
+    >
+      <AnimatedList className="gap-y-18 flex flex-col">
         {projects.map((item) => (
           <Description
             key={item.title}
@@ -21,8 +25,8 @@ export const Projects = ({ onClick, onHover, hoveredItem }) => {
             hoveredItem={hoveredItem}
           />
         ))}
-      </ul>
-    </main>
+      </AnimatedList>
+    </AnimatedSection>
   );
 };
 

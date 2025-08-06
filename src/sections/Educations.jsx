@@ -3,17 +3,23 @@ import { useTranslation } from "react-i18next";
 
 import { Title } from "../components/Title";
 import { education } from "../constants/data";
+import { AnimatedSection, AnimatedItem } from "../components/AnimatedSection";
 
 export const Educations = ({ handleItem }) => {
   return (
-    <main className="educations">
-      <Title value="Educations" />
-      <section className="flex gap-y-18 flex-col">
-        {education?.map((v) => (
-          <Education key={v.title} data={v} />
+    <AnimatedSection
+      className="educations"
+      title="Educations"
+      titleComponent={Title}
+    >
+      <div className="flex gap-y-18 flex-col">
+        {education?.map((v, index) => (
+          <AnimatedItem key={v.title} index={index}>
+            <Education data={v} />
+          </AnimatedItem>
         ))}
-      </section>
-    </main>
+      </div>
+    </AnimatedSection>
   );
 };
 

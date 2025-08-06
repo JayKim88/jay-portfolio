@@ -58,7 +58,7 @@ function App() {
       <Header />
       <Language />
       <AudioPlayer />
-      <main className="flex flex-col gap-40 max-w-[700px]">
+      <main className="flex flex-col gap-40 max-w-[700px] pb-[96px]">
         <Home />
         <Skills />
         <Experiences onHover={handleHoverItem} hoveredItem={hoveredItem} />
@@ -70,7 +70,7 @@ function App() {
         />
         <Educations />
         <Studies onHover={handleHoverItem} hoveredItem={hoveredItem} />
-        <TheLastFootsteps className="contact" />
+        {/* <TheLastFootsteps className="contact" /> */}
         {itemData && (
           <DetailModal
             data={itemData}

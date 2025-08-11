@@ -84,32 +84,6 @@ const Bold9Contribution = () => {
           </li>
         ))}
       </ul>
-      <button
-        className={`absolute px-2 py-1 rounded-2xl font-medium flex 
-          justify-center items-center gap-x-1 min-w-[124px]
-          ${open ? "-bottom-8" : "-bottom-6"} 
-          text-black cursor-pointer transition-transform duration-300
-          bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500
-          bg-[length:200%_200%] animate-gradientX
-        `}
-        style={{
-          right: "50%",
-          transform: "translateX(50%)",
-        }}
-        onClick={handleOpen}
-      >
-        {open ? (
-          <>
-            <EyeSlash className={viewBtnStyle} />
-            <span>{t("Hide Details")}</span>
-          </>
-        ) : (
-          <>
-            <Eye className={viewBtnStyle} />
-            <span>{t("View Details")}</span>
-          </>
-        )}
-      </button>
     </div>
   );
 };
@@ -137,6 +111,7 @@ export const experiences = [
       "Firebase",
       "MUI",
     ],
+    achievements,
   },
   {
     type: null,

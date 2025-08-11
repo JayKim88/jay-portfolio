@@ -42,7 +42,6 @@
   "Both": "모두 포함",
   "Usage": "사용률",
   "Hide Details": "접기",
-  "View Details": "자세히 보기",
   "Overseas Sales": "해외영업",
   "DRGEM, Gyeonggi-do": "(주)디알젬, 경기도",
   "DRGEM is manufacturer of advanced digital X-ray systems for global medical imaging solutions": "DRGEM은 글로벌 의료 영상 솔루션을 위한 고급 디지털 X선 시스템 제조업체입니다.",
@@ -91,5 +90,16 @@
   "Mar 2022 - Aug 2024": "2022.3 - 2024.8",
   "Oct 2020 - Mar 2021": "2020.10 - 2021.3",
   "Mar 2010 - Feb 2018": "2010.3 - 2018.2",
-  "Performance Optimization & UX Enhancements": "성능 최적화 및 사용자 경험 개선"
+  "Performance Optimization & UX Enhancements": "성능 최적화 및 사용자 경험 개선",
+  "Details": "상세",
+  "View Details": "상세 보기",
+  "Back": "돌아가기",
+  "Close": "닫기",
+  "Additional Details": "추가 세부사항",
+  "Enhanced product management with advanced image processing capabilities.": "고급 이미지 처리 기능을 활용한 제품 관리 개선",
+  "Tech Stack": "기술 스택",
+  "Links": "링크",
+  "Period": "기간",
+  "Role": "역할",
+  "Type": "유형"
 }

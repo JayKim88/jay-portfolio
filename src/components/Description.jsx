@@ -6,6 +6,7 @@ import Figma from "../assets/images/figma.svg?react";
 import Deploy from "../assets/images/rocket.svg?react";
 import Plan from "../assets/images/pen-ruler.svg?react";
 import Github from "../assets/images/sns/github.svg?react";
+import Eye from "../assets/images/eye.svg?react";
 import { Highlight } from "./Highlight";
 
 const iconStyle = `max-w-6 w-6 h-6 folder-open-8 fill-white`;
@@ -29,9 +30,11 @@ export const Description = ({
   refs,
   type,
   paragraph,
+  achievements,
   details,
   onHover,
   hoveredItem,
+  onDetailClick,
 }) => {
   const { t, i18n } = useTranslation();
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
@@ -57,20 +60,40 @@ export const Description = ({
         )}
       </section>
       <section className="flex-1 flex flex-col gap-y-4">
-        <section className="flex items-center justify-start gap-x-1">
-          {type && (
-            <span
-              className="px-2 py-1 bg-yellow-300 rounded-full text-xs 
-            font-medium text-black mr-0.5"
+        <section className="flex items-center justify-between">
+          <div className="flex items-center justify-start gap-x-1">
+            {type && (
+              <span
+                className="px-2 py-1 bg-yellow-300 rounded-full text-xs 
+              font-medium text-black mr-0.5"
+              >
+                {t(type)}
+              </span>
+            )}
+            <Highlight content={title} isImportant />
+            {(company || position) && (
+              <span className="text-sm font-medium pt-0.5">
+                · {t(company || position)}
+              </span>
+            )}
+          </div>
+          {achievements && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onDetailClick?.(title);
+              }}
+              className={`px-2 py-1 rounded-2xl font-medium flex 
+                justify-center items-center gap-x-1 text-sm
+                text-black cursor-pointer transition-transform duration-300
+                bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500
+                bg-[length:200%_200%] animate-gradientX
+              `}
+              title={t("View Details")}
             >
-              {t(type)}
-            </span>
-          )}
-          <Highlight content={title} isImportant />
-          {(company || position) && (
-            <span className="text-sm font-medium pt-0.5">
-              · {t(company || position)}
-            </span>
+              <Eye className="w-4 h-4 fill-current" />
+              <span className="hidden sm:inline">{t("Details")}</span>
+            </button>
           )}
         </section>
         {summary && (

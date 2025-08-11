@@ -5,7 +5,7 @@ import { experiences } from "../constants/data";
 import { Description } from "../components/Description";
 import { AnimatedSection, AnimatedList } from "../components/AnimatedSection";
 
-export const Experiences = ({ handleItem, onHover, hoveredItem }) => {
+export const Experiences = ({ handleItem, onHover, hoveredItem, onDetailClick }) => {
   return (
     <AnimatedSection
       className="experiences flex flex-col gap-y-6"
@@ -19,6 +19,7 @@ export const Experiences = ({ handleItem, onHover, hoveredItem }) => {
             {...item}
             onHover={onHover}
             hoveredItem={hoveredItem}
+            onDetailClick={onDetailClick}
           />
         ))}
       </AnimatedList>

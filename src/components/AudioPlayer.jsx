@@ -24,6 +24,8 @@ const AudioPlayer = () => {
   const [bright, setBright] = useState(false);
 
   const handlePlay = () => {
+    if (!audioRef.current) return;
+    
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -36,13 +38,17 @@ const AudioPlayer = () => {
   const handleVolumeChange = (event) => {
     const newVolume = event.target.value;
     setVolume(newVolume);
-    audioRef.current.volume = newVolume;
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
   };
 
   const handleSeek = (event) => {
     const newTime = parseFloat(event.target.value);
     setProgress(newTime);
-    audioRef.current.currentTime = newTime;
+    if (audioRef.current) {
+      audioRef.current.currentTime = newTime;
+    }
   };
 
   useEffect(() => {
@@ -63,19 +69,26 @@ const AudioPlayer = () => {
 
   useEffect(() => {
     const updateProgress = () => {
-      setProgress(audioRef.current.currentTime);
+      if (audioRef.current) {
+        setProgress(audioRef.current.currentTime);
+      }
+    };
+
+    const handleLoadedMetadata = () => {
+      if (audioRef.current) {
+        setDuration(audioRef.current.duration);
+      }
     };
 
     if (audioRef.current) {
       audioRef.current.addEventListener("timeupdate", updateProgress);
-      audioRef.current.addEventListener("loadedmetadata", () => {
-        setDuration(audioRef.current.duration);
-      });
+      audioRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
     }
 
     return () => {
       if (audioRef.current) {
         audioRef.current.removeEventListener("timeupdate", updateProgress);
+        audioRef.current.removeEventListener("loadedmetadata", handleLoadedMetadata);
       }
     };
   }, []);

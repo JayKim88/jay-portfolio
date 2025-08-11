@@ -13,8 +13,7 @@ import BarcodePrint1 from "../assets/images/refs/barcode-print_1.webp";
 import BarcodePrint2 from "../assets/images/refs/barcode-print_2.webp";
 import Mobile from "../assets/images/refs/mobile.webp";
 import NotificationModal from "../assets/images/refs/notification-modal.webp";
-import NotificationIosForeback from "../assets/images/refs/notification-ios-foreback.webp";
-import NotificationAndroidDesktop from "../assets/images/refs/notification-android-desktop.webp";
+import NotificationIosForeback from "../assets/images/refs/notifications.webp";
 import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.webp";
 import { TransDescription } from "../components/TransDescription";
 
@@ -185,17 +184,17 @@ export { checkVersionAndReload };
 export const achievements = [
   {
     title: "Dashboard Development",
+    images: [Widgets],
     points: [
       "Customized dashboard with real-time visualized analytics using Recharts library.",
       <TransDescription>
         {(isKo) => (
           <>
             {isKo ? " " : "Created "}
-            <BoldBtn
-              title={isKo ? "데이터 시각화 위젯" : "data visualization widgets"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              fontWeight="medium"
-              imageUrls={[Widgets]}
+            <Important
+              content={
+                isKo ? "데이터 시각화 위젯 " : "data visualization widgets "
+              }
             />
             {isKo ? (
               <>
@@ -235,6 +234,7 @@ export const achievements = [
   },
   {
     title: "Cross-Platform Notification System",
+    images: [NotificationIosForeback, NotificationModal],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -246,7 +246,6 @@ export const achievements = [
               fontWeight="medium"
               refName="Connect to Notion"
               link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
-              isBottomDirection
             />
             {isKo
               ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
@@ -258,12 +257,7 @@ export const achievements = [
         {(isKo) => (
           <>
             {isKo ? "FCM을 사용하여 " : ""}
-            <BoldBtn
-              title={isKo ? "푸시 알림" : "Push notifications"}
-              customStyle="mr-1"
-              fontWeight="medium"
-              imageUrls={[NotificationIosForeback, NotificationAndroidDesktop]}
-            />
+            <Important content={isKo ? "푸시 알림" : "Push notifications "} />
             {isKo
               ? "을 구현했고, 데스크탑, 모바일 웹(PWA), 모바일 앱(Flutter InAppWebView)에서 이를 지원하도록 했습니다."
               : "using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android)."}
@@ -276,11 +270,10 @@ export const achievements = [
             {isKo
               ? "사용자에 따라 설정 가능한 알림 설정 페이지 및 "
               : "Developed a settings page for customizable notifications and "}
-            <BoldBtn
-              title={isKo ? "실시간 알림 모달" : "real-time notification modal"}
-              customStyle="mx-1"
-              fontWeight="medium"
-              imageUrls={[NotificationModal]}
+            <Important
+              content={
+                isKo ? "실시간 알림 모달" : "real-time notification modal "
+              }
             />
             {isKo
               ? "을 구현했고, 알림 모달에 무한 스크롤과 클릭 시 알림에 해당하는 업무 페이지로 이동하는 기능을 적용했습니다."
@@ -294,6 +287,7 @@ export const achievements = [
   },
   {
     title: "Testing & Code Reliability",
+    images: [],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -369,6 +363,7 @@ export const achievements = [
   },
   {
     title: "Core Page Developments",
+    images: [CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -376,15 +371,12 @@ export const achievements = [
             {isKo
               ? "코어 비즈니스 페이지(운영 관리, 매출, 출고 등)를 완전한 CRUD 기능과 "
               : "Developed core business pages (Operations Management, Sales, and Outbound, among others) with full CRUD functionality, incorporating "}
-            <BoldBtn
-              title={
+            <Important
+              content={
                 isKo
-                  ? "검색 필터 및 데이터 테이블을 적용하여"
-                  : "search filters and data tables"
+                  ? "검색 필터 및 데이터 테이블을 적용하여 "
+                  : "search filters and data tables "
               }
-              fontWeight="medium"
-              customStyle={isKo ? "mr-1" : ""}
-              imageUrls={[CorePage1, CorePage2, CorePage3]}
             />
             {isKo ? "구현했습니다." : "."}
           </>
@@ -403,11 +395,10 @@ export const achievements = [
         {(isKo) => (
           <>
             {isKo ? "" : "Designed with "}
-            <BoldBtn
-              title={isKo ? "반응형 모바일 지원" : "responsive mobile support"}
-              fontWeight="medium"
-              imageUrls={[Mobile]}
-              customStyle={isKo ? "mr-1" : "ml-1"}
+            <Important
+              content={
+                isKo ? "반응형 모바일 지원" : "responsive mobile support "
+              }
             />
             {isKo
               ? "으로 원활한 접근성과 사용자와의 상호작용을 보장했습니다."
@@ -419,23 +410,8 @@ export const achievements = [
   },
   {
     title: "Performance Optimization & UX Enhancements",
+    images: [],
     points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            <Important
-              content={
-                isKo
-                  ? "useMemo 와 useCallback "
-                  : "Utilized useMemo and useCallback hooks "
-              }
-            />
-            {isKo
-              ? "훅을 활용하여 불필요한 리렌더링을 줄이고 성능을 최적화했습니다."
-              : "to reduce unnecessary re-renders and optimize performance."}
-          </>
-        )}
-      </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
@@ -522,32 +498,107 @@ export const achievements = [
     ],
   },
   {
-    title: "Security & Authentication Enhancements",
+    title: "3D Warehouse Visualization",
+    images: [],
+    videos: [Center3d],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo
-              ? "세션 보안을 강화하고 CSRF/XSS 위험을 완화하기 위해 토큰 기반 인증에서 "
-              : "Improved session security and mitigated CSRF/XSS risks by transitioning from token-based to "}
-            <BoldBtn
-              title={isKo ? "쿠키 기반 인증" : "cookie-based authentication"}
-              link="https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541?pvs=4"
-              fontWeight="medium"
-              customStyle={isKo ? "mr-1" : ""}
-              refName="Connect to Notion"
+            {isKo ? "" : "Created "}
+            <Important
+              content={isKo ? "3D 센터 시각화" : "3D center visualization "}
             />
             {isKo
-              ? "으로 전환하고, 보안 HTTP-Only 쿠키와 SameSite 속성을 적용했습니다."
-              : ", adopting secure HTTP-only cookies with SameSite attributes."}
+              ? "를 Three.js 로 구현하여 사용자가 키보드와 마우스로 센터 공간을 자유롭게 탐색할 수 있도록 지원했습니다."
+              : "using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions."}
           </>
         )}
       </TransDescription>,
-      "Login session extension feature to reduce unintended logouts and enhance user experience.",
+      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+    ],
+  },
+  {
+    title: "Security & Authentication Enhancements",
+    images: [],
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "모바일 앱 " : "Implemented "}
+            <Important
+              content={
+                isKo
+                  ? "백그라운드 알림 지속성"
+                  : "dual-token authentication system "
+              }
+            />
+            {isKo
+              ? "을 위한 이중 토큰 인증 시스템을 구현하여 accessToken(세션 토큰)과 refreshToken(연장 토큰)을 활용한 로그인 유지 기능을 추가했습니다."
+              : "with accessToken and refreshToken for mobile app background notification persistence and extended login sessions."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "LocalStorage에서 "
+              : "Enhanced security by transitioning from LocalStorage to "}
+            <BoldBtn
+              title={
+                isKo
+                  ? "HTTP-Only 쿠키 기반 인증"
+                  : "HTTP-Only cookie-based authentication"
+              }
+              link={
+                isKo
+                  ? "https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541"
+                  : "https://jay-global.notion.site/Explanation-of-Login-State-Management-Change-Local-Storage-Cookies-24ce5ccd65b180eca36bfd62f153cb70?source"
+              }
+              fontWeight="medium"
+              customStyle="mr-1"
+              refName="Connect to Notion"
+            />
+            {isKo
+              ? "으로 전환하여 보안을 강화했으며, 중요 정보를 포함한 accessToken과 refreshToken은 자바스크립트 접근이 불가능하도록 설정했습니다."
+              : "system, making critical tokens inaccessible to JavaScript while storing only token expiration times in LocalStorage."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "API 요청마다 " : "Implemented "}
+            <Important
+              content={isKo ? "CSRF 공격 방지 토큰" : "CSRF protection tokens "}
+            />
+            {isKo
+              ? "을 검증하는 시스템을 구현하여 서버에서 해시 암호화된 토큰을 발급하고 클라이언트에서 매 요청마다 서버 검증을 받도록 했습니다."
+              : "validated on every API request, with server-generated hash-encrypted tokens ensuring request authenticity and preventing cross-site attacks."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "클라이언트-서버 " : "Configured "}
+            <Important
+              content={
+                isKo ? "동일 도메인 쿠키 정책" : "same-domain cookie policy "
+              }
+            />
+            {isKo
+              ? "을 구성하여 쿠키 사용을 동일한 도메인에서만 가능하도록 제한하여 보안을 개선하고, 자동 로그아웃 시 서버에서 모든 토큰을 만료시키는 안전한 세션 관리를 구현했습니다."
+              : "restricting cookie usage to same-domain only, with secure session management that expires all tokens server-side during logout."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
   {
     title: "SEO & Server-Side Rendering (SSR)",
+    images: [],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -566,44 +617,87 @@ export const achievements = [
           </>
         )}
       </TransDescription>,
-      "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.",
-    ],
-  },
-  {
-    title: "3D Warehouse Visualization",
-    points: [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "" : "Created "}
-            <BoldBtn
-              title={isKo ? "3D 센터 시각화" : "3D center visualization"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              fontWeight="medium"
-              videoUrl={Center3d}
+            {isKo ? "페이지별 최적화를 통한 " : "Implemented "}
+            <Important
+              content={
+                isKo
+                  ? "포괄적인 메타데이터 시스템"
+                  : "comprehensive metadata system "
+              }
             />
             {isKo
-              ? "를 Three.js 로 구현하여 사용자가 키보드와 마우스로 센터 공간을 자유롭게 탐색할 수 있도록 지원했습니다."
-              : "using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions."}
+              ? "을 구현하여 여러 라우트에 걸쳐 물류 및 WMS 산업 부문을 위한 37개 이상의 타겟 키워드를 생성했습니다."
+              : "with page-specific optimization, generating 37+ targeted keywords for logistics and WMS industry sectors across multiple routes."}
           </>
         )}
       </TransDescription>,
-      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "CDN 호스팅 번역 파일에서 " : "Built "}
+            <Important
+              content={
+                isKo
+                  ? "다국어 SEO 아키텍처"
+                  : "multi-language SEO architecture "
+              }
+            />
+            {isKo
+              ? "를 구축하여 한국어와 영어 시장을 지원하고 동적 콘텐츠 로딩을 구현했습니다."
+              : "supporting Korean and English markets with dynamic content loading from CDN-hosted translation files."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "" : "Configured "}
+            <Important
+              content={
+                isKo
+                  ? "비동기 서버 컴포넌트와 정규 URL 구조"
+                  : "async server components and canonical URL structure "
+              }
+            />
+            {isKo
+              ? "를 구성하여 중복 콘텐츠 페널티를 방지하고 페이지당 7개 이상의 최적화된 이미지를 통해 소셜 미디어 참여를 극대화했습니다."
+              : "preventing duplicate content penalties while maximizing social media engagement through 7+ optimized images per page."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "" : "Deployed with "}
+            <Important
+              content={
+                isKo
+                  ? "독립 실행형 출력 구성"
+                  : "standalone output configuration "
+              }
+            />
+            {isKo
+              ? "으로 배포하여 Docker 이미지 크기를 약 40% 줄이고 로컬 폰트 최적화 전략으로 확장 가능한 프로덕션 빌드를 활성화했습니다."
+              : "reducing Docker image size by ~40% and enabling scalable production builds with local font optimization strategies."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
+
   {
     title: "Continuous Deployment & Versioning Improvements",
+    images: [],
+    codeBlocks: [versionDetectorCodeExample],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
             {isKo ? "" : "Implemented a "}
-            <BoldBtn
-              title={isKo ? "버전 탐지기" : "Version Detector"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              fontWeight="medium"
-              codeBlock={versionDetectorCodeExample}
-            />
+            <Important content={isKo ? "버전 탐지기" : "Version Detector "} />
             {isKo
               ? "를 GitHub API(Octokit)를 이용해 프로덕션, 스테이징 그리고 베타 환경에서 사용할 수 있도록 구현하여 최신 클라이언트 코드를 자동으로 받아올 수 있도록 개선했습니다."
               : "for production, staging, and beta environments using the GitHub API (Octokit), ensuring automatic reloading of the latest client code."}
@@ -633,19 +727,17 @@ export const achievements = [
   },
   {
     title: "Product Image Upload & Editing",
+    images: [ImageUpload1, ImageUpload2, ImageUpload3],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
-            <BoldBtn
-              title={
+            <Important
+              content={
                 isKo
                   ? "직관적인 이미지 업로드 기능"
-                  : "Intuitive image upload feature"
+                  : "Intuitive image upload feature "
               }
-              imageUrls={[ImageUpload1, ImageUpload2, ImageUpload3]}
-              customStyle="mr-1"
-              fontWeight="medium"
             />
             {isKo
               ? "을 통해 상품 인식과 사용성을 개선하여 사용자 경험을 향상시켰습니다."
@@ -676,17 +768,15 @@ export const achievements = [
   },
   {
     title: "Multi-Size Barcode Printing System",
+    images: [BarcodePrint1, BarcodePrint2],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
-            <BoldBtn
-              title={
-                isKo ? "맞춤형 바코드 출력 기능" : "Custom barcode printing"
+            <Important
+              content={
+                isKo ? "맞춤형 바코드 출력 기능" : "Custom barcode printing "
               }
-              customStyle="mr-1"
-              fontWeight="medium"
-              imageUrls={[BarcodePrint1, BarcodePrint2]}
             />
             {isKo
               ? "을 react-barcode 와 react-to-print 라이브러리를 사용해 다양한 상품 크기에 맞게 구현했습니다."
@@ -699,6 +789,7 @@ export const achievements = [
   },
   {
     title: "Automatic PR Labeler for team productivity",
+    images: [],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -710,7 +801,6 @@ export const achievements = [
               fontWeight="medium"
               link="https://github.com/JayKim88/automatic-pr-labeler"
               refName="Connect to Github Repo"
-              isBottomDirection
             />
             {isKo
               ? "를 만들어 리뷰 마감일을 지속적으로 확인할 수 있도록 지원했습니다."

@@ -7,7 +7,7 @@ import { projects } from "../constants/data";
 import { Description } from "../components/Description";
 import { AnimatedSection, AnimatedList } from "../components/AnimatedSection";
 
-export const Projects = ({ onClick, onHover, hoveredItem }) => {
+export const Projects = ({ onClick, onHover, hoveredItem, onDetailClick }) => {
   // const projectsData = useFiretore("works");
 
   return (
@@ -23,6 +23,7 @@ export const Projects = ({ onClick, onHover, hoveredItem }) => {
             {...item}
             onHover={onHover}
             hoveredItem={hoveredItem}
+            onDetailClick={onDetailClick}
           />
         ))}
       </AnimatedList>

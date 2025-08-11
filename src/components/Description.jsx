@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Tags } from "../components/Tags";
 import { useTranslation } from "react-i18next";
 
@@ -37,9 +38,14 @@ export const Description = ({
   onDetailClick,
 }) => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
   const isDesktop = window.innerWidth >= 1024;
-  const isKo = i18n.language === "ko";
+  const isKo = i18n.language === "ko"
+
+  const handleDetailClick = (title) => {
+    navigate(`/detail/${encodeURIComponent(title)}`);
+  };
 
   return (
     <div
@@ -81,7 +87,7 @@ export const Description = ({
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                onDetailClick?.(title);
+                handleDetailClick(title);
               }}
               className={`px-2 py-1 rounded-2xl font-medium flex 
                 justify-center items-center gap-x-1 text-sm

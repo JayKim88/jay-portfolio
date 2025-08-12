@@ -419,11 +419,6 @@ export const DetailPage = ({ data, metadata, onBack }) => {
   const { t, i18n } = useTranslation();
   const isKo = i18n.language === "ko";
 
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
-
   if (!data) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-teal-900 flex items-center justify-center">

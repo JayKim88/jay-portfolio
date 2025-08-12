@@ -220,7 +220,7 @@ export const projects = [
       {
         type: "note",
         title: "work history",
-        url: "https://nomadkim880901.tistory.com/category/Projects/JStargram",
+        url: "https://nomadkim880901.tistory.com/category/2021%7E_Projects/JStargram_2021",
       },
     ],
   },
@@ -262,7 +262,7 @@ export const projects = [
       {
         type: "note",
         title: "work history",
-        url: "https://nomadkim880901.tistory.com/category/Projects/Covid19%20Tracker",
+        url: "https://nomadkim880901.tistory.com/category/2021%7E_Projects/Covid19%20Tracker_2021",
       },
     ],
   },
@@ -437,7 +437,7 @@ export const projects = [
       {
         type: "note",
         title: "work history",
-        url: "https://nomadkim880901.tistory.com/category/BootCamp_Codestates/First%20Project?page=1",
+        url: "https://nomadkim880901.tistory.com/category/2020_BootCamp_Codestates/First%20Project?page=1",
       },
     ],
   },

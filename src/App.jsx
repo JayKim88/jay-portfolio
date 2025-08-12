@@ -34,7 +34,6 @@ const MainContent = () => {
     navigate(`/detail/${encodeURIComponent(title)}`);
   };
 
-
   useEffect(() => {
     const updateSizes = () => {
       if (svgWrapperRef.current) {
@@ -66,8 +65,6 @@ const MainContent = () => {
       )}
       <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} />
       <Header />
-      <Language />
-      <AudioPlayer />
       <main className="flex flex-col gap-40 max-w-[700px] pb-[96px]">
         <Home />
         <Skills />
@@ -99,10 +96,14 @@ const MainContent = () => {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainContent />} />
-      <Route path="/detail/:title" element={<DetailPageRoute />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/detail/:title" element={<DetailPageRoute />} />
+      </Routes>
+      <AudioPlayer />
+      <Language />
+    </>
   );
 }
 

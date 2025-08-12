@@ -6,9 +6,9 @@ import { experiences, projects } from "../constants/data";
 export const DetailPageRoute = () => {
   const { title } = useParams();
   const navigate = useNavigate();
-  
+
   const allItems = [...experiences, ...projects];
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [title]);
@@ -32,11 +32,5 @@ export const DetailPageRoute = () => {
 
   const { achievements, ...rest } = item;
 
-  return (
-    <DetailPage 
-      data={achievements} 
-      metadata={rest} 
-      onBack={handleBack} 
-    />
-  );
+  return <DetailPage data={achievements} metadata={rest} onBack={handleBack} />;
 };

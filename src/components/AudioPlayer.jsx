@@ -25,7 +25,7 @@ const AudioPlayer = () => {
 
   const handlePlay = () => {
     if (!audioRef.current) return;
-    
+
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -52,22 +52,6 @@ const AudioPlayer = () => {
   };
 
   useEffect(() => {
-    const playAudio = async () => {
-      if (audioRef.current) {
-        audioRef.current.volume = 0;
-        try {
-          await audioRef.current.play();
-          setIsPlaying(true);
-        } catch (error) {
-          console.warn("Autoplay blocked, waiting for user interaction");
-        }
-      }
-    };
-
-    playAudio();
-  }, []);
-
-  useEffect(() => {
     const updateProgress = () => {
       if (audioRef.current) {
         setProgress(audioRef.current.currentTime);
@@ -88,7 +72,10 @@ const AudioPlayer = () => {
     return () => {
       if (audioRef.current) {
         audioRef.current.removeEventListener("timeupdate", updateProgress);
-        audioRef.current.removeEventListener("loadedmetadata", handleLoadedMetadata);
+        audioRef.current.removeEventListener(
+          "loadedmetadata",
+          handleLoadedMetadata
+        );
       }
     };
   }, []);

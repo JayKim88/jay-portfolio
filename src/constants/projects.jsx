@@ -11,22 +11,119 @@ export const projects = [
     title: "PolyLingo",
     position: "Full Stack",
     summary:
-      "A real-time multi-language translation mobile app combining Claude AI with Wiktionary API, supporting commercial-grade Apple ecosystem integration",
+      "A real-time multi-language translation app (14 languages) with parallel translation, speech recognition, offline support, and subscription-based monetization",
     points: [
-      "Built comprehensive translation system supporting simultaneous translation for up to 5 languages with Claude AI and Wiktionary API integration for enhanced word definitions and pronunciation",
-      "Implemented transaction-only architecture using Apple's originalTransactionIdentifierIOS, eliminating user registration while maintaining full subscription lifecycle management and App Store compliance",
-      "Developed hybrid local-first data architecture with AsyncStorage and Supabase sync, featuring 24-hour memory caching and offline-first experience with race condition prevention",
-      "Created smart failover system with parallel API processing, automatic retry logic, and Claude API to MyMemory fallback ensuring 99%+ translation reliability",
-      "Integrated comprehensive monetization model with React Native IAP, Google Mobile Ads, and Apple Sign-In supporting both free (3 languages) and premium (5 languages) plans",
-      "Built advanced UX features including speech recognition, text-to-speech, dark/light themes, smooth animations with React Native Reanimated, and auto-hiding navigation based on scroll direction",
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "Claude AI, Wiktionary API, MyMemory 백업 시스템을 활용한 "
+              : "Built "}
+            <Important
+              content={
+                isKo
+                  ? "지능형 멀티 API 번역 파이프라인"
+                  : "intelligent multi-API translation pipeline"
+              }
+            />
+            {isKo
+              ? "을 구축하여 14개 언어에서 24시간 캐싱과 함께 99% 이상의 가용성을 달성했습니다."
+              : " with Claude AI, Wiktionary API, and MyMemory failover, achieving 99%+ availability with 24-hour caching across 14 languages."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "Apple의 트랜잭션 식별자를 활용한 " : "Architected "}
+            <Important
+              content={
+                isKo
+                  ? "트랜잭션 기반 비밀번호 없는 인증"
+                  : "transaction-based passwordless authentication"
+              }
+            />
+            {isKo
+              ? "을 설계하여 회원가입 과정 없이도 App Store 정책을 완벽히 준수하도록 구현했습니다."
+              : " using Apple's transaction identifiers, eliminating registration while ensuring App Store compliance."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "AsyncStorage와 Supabase 동기화를 결합한 " : "Designed "}
+            <Important
+              content={
+                isKo
+                  ? "하이브리드 오프라인 우선 아키텍처"
+                  : "hybrid offline-first architecture"
+              }
+            />
+            {isKo
+              ? "를 설계하고, 경합 조건(race condition) 방지 및 사용자 시간대 기반의 일일 사용량 추적 기능을 구현했습니다."
+              : " with AsyncStorage + Supabase sync, implementing race condition prevention and timezone-aware daily usage tracking."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "앱 사용 중 구독 갱신을 실시간으로 감지하는 "
+              : "Developed "}
+            <Important
+              content={
+                isKo
+                  ? "정교한 갱신 감지 로직"
+                  : "sophisticated renewal detection"
+              }
+            />
+            {isKo
+              ? "를 구현하여 Apple IAP 자동 검증과 매끄러운 상태 전환을 지원합니다."
+              : " handling expired subscriptions during active usage, with automatic Apple IAP validation and seamless state transitions."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "개별 재시도/취소 제어가 가능한 " : "Implemented "}
+            <Important
+              content={
+                isKo ? "실시간 병렬 번역" : "real-time parallel translation"
+              }
+            />
+            {isKo
+              ? "과 순차적 결과 표시를 구현하여, 전체 완료를 기다리지 않고 완료된 번역부터 실시간으로 보여줍니다."
+              : " with individual retry/cancel controls and progressive result display, showing first-arrived translations immediately without waiting for completion."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "React Native IAP와 Google Ads를 연동한 " : "Integrated "}
+            <Important
+              content={isKo ? "구독 기반 수익화" : "subscription monetization"}
+            />
+            {isKo
+              ? "를 구현하여 무료 및 프리미엄 구독 서비스를 제공합니다."
+              : " with React Native IAP and Google Ads, supporting Free and Premium tiers."}
+          </>
+        )}
+      </TransDescription>,
     ],
     stacks: [
       "React Native",
+      "Expo SDK",
       "TypeScript",
       "NativeWind",
       "Zustand",
       "Supabase",
       "Claude API",
+      "React Native IAP",
+      "Google Mobile Ads",
       "Sentry",
       "i18next",
     ],
@@ -37,7 +134,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "project info",
+        title: "project details",
         url: "https://jay-global.notion.site/PolyLingo-Info-240e5ccd65b180dc9180e79a1367268f",
       },
     ],

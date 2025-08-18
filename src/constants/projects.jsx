@@ -134,7 +134,7 @@ export const projects = [
       },
       {
         type: "note",
-        title: "project details",
+        title: "details",
         url: "https://jay-global.notion.site/PolyLingo-Info-240e5ccd65b180dc9180e79a1367268f",
       },
     ],

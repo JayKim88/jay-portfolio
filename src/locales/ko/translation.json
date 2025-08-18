@@ -54,6 +54,7 @@
   "github": "깃헙",
   "deploy": "배포",
   "work history": "작업내역",
+  "details": "상세 정보",
   "figma": "피그마",
   "An interactive photo-sharing platform that connects users through shared images and conversations": "이미지 공유와 대화를 통해 사용자를 연결하는 대화형 사진 공유 플랫폼",
   "Implemented secure image upload with progress tracking and server-side timestamping for efficient media management.": "효율적인 미디어 관리를 위해 진행 상황 추적 및 서버 측 타임스탬프 기능을 갖춘 안전한 이미지 업로드를 구현했습니다.",

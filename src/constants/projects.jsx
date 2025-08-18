@@ -7,6 +7,43 @@ import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.webp";
 export const projects = [
   {
     type: "Personal",
+    period: "July - Aug 2025",
+    title: "PolyLingo",
+    position: "Full Stack",
+    summary:
+      "A real-time multi-language translation mobile app combining Claude AI with Wiktionary API, supporting commercial-grade Apple ecosystem integration",
+    points: [
+      "Built comprehensive translation system supporting simultaneous translation for up to 5 languages with Claude AI and Wiktionary API integration for enhanced word definitions and pronunciation",
+      "Implemented transaction-only architecture using Apple's originalTransactionIdentifierIOS, eliminating user registration while maintaining full subscription lifecycle management and App Store compliance",
+      "Developed hybrid local-first data architecture with AsyncStorage and Supabase sync, featuring 24-hour memory caching and offline-first experience with race condition prevention",
+      "Created smart failover system with parallel API processing, automatic retry logic, and Claude API to MyMemory fallback ensuring 99%+ translation reliability",
+      "Integrated comprehensive monetization model with React Native IAP, Google Mobile Ads, and Apple Sign-In supporting both free (3 languages) and premium (5 languages) plans",
+      "Built advanced UX features including speech recognition, text-to-speech, dark/light themes, smooth animations with React Native Reanimated, and auto-hiding navigation based on scroll direction",
+    ],
+    stacks: [
+      "React Native",
+      "TypeScript",
+      "NativeWind",
+      "Zustand",
+      "Supabase",
+      "Claude API",
+      "Sentry",
+      "i18next",
+    ],
+    refs: [
+      {
+        type: "deploy",
+        url: "https://apps.apple.com/kr/app/polylingo-translator/id6748724404?l=en-GB",
+      },
+      {
+        type: "note",
+        title: "project info",
+        url: "https://jay-global.notion.site/PolyLingo-Info-240e5ccd65b180dc9180e79a1367268f",
+      },
+    ],
+  },
+  {
+    type: "Personal",
     period: "May - Sep 2024",
     title: "Build Your Body",
     position: "Full Stack",

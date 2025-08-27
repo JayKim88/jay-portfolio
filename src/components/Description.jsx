@@ -36,12 +36,13 @@ export const Description = ({
   onHover,
   hoveredItem,
   onDetailClick,
+  serviceType,
 }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
   const isDesktop = window.innerWidth >= 1024;
-  const isKo = i18n.language === "ko"
+  const isKo = i18n.language === "ko";
 
   const handleDetailClick = (title) => {
     navigate(`/detail/${encodeURIComponent(title)}`);
@@ -77,6 +78,11 @@ export const Description = ({
               </span>
             )}
             <Highlight content={title} isImportant />
+            {serviceType && (
+              <span className="text-sm font-medium pt-0.5">
+                · {t(serviceType)}
+              </span>
+            )}
             {(company || position) && (
               <span className="text-sm font-medium pt-0.5">
                 · {t(company || position)}

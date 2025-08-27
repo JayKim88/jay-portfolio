@@ -10,6 +10,7 @@ export const projects = [
     period: "July - Aug 2025",
     title: "PolyLingo",
     position: "Full Stack",
+    serviceType: "Mobile App",
     summary:
       "A real-time multi-language translation app (14 languages) with parallel translation, speech recognition, offline support, and subscription-based monetization",
     points: [
@@ -144,6 +145,7 @@ export const projects = [
     period: "May - Sep 2024",
     title: "Build Your Body",
     position: "Full Stack",
+    serviceType: "Web App",
     summary:
       "A personal home training service designed to help users customize and track their fitness journey",
     points: [
@@ -269,6 +271,7 @@ export const projects = [
     period: "Apr 2021",
     title: "JStargram",
     position: "Full Stack",
+    serviceType: "Web App",
     summary:
       "An interactive photo-sharing platform that connects users through shared images and conversations",
     points: [
@@ -363,6 +366,7 @@ export const projects = [
     period: "Apr 2021",
     title: "Covid19 Tracker",
     position: "Full Stack",
+    serviceType: "Web App",
     summary: "A chart and map service providing real-time global COVID-19 data",
     points: [
       "Designed and configured a user-friendly UI for a global COVID-19 data service.",
@@ -405,6 +409,7 @@ export const projects = [
     period: "Feb - Mar 2021",
     title: "Royal Diary",
     position: "Front End",
+    serviceType: "Web App",
     summary:
       "A digital illustrated diary service letting users relive childhood vacation journaling with a retro-style interface. They can draw, write, edit entries, share diaries, exchange encouraging comments, and interact using stamp-like reactions, recreating the joy of childhood journaling",
     points: [
@@ -473,6 +478,7 @@ export const projects = [
     period: "Jan - Feb 2021",
     title: "Home Made",
     position: "Back End",
+    serviceType: "Web App",
     summary:
       "A recipe-sharing service created in response to increased home cooking during COVID-19. Users can share family recipes, rate, and comment on others' dishes, while the platform highlights popular recipes of the week, fostering a community around discovering and enjoying delicious meals",
     points: [

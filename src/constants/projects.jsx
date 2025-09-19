@@ -131,7 +131,7 @@ export const projects = [
     refs: [
       {
         type: "deploy",
-        url: "https://apps.apple.com/kr/app/polylingo-translator/id6748724404?l=en-GB",
+        url: "https://jay-global.notion.site/App-Store-Preview-273e5ccd65b180fe8a5cda70e13d8d21",
       },
       {
         type: "note",

@@ -362,23 +362,39 @@ export const achievements = [
     ],
   },
   {
-    title: "Core Page Developments",
+    title: "Fulfillment Platform Core Modules",
     images: [CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
             {isKo
-              ? "코어 비즈니스 페이지(운영 관리, 매출, 출고 등)를 완전한 CRUD 기능과 "
-              : "Developed core business pages (Operations Management, Sales, and Outbound, among others) with full CRUD functionality, incorporating "}
+              ? "풀필먼트 플랫폼의 핵심 모듈(주문, 입고, 출고, 재고 등)을 개발하며 "
+              : "Led end-to-end development of the Fulfillment Platform's core modules—including Orders, Inbound (Receiving), Outbound (Shipping), and Inventory—while "}
             <Important
               content={
                 isKo
-                  ? "검색 필터 및 데이터 테이블을 적용하여 "
-                  : "search filters and data tables "
+                  ? "데이터 흐름·운영 효율을 개선하고 고도화된 UI/UX를 구현"
+                  : "optimizing data flows, enhancing operational efficiency, and delivering refined UI/UX"
               }
             />
-            {isKo ? "구현했습니다." : "."}
+            {isKo ? "했습니다." : "."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "운영 관리 페이지에서는 완전한 CRUD 기능과 "
+              : "The Operations Management page include full CRUD functionality, "}
+            <Important
+              content={
+                isKo
+                  ? "검색 필터 및 데이터 테이블을 적용했습니다."
+                  : "incorporating search filters and data tables."
+              }
+            />
           </>
         )}
       </TransDescription>,
@@ -387,22 +403,16 @@ export const achievements = [
           <>
             {isKo
               ? "데이터 테이블에 일괄 선택, 정렬, 상세 페이지 이동 기능을 추가하여 사용성을 개선했습니다."
-              : "Added bulk selection, sorting, and detail page navigation for improved usability to data table."}
+              : "Added bulk selection, sorting, and detail page navigation to improve table usability."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "" : "Designed with "}
-            <Important
-              content={
-                isKo ? "반응형 모바일 지원" : "responsive mobile support "
-              }
-            />
             {isKo
-              ? "으로 원활한 접근성과 사용자와의 상호작용을 보장했습니다."
-              : ", ensuring seamless accessibility and interaction."}
+              ? "반응형 모바일 지원으로 원활한 접근성과 상호작용을 보장했습니다."
+              : "Ensured seamless accessibility and interaction with responsive mobile support."}
           </>
         )}
       </TransDescription>,

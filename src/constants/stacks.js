@@ -8,113 +8,189 @@ import threeJS from "../assets/images/stacks/threejs.svg";
 import reactNative from "../assets/images/stacks/react-native.svg";
 import tailwindCss from "../assets/images/stacks/tailwindcss.svg";
 import viteJS from "../assets/images/stacks/vitejs.svg";
+import flutter from "../assets/images/stacks/flutter.svg";
+import zustand from "../assets/images/stacks/zustand.svg";
+import i18next from "../assets/images/stacks/i18next.svg";
+import nextJS from "../assets/images/stacks/nextjs.svg";
 
 import nodeJS from "../assets/images/stacks/nodejs.svg";
-import mongoDB from "../assets/images/stacks/mongodb.svg";
-import gcp from "../assets/images/stacks/gcp.svg";
-import vercel from "../assets/images/stacks/vercel.svg";
-import firebase from "../assets/images/stacks/firebase.svg";
-
-import nextJS from "../assets/images/stacks/nextjs.svg";
 import graphQL from "../assets/images/stacks/graphql.svg";
+import mongoDB from "../assets/images/stacks/mongodb.svg";
+import supabase from "../assets/images/stacks/supabase.svg";
+
+import gcp from "../assets/images/stacks/gcp.svg";
+import firebase from "../assets/images/stacks/firebase.svg";
+import vercel from "../assets/images/stacks/vercel.svg";
+import docker from "../assets/images/stacks/docker.svg";
+import githubActions from "../assets/images/stacks/github-actions.svg";
+import vitest from "../assets/images/stacks/vitest.svg";
+import storybook from "../assets/images/stacks/storybook.svg";
+import playwright from "../assets/images/stacks/playwright.svg";
+
+// Expert > Advanced > Proficient > Familiar
 
 const client = [
   {
-    name: "Html",
+    name: "HTML5",
     img: html,
-    usage: 100,
+    level: "Expert",
+    keyword: "Semantic Markup, Accessibility",
   },
   {
-    name: "Css3",
+    name: "CSS3",
     img: css,
-    usage: 100,
+    level: "Expert",
+    keyword: "Responsive Layout, Animation",
   },
   {
-    name: "Javascript",
+    name: "JavaScript",
     img: javascript,
-    usage: 100,
-  },
-  {
-    name: "Typescript",
-    img: typescript,
-    usage: 90,
+    level: "Expert",
+    keyword: "Async Patterns, Performance",
   },
   {
     name: "React",
     img: react,
-    usage: 100,
+    level: "Expert",
+    keyword: "Hooks, Performance Optimization",
+  },
+  {
+    name: "TypeScript",
+    img: typescript,
+    level: "Advanced",
+    keyword: "Type Safety, Generics",
+  },
+  {
+    name: "Next.js",
+    img: nextJS,
+    level: "Advanced",
+    keyword: "SSR/SSG, App Router, SEO",
   },
   {
     name: "Apollo Client",
     img: apolloClient,
-    usage: 80,
+    level: "Advanced",
+    keyword: "GraphQL Caching, Local State",
   },
-  {
-    name: "Three JS",
-    img: threeJS,
-    usage: 20,
-  },
+  { name: "Vite", img: viteJS, level: "Advanced", keyword: "Fast Build, HMR" },
   {
     name: "React Native",
     img: reactNative,
-    usage: 40,
+    level: "Proficient",
+    keyword: "Cross-platform, Native",
   },
   {
     name: "Tailwind CSS",
     img: tailwindCss,
-    usage: 50,
+    level: "Proficient",
+    keyword: "Utility-first, Responsive Design",
   },
   {
-    name: "Vite JS",
-    img: viteJS,
-    usage: 70,
+    name: "Zustand",
+    img: zustand,
+    level: "Proficient",
+    keyword: "Lightweight Global State",
+  },
+  {
+    name: "i18next",
+    img: i18next,
+    level: "Proficient",
+    keyword: "Translation Pipeline",
+  },
+  {
+    name: "Flutter",
+    img: flutter,
+    level: "Familiar",
+    keyword: "Hybrid WebView",
+  },
+  {
+    name: "Three.js",
+    img: threeJS,
+    level: "Familiar",
+    keyword: "3D Visualization, WebGL",
   },
 ];
 
 const server = [
   {
-    name: "Node JS",
-    img: nodeJS,
-    usage: 40,
+    name: "GraphQL",
+    img: graphQL,
+    level: "Advanced",
+    keyword: "Schema Design, Apollo Server",
   },
   {
-    name: "Typescript",
-    img: typescript,
-    usage: 40,
+    name: "Node.js",
+    img: nodeJS,
+    level: "Proficient",
+    keyword: "Express, REST API, Middleware",
   },
   {
     name: "MongoDB",
     img: mongoDB,
-    usage: 50,
+    level: "Proficient",
+    keyword: "Aggregation Pipeline",
   },
+  {
+    name: "Supabase",
+    img: supabase,
+    level: "Familiar",
+    keyword: "Auth, Realtime, Storage",
+  },
+];
+
+const devops = [
   {
     name: "GCP",
     img: gcp,
-    usage: 60,
-  },
-  {
-    name: "Vercel",
-    img: vercel,
-    usage: 30,
+    level: "Advanced",
+    keyword: "Cloud Run, Storage, Monitoring",
   },
   {
     name: "Firebase",
     img: firebase,
-    usage: 50,
+    level: "Advanced",
+    keyword: "FCM, Hosting, Firestore",
+  },
+
+  {
+    name: "Vercel",
+    img: vercel,
+    level: "Advanced",
+    keyword: "Serverless Deployment",
+  },
+  {
+    name: "GitHub Actions",
+    img: githubActions,
+    level: "Proficient",
+    keyword: "CI/CD, Parallel Testing",
+  },
+  {
+    name: "Docker",
+    img: docker,
+    level: "Familiar",
+    keyword: "CI/CD, Containerization",
   },
 ];
 
-const both = [
+const testing = [
   {
-    name: "Next JS",
-    img: nextJS,
-    usage: 60,
+    name: "Vitest",
+    img: vitest,
+    level: "Advanced",
+    keyword: "Unit & Integration Tests",
   },
   {
-    name: "GraphQL",
-    img: graphQL,
-    usage: 80,
+    name: "Storybook",
+    img: storybook,
+    level: "Proficient",
+    keyword: "Visual Regression",
+  },
+  {
+    name: "Playwright",
+    img: playwright,
+    level: "Familiar",
+    keyword: "E2E Testing",
   },
 ];
 
-export { client, server, both };
+export { client, server, devops, testing };

@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 
-import { both, client, server } from "../constants/stacks";
+import { testing, devops, client, server } from "../constants/stacks";
 import { useTranslation } from "react-i18next";
 import { AnimatedItem } from "./AnimatedSection";
 
@@ -17,7 +15,10 @@ export const Stacks = () => {
         <StacksElements title="Server" data={server} />
       </AnimatedItem>
       <AnimatedItem index={2}>
-        <StacksElements title="Both" data={both} />
+        <StacksElements title="DevOps" data={devops} />
+      </AnimatedItem>
+      <AnimatedItem index={3}>
+        <StacksElements title="Testing" data={testing} />
       </AnimatedItem>
     </div>
   );
@@ -62,7 +63,7 @@ const StacksElements = ({ title, data }) => {
         {t(title)}
       </motion.div>
       <motion.div className="flex flex-wrap gap-4" variants={containerVariants}>
-        {data.map(({ name, img, usage }, index) => (
+        {data.map(({ name, img, level, keyword }, index) => (
           <motion.div
             key={name}
             className="w-24 h-24 group"
@@ -84,23 +85,27 @@ const StacksElements = ({ title, data }) => {
                 <span className="text-xs">{name}</span>
               </div>
               <div
-                className={`rotate-y-180 flex items-center justify-center flex-col ${commonStackStyle}`}
+                style={{
+                  overflowWrap: "anywhere",
+                }}
+                className={`rotate-y-180 flex flex-wrap items-center
+                  justify-center flex-col ${commonStackStyle} p-2`}
               >
-                <div className="absolute top-1 text-xs font-bold tracking-tighter">
-                  {t("Usage")}
+                <div
+                  className={`px-2 py-1 rounded-full text-xs font-bold text-white mb-1 ${
+                    level === "Expert"
+                      ? "bg-green-500"
+                      : level === "Advanced"
+                      ? "bg-blue-500"
+                      : level === "Proficient"
+                      ? "bg-yellow-500"
+                      : "bg-orange-500"
+                  }`}
+                >
+                  {level}
                 </div>
-                <div className="w-14 h-14 flex items-center justify-center mt-4">
-                  <CircularProgressbar
-                    value={usage}
-                    text={`${usage}%`}
-                    styles={buildStyles({
-                      outerWidth: 20,
-                      textSize: "20px",
-                      pathColor: "#fff",
-                      textColor: "#fff",
-                      trailColor: "#090000",
-                    })}
-                  />
+                <div className="text-xs text-center text-white font-medium">
+                  {keyword}
                 </div>
               </div>
             </div>

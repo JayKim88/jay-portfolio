@@ -8,6 +8,8 @@ import ImageUpload3 from "../assets/images/refs/image-upload_3.webp";
 import CorePage1 from "../assets/images/refs/core-page_1.webp";
 import CorePage2 from "../assets/images/refs/core-page_2.webp";
 import CorePage3 from "../assets/images/refs/core-page_3.webp";
+import CorePage4 from "../assets/images/refs/core-page_4.webp";
+import CorePage5 from "../assets/images/refs/core-page_5.webp";
 import Center3d from "../assets/video/3d-center.mp4";
 import BarcodePrint1 from "../assets/images/refs/barcode-print_1.webp";
 import BarcodePrint2 from "../assets/images/refs/barcode-print_2.webp";
@@ -363,7 +365,7 @@ export const achievements = [
   },
   {
     title: "Fulfillment Platform Core Modules",
-    images: [CorePage1, CorePage2, CorePage3, Mobile],
+    images: [CorePage4, CorePage5, CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -520,12 +522,38 @@ export const achievements = [
               content={isKo ? "3D 센터 시각화" : "3D center visualization "}
             />
             {isKo
-              ? "를 Three.js 로 구현하여 사용자가 키보드와 마우스로 센터 공간을 자유롭게 탐색할 수 있도록 지원했습니다."
-              : "using Three.js, allowing users to freely navigate the space with keyboard controls and mouse interactions."}
+              ? "를 Three.js로 구현하여 키보드/마우스 내비게이션과 클릭 가능한 랙 위치를 통한 실시간 재고 조회 기능을 지원했습니다."
+              : "with Three.js featuring keyboard/mouse navigation and clickable rack locations for real-time inventory inspection."}
           </>
         )}
       </TransDescription>,
       "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "렌더링 성능 최적화"
+                  : "Optimized rendering performance "
+              }
+            />
+            {isKo
+              ? "를 위해 컴포넌트 메모이제이션과 인스턴스화된 지오메트리를 적용하여 복잡한 창고 환경에서 "
+              : "through component memoization and instanced geometries, "}
+            <Important
+              content={
+                isKo
+                  ? "부드러운 60fps 내비게이션을 보장"
+                  : "ensuring smooth 60fps navigation "
+              }
+            />
+            {isKo
+              ? "했습니다."
+              : "in complex warehouse environments."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
   {
@@ -675,23 +703,6 @@ export const achievements = [
             {isKo
               ? "를 구성하여 중복 콘텐츠 페널티를 방지하고 페이지당 7개 이상의 최적화된 이미지를 통해 소셜 미디어 참여를 극대화했습니다."
               : "preventing duplicate content penalties while maximizing social media engagement through 7+ optimized images per page."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Deployed with "}
-            <Important
-              content={
-                isKo
-                  ? "독립 실행형 출력 구성"
-                  : "standalone output configuration "
-              }
-            />
-            {isKo
-              ? "으로 배포하여 Docker 이미지 크기를 약 40% 줄이고 로컬 폰트 최적화 전략으로 확장 가능한 프로덕션 빌드를 활성화했습니다."
-              : "reducing Docker image size by ~40% and enabling scalable production builds with local font optimization strategies."}
           </>
         )}
       </TransDescription>,

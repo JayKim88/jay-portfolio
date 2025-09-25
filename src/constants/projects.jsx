@@ -36,23 +36,6 @@ export const projects = [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "Apple의 트랜잭션 식별자를 활용한 " : "Architected "}
-            <Important
-              content={
-                isKo
-                  ? "트랜잭션 기반 비밀번호 없는 인증"
-                  : "transaction-based passwordless authentication"
-              }
-            />
-            {isKo
-              ? "을 설계하여 회원가입 과정 없이도 App Store 정책을 완벽히 준수하도록 구현했습니다."
-              : " using Apple's transaction identifiers, eliminating registration while ensuring App Store compliance."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
             {isKo ? "AsyncStorage와 Supabase 동기화를 결합한 " : "Designed "}
             <Important
               content={

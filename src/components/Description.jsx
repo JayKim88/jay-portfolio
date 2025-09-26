@@ -8,6 +8,7 @@ import Deploy from "../assets/images/rocket.svg?react";
 import Plan from "../assets/images/pen-ruler.svg?react";
 import Github from "../assets/images/sns/github.svg?react";
 import Eye from "../assets/images/eye.svg?react";
+import PointingHand from "../assets/images/pointinghand.svg?react";
 import { Highlight } from "./Highlight";
 
 const iconStyle = `max-w-6 w-6 h-6 folder-open-8 fill-white`;
@@ -95,7 +96,7 @@ export const Description = ({
                 e.stopPropagation();
                 handleDetailClick(title);
               }}
-              className={`px-2 py-1 rounded-2xl font-medium flex 
+              className={`group/details relative px-2 py-1 rounded-2xl font-medium flex 
                 justify-center items-center gap-x-1 text-sm
                 text-black cursor-pointer transition-transform duration-300
                 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500
@@ -105,6 +106,10 @@ export const Description = ({
             >
               <Eye className="w-4 h-4 fill-current" />
               <span className="hidden sm:inline">{t("Details")}</span>
+              <PointingHand
+                className="group-hover/details:opacity-0 absolute w-16 hover:-top-2 animate-pointer
+              hover:-right-1 h-16 fill-current -top-[1px] -right-3 transition-all duration-400"
+              />
             </button>
           )}
         </section>

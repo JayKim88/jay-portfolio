@@ -29,6 +29,7 @@
 
   --animate-buzz: buzz 1.8s ease-in-out infinite;
   --animate-gradientX: gradientX 2s ease-in-out infinite;
+  --animate-pointer: pointer 1.4s ease-in-out infinite;
 
   @keyframes buzz {
     0%,
@@ -47,6 +48,16 @@
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+
+  @keyframes pointer {
+    0%,
+    100% {
+      transform: translateY(-3px) translateX(-3px);
+    }
+    50% {
+      transform: translateY(3px) translateX(3px);
     }
   }
 }

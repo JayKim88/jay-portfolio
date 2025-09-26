@@ -107,8 +107,10 @@ export const Description = ({
               <Eye className="w-4 h-4 fill-current" />
               <span className="hidden sm:inline">{t("Details")}</span>
               <PointingHand
-                className="group-hover/details:opacity-0 absolute w-16 hover:-top-2 animate-pointer
-              hover:-right-1 h-16 fill-current -top-[1px] -right-3 transition-all duration-400"
+                className="group-hover/details:opacity-0 absolute w-14 h-14 
+                sm:w-16 sm:h-16  hover:-top-2 animate-pointer hover:-right-1 
+                fill-current -top-[1px] -right-6 sm:-right-3 transition-all duration-400 
+                pointer-events-none"
               />
             </button>
           )}

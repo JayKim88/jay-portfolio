@@ -44,10 +44,22 @@ export const Description = ({
   const isNotHovered = !!hoveredItem && hoveredItem !== title;
   const isDesktop = window.innerWidth >= 1024;
   const isKo = i18n.language === "ko";
+  const sessionId = `${title}-${company || position}`;
 
-  const handleDetailClick = (title) => {
+  const handleDetailsClick = (title) => {
+    const clickedDetails = JSON.parse(
+      sessionStorage.getItem("clickedDetails") ?? "[]"
+    );
+    sessionStorage.setItem(
+      "clickedDetails",
+      JSON.stringify([...clickedDetails, sessionId])
+    );
     navigate(`/detail/${encodeURIComponent(title)}`);
   };
+
+  const isDetailsClicked = JSON.parse(
+    sessionStorage.getItem("clickedDetails") ?? "[]"
+  ).includes(sessionId);
 
   return (
     <div
@@ -94,7 +106,7 @@ export const Description = ({
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                handleDetailClick(title);
+                handleDetailsClick(title);
               }}
               className={`group/details relative px-2 py-1 rounded-2xl font-medium flex 
                 justify-center items-center gap-x-1 text-sm
@@ -106,12 +118,14 @@ export const Description = ({
             >
               <Eye className="w-4 h-4 fill-current" />
               <span className="hidden sm:inline">{t("Details")}</span>
-              <PointingHand
-                className="group-hover/details:opacity-0 absolute w-14 h-14 
+              {!isDetailsClicked && (
+                <PointingHand
+                  className="group-hover/details:opacity-0 absolute w-14 h-14 
                 sm:w-16 sm:h-16  hover:-top-2 animate-pointer hover:-right-1 
                 fill-current -top-[1px] -right-6 sm:-right-3 transition-all duration-400 
                 pointer-events-none"
-              />
+                />
+              )}
             </button>
           )}
         </section>

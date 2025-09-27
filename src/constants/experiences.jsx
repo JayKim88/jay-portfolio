@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { achievements } from "./achievements";
 import { Important } from "../components/Important";
 import { TransDescription } from "../components/TransDescription";
@@ -9,6 +10,7 @@ import EyeSlash from "../assets/images/eye-slash.svg?react";
 const viewBtnStyle = "fill-black w-6 h-6";
 
 const Bold9Contribution = () => {
+  const navigate = useNavigate();
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const ulRefs = useRef([]);
@@ -64,7 +66,18 @@ const Bold9Contribution = () => {
       <ul className={`flex flex-col ${open ? "gap-y-10" : ""}`}>
         {achievements.map((achievement, index) => (
           <li key={index}>
-            <h3 className="text-main text-[14.6px] font-semibold flex items-center mb-2">
+            <h3
+              className="text-main text-[14.6px] font-semibold flex items-center w-fit
+               mb-2 hover:text-yellow-300 cursor-pointer transition-all duration-200 
+               transform-gpu"
+              onClick={() => {
+                navigate(`/detail/${encodeURIComponent("Frontend Engineer")}`, {
+                  state: {
+                    subTitle: achievement.title,
+                  },
+                });
+              }}
+            >
               {`${index + 1}. ${t(achievement.title)}`}
             </h3>
             <ul

@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useLocation } from "react-router-dom";
+
 import { Tags } from "./Tags";
 import ErrorBoundary from "./ErrorBoundary";
 
@@ -418,6 +420,9 @@ const MediaCarousel = ({
 export const DetailPage = ({ data, metadata, onBack }) => {
   const { t, i18n } = useTranslation();
   const isKo = i18n.language === "ko";
+  const location = useLocation();
+  const { subTitle } = location.state || {};
+  const [flash, setFlash] = useState(false);
 
   if (!data) {
     return (
@@ -432,6 +437,16 @@ export const DetailPage = ({ data, metadata, onBack }) => {
 
   // Normalize data - if it's a single object, convert to array for consistent processing
   const contentToDisplay = Array.isArray(data) ? data : [data];
+
+  useEffect(() => {
+    if (!subTitle) return;
+    const start = setTimeout(() => setFlash(true), 3000);
+    const end = setTimeout(() => setFlash(false), 5400);
+    return () => {
+      clearTimeout(start);
+      clearTimeout(end);
+    };
+  }, [subTitle]);
 
   return (
     <motion.div
@@ -605,8 +620,10 @@ export const DetailPage = ({ data, metadata, onBack }) => {
             return (
               <motion.div
                 key={`${section.title}-${index}`}
-                className="group backdrop-blur-xl rounded-3xl border overflow-hidden
-                           transition-all duration-500 shadow-xl h-fit"
+                className={`group backdrop-blur-xl rounded-3xl border overflow-hidden
+                transition-all duration-500 shadow-xl h-fit  ${
+                  flash && subTitle === section.title ? "animate-flash" : ""
+                }`}
                 style={{
                   boxShadow: "0 25px 50px -12px rgba(1, 31, 31, 0.3)",
                 }}
@@ -624,6 +641,7 @@ export const DetailPage = ({ data, metadata, onBack }) => {
                 <div className="p-6">
                   {contentToDisplay.length > 1 && (
                     <motion.h3
+                      id={section.title}
                       className="text-2xl font-bold text-transparent bg-gradient-to-r from-white to-teal-200 
                                  bg-clip-text mb-6 pb-4 border-b flex items-center gap-3"
                       style={{ borderColor: "rgba(0, 255, 200, 0.3)" }}

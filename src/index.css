@@ -30,6 +30,7 @@
   --animate-buzz: buzz 1.8s ease-in-out infinite;
   --animate-gradientX: gradientX 2s ease-in-out infinite;
   --animate-pointer: pointer 1.4s ease-in-out infinite;
+  --animate-flash: flash 0.8s ease-in-out infinite;
 
   @keyframes buzz {
     0%,
@@ -60,6 +61,22 @@
       transform: translateY(3px) translateX(3px);
     }
   }
+
+  @keyframes flash {
+    0% {
+      box-shadow: 0 0 0 rgba(255, 255, 0, 0);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(255, 255, 0, 0);
+    }
+  }
+}
+
+.flash {
+  animation: flash 0.8s ease-in-out;
 }
 
 .main {

@@ -1,7 +1,8 @@
 import React from "react";
 import { BoldBtn } from "../components/BoldBtn";
 import { Important } from "../components/Important";
-import Widgets from "../assets/images/refs/widgets.webp";
+import Widgets1 from "../assets/images/refs/widgets1.webp";
+import Widgets2 from "../assets/images/refs/widgets2.webp";
 import ImageUpload1 from "../assets/images/refs/image-upload_1.webp";
 import ImageUpload2 from "../assets/images/refs/image-upload_2.webp";
 import ImageUpload3 from "../assets/images/refs/image-upload_3.webp";
@@ -16,6 +17,9 @@ import BarcodePrint2 from "../assets/images/refs/barcode-print_2.webp";
 import Mobile from "../assets/images/refs/mobile.webp";
 import NotificationModal from "../assets/images/refs/notification-modal.webp";
 import NotificationIosForeback from "../assets/images/refs/notifications.webp";
+import NotificationMobile from "../assets/images/refs/notification-mobile.webp";
+import NotificationSettingsMobile from "../assets/images/refs/notification-settings-mobile.webp";
+import NotificationSettings from "../assets/images/refs/notification-settings.webp";
 import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.webp";
 import { TransDescription } from "../components/TransDescription";
 
@@ -186,30 +190,38 @@ export { checkVersionAndReload };
 export const achievements = [
   {
     title: "Dashboard Development",
-    images: [Widgets],
+    images: [Widgets1, Widgets2],
     points: [
-      "Customized dashboard with real-time visualized analytics using Recharts library.",
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? " " : "Created "}
+            {isKo
+              ? "Recharts 라이브러리를 사용하여, 데이터 시각화 위젯들 (최근 송장, 마켓 주문 상태, 택배사 정보 등) 로 구성된 "
+              : "Developed a "}
             <Important
               content={
-                isKo ? "데이터 시각화 위젯 " : "data visualization widgets "
+                isKo
+                  ? "커스터마이징이 가능한 대시보드"
+                  : "customizable dashboard with data visualization widgets "
               }
             />
-            {isKo ? (
-              <>
-                (예: 최근 송장, 마켓 주문 상태, 택배 대역대 정보) 을
-                구현했습니다. 이는 풀필먼트 작업을 한눈에 모니터링할 수 있도록
-                지원합니다.
-              </>
-            ) : (
-              <>
-                (e.g., Recent Invoice, Market Order Status, Courier Bands Info),
-                enabling users to monitor fulfillment operations at a glance.
-              </>
-            )}
+            {isKo
+              ? "를 구현했으며, 사용자가 풀필먼트 운영 현황을 한눈에 모니터링할 수 있도록 했습니다."
+              : "(e.g., Recent Invoice, Market Order Status, Courier Bands Info) using the Recharts library to enable users to monitor fulfillment operations at a glance."}
+          </>
+        )}
+      </TransDescription>,
+      ,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "차트의 " : "Implemented "}
+            <Important
+              content={isKo ? "고급 기능들" : "advanced chart features "}
+            />
+            {isKo
+              ? " (커스텀 툴팁, 반응형 레이아웃, 호버 효과, 디자인 시스템과 매끄럽게 통합되는 브랜드 컬러 스킴 등) 을 구현했습니다."
+              : "such as custom tooltips with formatted data, responsive layouts, hover effects, and branded color schemes that integrate seamlessly with the design system."}
           </>
         )}
       </TransDescription>,
@@ -236,30 +248,21 @@ export const achievements = [
   },
   {
     title: "Cross-Platform Notification System",
-    images: [NotificationIosForeback, NotificationModal],
+    images: [
+      NotificationIosForeback,
+      NotificationModal,
+      NotificationMobile,
+      NotificationSettings,
+      NotificationSettingsMobile,
+    ],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "자가 인증서와 Nginx 를 사용하여" : "Built a "}
-            <BoldBtn
-              title={isKo ? "로컬 HTTPS 를 설정" : "Local HTTPS setup"}
-              customStyle="mx-1"
-              fontWeight="medium"
-              refName="Connect to Notion"
-              link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
-            />
-            {isKo
-              ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
-              : "using self-signed certificates and Nginx to support Service Workers and PWA development."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
             {isKo ? "FCM을 사용하여 " : ""}
-            <Important content={isKo ? "푸시 알림" : "Push notifications "} />
+            <Important
+              content={isKo ? "푸시 알림" : "Implemented push notifications "}
+            />
             {isKo
               ? "을 구현했고, 데스크탑, 모바일 웹(PWA), 모바일 앱(Flutter InAppWebView)에서 이를 지원하도록 했습니다."
               : "using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android)."}
@@ -285,6 +288,23 @@ export const achievements = [
       </TransDescription>,
       ,
       "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "자가 인증서와 Nginx 를 사용하여" : "Built a "}
+            <BoldBtn
+              title={isKo ? "로컬 HTTPS 를 설정" : "Local HTTPS setup"}
+              customStyle="mx-1"
+              fontWeight="medium"
+              refName="Connect to Notion"
+              link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
+            />
+            {isKo
+              ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
+              : "using self-signed certificates and Nginx to support Service Workers and PWA development."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
   {
@@ -388,24 +408,18 @@ export const achievements = [
         {(isKo) => (
           <>
             {isKo
-              ? "운영 관리 페이지에서는 완전한 CRUD 기능과 "
-              : "The Operations Management page include full CRUD functionality, "}
+              ? "운영 관리 페이지들에는 완전한 CRUD 기능과 "
+              : "The Operations Management pages include full CRUD functionality with "}
             <Important
               content={
                 isKo
-                  ? "검색 필터 및 데이터 테이블을 적용했습니다."
-                  : "incorporating search filters and data tables."
+                  ? "검색 필터 및 데이터 테이블"
+                  : "search filters and data tables "
               }
             />
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
             {isKo
-              ? "데이터 테이블에 일괄 선택, 정렬, 상세 페이지 이동 기능을 추가하여 사용성을 개선했습니다."
-              : "Added bulk selection, sorting, and detail page navigation to improve table usability."}
+              ? "을 적용했으며, 일괄 선택, 정렬, 상세 페이지 이동 기능을 추가하여 사용성을 개선했습니다."
+              : "featuring bulk selection, sorting, and detail page navigation to improve usability."}
           </>
         )}
       </TransDescription>,
@@ -522,8 +536,8 @@ export const achievements = [
               content={isKo ? "3D 센터 시각화" : "3D center visualization "}
             />
             {isKo
-              ? "를 Three.js로 구현하여 키보드/마우스 내비게이션과 클릭 가능한 랙 위치를 통한 실시간 재고 조회 기능을 지원했습니다."
-              : "with Three.js featuring keyboard/mouse navigation and clickable rack locations for real-time inventory inspection."}
+              ? "를 기획부터 구현까지 담당하여 Three.js, @react-three/fiber, react-three/cannon 으로 구현했으며, 키보드/마우스 내비게이션과 클릭 가능한 랙 위치를 통한 실시간 재고 조회 기능을 지원했습니다."
+              : "from planning to implementation using Three.js, @react-three/fiber and react-three/cannon, featuring keyboard/mouse navigation and clickable rack locations for real-time inventory inspection."}
           </>
         )}
       </TransDescription>,
@@ -533,9 +547,7 @@ export const achievements = [
           <>
             <Important
               content={
-                isKo
-                  ? "렌더링 성능 최적화"
-                  : "Optimized rendering performance "
+                isKo ? "렌더링 성능 최적화" : "Optimized rendering performance "
               }
             />
             {isKo
@@ -548,9 +560,7 @@ export const achievements = [
                   : "ensuring smooth 60fps navigation "
               }
             />
-            {isKo
-              ? "했습니다."
-              : "in complex warehouse environments."}
+            {isKo ? "했습니다." : "in complex warehouse environments."}
           </>
         )}
       </TransDescription>,
@@ -744,6 +754,23 @@ export const achievements = [
           </>
         )}
       </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "localStorage 기반 버전 비교와 강제 서비스 워커 업데이트를 통한 "
+              : "Designed "}
+            <Important
+              content={
+                isKo ? "고도화된 캐싱 전략" : "intelligent caching strategy "
+              }
+            />
+            {isKo
+              ? "을 설계하여 완전히 캐시가 무효화되고, 매끄럽게 클라이언트 코드가 업데이트 되도록 했습니다."
+              : "with localStorage-based version comparison and forced service worker updates, ensuring complete cache invalidation and seamless client code refresh."}
+          </>
+        )}
+      </TransDescription>,
     ],
   },
   {
@@ -753,35 +780,63 @@ export const achievements = [
       <TransDescription>
         {(isKo) => (
           <>
+            {isKo ? "react-sortablejs 를 사용하여 " : "Implemented "}
             <Important
               content={
-                isKo
-                  ? "직관적인 이미지 업로드 기능"
-                  : "Intuitive image upload feature "
+                isKo ? "드래그 앤 드롭 재정렬" : "drag-and-drop reordering "
               }
             />
             {isKo
-              ? "을 통해 상품 인식과 사용성을 개선하여 사용자 경험을 향상시켰습니다."
-              : "that enhanced user experience by improving product recognition and usability."}
+              ? " 기능을 구현하여 직관적으로 이미지 순서를 변경할 수 있고, "
+              : "using react-sortablejs for intuitive image sequence management, with "}
+            <Important
+              content={
+                isKo
+                  ? "자동 대표 이미지 지정"
+                  : "automatic representative image designation "
+              }
+            />
+            {isKo
+              ? " 기능으로 첫 번째 이미지가 자동으로 설정되도록 했습니다."
+              : "for the first position."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo
-              ? "react-cropper와 react-sortablejs 라이브러리를 사용해 "
-              : "Includes "}
+            {isKo ? "react-cropper 를 사용해 " : "Created "}
             <Important
               content={
-                isKo
-                  ? "이미지 자르기 및 순서 변경 기능"
-                  : "image cropping and reordering functions "
+                isKo ? "이미지 편집 워크플로우" : "image cropping workflow "
               }
             />
             {isKo
-              ? "을 구현하여 사용자가 상품 이미지를 손쉽게 관리할 수 있도록 지원했습니다."
-              : "using react-cropper and react-sortablejs, that help users manage product images easily."}
+              ? "를 구현하여, 실시간 미리보기가 가능하고 "
+              : "with react-cropper integration, featuring real-time preview and "}
+            <Important
+              content={
+                isKo ? "다중 해상도 처리" : "multiple resolution handling "
+              }
+            />
+            {isKo
+              ? "(썸네일/원본)를 통해 최적화된 이미지가 저장되고 보여지도록 했습니다."
+              : "(thumbnail/original) for optimized storage and display."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "안정적인 " : "Developed robust "}
+            <Important
+              content={
+                isKo ? "이미지 업로드 파이프라인" : "image upload pipeline "
+              }
+            />
+            {isKo
+              ? "을 개발했고, 이는 다중 파일 선택(최대 5개 이미지), 포맷 검증(jpg, png), 크기 제한(최대 5MB), GCP 와의 비동기 클라우드 스토리지 통합으로 구현되었습니다."
+              : "supporting multi-file selection (up to 5 images), format validation (jpg, png), size constraints (max 5MB), and asynchronous cloud storage integration with GCP."}
           </>
         )}
       </TransDescription>,
@@ -826,10 +881,35 @@ export const achievements = [
             {isKo
               ? "를 만들어 리뷰 마감일을 지속적으로 확인할 수 있도록 지원했습니다."
               : "for PRs, ensuring continuous visibility of review deadlines."}
+            {isKo ? " PR 이 생성되면 " : " When a pull request is created, "}
+            <Important
+              content={isKo ? "GitHub 워크플로우" : "GitHub workflow "}
+            />
+            {isKo
+              ? " 내부에서 automatic-pr-labeler 가 실행되어 D-day 라벨을 자동으로 설정합니다."
+              : "triggers automatic-pr-labeler to set D-day labels automatically."}
           </>
         )}
       </TransDescription>,
-      "D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'.",
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "서버리스 자동화 파이프라인"
+                  : "Built serverless automation pipeline "
+              }
+            />
+            {isKo
+              ? "을 Google Cloud Functions 와 HTTP 엔드포인트로 트리거하는 Cloud Scheduler를 이용하여 구축했고, 정확히 자정에 실행됩니다."
+              : "using Google Cloud Functions with HTTP endpoint, triggered by Cloud Scheduler for precise midnight execution."}
+            {isKo
+              ? " D-day 라벨이 매일 자동으로 업데이트되어 'D-0'에 도달할 때까지 하루씩 감소합니다. "
+              : " D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'. "}
+          </>
+        )}
+      </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>

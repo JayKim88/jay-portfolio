@@ -536,12 +536,12 @@ export const achievements = [
               content={isKo ? "3D 센터 시각화" : "3D center visualization "}
             />
             {isKo
-              ? "를 기획부터 구현까지 담당하여 Three.js, @react-three/fiber, react-three/cannon 으로 구현했으며, 키보드/마우스 내비게이션과 클릭 가능한 랙 위치를 통한 실시간 재고 조회 기능을 지원했습니다."
-              : "from planning to implementation using Three.js, @react-three/fiber and react-three/cannon, featuring keyboard/mouse navigation and clickable rack locations for real-time inventory inspection."}
+              ? "를 기획부터 구현까지 담당하여 Three.js, @react-three/fiber, react-three/cannon 으로 구현했으며, 키보드/마우스 내비게이션과 로케이션 정보 모달 통해 실시간으로 재고를 조회할 수 있도록 했습니다."
+              : "from planning to implementation using Three.js, @react-three/fiber and react-three/cannon, featuring keyboard/mouse navigation and location-info modal for real-time inventory inspection."}
           </>
         )}
       </TransDescription>,
-      "Improved warehouse navigation by adding rack search and clickable mini-map features, enhancing usability for warehouse staffs.",
+      "Improved warehouse navigation by adding location search and clickable mini-map features, enhancing usability for warehouse staffs.",
       <TransDescription>
         {(isKo) => (
           <>

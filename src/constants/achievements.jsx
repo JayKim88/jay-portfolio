@@ -887,7 +887,7 @@ export const achievements = [
             />
             {isKo
               ? " 내부에서 automatic-pr-labeler 가 실행되어 D-day 라벨을 자동으로 설정합니다."
-              : "triggers automatic-pr-labeler to set D-day labels automatically."}
+              : "triggers automatic-pr-labeler to set a D-day label automatically."}
           </>
         )}
       </TransDescription>,

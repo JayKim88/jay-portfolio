@@ -10,6 +10,7 @@ import CorePage1 from "../assets/images/refs/core-page_1.webp";
 import CorePage2 from "../assets/images/refs/core-page_2.webp";
 import CorePage3 from "../assets/images/refs/core-page_3.webp";
 import CorePage4 from "../assets/images/refs/core-page_4.webp";
+import ComplexForm0 from "../assets/images/refs/complex-form_0.webp";
 import ComplexForm1 from "../assets/images/refs/complex-form_1.webp";
 import ComplexForm2 from "../assets/images/refs/complex-form_2.webp";
 import ComplexForm3 from "../assets/images/refs/complex-form_3.webp";
@@ -302,7 +303,7 @@ export const achievements = [
   },
   {
     title: "Optimized Complex Forms: Validation & State Management",
-    images: [ComplexForm1, ComplexForm2, ComplexForm3],
+    images: [ComplexForm0, ComplexForm1, ComplexForm2, ComplexForm3],
     points: [
       <TransDescription>
         {(isKo) => (

@@ -758,23 +758,6 @@ export const achievements = [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "모바일 앱 " : "Implemented "}
-            <Important
-              content={
-                isKo
-                  ? "백그라운드 알림 지속성"
-                  : "dual-token authentication system "
-              }
-            />
-            {isKo
-              ? "을 위한 이중 토큰 인증 시스템을 구현하여 accessToken(세션 토큰)과 refreshToken(연장 토큰)을 활용한 로그인 유지 기능을 추가했습니다."
-              : "with accessToken and refreshToken for mobile app background notification persistence and extended login sessions."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
             {isKo
               ? "LocalStorage에서 "
               : "Enhanced security by transitioning from LocalStorage to "}
@@ -802,13 +785,17 @@ export const achievements = [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "API 요청마다 " : "Implemented "}
+            {isKo ? "API 요청마다 " : "Implemented a "}
             <Important
-              content={isKo ? "CSRF 공격 방지 토큰" : "CSRF protection tokens "}
+              content={
+                isKo
+                  ? "CSRF 공격 방지 토큰을 검증하는 시스템"
+                  : "CSRF protection token validation system"
+              }
             />
             {isKo
-              ? "을 검증하는 시스템을 구현하여 서버에서 해시 암호화된 토큰을 발급하고 클라이언트에서 매 요청마다 서버 검증을 받도록 했습니다."
-              : "validated on every API request, with server-generated hash-encrypted tokens ensuring request authenticity and preventing cross-site attacks."}
+              ? "을 구현하여 서버에서 해시 암호화된 토큰을 발급하고 클라이언트에서 매 요청마다 서버 검증을 받도록 했습니다."
+              : " on every API request, with server-generated hash-encrypted tokens ensuring request authenticity and preventing cross-site attacks."}
           </>
         )}
       </TransDescription>,

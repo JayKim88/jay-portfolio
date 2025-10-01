@@ -21,10 +21,10 @@
   "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.": "모바일 앱에 특정 시간 동안 알림을 차단하는 ‘방해 금지’ 모드를 추가했습니다.",
   "Cross-Platform Notification System": "크로스 플랫폼 알림 시스템",
   "Testing & Code Reliability": "테스트 및 코드 신뢰성",
-  "Fulfillment Platform Core Modules": "풀필먼트 플랫폼의 핵심 모듈",
+  "Fulfillment Platform Core Pages": "풀필먼트 플랫폼의 핵심 페이지 구현",
   "Security & Authentication Enhancements": "보안 및 인증 향상",
   "Login session extension feature to reduce unintended logouts and enhance user experience.": "의도치 않은 로그아웃을 줄이고 사용자 경험을 향상시키기 위해 로그인 세션 연장 기능을 구현했습니다.",
-  "Product Image Upload & Editing": "제품 이미지 업로드 및 편집",
+  "Product Image Upload Workflow": "제품 이미지 업로드 프로세스",
   "3D Warehouse Visualization": "3D 물류센터 시각화",
   "Improved warehouse navigation by adding location search and clickable mini-map features, enhancing usability for warehouse staffs.": "로케이션 검색 및 클릭 가능한 미니맵 기능을 추가하여 물류센터 탐색 기능을 개선하고 센터 직원의 사용성을 향상시켰습니다.",
   "Multi-Size Barcode Printing System": "다양한 크기의 바코드 인쇄 시스템",
@@ -109,5 +109,5 @@
   "Type": "유형",
   "Web App": "웹앱",
   "Mobile App": "모바일앱",
-  "Enhanced Complex Form Validation & State Management": "복잡한 폼 검증 및 상태 관리 개선"
+  "Optimized Complex Forms: Validation & State Management": "복잡한 폼 최적화: 검증 및 상태 관리"
 }

@@ -250,7 +250,7 @@ export const achievements = [
   },
 
   {
-    title: "Fulfillment Platform Core Modules",
+    title: "Fulfillment Platform Core Pages",
     images: [CorePage4, CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
@@ -301,7 +301,7 @@ export const achievements = [
     ],
   },
   {
-    title: "Enhanced Complex Form Validation & State Management",
+    title: "Optimized Complex Forms: Validation & State Management",
     images: [ComplexForm1, ComplexForm2, ComplexForm3],
     points: [
       <TransDescription>
@@ -661,214 +661,7 @@ export const achievements = [
     ],
   },
   {
-    title: "Security & Authentication Enhancements",
-    images: [],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "모바일 앱 " : "Implemented "}
-            <Important
-              content={
-                isKo
-                  ? "백그라운드 알림 지속성"
-                  : "dual-token authentication system "
-              }
-            />
-            {isKo
-              ? "을 위한 이중 토큰 인증 시스템을 구현하여 accessToken(세션 토큰)과 refreshToken(연장 토큰)을 활용한 로그인 유지 기능을 추가했습니다."
-              : "with accessToken and refreshToken for mobile app background notification persistence and extended login sessions."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "LocalStorage에서 "
-              : "Enhanced security by transitioning from LocalStorage to "}
-            <BoldBtn
-              title={
-                isKo
-                  ? "HTTP-Only 쿠키 기반 인증"
-                  : "HTTP-Only cookie-based authentication"
-              }
-              link={
-                isKo
-                  ? "https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541"
-                  : "https://jay-global.notion.site/Explanation-of-Login-State-Management-Change-Local-Storage-Cookies-24ce5ccd65b180eca36bfd62f153cb70?source"
-              }
-              fontWeight="medium"
-              customStyle="mr-1"
-              refName="Connect to Notion"
-            />
-            {isKo
-              ? "으로 전환하여 보안을 강화했으며, 중요 정보를 포함한 accessToken과 refreshToken은 자바스크립트 접근이 불가능하도록 설정했습니다."
-              : "system, making critical tokens inaccessible to JavaScript while storing only token expiration times in LocalStorage."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "API 요청마다 " : "Implemented "}
-            <Important
-              content={isKo ? "CSRF 공격 방지 토큰" : "CSRF protection tokens "}
-            />
-            {isKo
-              ? "을 검증하는 시스템을 구현하여 서버에서 해시 암호화된 토큰을 발급하고 클라이언트에서 매 요청마다 서버 검증을 받도록 했습니다."
-              : "validated on every API request, with server-generated hash-encrypted tokens ensuring request authenticity and preventing cross-site attacks."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "클라이언트-서버 " : "Configured "}
-            <Important
-              content={
-                isKo ? "동일 도메인 쿠키 정책" : "same-domain cookie policy "
-              }
-            />
-            {isKo
-              ? "을 구성하여 쿠키 사용을 동일한 도메인에서만 가능하도록 제한하여 보안을 개선하고, 자동 로그아웃 시 서버에서 모든 토큰을 만료시키는 안전한 세션 관리를 구현했습니다."
-              : "restricting cookie usage to same-domain only, with secure session management that expires all tokens server-side during logout."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
-  {
-    title: "SEO & Server-Side Rendering (SSR)",
-    images: [],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "SEO를 향상시키기 위해 " : "Enhanced SEO by "}
-            <Important
-              content={
-                isKo
-                  ? "랜딩 페이지를 React에서 Next.js로 마이그레이션"
-                  : "migrating the landing page from React to Next.js "
-              }
-            />
-            {isKo
-              ? "하고 SSR, 최적화된 메타데이터, Open Graph 태그를 활용하여 검색 가시성을 높이고 풍부한 링크 미리보기를 제공했습니다."
-              : "leveraging SSR, optimized metadata, and Open Graph tags for improved visibility and rich link previews."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "페이지별 최적화를 통한 " : "Implemented "}
-            <Important
-              content={
-                isKo
-                  ? "포괄적인 메타데이터 시스템"
-                  : "comprehensive metadata system "
-              }
-            />
-            {isKo
-              ? "을 구현하여 여러 라우트에 걸쳐 물류 및 WMS 산업 부문을 위한 37개 이상의 타겟 키워드를 생성했습니다."
-              : "with page-specific optimization, generating 37+ targeted keywords for logistics and WMS industry sectors across multiple routes."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "CDN 호스팅 번역 파일에서 " : "Built "}
-            <Important
-              content={
-                isKo
-                  ? "다국어 SEO 아키텍처"
-                  : "multi-language SEO architecture "
-              }
-            />
-            {isKo
-              ? "를 구축하여 한국어와 영어 시장을 지원하고 동적 콘텐츠 로딩을 구현했습니다."
-              : "supporting Korean and English markets with dynamic content loading from CDN-hosted translation files."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Configured "}
-            <Important
-              content={
-                isKo
-                  ? "비동기 서버 컴포넌트와 정규 URL 구조"
-                  : "async server components and canonical URL structure "
-              }
-            />
-            {isKo
-              ? "를 구성하여 중복 콘텐츠 페널티를 방지하고 페이지당 7개 이상의 최적화된 이미지를 통해 소셜 미디어 참여를 극대화했습니다."
-              : "preventing duplicate content penalties while maximizing social media engagement through 7+ optimized images per page."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
-
-  {
-    title: "Continuous Deployment & Versioning Improvements",
-    images: [],
-    codeBlocks: [versionDetectorCodeExample],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Implemented a "}
-            <Important content={isKo ? "버전 탐지기" : "Version Detector "} />
-            {isKo
-              ? "를 GitHub API(Octokit)를 이용해 프로덕션, 스테이징 그리고 베타 환경에서 사용할 수 있도록 구현하여 최신 클라이언트 코드를 자동으로 받아올 수 있도록 개선했습니다."
-              : "for production, staging, and beta environments using the GitHub API (Octokit), ensuring automatic reloading of the latest client code."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "배포일마다 발생하던 버전 불일치 오류를 최소화하고 "
-              : "Minimized version mismatch errors that previously occurred weekly on deployment days, "}
-            <Important
-              content={
-                isKo
-                  ? "불일치 빈도를 거의 0으로 감소"
-                  : "reducing the frequency to near zero "
-              }
-            />
-            {isKo
-              ? "시켜 클라이언트-서버 동기화를 원활하게 유지했습니다."
-              : "by ensuring seamless client-server synchronization."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "localStorage 기반 버전 비교와 강제 서비스 워커 업데이트를 통한 "
-              : "Designed "}
-            <Important
-              content={
-                isKo ? "고도화된 캐싱 전략" : "intelligent caching strategy "
-              }
-            />
-            {isKo
-              ? "을 설계하여 완전히 캐시가 무효화되고, 매끄럽게 클라이언트 코드가 업데이트 되도록 했습니다."
-              : "with localStorage-based version comparison and forced service worker updates, ensuring complete cache invalidation and seamless client code refresh."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
-  {
-    title: "Product Image Upload & Editing",
+    title: "Product Image Upload Workflow",
     images: [ImageUpload1, ImageUpload2, ImageUpload3],
     points: [
       <TransDescription>
@@ -958,6 +751,213 @@ export const achievements = [
       "Includes print preview and 5 multi-size selection, increasing efficiency for warehouse staffs.",
     ],
   },
+  {
+    title: "Security & Authentication Enhancements",
+    images: [],
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "모바일 앱 " : "Implemented "}
+            <Important
+              content={
+                isKo
+                  ? "백그라운드 알림 지속성"
+                  : "dual-token authentication system "
+              }
+            />
+            {isKo
+              ? "을 위한 이중 토큰 인증 시스템을 구현하여 accessToken(세션 토큰)과 refreshToken(연장 토큰)을 활용한 로그인 유지 기능을 추가했습니다."
+              : "with accessToken and refreshToken for mobile app background notification persistence and extended login sessions."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "LocalStorage에서 "
+              : "Enhanced security by transitioning from LocalStorage to "}
+            <BoldBtn
+              title={
+                isKo
+                  ? "HTTP-Only 쿠키 기반 인증"
+                  : "HTTP-Only cookie-based authentication"
+              }
+              link={
+                isKo
+                  ? "https://jay-global.notion.site/local-storage-cookie-1c5e5ccd65b180e7950bd1441adf8541"
+                  : "https://jay-global.notion.site/Explanation-of-Login-State-Management-Change-Local-Storage-Cookies-24ce5ccd65b180eca36bfd62f153cb70?source"
+              }
+              fontWeight="medium"
+              customStyle="mr-1"
+              refName="Connect to Notion"
+            />
+            {isKo
+              ? "으로 전환하여 보안을 강화했으며, 중요 정보를 포함한 accessToken과 refreshToken은 자바스크립트 접근이 불가능하도록 설정했습니다."
+              : "system, making critical tokens inaccessible to JavaScript while storing only token expiration times in LocalStorage."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "API 요청마다 " : "Implemented "}
+            <Important
+              content={isKo ? "CSRF 공격 방지 토큰" : "CSRF protection tokens "}
+            />
+            {isKo
+              ? "을 검증하는 시스템을 구현하여 서버에서 해시 암호화된 토큰을 발급하고 클라이언트에서 매 요청마다 서버 검증을 받도록 했습니다."
+              : "validated on every API request, with server-generated hash-encrypted tokens ensuring request authenticity and preventing cross-site attacks."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "클라이언트-서버 " : "Configured "}
+            <Important
+              content={
+                isKo ? "동일 도메인 쿠키 정책" : "same-domain cookie policy "
+              }
+            />
+            {isKo
+              ? "을 구성하여 쿠키 사용을 동일한 도메인에서만 가능하도록 제한하여 보안을 개선하고, 자동 로그아웃 시 서버에서 모든 토큰을 만료시키는 안전한 세션 관리를 구현했습니다."
+              : "restricting cookie usage to same-domain only, with secure session management that expires all tokens server-side during logout."}
+          </>
+        )}
+      </TransDescription>,
+    ],
+  },
+  // {
+  //   title: "SEO & Server-Side Rendering (SSR)",
+  //   images: [],
+  //   points: [
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "SEO를 향상시키기 위해 " : "Enhanced SEO by "}
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "랜딩 페이지를 React에서 Next.js로 마이그레이션"
+  //                 : "migrating the landing page from React to Next.js "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "하고 SSR, 최적화된 메타데이터, Open Graph 태그를 활용하여 검색 가시성을 높이고 풍부한 링크 미리보기를 제공했습니다."
+  //             : "leveraging SSR, optimized metadata, and Open Graph tags for improved visibility and rich link previews."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "페이지별 최적화를 통한 " : "Implemented "}
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "포괄적인 메타데이터 시스템"
+  //                 : "comprehensive metadata system "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "을 구현하여 여러 라우트에 걸쳐 물류 및 WMS 산업 부문을 위한 37개 이상의 타겟 키워드를 생성했습니다."
+  //             : "with page-specific optimization, generating 37+ targeted keywords for logistics and WMS industry sectors across multiple routes."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "CDN 호스팅 번역 파일에서 " : "Built "}
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "다국어 SEO 아키텍처"
+  //                 : "multi-language SEO architecture "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "를 구축하여 한국어와 영어 시장을 지원하고 동적 콘텐츠 로딩을 구현했습니다."
+  //             : "supporting Korean and English markets with dynamic content loading from CDN-hosted translation files."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "" : "Configured "}
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "비동기 서버 컴포넌트와 정규 URL 구조"
+  //                 : "async server components and canonical URL structure "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "를 구성하여 중복 콘텐츠 페널티를 방지하고 페이지당 7개 이상의 최적화된 이미지를 통해 소셜 미디어 참여를 극대화했습니다."
+  //             : "preventing duplicate content penalties while maximizing social media engagement through 7+ optimized images per page."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //   ],
+  // },
+
+  // {
+  //   title: "Continuous Deployment & Versioning Improvements",
+  //   images: [],
+  //   codeBlocks: [versionDetectorCodeExample],
+  //   points: [
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "" : "Implemented a "}
+  //           <Important content={isKo ? "버전 탐지기" : "Version Detector "} />
+  //           {isKo
+  //             ? "를 GitHub API(Octokit)를 이용해 프로덕션, 스테이징 그리고 베타 환경에서 사용할 수 있도록 구현하여 최신 클라이언트 코드를 자동으로 받아올 수 있도록 개선했습니다."
+  //             : "for production, staging, and beta environments using the GitHub API (Octokit), ensuring automatic reloading of the latest client code."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo
+  //             ? "배포일마다 발생하던 버전 불일치 오류를 최소화하고 "
+  //             : "Minimized version mismatch errors that previously occurred weekly on deployment days, "}
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "불일치 빈도를 거의 0으로 감소"
+  //                 : "reducing the frequency to near zero "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "시켜 클라이언트-서버 동기화를 원활하게 유지했습니다."
+  //             : "by ensuring seamless client-server synchronization."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo
+  //             ? "localStorage 기반 버전 비교와 강제 서비스 워커 업데이트를 통한 "
+  //             : "Designed "}
+  //           <Important
+  //             content={
+  //               isKo ? "고도화된 캐싱 전략" : "intelligent caching strategy "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "을 설계하여 완전히 캐시가 무효화되고, 매끄럽게 클라이언트 코드가 업데이트 되도록 했습니다."
+  //             : "with localStorage-based version comparison and forced service worker updates, ensuring complete cache invalidation and seamless client code refresh."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //   ],
+  // },
   // {
   //   title: "Automatic PR Labeler for team productivity",
   //   images: [],

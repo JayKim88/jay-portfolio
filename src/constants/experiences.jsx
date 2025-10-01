@@ -138,7 +138,7 @@ export const experiences = [
         {(isKo) => (
           <>
             {isKo
-              ? "아시아, 중동, 아프리카 지역의 후지필름 지사들과 긴밀한 관계를 구축하고 "
+              ? "아시아, 중동, 아프리카 지역의 Fujifilm 지사들과 긴밀한 관계를 구축하고 "
               : "Built strong relationships with FujiFilm branches across Asia, the Middle East, and Africa, offering "}
             <Important content={isKo ? "기술 지원" : "technical support"} />
             {isKo ? "을 제공하며 " : " and fostering "}

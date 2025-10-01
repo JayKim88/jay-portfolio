@@ -10,7 +10,9 @@ import CorePage1 from "../assets/images/refs/core-page_1.webp";
 import CorePage2 from "../assets/images/refs/core-page_2.webp";
 import CorePage3 from "../assets/images/refs/core-page_3.webp";
 import CorePage4 from "../assets/images/refs/core-page_4.webp";
-import CorePage5 from "../assets/images/refs/core-page_5.webp";
+import ComplexForm1 from "../assets/images/refs/complex-form_1.webp";
+import ComplexForm2 from "../assets/images/refs/complex-form_2.webp";
+import ComplexForm3 from "../assets/images/refs/complex-form_3.webp";
 import Center3d from "../assets/video/3d-center.mp4";
 import BarcodePrint1 from "../assets/images/refs/barcode-print_1.webp";
 import BarcodePrint2 from "../assets/images/refs/barcode-print_2.webp";
@@ -246,93 +248,10 @@ export const achievements = [
       </TransDescription>,
     ],
   },
-  {
-    title: "Cross-Platform Notification System",
-    images: [
-      NotificationIosForeback,
-      NotificationModal,
-      NotificationMobile,
-      NotificationSettings,
-      NotificationSettingsMobile,
-    ],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "FCM을 사용하여 " : ""}
-            <Important
-              content={isKo ? "푸시 알림" : "Implemented push notifications "}
-            />
-            {isKo
-              ? "을 구현했고, 데스크탑, 모바일 웹(PWA), 모바일 앱(Flutter InAppWebView)에서 이를 지원하도록 했습니다."
-              : "using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android)."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            <Important
-              content={
-                isKo
-                  ? "불필요한 운영자-사용자 메시징을 줄이고 "
-                  : "Reduced unnecessary operator-user messaging "
-              }
-            />
-            {isKo
-              ? "푸시 알림에서 다음 작업으로 직접 이동할 수 있도록 하여 "
-              : "and enabled direct navigation to the next task from push-notifications, "}
-            <Important
-              content={
-                isKo
-                  ? "워크플로우 효율성을 개선"
-                  : "improving workflow efficiency"
-              }
-            />
-            {isKo ? "했습니다." : "."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "사용자에 따라 설정 가능한 알림 설정 페이지 및 "
-              : "Developed a settings page for customizable notifications and "}
-            <Important
-              content={
-                isKo ? "실시간 알림 모달" : "real-time notification modal "
-              }
-            />
-            {isKo
-              ? "을 구현했고, 알림 모달에 무한 스크롤과 클릭 시 알림에 해당하는 업무 페이지로 이동하는 기능을 적용했습니다."
-              : "supporting infinite scroll with clickable notifications linking to task-specific pages."}
-          </>
-        )}
-      </TransDescription>,
-      ,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "자가 인증서와 Nginx 를 사용하여" : "Built a "}
-            <BoldBtn
-              title={isKo ? "로컬 HTTPS 를 설정" : "Local HTTPS setup"}
-              customStyle="mx-1"
-              fontWeight="medium"
-              refName="Connect to Notion"
-              link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
-            />
-            {isKo
-              ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
-              : "using self-signed certificates and Nginx to support Service Workers and PWA development."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
+
   {
     title: "Fulfillment Platform Core Modules",
-    images: [CorePage4, CorePage5, CorePage1, CorePage2, CorePage3, Mobile],
+    images: [CorePage4, CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
         {(isKo) => (
@@ -382,82 +301,73 @@ export const achievements = [
     ],
   },
   {
-    title: "Testing & Code Reliability",
-    images: [],
+    title: "Enhanced Complex Form Validation & State Management",
+    images: [ComplexForm1, ComplexForm2, ComplexForm3],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
+            {isKo
+              ? "Formik과 Yup 스키마, 커스텀 검증 함수를 사용하여 대규모 폼에서 "
+              : "Built "}
             <Important
               content={
                 isKo
-                  ? "테스트 커버리지를 10%에서 70%까지 상승시켰습니다. "
-                  : "Increased test coverage from 10% to 70% "
+                  ? "동적 폼 검증 및 조건부 필드"
+                  : "dynamic form validation and conditional fields "
               }
             />
             {isKo
-              ? "Vitest 와 MSW 를 사용하여 코어 컴포넌트를 위한 33개의 유닛 테스트와 전체 애플리케이션에 페이지 단위의 54개의 통합 테스트를 작성하여 안정성을 개선했습니다."
-              : "with 33 unit tests for core components and 54 integration tests across the entire application by Vitest and MSW, improving app stability."}
+              ? "를 구현했습니다."
+              : "in large-scale forms using Formik with Yup schemas and custom validation functions."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
+            {isKo ? "Formik의 FastField와 React.memo를 적용하여 " : ""}
             <Important
               content={
-                isKo ? "스냅샷 테스트 " : "Implemented snapshot testing "
+                isKo ? "폼의 반응성을 최적화" : "Optimized form responsiveness "
               }
             />
-            {isKo ? "및 " : "and "}
-            <Important
-              content={isKo ? "자동화된 UI 테스트" : " automated UI testing "}
-            />
             {isKo
-              ? "를 Storybook 및 Chromatic 으로 구현하여 의도치 않은 UI 회귀를 방지했습니다."
-              : "with Storybook & Chromatic to prevent UI regressions."}
+              ? "하고, 불필요한 리렌더링을 줄였습니다."
+              : "by applying Formik's FastField and React.memo, significantly reducing unnecessary re-renders."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
+            {isKo
+              ? "조건부 표시, 검증 결과, API 응답 통합을 포함한 "
+              : "Effectively "}
             <Important
               content={
                 isKo
-                  ? "GitHub 워크플로우 최적화 "
-                  : "Optimized GitHub workflow "
+                  ? "복잡한 폼 상태를 효과적으로 관리"
+                  : "managed complex form state"
               }
             />
             {isKo
-              ? "및 병렬 테스트, 모듈 캐싱을 통해 테스트 시간을 "
-              : "with parallel testing & module caching, cutting test time by "}
-            <Important
-              content={isKo ? "50% (15분 → 6분) " : "50% (15m → 6m)"}
-            />
-            {isKo ? "로 단축시켰습니다" : ""}.
+              ? "했습니다."
+              : ", including conditional visibility, validation results, and integration with API responses."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "클라이언트 프로젝트를 위한 " : "Established a "}
-            <BoldBtn
-              title={isKo ? "테스트 코드 가이드" : "test code guide"}
-              link="https://nomadkim880901.tistory.com/entry/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C"
-              customStyle="mx-1"
-              fontWeight="medium"
-              refName="Connect to Blog"
-            />
-            {isKo ? "를 작성했습니다." : "for the client project."}
+            {isKo
+              ? "사용자 액션을 즉시 반영하는 낙관적 UI 업데이트를 구현하고, 명확한 에러와 안내 메시지를 제공하여 체감 성능과 사용자 경험을 향상시켰습니다."
+              : "Implemented optimistic UI updates to reflect user actions instantly, while providing clear error and informational messages, improving both perceived performance and user experience."}
           </>
         )}
       </TransDescription>,
-      ,
     ],
   },
-
   {
     title: "Performance Optimization & UX Enhancements",
     images: [],
@@ -545,6 +455,166 @@ export const achievements = [
           </>
         )}
       </TransDescription>,
+    ],
+  },
+  {
+    title: "Cross-Platform Notification System",
+    images: [
+      NotificationIosForeback,
+      NotificationModal,
+      NotificationMobile,
+      NotificationSettings,
+      NotificationSettingsMobile,
+    ],
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "FCM을 사용하여 " : ""}
+            <Important
+              content={isKo ? "푸시 알림" : "Implemented push notifications "}
+            />
+            {isKo
+              ? "을 구현했고, 데스크탑, 모바일 웹(PWA), 모바일 앱(Flutter InAppWebView)에서 이를 지원하도록 했습니다."
+              : "using FCM for desktop, mobile web (PWA), and mobile apps (Flutter InAppWebView for ios and android)."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "불필요한 운영자-사용자 메시징을 줄이고 "
+                  : "Reduced unnecessary operator-user messaging "
+              }
+            />
+            {isKo
+              ? "푸시 알림에서 다음 작업으로 직접 이동할 수 있도록 하여 "
+              : "and enabled direct navigation to the next task from push-notifications, "}
+            <Important
+              content={
+                isKo
+                  ? "워크플로우 효율성을 개선"
+                  : "improving workflow efficiency"
+              }
+            />
+            {isKo ? "했습니다." : "."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "사용자에 따라 설정 가능한 알림 설정 페이지 및 "
+              : "Developed a settings page for customizable notifications and "}
+            <Important
+              content={
+                isKo ? "실시간 알림 모달" : "real-time notification modal "
+              }
+            />
+            {isKo
+              ? "을 구현했고, 알림 모달에 무한 스크롤과 클릭 시 알림에 해당하는 업무 페이지로 이동하는 기능을 적용했습니다."
+              : "supporting infinite scroll with clickable notifications linking to task-specific pages."}
+          </>
+        )}
+      </TransDescription>,
+      ,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "자가 인증서와 Nginx 를 사용하여" : "Built a "}
+            <BoldBtn
+              title={isKo ? "로컬 HTTPS 를 설정" : "Local HTTPS setup"}
+              customStyle="mx-1"
+              fontWeight="medium"
+              refName="Connect to Notion"
+              link="https://jay-global.notion.site/https-17de5ccd65b180e59226cba874ddb95c?pvs=4"
+            />
+            {isKo
+              ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
+              : "using self-signed certificates and Nginx to support Service Workers and PWA development."}
+          </>
+        )}
+      </TransDescription>,
+    ],
+  },
+  {
+    title: "Testing & Code Reliability",
+    images: [],
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "테스트 커버리지를 10%에서 70%까지 상승시켰습니다. "
+                  : "Increased test coverage from 10% to 70% "
+              }
+            />
+            {isKo
+              ? "Vitest 와 MSW 를 사용하여 코어 컴포넌트를 위한 33개의 유닛 테스트와 전체 애플리케이션에 페이지 단위의 54개의 통합 테스트를 작성하여 안정성을 개선했습니다."
+              : "with 33 unit tests for core components and 54 integration tests across the entire application by Vitest and MSW, improving app stability."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo ? "스냅샷 테스트 " : "Implemented snapshot testing "
+              }
+            />
+            {isKo ? "및 " : "and "}
+            <Important
+              content={isKo ? "자동화된 UI 테스트" : " automated UI testing "}
+            />
+            {isKo
+              ? "를 Storybook 및 Chromatic 으로 구현하여 의도치 않은 UI 회귀를 방지했습니다."
+              : "with Storybook & Chromatic to prevent UI regressions."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            <Important
+              content={
+                isKo
+                  ? "GitHub 워크플로우 최적화 "
+                  : "Optimized GitHub workflow "
+              }
+            />
+            {isKo
+              ? "및 병렬 테스트, 모듈 캐싱을 통해 테스트 시간을 "
+              : "with parallel testing & module caching, cutting test time by "}
+            <Important
+              content={isKo ? "50% (15분 → 6분) " : "50% (15m → 6m)"}
+            />
+            {isKo ? "로 단축시켰습니다" : ""}.
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "클라이언트 프로젝트를 위한 " : "Established a "}
+            <BoldBtn
+              title={isKo ? "테스트 코드 가이드" : "test code guide"}
+              link="https://nomadkim880901.tistory.com/entry/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C"
+              customStyle="mx-1"
+              fontWeight="medium"
+              refName="Connect to Blog"
+            />
+            {isKo ? "를 작성했습니다." : "for the client project."}
+          </>
+        )}
+      </TransDescription>,
+      ,
     ],
   },
   {
@@ -884,76 +954,77 @@ export const achievements = [
           </>
         )}
       </TransDescription>,
+      "Integrated with actual barcode printers and validated through hands-on testing, ensuring reliable printing in warehouse operations.",
       "Includes print preview and 5 multi-size selection, increasing efficiency for warehouse staffs.",
     ],
   },
-  {
-    title: "Automatic PR Labeler for team productivity",
-    images: [],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "PR을 위한 " : "Created a "}
-            <BoldBtn
-              title={isKo ? "자동 D-day 라벨러" : "Automated D-day labeler"}
-              customStyle="mx-1"
-              fontWeight="medium"
-              link="https://github.com/JayKim88/automatic-pr-labeler"
-              refName="Connect to Github Repo"
-            />
-            {isKo
-              ? "를 만들어 리뷰 마감일을 지속적으로 확인할 수 있도록 지원했습니다."
-              : "for PRs, ensuring continuous visibility of review deadlines."}
-            {isKo ? " PR 이 생성되면 " : " When a pull request is created, "}
-            <Important
-              content={isKo ? "GitHub 워크플로우" : "GitHub workflow "}
-            />
-            {isKo
-              ? " 내부에서 automatic-pr-labeler 가 실행되어 D-day 라벨을 자동으로 설정합니다."
-              : "triggers automatic-pr-labeler to set a D-day label automatically."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            <Important
-              content={
-                isKo
-                  ? "서버리스 자동화 파이프라인"
-                  : "Built serverless automation pipeline "
-              }
-            />
-            {isKo
-              ? "을 Google Cloud Functions 와 HTTP 엔드포인트로 트리거하는 Cloud Scheduler를 이용하여 구축했고, 정확히 자정에 실행됩니다."
-              : "using Google Cloud Functions with HTTP endpoint, triggered by Cloud Scheduler for precise midnight execution."}
-            {isKo
-              ? " D-day 라벨이 매일 자동으로 업데이트되어 'D-0'에 도달할 때까지 하루씩 감소합니다. "
-              : " D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'. "}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            <BoldBtn
-              title={
-                isKo
-                  ? "지연된 리뷰를 50% 감소"
-                  : "Reduced delayed reviews by 50%"
-              }
-              fontWeight="medium"
-              link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
-              refName="Connect to Blog"
-              customStyle={isKo ? "mr-1" : ""}
-            />
-            {isKo
-              ? "시켜 팀의 효율성과 제품 안정성을 높였습니다."
-              : ", improving team efficiency and product stability."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
+  // {
+  //   title: "Automatic PR Labeler for team productivity",
+  //   images: [],
+  //   points: [
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           {isKo ? "PR을 위한 " : "Created a "}
+  //           <BoldBtn
+  //             title={isKo ? "자동 D-day 라벨러" : "Automated D-day labeler"}
+  //             customStyle="mx-1"
+  //             fontWeight="medium"
+  //             link="https://github.com/JayKim88/automatic-pr-labeler"
+  //             refName="Connect to Github Repo"
+  //           />
+  //           {isKo
+  //             ? "를 만들어 리뷰 마감일을 지속적으로 확인할 수 있도록 지원했습니다."
+  //             : "for PRs, ensuring continuous visibility of review deadlines."}
+  //           {isKo ? " PR 이 생성되면 " : " When a pull request is created, "}
+  //           <Important
+  //             content={isKo ? "GitHub 워크플로우" : "GitHub workflow "}
+  //           />
+  //           {isKo
+  //             ? " 내부에서 automatic-pr-labeler 가 실행되어 D-day 라벨을 자동으로 설정합니다."
+  //             : "triggers automatic-pr-labeler to set a D-day label automatically."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           <Important
+  //             content={
+  //               isKo
+  //                 ? "서버리스 자동화 파이프라인"
+  //                 : "Built serverless automation pipeline "
+  //             }
+  //           />
+  //           {isKo
+  //             ? "을 Google Cloud Functions 와 HTTP 엔드포인트로 트리거하는 Cloud Scheduler를 이용하여 구축했고, 정확히 자정에 실행됩니다."
+  //             : "using Google Cloud Functions with HTTP endpoint, triggered by Cloud Scheduler for precise midnight execution."}
+  //           {isKo
+  //             ? " D-day 라벨이 매일 자동으로 업데이트되어 'D-0'에 도달할 때까지 하루씩 감소합니다. "
+  //             : " D-day label is automatically updated daily, reducing by one day until it reaches 'D-0'. "}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //     <TransDescription>
+  //       {(isKo) => (
+  //         <>
+  //           <BoldBtn
+  //             title={
+  //               isKo
+  //                 ? "지연된 리뷰를 50% 감소"
+  //                 : "Reduced delayed reviews by 50%"
+  //             }
+  //             fontWeight="medium"
+  //             link="https://nomadkim880901.tistory.com/entry/Automatic-PR-Labeler-%EB%A1%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%ED%9A%A8%EC%9C%A8-%EB%86%92%EC%9D%B4%EA%B8%B0"
+  //             refName="Connect to Blog"
+  //             customStyle={isKo ? "mr-1" : ""}
+  //           />
+  //           {isKo
+  //             ? "시켜 팀의 효율성과 제품 안정성을 높였습니다."
+  //             : ", improving team efficiency and product stability."}
+  //         </>
+  //       )}
+  //     </TransDescription>,
+  //   ],
+  // },
 ];

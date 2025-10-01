@@ -29,6 +29,7 @@
   "Improved warehouse navigation by adding location search and clickable mini-map features, enhancing usability for warehouse staffs.": "로케이션 검색 및 클릭 가능한 미니맵 기능을 추가하여 물류센터 탐색 기능을 개선하고 센터 직원의 사용성을 향상시켰습니다.",
   "Multi-Size Barcode Printing System": "다양한 크기의 바코드 인쇄 시스템",
   "Includes print preview and 5 multi-size selection, increasing efficiency for warehouse staffs.": "인쇄 미리보기와 5가지 다양한 크기 선택 기능을 추가하여 센터 업무 효율성을 향상시켰습니다.",
+  "Integrated with actual barcode printers and validated through hands-on testing, ensuring reliable printing in warehouse operations.": "실제 바코드 프린터와 연동하고 직접 테스트를 통해 검증하여, 센터 업무 시 안정적인 출력이 가능하도록 했습니다.",
   "Continuous Deployment & Versioning Improvements": "지속적인 배포 및 버전 관리 개선",
   "SEO & Server-Side Rendering (SSR)": "SEO 및 서버 측 렌더링(SSR)",
   "Pre-rendered critical content, reducing initial load times and improving engagement across platforms.": "중요 콘텐츠의 사전 렌더링을 통해 초기 로드 시간을 줄이고 플랫폼 전반의 참여도를 향상시켰습니다.",
@@ -107,5 +108,6 @@
   "Role": "역할",
   "Type": "유형",
   "Web App": "웹앱",
-  "Mobile App": "모바일앱"
+  "Mobile App": "모바일앱",
+  "Enhanced Complex Form Validation & State Management": "복잡한 폼 검증 및 상태 관리 개선"
 }

@@ -272,6 +272,30 @@ export const achievements = [
       <TransDescription>
         {(isKo) => (
           <>
+            <Important
+              content={
+                isKo
+                  ? "불필요한 운영자-사용자 메시징을 줄이고 "
+                  : "Reduced unnecessary operator-user messaging "
+              }
+            />
+            {isKo
+              ? "푸시 알림에서 다음 작업으로 직접 이동할 수 있도록 하여 "
+              : "and enabled direct navigation to the next task from push-notifications, "}
+            <Important
+              content={
+                isKo
+                  ? "워크플로우 효율성을 개선"
+                  : "improving workflow efficiency"
+              }
+            />
+            {isKo ? "했습니다." : "."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
             {isKo
               ? "사용자에 따라 설정 가능한 알림 설정 페이지 및 "
               : "Developed a settings page for customizable notifications and "}
@@ -287,7 +311,6 @@ export const achievements = [
         )}
       </TransDescription>,
       ,
-      "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.",
       <TransDescription>
         {(isKo) => (
           <>
@@ -302,6 +325,57 @@ export const achievements = [
             {isKo
               ? "하는 가이드를 작성하여 Service Workers 및 PWA 개발에 이를 활용할 수 있도록 했습니다."
               : "using self-signed certificates and Nginx to support Service Workers and PWA development."}
+          </>
+        )}
+      </TransDescription>,
+    ],
+  },
+  {
+    title: "Fulfillment Platform Core Modules",
+    images: [CorePage4, CorePage5, CorePage1, CorePage2, CorePage3, Mobile],
+    points: [
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "풀필먼트 플랫폼의 핵심 모듈(주문, 입고, 출고, 재고 등)을 개발하며 "
+              : "Led end-to-end development of the Fulfillment Platform's core modules—including Orders, Inbound (Receiving), Outbound (Shipping), and Inventory—while "}
+            <Important
+              content={
+                isKo
+                  ? "데이터 흐름·운영 효율을 개선하고 고도화된 UI/UX를 구현"
+                  : "optimizing data flows, enhancing operational efficiency, and delivering refined UI/UX"
+              }
+            />
+            {isKo ? "했습니다." : "."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "운영 관리 페이지들에는 완전한 CRUD 기능과 "
+              : "The Operations Management pages include full CRUD functionality with "}
+            <Important
+              content={
+                isKo
+                  ? "검색 필터 및 데이터 테이블"
+                  : "search filters and data tables "
+              }
+            />
+            {isKo
+              ? "을 적용했으며, 일괄 선택, 정렬, 상세 페이지 이동 기능을 추가하여 사용성을 개선했습니다."
+              : "featuring bulk selection, sorting, and detail page navigation to improve usability."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo
+              ? "반응형 모바일 지원으로 원활한 접근성과 상호작용을 보장했습니다."
+              : "Ensured seamless accessibility and interaction with responsive mobile support."}
           </>
         )}
       </TransDescription>,
@@ -383,57 +457,7 @@ export const achievements = [
       ,
     ],
   },
-  {
-    title: "Fulfillment Platform Core Modules",
-    images: [CorePage4, CorePage5, CorePage1, CorePage2, CorePage3, Mobile],
-    points: [
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "풀필먼트 플랫폼의 핵심 모듈(주문, 입고, 출고, 재고 등)을 개발하며 "
-              : "Led end-to-end development of the Fulfillment Platform's core modules—including Orders, Inbound (Receiving), Outbound (Shipping), and Inventory—while "}
-            <Important
-              content={
-                isKo
-                  ? "데이터 흐름·운영 효율을 개선하고 고도화된 UI/UX를 구현"
-                  : "optimizing data flows, enhancing operational efficiency, and delivering refined UI/UX"
-              }
-            />
-            {isKo ? "했습니다." : "."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "운영 관리 페이지들에는 완전한 CRUD 기능과 "
-              : "The Operations Management pages include full CRUD functionality with "}
-            <Important
-              content={
-                isKo
-                  ? "검색 필터 및 데이터 테이블"
-                  : "search filters and data tables "
-              }
-            />
-            {isKo
-              ? "을 적용했으며, 일괄 선택, 정렬, 상세 페이지 이동 기능을 추가하여 사용성을 개선했습니다."
-              : "featuring bulk selection, sorting, and detail page navigation to improve usability."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "반응형 모바일 지원으로 원활한 접근성과 상호작용을 보장했습니다."
-              : "Ensured seamless accessibility and interaction with responsive mobile support."}
-          </>
-        )}
-      </TransDescription>,
-    ],
-  },
+
   {
     title: "Performance Optimization & UX Enhancements",
     images: [],

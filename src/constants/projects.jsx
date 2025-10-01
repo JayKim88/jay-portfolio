@@ -18,18 +18,18 @@ export const projects = [
         {(isKo) => (
           <>
             {isKo
-              ? "Claude AI, Wiktionary API, MyMemory 백업 시스템을 활용한 "
-              : "Built "}
+              ? "Claude AI, Wiktionary, MyMemory 등 "
+              : "Designed and built "}
             <Important
               content={
                 isKo
-                  ? "지능형 멀티 API 번역 파이프라인"
-                  : "intelligent multi-API translation pipeline"
+                  ? "다중 API 기반 번역 시스템을 설계·구현"
+                  : "multi-API translation system"
               }
             />
             {isKo
-              ? "을 구축하여 14개 언어에서 24시간 캐싱과 함께 99% 이상의 가용성을 달성했습니다."
-              : " with Claude AI, Wiktionary API, and MyMemory failover, achieving 99%+ availability with 24-hour caching across 14 languages."}
+              ? "하고, 자동 장애 대응을 통해 안정적인 서비스를 제공했습니다."
+              : " with Claude AI, Wiktionary, and MyMemory, providing reliable service through automatic failover."}
           </>
         )}
       </TransDescription>,
@@ -134,6 +134,37 @@ export const projects = [
       <TransDescription>
         {(isKo) => (
           <>
+            {isKo ? "" : "Built an "}
+            <BoldBtn
+              title={isKo ? "인터랙티브 대시보드" : "interactive dashboard"}
+              customStyle={isKo ? "mr-1" : "mx-1"}
+              imageUrls={[MyStatsDashboard]}
+            />
+            {isKo
+              ? "를 만들어 사용자의 주간/월간 운동 진행 상황을 실시간 차트로 확인할 수 있도록 했습니다."
+              : "with real-time charts tracking user progress by week/month."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
+            {isKo ? "" : "Designed a "}
+            <BoldBtn
+              title={isKo ? "프로그램 진행 페이지" : "program-process page"}
+              link="https://github.com/JayKim88/build-your-body?tab=readme-ov-file#4-program-process-page"
+              customStyle={isKo ? "mr-1" : "mx-1"}
+              refName="Connect to Github Repo"
+            />
+            {isKo
+              ? "를 설계하여 운동 세트 추적, 세트 수정, 다음 운동으로 자동 진행 기능을 적용했습니다."
+              : "for tracking sets, modifying workouts, and auto-progressing to the next exercise."}
+          </>
+        )}
+      </TransDescription>,
+      <TransDescription>
+        {(isKo) => (
+          <>
             {isKo ? "Google OAuth 인증을 위해 " : "Integrated NextAuth for "}
             <Important
               content={
@@ -182,37 +213,6 @@ export const projects = [
             {isKo
               ? "하여 세션 및 로컬 스토리지에 운동 장바구니와 사용자 진행 상황을 유지했으며, 프로그램 세부사항, 운동 시간, 완료 상태를 관리하는 모듈형 상태 관리 스토어를 설계했습니다."
               : "with session and local storage to persist exercise cart and user progress; designed modular stores to manage program details, workout duration, and completion status."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Designed a "}
-            <BoldBtn
-              title={isKo ? "프로그램 진행 페이지" : "program-process page"}
-              link="https://github.com/JayKim88/build-your-body?tab=readme-ov-file#4-program-process-page"
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              refName="Connect to Github Repo"
-            />
-            {isKo
-              ? "를 설계하여 운동 세트 추적, 세트 수정, 다음 운동으로 자동 진행 기능을 적용했습니다."
-              : "for tracking sets, modifying workouts, and auto-progressing to the next exercise."}
-          </>
-        )}
-      </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo ? "" : "Built an "}
-            <BoldBtn
-              title={isKo ? "인터랙티브 대시보드" : "interactive dashboard"}
-              customStyle={isKo ? "mr-1" : "mx-1"}
-              imageUrls={[MyStatsDashboard]}
-            />
-            {isKo
-              ? "를 만들어 사용자의 주간/월간 운동 진행 상황을 실시간 차트로 확인할 수 있도록 했습니다."
-              : "with real-time charts tracking user progress by week/month."}
           </>
         )}
       </TransDescription>,

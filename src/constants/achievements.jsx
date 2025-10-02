@@ -308,34 +308,41 @@ export const achievements = [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo
-              ? "Formik과 Yup 스키마, 커스텀 검증 함수를 사용하여 대규모 폼에서 "
-              : "Built "}
+            {isKo ? "Formik/Yup 을 사용하여 " : "Architected "}
+            <Important
+              content={isKo ? "대규모 폼 시스템" : "large-scale form systems "}
+            />
+            {isKo ? "을 설계하고, 여러 폼 섹션에 걸쳐 " : "with Formik/Yup, "}
             <Important
               content={
                 isKo
-                  ? "동적 폼 검증 및 조건부 필드"
-                  : "dynamic form validation and conditional fields "
+                  ? "복잡한 비즈니스 로직을 관리"
+                  : "managing complex business logic "
               }
             />
-            {isKo
-              ? "를 구현했습니다."
-              : "in large-scale forms using Formik with Yup schemas and custom validation functions."}
+            {isKo ? "했습니다." : "across multiple form sections."}
           </>
         )}
       </TransDescription>,
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "Formik의 FastField와 React.memo를 적용하여 " : ""}
             <Important
               content={
-                isKo ? "폼의 반응성을 최적화" : "Optimized form responsiveness "
+                isKo ? "동적 검증 스키마" : "Built dynamic validation schemas "
               }
             />
             {isKo
-              ? "하고, 불필요한 리렌더링을 줄였습니다."
-              : "by applying Formik's FastField and React.memo, significantly reducing unnecessary re-renders."}
+              ? "를 구축하고 폼 상태에 따라 조건부 필드 가시성을 관리했으며, useFormikContext 를 활용해 "
+              : "and managed conditional field visibility based on form state, with useFormikContext for "}
+            <Important
+              content={
+                isKo
+                  ? "prop drilling 없이 대규모 폼을 모듈화"
+                  : "modularizing large forms without prop drilling"
+              }
+            />
+            {isKo ? "했습니다." : "."}
           </>
         )}
       </TransDescription>,
@@ -343,30 +350,18 @@ export const achievements = [
         {(isKo) => (
           <>
             {isKo
-              ? "조건부 표시, 검증 결과, API 응답 통합을 포함한 "
-              : "Effectively "}
+              ? "필드 레벨 렌더링을 위한 FastField, React.memo 그리고 검증 타이밍 제어를 통해 불필요한 렌더링을 줄여 "
+              : ""}
             <Important
-              content={
-                isKo
-                  ? "복잡한 폼 상태를 효과적으로 관리"
-                  : "managed complex form state"
-              }
+              content={isKo ? "성능을 최적화" : "Optimized performance "}
             />
             {isKo
               ? "했습니다."
-              : ", including conditional visibility, validation results, and integration with API responses."}
+              : "with FastField for field-level rendering, React.memo, and controlled validation timing, reducing unnecessary re-renders."}
           </>
         )}
       </TransDescription>,
-      <TransDescription>
-        {(isKo) => (
-          <>
-            {isKo
-              ? "사용자 액션을 즉시 반영하는 낙관적 UI 업데이트를 구현하고, 명확한 에러와 안내 메시지를 제공하여 체감 성능과 사용자 경험을 향상시켰습니다."
-              : "Implemented optimistic UI updates to reflect user actions instantly, while providing clear error and informational messages, improving both perceived performance and user experience."}
-          </>
-        )}
-      </TransDescription>,
+      "Created comprehensive error handling system with real-time validation feedback and field-level messages to improve user experience.",
     ],
   },
   {

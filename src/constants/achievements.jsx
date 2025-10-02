@@ -192,7 +192,7 @@ export { checkVersionAndReload };
 
 export const achievements = [
   {
-    title: "Dashboard Development",
+    title: "Operations Dashboard",
     images: [Widgets1, Widgets2],
     points: [
       <TransDescription>
@@ -209,7 +209,7 @@ export const achievements = [
               }
             />
             {isKo
-              ? "를 구현했으며, 사용자가 풀필먼트 운영 현황을 한눈에 모니터링할 수 있도록 했습니다."
+              ? "를 개발했으며, 사용자가 풀필먼트 운영 현황을 한눈에 모니터링할 수 있도록 했습니다."
               : "(e.g., Recent Invoice, Market Order Status, Courier Bands Info) using the Recharts library to enable users to monitor fulfillment operations at a glance."}
           </>
         )}
@@ -302,17 +302,17 @@ export const achievements = [
     ],
   },
   {
-    title: "Optimized Complex Forms: Validation & State Management",
+    title: "Large-Scale Form System",
     images: [ComplexForm0, ComplexForm1, ComplexForm2, ComplexForm3],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
-            {isKo ? "Formik/Yup 을 사용하여 " : "Architected "}
+            {isKo ? "Formik/Yup 을 사용하여 " : "Implemented "}
             <Important
               content={isKo ? "대규모 폼 시스템" : "large-scale form systems "}
             />
-            {isKo ? "을 설계하고, 여러 폼 섹션에 걸쳐 " : "with Formik/Yup, "}
+            {isKo ? "을 구현하고, 여러 폼 섹션에 걸쳐 " : "with Formik/Yup, "}
             <Important
               content={
                 isKo

@@ -16,12 +16,12 @@
   "LinkedIn": "링크드인",
   "Blog": "블로그",
   "Key Achievements & Contributions": "주요 성과 및 기여 내용",
-  "Dashboard Development": "대시보드 개발",
+  "Operations Dashboard": "운영 대시보드",
   "Customized dashboard with real-time visualized analytics using Recharts library.": "Recharts 라이브러리를 활용해 실시간으로 시각화된 분석을 제공하는 맞춤형 대시보드를 개발했습니다.",
   "Added a 'Do Not Disturb' mode for scheduled quiet hours on mobile apps.": "모바일 앱에 특정 시간 동안 알림을 차단하는 ‘방해 금지’ 모드를 추가했습니다.",
   "Cross-Platform Notification System": "크로스 플랫폼 알림 시스템",
-  "Testing & Code Reliability": "테스트 및 코드 신뢰성",
-  "Fulfillment Platform Core Pages": "풀필먼트 플랫폼의 핵심 페이지 구현",
+  "Testing & Code Reliability": "테스트 및 신뢰성 향상",
+  "Fulfillment Platform Core Pages": "풀필먼트 플랫폼의 핵심 페이지",
   "Security & Authentication Enhancements": "보안 및 인증 개선",
   "Login session extension feature to reduce unintended logouts and enhance user experience.": "의도치 않은 로그아웃을 줄이고 사용자 경험을 향상시키기 위해 로그인 세션 연장 기능을 구현했습니다.",
   "Product Image Upload Workflow": "제품 이미지 업로드 프로세스",
@@ -109,6 +109,6 @@
   "Type": "유형",
   "Web App": "웹앱",
   "Mobile App": "모바일앱",
-  "Optimized Complex Forms: Validation & State Management": "복잡한 폼 최적화: 검증 및 상태 관리",
+  "Large-Scale Form System": "대규모 폼 시스템",
   "Created comprehensive error handling system with real-time validation feedback and field-level messages to improve user experience.": "실시간 검증 피드백과 필드 레벨 메시지를 제공하는 포괄적인 에러 핸들링 시스템을 구축하여 사용자 경험을 개선했습니다."
 }

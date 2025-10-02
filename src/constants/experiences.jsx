@@ -108,7 +108,7 @@ export const experiences = [
     title: "Frontend Engineer",
     company: "Bold9, Seoul",
     summary:
-      "Bold9 is e-commerce fulfilment company specialising in end-to-end logistics, including inventory management, multi-temperature storage, and international shipping",
+      "Bold9 is a company that provides a SaaS-based e-commerce fulfillment platform for online sellers",
     paragraph: <Bold9Contribution />,
     stacks: [
       "Javascript",

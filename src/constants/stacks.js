@@ -72,6 +72,12 @@ const client = [
     level: "Advanced",
     keyword: "GraphQL Caching, Local State",
   },
+  {
+    name: "GraphQL",
+    img: graphQL,
+    level: "Advanced",
+    keyword: "API Integration, Type Safety",
+  },
   { name: "Vite", img: viteJS, level: "Advanced", keyword: "Fast Build, HMR" },
   {
     name: "React Native",
@@ -85,24 +91,24 @@ const client = [
     level: "Proficient",
     keyword: "Utility-first, Responsive Design",
   },
-  {
-    name: "Zustand",
-    img: zustand,
-    level: "Proficient",
-    keyword: "Lightweight Global State",
-  },
-  {
-    name: "i18next",
-    img: i18next,
-    level: "Proficient",
-    keyword: "Translation Pipeline",
-  },
-  {
-    name: "Flutter",
-    img: flutter,
-    level: "Familiar",
-    keyword: "Hybrid WebView",
-  },
+  // {
+  //   name: "Zustand",
+  //   img: zustand,
+  //   level: "Proficient",
+  //   keyword: "Lightweight Global State",
+  // },
+  // {
+  //   name: "i18next",
+  //   img: i18next,
+  //   level: "Proficient",
+  //   keyword: "Translation Pipeline",
+  // },
+  // {
+  //   name: "Flutter",
+  //   img: flutter,
+  //   level: "Familiar",
+  //   keyword: "Hybrid WebView",
+  // },
   {
     name: "Three.js",
     img: threeJS,
@@ -112,12 +118,6 @@ const client = [
 ];
 
 const server = [
-  {
-    name: "GraphQL",
-    img: graphQL,
-    level: "Advanced",
-    keyword: "Schema Design, Apollo Server",
-  },
   {
     name: "Node.js",
     img: nodeJS,
@@ -130,12 +130,12 @@ const server = [
     level: "Proficient",
     keyword: "Aggregation Pipeline",
   },
-  {
-    name: "Supabase",
-    img: supabase,
-    level: "Familiar",
-    keyword: "Auth, Realtime, Storage",
-  },
+  // {
+  //   name: "Supabase",
+  //   img: supabase,
+  //   level: "Familiar",
+  //   keyword: "Auth, Realtime, Storage",
+  // },
 ];
 
 const devops = [
@@ -185,12 +185,12 @@ const testing = [
     level: "Proficient",
     keyword: "Visual Regression",
   },
-  {
-    name: "Playwright",
-    img: playwright,
-    level: "Familiar",
-    keyword: "E2E Testing",
-  },
+  // {
+  //   name: "Playwright",
+  //   img: playwright,
+  //   level: "Familiar",
+  //   keyword: "E2E Testing",
+  // },
 ];
 
 export { client, server, devops, testing };

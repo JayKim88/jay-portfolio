@@ -7,7 +7,7 @@ import MyStatsDashboard from "../assets/images/refs/my-stats-dashboard.webp";
 export const projects = [
   {
     type: "Personal",
-    period: "July - Aug 2025",
+    period: "Jun - Aug 2025",
     title: "PolyLingo",
     position: "Full Stack",
     serviceType: "Mobile App",

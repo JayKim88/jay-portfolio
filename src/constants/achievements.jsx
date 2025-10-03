@@ -10,6 +10,7 @@ import CorePage1 from "../assets/images/refs/core-page_1.webp";
 import CorePage2 from "../assets/images/refs/core-page_2.webp";
 import CorePage3 from "../assets/images/refs/core-page_3.webp";
 import CorePage4 from "../assets/images/refs/core-page_4.webp";
+import CorePage6 from "../assets/images/refs/core-page_6.webp";
 import ComplexForm0 from "../assets/images/refs/complex-form_0.webp";
 import ComplexForm1 from "../assets/images/refs/complex-form_1.webp";
 import ComplexForm2 from "../assets/images/refs/complex-form_2.webp";
@@ -252,14 +253,14 @@ export const achievements = [
 
   {
     title: "Fulfillment Platform Core Pages",
-    images: [CorePage4, CorePage1, CorePage2, CorePage3, Mobile],
+    images: [CorePage4, CorePage6, CorePage1, CorePage2, CorePage3, Mobile],
     points: [
       <TransDescription>
         {(isKo) => (
           <>
             {isKo
-              ? "풀필먼트 플랫폼의 핵심 모듈(주문, 입고, 출고, 재고 등)을 개발하며 "
-              : "Led end-to-end development of the Fulfillment Platform's core modules—including Orders, Inbound (Receiving), Outbound (Shipping), and Inventory—while "}
+              ? "풀필먼트 플랫폼의 핵심 페이지(주문, 입고, 출고, 재고 등)를 개발하며 "
+              : "Developed the Fulfillment Platform's core pages—including Orders, Inbound (Receiving), Outbound (Shipping), and Inventory—while "}
             <Important
               content={
                 isKo

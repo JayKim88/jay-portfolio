@@ -233,18 +233,16 @@ export const achievements = [
         {(isKo) => (
           <>
             {isKo
-              ? "최근 2주간의 데이터를 요구하는 송장 위젯의 렌더링 시간을 "
-              : "Optimized recent invoice widget which requires 2 weeks data by reducing rendering time "}
+              ? "송장/주문 현황 위젯에서 14개의 날짜 기반 API 호출(2주치 데이터)을 병렬화하고 낙관적 렌더링을 적용하여 "
+              : "Optimized recent-invoice widget performance by parallelizing 14 date-based API calls (2 weeks data) and implementing optimistic rendering, achieving "}
             <Important
               content={
                 isKo
-                  ? "13초에서 1초(92% 개선)"
-                  : "from 13s to 1s (92% improvement) "
+                  ? "로드 시간을 92% 단축 (13초 → 1초)"
+                  : "92% reduction in load time (13s → 1s)"
               }
             />
-            {isKo
-              ? "로 단축했으며, Promise.all 을 사용하여 모든 API 요청을 최적화했습니다."
-              : "using Promise.all on all API requests."}
+            {isKo ? "했습니다." : "."}
           </>
         )}
       </TransDescription>,

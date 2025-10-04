@@ -18,7 +18,6 @@ export const Projects = ({ onClick, onHover, hoveredItem, onDetailClick }) => {
       className="projects"
       title="Projects"
       titleComponent={Title}
-      className="relative"
     >
       <h2 className="ml-4 mb-6 text-[20px] font-bold text-gray-800 dark:text-gray-100">
         Featured.

@@ -55,8 +55,8 @@ export const Navigation = ({ isTop, customStyle, style }) => {
       if (scrollY < positions.experiences) return "skills";
       if (scrollY < positions.projects) return "experiences";
       if (scrollY < positions.educations) return "projects";
-      if (scrollY < positions.studies) return "educations";
-      return "studies";
+      // if (scrollY < positions.studies) return "educations";
+      return "educations";
     };
 
     setCurrentSection(getSectionNow());
@@ -105,11 +105,11 @@ export const Navigation = ({ isTop, customStyle, style }) => {
         isShowing={currentSection === "educations"}
         customStyle="min-w-[90px]"
       />
-      <NavItem
+      {/* <NavItem
         title="Studies"
         isShowing={currentSection === "studies"}
         customStyle="min-w-[62px]"
-      />
+      /> */}
     </ul>
   );
 };

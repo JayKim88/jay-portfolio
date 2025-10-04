@@ -65,7 +65,7 @@ const MainContent = () => {
       )}
       <BackgroundImages svgWrapperRef={svgWrapperRef} svgWidth={svgWidth} />
       <Header />
-      <main className="flex flex-col gap-40 max-w-[700px] pb-[96px]">
+      <main className="flex flex-col gap-40 max-w-[700px] pb-[180px]">
         <Home />
         <Skills />
         <Experiences
@@ -81,7 +81,7 @@ const MainContent = () => {
           onDetailClick={handleDetailClick}
         />
         <Educations />
-        <Studies onHover={handleHoverItem} hoveredItem={hoveredItem} />
+        {/* <Studies onHover={handleHoverItem} hoveredItem={hoveredItem} /> */}
         {/* <TheLastFootsteps className="contact" /> */}
         {itemData && (
           <DetailModal
